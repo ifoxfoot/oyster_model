@@ -26,8 +26,9 @@ class Oyster(mesa.Agent):
             self.model.schedule.remove(self)
             living = False
 
+        #reproduction
         if living & self.energy >= 1.5 and self.age > 365:
-            for i in random.randint(1,6):
+            for i in range(random.randint(1,6)):
                 babyOyster = Oyster(
                     self.model.next_id(), self.model, self.energy, self.age
                 )
