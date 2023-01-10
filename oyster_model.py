@@ -1,37 +1,81 @@
-#this tutorial uses the mesa package
+#import packages
 import mesa
 import random
 
+#import funs
+from energy_funs import *
+
+#establish reproductive days
+reproductive_days = list(range(203, 210)) + list(range(212, 215))
 
 #set up class for agent
 class Oyster(mesa.Agent):
     
-    """An agent with randomly assigned initial energy & age."""
+    """An agent with assigned age."""
    
     #define init values
     def __init__(self, unique_id, model, age = 0):
          super().__init__(unique_id, model)
-         self.energy = random.randint(1,10)
+         self.energy = random.randint(0,10)
          self.age = age
+         self.living = True
+
+         #create lists for multi-step effects
+         self.energy_list = []
+         self.tss_list = []
+         self.temp_list = []
+         self.tds_list = []
 
     #define what happens at each step      
     def step(self):
+
+        #set living to true
         living = True
+        
+        #get environmental variables
+        do = random.randint(25, 250)*0.01
+        tss = random.randint(0, 5000)
+        temp = random.randint(0, 40)
+        tds = random.randrange(5,37)
+
+        #store variables in list
+        self.energy_list.append(self.energy)
+        self.tss_list.append(tss)
+        self.temp_list.append(temp)
+        self.tds_list.append(tds)
+
+        #age
         self.age += 1
-        self.energy += random.randint(-5, 5)
-       
+        #energy
+        if self.age < 365:
+            self.energy += (2.8 * do_juvi(do))
+        else:
+            self.energy += (2.8 * (do_adult(do)))
+
+        self.energy -= 1.2
+
         # Death
-        if (self.energy < 0) or (self.age > 3650):
+        if (self.energy < 0) or (self.age > 3650) or ((self.model.step_count >= 8) and all(v == 0 for v in self.energy_list[-8:])):
             self.model.grid.remove_agent(self)
             self.model.schedule.remove(self)
             living = False
 
+        #reproductive potential depending on age
+        if self.age < 1095 and random.random() < 0.03:
+            female = True
+        elif self.age >= 1095 and random.random() < 0.75:
+            female = True
+        else:
+            female = False
+
+        #establish reproductive days
+        reproductive_days = list(range(203, 210)) + list(range(212, 215))
+        
         #reproduction
-        if living & (self.age > 365) and (self.energy > 2) and self.model.step_count%50 == 0 : 
+        if living & female & (self.age > 365) and any(self.model.step_count%i == 0 for i in reproductive_days):
+            
             for i in range(3):
-                babyOyster = Oyster(
-                    self.model.next_id(), self.model
-                )
+                babyOyster = Oyster(self.model.next_id(), self.model)
                 x = self.random.randrange(self.model.grid.width)
                 y = self.random.randrange(self.model.grid.height)
                 self.model.grid.place_agent(babyOyster, (x, y))
@@ -40,6 +84,7 @@ class Oyster(mesa.Agent):
     
 #set up class for model
 class OysterModel(mesa.Model):
+    
     """A model with some number of agents."""
 
     #define init parameters
