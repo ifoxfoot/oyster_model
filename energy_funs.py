@@ -5,15 +5,16 @@
 def do_juvi (do):
     if do >= 2.4:
         return(1.0)
-    elif 0.5 >= do < 2.4:
+    elif 0.5 <= do < 2.4:
         return(0.5)
     elif do < 0.5:
         return(0.0)
+ 
 
 def do_adult (do):
     if do >= 2.4:
         return(1.0)
-    elif 0.5 >= do < 2.4:
+    elif 0.5 <= do < 2.4:
         return(0.75)
     elif do < 0.5:
         return(0.25)
@@ -39,6 +40,7 @@ def tds_adult (tds, tds_list):
         return(1.0)
     elif tds > 35:
         return(0.5)
+
 
 #TOTAL SUSPENDED SOLIDS
 

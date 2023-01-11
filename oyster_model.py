@@ -39,19 +39,24 @@ class Oyster(mesa.Agent):
         tds = random.randrange(5,37)
 
         #store variables in list
-        self.energy_list.append(self.energy)
         self.tss_list.append(tss)
         self.temp_list.append(temp)
         self.tds_list.append(tds)
 
         #age
         self.age += 1
-        #energy
+       
+        #energy gain
         if self.age < 365:
-            self.energy += (2.8 * do_juvi(do))
+            energy_gain = (2.8 * do_juvi(do) * tds_juvi(tds, self.tds_list) * tss_juvi(tss, self.tss_list) * temp_juvi(temp, self.temp_list))
         else:
-            self.energy += (2.8 * (do_adult(do)))
+            energy_gain = (2.8 * do_adult(do) * tds_adult(tds, self.tds_list) * tss_adult(tss, self.tss_list) * temp_adult(temp, self.temp_list))
 
+        #store energy gain
+        self.energy += energy_gain
+        self.energy_list.append(energy_gain)
+
+        #energy loss
         self.energy -= 1.2
 
         # Death
