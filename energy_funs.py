@@ -45,7 +45,7 @@ def tds_adult (tds, tds_list):
 #TOTAL SUSPENDED SOLIDS
 
 def tss_juvi (tss, tss_list):
-    if tss < 250:
+    if tss <= 250:
         return(1.0)
     elif len(tss_list) >= 14 and all(250 < v <= 500 for v in tss_list[-14:]):
         return(0.8)
@@ -59,7 +59,7 @@ def tss_juvi (tss, tss_list):
         return(0.25)
 
 def tss_adult (tss, tss_list):
-    if tss < 500:
+    if tss <= 500:
         return(1.0)
     elif len(tss_list) >= 14 and all(500 < v <= 1500 for v in tss_list[-14:]):
         return(0.8)
@@ -80,7 +80,7 @@ def temp_juvi (temp, temp_list):
     elif temp <= 5:
         return(0.95)
     elif 5 < temp <= 32:
-        return(1)
+        return(1.0)
     elif temp > 32:
         return(0.5)
 
@@ -90,6 +90,6 @@ def temp_adult (temp, temp_list):
     elif temp <= 5:
         return(0.95)
     elif 5 < temp <= 32:
-        return(1)
+        return(1.0)
     elif temp > 32:
         return(0.75)
