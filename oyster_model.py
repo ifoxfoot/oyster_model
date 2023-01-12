@@ -3,7 +3,7 @@ import mesa
 import random
 
 #import funs
-from energy_funs import *
+from energy_fun import *
 
 #establish reproductive days
 reproductive_days = list(range(203, 210)) + list(range(212, 215))
@@ -16,9 +16,12 @@ class Oyster(mesa.Agent):
     #define init values
     def __init__(self, unique_id, model, age = 0):
          super().__init__(unique_id, model)
-         self.energy = random.randint(0,10)
          self.age = age
-         self.living = True
+         self.energy = random.randint(0,10)
+         self.shell_length_mm = random.randint(1, 300)
+         self.dry_biomass = 9.6318 * (10**-6) * (self.shell_length_mm**2.743)
+         self.wet_biomass =  (self.dry_biomass * 5.6667) + self.dry_biomass 
+         
 
          #create lists for multi-step effects
          self.energy_list = []
@@ -47,14 +50,11 @@ class Oyster(mesa.Agent):
         self.age += 1
        
         #energy gain
-        if self.age < 365:
-            energy_gain = (2.8 * do_juvi(do) * tds_juvi(tds, self.tds_list) * tss_juvi(tss, self.tss_list) * temp_juvi(temp, self.temp_list))
-        else:
-            energy_gain = (2.8 * do_adult(do) * tds_adult(tds, self.tds_list) * tss_adult(tss, self.tss_list) * temp_adult(temp, self.temp_list))
+        energy_added = energy_gain(self.age, do, tss, self.tss_list, tds, self.tds_list, temp, self.temp_list)
 
         #store energy gain
-        self.energy += energy_gain
-        self.energy_list.append(energy_gain)
+        self.energy += energy_added
+        self.energy_list.append(energy_added)
 
         #energy loss
         self.energy -= 1.2
