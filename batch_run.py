@@ -1,6 +1,9 @@
 
 #import library 
+import mesa
+import random
 import pandas as pd
+import matplotlib.pyplot as plt
 
 #import model
 from oyster_model import *
@@ -23,11 +26,12 @@ results = mesa.batch_run(
 results_df = pd.DataFrame(results)
 print(results_df.keys())
 
-# First, we filter the results
-one_episode_energy = results_df[(results_df.N == 500) & (results_df.iteration == 2)]
-# Then, print the columns of interest of the filtered data frame
-print(
-    one_episode_energy.to_string(
-        index=False, columns=["Step", "AgentID", "Energy"], max_rows=25
-    )
-)
+#first filter the results for one iteration one agent
+iteration_one = results_df[(results_df.iteration == 1) & (results_df.AgentID == random.randint(1,500))]
+
+#plot energy and shell
+plt.plot(iteration_one.Step, iteration_one.Energy, label = "energy")
+plt.plot(iteration_one.Step, iteration_one.shell_length_mm, label = "shell length (mm)")
+plt.xlabel('step')
+plt.legend()
+plt.show()

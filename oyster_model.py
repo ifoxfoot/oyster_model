@@ -114,8 +114,14 @@ class OysterModel(mesa.Model):
             self.grid.place_agent(oyster, (x, y))
             self.schedule.add(oyster)
 
+        #init data collector
         self.datacollector = mesa.DataCollector(
-            agent_reporters={"Energy": "energy"}
+            agent_reporters = {"Energy": "energy",
+                              "shell_length_mm": "shell_length_mm",
+                              "dry_biomass": "dry_biomass",
+                              "wet_biomass": "wet_biomass"
+                              },
+            tables = {"Lifespan": ["unique_id", "age"]}
             )
 
     #definte step
