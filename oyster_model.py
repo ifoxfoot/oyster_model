@@ -5,6 +5,7 @@ import random
 #import funs
 from energy_fun import *
 from shell_length_fun import *
+from fertility_fun import *
 
 #establish reproductive days
 reproductive_days = list(range(203, 210)) + list(range(212, 215))
@@ -21,7 +22,8 @@ class Oyster(mesa.Agent):
          self.energy = random.randint(0,10)
          self.shell_length_mm = random.randint(1, 300)
          self.dry_biomass = 9.6318 * (10**-6) * (self.shell_length_mm**2.743)
-         self.wet_biomass =  (self.dry_biomass * 5.6667) + self.dry_biomass 
+         self.wet_biomass =  (self.dry_biomass * 5.6667) + self.dry_biomass
+         self.fertility = 0
          
 
          #create lists for multi-step effects
@@ -37,10 +39,10 @@ class Oyster(mesa.Agent):
         living = True
         
         #get environmental variables
-        do = random.randint(25, 250)*0.01
-        tss = random.randint(0, 5000)
-        temp = random.randint(0, 40)
-        tds = random.randrange(5,37)
+        do = random.randint(50, 250)*0.01
+        tss = random.randint(0, 300)
+        temp = random.randint(4, 33)
+        tds = random.randrange(10,27)
 
         #store variables in list
         self.tss_list.append(tss)
@@ -51,17 +53,19 @@ class Oyster(mesa.Agent):
         self.age += 1
        
         #energy gain
-        energy_added = energy_gain(self.age, do, tss, self.tss_list, tds, self.tds_list, temp, self.temp_list)
-
-        #store energy gain
-        self.energy += energy_added
-        self.energy_list.append(energy_added)
+        daily_energy = energy_gain(
+            self.age, do, tss, self.tss_list, tds, self.tds_list, temp, self.temp_list
+        )
+        self.energy += daily_energy
+        self.energy_list.append(daily_energy)
 
         #energy loss
         self.energy -= 1.2
 
         #growth
         self.shell_length_mm += shell_length_gain(self.shell_length_mm, self.energy)
+        self.dry_biomass = 9.6318 * (10**-6) * (self.shell_length_mm**2.743)
+        self.wet_biomass =  (self.dry_biomass * 5.6667) + self.dry_biomass 
 
         # Death
         if (self.energy < 0) or (self.age > 3650) or ((self.model.step_count >= 8) and all(v == 0 for v in self.energy_list[-8:])):
@@ -69,21 +73,15 @@ class Oyster(mesa.Agent):
             self.model.schedule.remove(self)
             living = False
 
-        #reproductive potential depending on age
-        if self.age < 1095 and random.random() < 0.03:
-            female = True
-        elif self.age >= 1095 and random.random() < 0.75:
-            female = True
-        else:
-            female = False
-
         #establish reproductive days
         reproductive_days = list(range(203, 210)) + list(range(212, 215))
         
         #reproduction
-        if living & female & (self.age > 365) and any(self.model.step_count%i == 0 for i in reproductive_days):
+        if living and any(self.model.step_count%i == 0 for i in reproductive_days):
             
-            for i in range(3):
+            self.fertility = n_babies(self.age, do, tss, tds, temp)
+
+            for i in range(self.fertility):
                 babyOyster = Oyster(self.model.next_id(), self.model)
                 x = self.random.randrange(self.model.grid.width)
                 y = self.random.randrange(self.model.grid.height)
@@ -116,7 +114,8 @@ class OysterModel(mesa.Model):
 
         #init data collector
         self.datacollector = mesa.DataCollector(
-            agent_reporters = {"Energy": "energy",
+            agent_reporters = {"energy": "energy",
+                              "fertility": "fertility",
                               "shell_length_mm": "shell_length_mm",
                               "dry_biomass": "dry_biomass",
                               "wet_biomass": "wet_biomass"

@@ -29,9 +29,12 @@ print(results_df.keys())
 #first filter the results for one iteration one agent
 iteration_one = results_df[(results_df.iteration == 1) & (results_df.AgentID == random.randint(1,500))]
 
-#plot energy and shell
-plt.plot(iteration_one.Step, iteration_one.Energy, label = "energy")
-plt.plot(iteration_one.Step, iteration_one.shell_length_mm, label = "shell length (mm)")
+#plot things
+#plt.plot(iteration_one.Step, iteration_one.dry_biomass, label = "dry_biomass")
+#plt.plot(iteration_one.Step, iteration_one.wet_biomass, label = "wet_biomass")
+#plt.plot(iteration_one.Step, iteration_one.shell_length_mm, label = "shell length (mm)")
+#plt.plot(iteration_one.Step, iteration_one.energy, label = "energy")
+plt.plot(iteration_one.Step, iteration_one.fertility, label = "fertility")
 plt.xlabel('step')
 plt.legend()
 plt.show()
