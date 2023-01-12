@@ -114,8 +114,13 @@ class OysterModel(mesa.Model):
             self.grid.place_agent(oyster, (x, y))
             self.schedule.add(oyster)
 
+        self.datacollector = mesa.DataCollector(
+            agent_reporters={"Energy": "energy"}
+            )
+
     #definte step
     def step(self):
         """Advance the model by one step."""
+        self.datacollector.collect(self)
         self.schedule.step()
         self.step_count += 1
