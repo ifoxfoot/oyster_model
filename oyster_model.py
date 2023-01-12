@@ -4,6 +4,7 @@ import random
 
 #import funs
 from energy_fun import *
+from shell_length_fun import *
 
 #establish reproductive days
 reproductive_days = list(range(203, 210)) + list(range(212, 215))
@@ -58,6 +59,9 @@ class Oyster(mesa.Agent):
 
         #energy loss
         self.energy -= 1.2
+
+        #growth
+        self.shell_length_mm += shell_length_gain(self.shell_length_mm, self.energy)
 
         # Death
         if (self.energy < 0) or (self.age > 3650) or ((self.model.step_count >= 8) and all(v == 0 for v in self.energy_list[-8:])):
