@@ -1,7 +1,7 @@
 
 import random
 
-def n_babies (age, do, tss, tds, temp):
+def n_babies(age, do, tss, tds, temp):
     
     #SALINITY
     tds_weight = (tds - 8)/5.5
@@ -45,8 +45,8 @@ def n_babies (age, do, tss, tds, temp):
         female = False
 
     #FERTILITY
-    if female & age >= 365:
-        return(3 * tds_weight * tss_weight * temp_weight * do_weight)
+    if female and age >= 365:
+        return(int(3 * tds_weight * tss_weight * temp_weight * do_weight))
     else:
         return(0)
-
+        

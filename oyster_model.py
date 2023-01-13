@@ -25,7 +25,6 @@ class Oyster(mesa.Agent):
          self.wet_biomass =  (self.dry_biomass * 5.6667) + self.dry_biomass
          self.fertility = 0
          
-
          #create lists for multi-step effects
          self.energy_list = []
          self.tss_list = []
