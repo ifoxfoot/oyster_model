@@ -13,7 +13,7 @@ reproductive_days = list(range(203, 210)) + list(range(212, 215))
 #set up class for agent
 class Oyster(mesa.Agent):
     
-    """An agent with assigned age."""
+    """An agent with assigned age, energy, and size."""
    
     #define init values
     def __init__(self, unique_id, model, age = 0):
@@ -38,7 +38,7 @@ class Oyster(mesa.Agent):
         living = True
         
         #get environmental variables
-        do = random.randint(50, 250)*0.01
+        do = random.randint(150, 340)*0.01
         tss = random.randint(0, 300)
         temp = random.randint(4, 33)
         tds = random.randrange(10,27)
@@ -77,9 +77,11 @@ class Oyster(mesa.Agent):
         
         #reproduction
         if living and any(self.model.step_count%i == 0 for i in reproductive_days):
-            
+
+            #get fertility
             self.fertility = n_babies(self.age, do, tss, tds, temp)
 
+            #create new oysters
             for i in range(self.fertility):
                 babyOyster = Oyster(self.model.next_id(), self.model)
                 x = self.random.randrange(self.model.grid.width)

@@ -16,7 +16,7 @@ results = mesa.batch_run(
     OysterModel,
     parameters=params,
     iterations=5,
-    max_steps=100,
+    max_steps=365,
     number_processes=1,
     data_collection_period=1,
     display_progress=True,
