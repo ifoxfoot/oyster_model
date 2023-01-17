@@ -6,6 +6,7 @@ import random
 from energy_fun import *
 from shell_length_fun import *
 from fertility_fun import *
+from mortality_fun import *
 
 #establish reproductive days
 reproductive_days = list(range(203, 210)) + list(range(212, 215))
@@ -24,12 +25,14 @@ class Oyster(mesa.Agent):
          self.dry_biomass = 9.6318 * (10**-6) * (self.shell_length_mm**2.743)
          self.wet_biomass =  (self.dry_biomass * 5.6667) + self.dry_biomass
          self.fertility = 0
+         self.mortality_prob = 0
          
          #create lists for multi-step effects
          self.energy_list = []
          self.tss_list = []
          self.temp_list = []
          self.tds_list = []
+         self.do_list = []
 
     #define what happens at each step      
     def step(self):
@@ -47,7 +50,13 @@ class Oyster(mesa.Agent):
         self.tss_list.append(tss)
         self.temp_list.append(temp)
         self.tds_list.append(tds)
+        self.do_list.append(do)
 
+        self.tss_list = self.tss_list[-14:]
+        self.temp_list = self.temp_list[-7:]
+        self.tds_list = self.tds_list[-7:]
+        self.do_list = self.do_list[-7:]
+        
         #age
         self.age += 1
        
@@ -66,7 +75,9 @@ class Oyster(mesa.Agent):
         self.dry_biomass = 9.6318 * (10**-6) * (self.shell_length_mm**2.743)
         self.wet_biomass =  (self.dry_biomass * 5.6667) + self.dry_biomass 
 
-        # Death
+        #death
+        self.mortality_prob = mort_prob(self.age, tds, self.tds_list, tss, self.tss_list, temp, self.temp_list, do, self.do_list)
+        
         if (self.energy < 0) or (self.age > 3650) or ((self.model.step_count >= 8) and all(v == 0 for v in self.energy_list[-8:])):
             self.model.grid.remove_agent(self)
             self.model.schedule.remove(self)
@@ -119,7 +130,8 @@ class OysterModel(mesa.Model):
                               "fertility": "fertility",
                               "shell_length_mm": "shell_length_mm",
                               "dry_biomass": "dry_biomass",
-                              "wet_biomass": "wet_biomass"
+                              "wet_biomass": "wet_biomass",
+                              "mortality_prob": "mortality_prob"
                               },
             tables = {"Lifespan": ["unique_id", "age"]}
             )
