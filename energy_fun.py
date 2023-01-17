@@ -13,7 +13,7 @@ def energy_gain(age, do, tds, tds_list, tss, tss_list, temp, temp_list):
             do_energy = 0.0
 
         #SALINITY
-        if len(tds_list) > 7 and all(v < 12 for v in tds_list[-7:]):
+        if len(tds_list) >= 7 and all(v < 12 for v in tds_list[-7:]):
             tds_energy = 0.8
         elif tds < 12:
             tds_energy = 0.9
