@@ -6,7 +6,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 #import model
-from oyster_model import *
+from model import *
 
 #set params
 params = {"width": 10, "height": 10, "N": 500}

@@ -1,23 +1,24 @@
 #import packages
-import mesa
+import mesa_geo as mg
 import random
+from shapely.geometry import Point
 
 #import funs
-from energy_fun import *
-from shell_length_fun import *
-from fertility_fun import *
-from mortality_fun import *
+from functions.energy_fun import *
+from functions.shell_length_fun import *
+from functions.fertility_fun import *
+from functions.mortality_fun import *
 
 #establish reproductive days
 reproductive_days = list(range(203, 210)) + list(range(212, 215))
 
-#set up class for agent
-class Oyster(mesa.Agent):
+#set up class for oyster agent
+class Oyster(mg.GeoAgent):
     
-    """An agent with assigned age, energy, and size."""
+    """An oyster with assigned age, energy, and size."""
    
     #define init values
-    def __init__(self, unique_id, model, age = 0):
+    def __init__(self, unique_id, model, geometry, crs, age = 0):
          super().__init__(unique_id, model)
          self.age = age
          self.energy = random.randint(0,10)
@@ -99,46 +100,3 @@ class Oyster(mesa.Agent):
                 y = self.random.randrange(self.model.grid.height)
                 self.model.grid.place_agent(babyOyster, (x, y))
                 self.model.schedule.add(babyOyster)
-
-    
-#set up class for model
-class OysterModel(mesa.Model):
-    
-    """A model with some number of agents."""
-
-    #define init parameters
-    def __init__(self, N, width, height):
-        self.num_agents = N
-        self.grid = mesa.space.MultiGrid(width, height, True)
-        self.schedule = mesa.time.RandomActivation(self)
-        self.running = True
-        self.step_count = 0
-        self.current_id = 0
-        
-        # Create agents
-        for i in range(self.num_agents):
-            x = self.random.randrange(self.grid.width)
-            y = self.random.randrange(self.grid.height)
-            age = random.randint(1, 3649)
-            oyster = Oyster(self.next_id(), self, age)
-            self.grid.place_agent(oyster, (x, y))
-            self.schedule.add(oyster)
-
-        #init data collector
-        self.datacollector = mesa.DataCollector(
-            agent_reporters = {"energy": "energy",
-                              "fertility": "fertility",
-                              "shell_length_mm": "shell_length_mm",
-                              "dry_biomass": "dry_biomass",
-                              "wet_biomass": "wet_biomass",
-                              "mortality_prob": "mortality_prob"
-                              },
-            tables = {"Lifespan": ["unique_id", "age"]}
-            )
-
-    #definte step
-    def step(self):
-        """Advance the model by one step."""
-        self.datacollector.collect(self)
-        self.schedule.step()
-        self.step_count += 1

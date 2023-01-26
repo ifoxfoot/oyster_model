@@ -1,5 +1,5 @@
-#import the model and mesa
-from oyster_model import *
+#import the model and mesa package
+from model import *
 import mesa
 
 #set up visualization
