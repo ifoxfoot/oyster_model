@@ -1,12 +1,17 @@
-#import the model and mesa package
-from model import *
+#import mesa package
 import mesa
+import mesa_geo as mg
+
+#import model and agent
+from model import *
+from agents import *
 
 #set up visualization
 def agent_portrayal(agent):
-    portrayal = {"Shape": "circle",
-                 "Filled": "true",
-                 "r": 0.5}
+    if isinstance(agent, Oyster):
+        portrayal = {"Shape": "circle",
+                    "Filled": "true",
+                     "r": 0.5}
 
     if agent.energy > 1.5:
         portrayal["Color"] = "red"
@@ -17,13 +22,11 @@ def agent_portrayal(agent):
         portrayal["r"] = 0.2
     return portrayal
 
-#init grid
-grid = mesa.visualization.CanvasGrid(agent_portrayal, 10, 10, 500, 500)  
-
+map_element = mg.visualization.MapModule(agent_portrayal)
 
 #server code
 server = mesa.visualization.ModularServer(
-    OysterModel, [grid], "Oyster Model", {"N": 100, "width": 10, "height": 10}
+    OysterModel, [map_element], "Oyster Model", {"N": 100}
 )
 
 #code to launch
