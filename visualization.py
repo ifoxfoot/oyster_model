@@ -8,18 +8,14 @@ from agents import *
 
 #set up visualization
 def agent_portrayal(agent):
+    portrayal = dict()
     if isinstance(agent, Oyster):
-        portrayal = {"Shape": "circle",
-                    "Filled": "true",
-                     "r": 0.5}
-
-    if agent.energy > 1.5:
-        portrayal["Color"] = "red"
-        portrayal["Layer"] = 0
-    else:
-        portrayal["Color"] = "grey"
-        portrayal["Layer"] = 1
-        portrayal["r"] = 0.2
+        portrayal["shape"] = "circle"
+        if agent.energy > 1.5:
+            portrayal["color"] = "red"
+        else:
+            portrayal["color"] = "grey"
+    else: portrayal["color"] = "Green"
     return portrayal
 
 map_element = mg.visualization.MapModule(agent_portrayal)

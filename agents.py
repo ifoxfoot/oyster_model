@@ -9,16 +9,20 @@ from functions.shell_length_fun import *
 from functions.fertility_fun import *
 from functions.mortality_fun import *
 
+#import model
+from model import *
+
+
 #set up class for oyster agent
 class Oyster(mg.GeoAgent):
     
     """An oyster with assigned age, energy, and size."""
    
     #define init values
-    def __init__(self, unique_id, home_reef, model, geometry, crs, age = 0):
+    def __init__(self, unique_id, model, geometry, crs, home_reef, age = 0):
          super().__init__(unique_id, model, geometry, crs)
-         self.home_reef = home_reef
          self.age = age
+         self.home_reef = self.model.space.agents[home_reef]
          self.energy = random.randint(0,10)
          self.shell_length_mm = random.randint(1, 300)
          self.dry_biomass = 9.6318 * (10**-6) * (self.shell_length_mm**2.743)
@@ -32,6 +36,9 @@ class Oyster(mg.GeoAgent):
     #define what happens at each step      
     def step(self):
 
+        #home reef not working
+        #self.home_reef = self.model.space.get_intersecting_agents(self, Reef)
+
         #set living to true
         living = True
         
@@ -41,7 +48,7 @@ class Oyster(mg.GeoAgent):
         #energy gain
         daily_energy = energy_gain(
             self.age, 
-            self.home_reef.do, 
+            self.home_reef.do,
             self.home_reef.tss, 
             self.home_reef.tss_list, 
             self.home_reef.tds, 
@@ -74,7 +81,7 @@ class Oyster(mg.GeoAgent):
             )
         
         if (self.energy < 0) or (self.age > 3650) or ((self.model.step_count >= 8) and all(v == 0 for v in self.energy_list[-8:])):
-            self.model.grid.remove_agent(self)
+            self.model.space.remove_agent(self)
             self.model.schedule.remove(self)
             living = False
 
@@ -94,27 +101,30 @@ class Oyster(mg.GeoAgent):
 
             #create new oysters
             for i in range(self.fertility):
-                babyOyster = Oyster(self.model.next_id(), self.model)
                 #get random reef
                 random_reef =  self.random.randint(
                 0, len(self.model.reef_agents) - 1
                 )
-                #generate point where agent is located within random reef
-                center_x, center_y = self.model.reef_agents[random_reef].geometry.centroid.coords.xy
-                this_bounds = self.model.reef_agents[random_reef].geometry.bounds
-                spread_x = int(this_bounds[2] - this_bounds[0]) 
-                spread_y = int(this_bounds[3] - this_bounds[1])
-                this_x = center_x[0] + self.random.randint(0, spread_x) - spread_x / 2
-                this_y = center_y[0] + self.random.randint(0, spread_y) - spread_y / 2
-                this_oyster = babyOyster.create_agent(
-                    Point(this_x, this_y), 
-                    unique_id = i, 
-                    home_reef = random_reef
+                #create while loop to return point in reef
+                def point_in_reef (random_reef):
+                        minx, miny, maxx, maxy = self.model.reef_agents[random_reef].geometry.bounds
+                        pnt = Point(0,0)
+                        while not self.model.reef_agents[random_reef].geometry.contains(pnt):
+                            pnt = Point(random.uniform(minx, maxx), random.uniform(miny, maxy))
+                        return pnt
+                #create oyster
+                baby_oyster = Oyster(
+                    unique_id = "oyster_" + str(self.model.next_id()),
+                    model = self.model,
+                    geometry = point_in_reef(random_reef), 
+                    crs = self.model.space.crs,
+                    home_reef = random_reef,
+                    age = 0
                 )
             
                 #add oyster agents to grid and scheduler
-                self.space.add_agents(this_oyster)
-                self.schedule.add(this_oyster)
+                self.model.space.add_agents(baby_oyster)
+                self.model.schedule.add(baby_oyster)
 
 #set up class for ReefAgent
 class Reef(mg.GeoAgent):
@@ -130,18 +140,23 @@ class Reef(mg.GeoAgent):
         self.temp_list = []
         self.tds_list = []
         self.do_list = []
+        #init env values
+        self.do = random.randint(150, 340)*0.01
+        self.tss = random.randint(0, 300)
+        self.temp = random.randint(4, 33)
+        self.tds = random.randrange(10,27)
 
     def step(self):
-        #get environmental variables
-        do = random.randint(150, 340)*0.01
-        tss = random.randint(0, 300)
-        temp = random.randint(4, 33)
-        tds = random.randrange(10,27)
+        #get new environmental variables
+        self.do = random.randint(150, 340)*0.01
+        self.tss = random.randint(0, 300)
+        self.temp = random.randint(4, 33)
+        self.tds = random.randrange(10,27)
         #store variables in list
-        self.tss_list.append(tss)
-        self.temp_list.append(temp)
-        self.tds_list.append(tds)
-        self.do_list.append(do)
+        self.tss_list.append(self.tss)
+        self.temp_list.append(self.temp)
+        self.tds_list.append(self.tds)
+        self.do_list.append(self.do)
         #limit list length
         self.tss_list = self.tss_list[-14:]
         self.temp_list = self.temp_list[-7:]
