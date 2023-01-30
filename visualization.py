@@ -10,7 +10,6 @@ from agents import *
 def agent_portrayal(agent):
     portrayal = dict()
     if isinstance(agent, Oyster):
-        portrayal["shape"] = "circle"
         if agent.energy > 1.5:
             portrayal["color"] = "red"
         else:

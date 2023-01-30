@@ -36,9 +36,6 @@ class Oyster(mg.GeoAgent):
     #define what happens at each step      
     def step(self):
 
-        #home reef not working
-        #self.home_reef = self.model.space.get_intersecting_agents(self, Reef)
-
         #set living to true
         living = True
         
@@ -67,7 +64,7 @@ class Oyster(mg.GeoAgent):
         self.dry_biomass = 9.6318 * (10**-6) * (self.shell_length_mm**2.743)
         self.wet_biomass =  (self.dry_biomass * 5.6667) + self.dry_biomass 
 
-        #death
+        #death NOT ADDED INTO DEATH IF STATEMENT YET
         self.mortality_prob = mort_prob(
             self.age, 
             self.home_reef.tds, 
@@ -80,6 +77,7 @@ class Oyster(mg.GeoAgent):
             self.home_reef.do_list
             )
         
+        #if conditions met, kill off
         if (self.energy < 0) or (self.age > 3650) or ((self.model.step_count >= 8) and all(v == 0 for v in self.energy_list[-8:])):
             self.model.space.remove_agent(self)
             self.model.schedule.remove(self)

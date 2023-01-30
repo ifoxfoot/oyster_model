@@ -53,6 +53,7 @@ class OysterModel(mesa.Model):
                 home_reef = random_reef,
                 age = random.randint(1, 3649)
             )
+            
             #add oyster agents to grid and scheduler
             self.space.add_agents(this_oyster)
             self.schedule.add(this_oyster)
@@ -65,14 +66,14 @@ class OysterModel(mesa.Model):
         self.running = True
         
         self.datacollector = mesa.DataCollector(
-            # agent_reporters = {"Oyster": energy(Oyster),
-                                # "energy": "energy",
-                                # "fertility": "fertility",
-                                # "shell_length_mm": "shell_length_mm",
-                                # "dry_biomass": "dry_biomass",
-                                # "wet_biomass": "wet_biomass",
-                                # "mortality_prob": "mortality_prob"
-                                # }
+            # agent_reporters = {
+            #                     "energy": "energy",
+            #                     "fertility": "fertility",
+            #                     "shell_length_mm": "shell_length_mm",
+            #                     "dry_biomass": "dry_biomass",
+            #                     "wet_biomass": "wet_biomass",
+            #                     "mortality_prob": "mortality_prob"
+            #                     },
             # tables = {"Lifespan": ["unique_id", "age"]}
             )
 
