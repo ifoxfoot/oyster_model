@@ -21,7 +21,7 @@ map_element = mg.visualization.MapModule(agent_portrayal)
 
 #server code
 server = mesa.visualization.ModularServer(
-    OysterModel, [map_element], "Oyster Model", {"N": 100}
+    OysterModel, [map_element], "Oyster Model", {"N": 100, "harvest_rate": 20}
 )
 
 #code to launch

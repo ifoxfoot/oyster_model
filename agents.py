@@ -19,9 +19,11 @@ class Oyster(mg.GeoAgent):
     """An oyster with assigned age, energy, and size."""
    
     #define init values
-    def __init__(self, unique_id, model, geometry, crs, home_reef, age = 0):
+    def __init__(self, unique_id, model, geometry, crs, birth_reef, home_reef, age = 0):
          super().__init__(unique_id, model, geometry, crs)
+         self.type = "Oyster"
          self.age = age
+         self.birth_reef = birth_reef
          self.home_reef = self.model.space.agents[home_reef]
          self.energy = random.randint(0,10)
          self.shell_length_mm = random.randint(1, 300)
@@ -116,6 +118,7 @@ class Oyster(mg.GeoAgent):
                     model = self.model,
                     geometry = point_in_reef(random_reef), 
                     crs = self.model.space.crs,
+                    birth_reef = self.home_reef,
                     home_reef = random_reef,
                     age = 0
                 )
@@ -130,9 +133,14 @@ class Reef(mg.GeoAgent):
     """Reef Agent"""
 
     def __init__(
-        self, unique_id, model, geometry, crs
+        self, unique_id, model, geometry, crs, harvest_rate, sanctuary_status
     ):
         super().__init__(unique_id, model, geometry, crs)
+        self.type = "Reef"
+        self.harvest_rate = harvest_rate
+        self.sanctuary_status = sanctuary_status
+        self.oyster_count = self.model.space.agents["home_reef" == self.unique_id]
+
         #create lists for multi-step effects
         self.tss_list = []
         self.temp_list = []
@@ -145,6 +153,7 @@ class Reef(mg.GeoAgent):
         self.tds = random.randrange(10,27)
 
     def step(self):
+        print(self.oyster_count)
         #get new environmental variables
         self.do = random.randint(150, 340)*0.01
         self.tss = random.randint(0, 300)

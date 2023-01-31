@@ -16,15 +16,23 @@ class OysterModel(mesa.Model):
     unique_id = "Id"
 
     #define init parameters
-    def __init__(self, N):
+    def __init__(self, N, harvest_rate):
         self.num_oysters = N
+        self.harvest_rate = harvest_rate
         self.space = mg.GeoSpace(warn_crs_conversion=False)
         self.schedule = mesa.time.RandomActivation(self)
         self.step_count = 0
         self.current_id = N
 
         #create reef agents
-        ac = mg.AgentCreator(Reef, model = self)
+        ac = mg.AgentCreator(
+            Reef, 
+            model = self,
+            agent_kwargs = {
+                "harvest_rate": harvest_rate,
+                "sanctuary_status" : True
+                }
+            )
         self.reef_agents = ac.from_file(
             self.reefs, unique_id = self.unique_id
             )
@@ -50,6 +58,7 @@ class OysterModel(mesa.Model):
                 model = self,
                 geometry = point_in_reef(random_reef),
                 crs =  self.space.crs,
+                birth_reef = random_reef,
                 home_reef = random_reef,
                 age = random.randint(1, 3649)
             )
@@ -66,20 +75,24 @@ class OysterModel(mesa.Model):
         self.running = True
         
         self.datacollector = mesa.DataCollector(
-            # agent_reporters = {
-            #                     "energy": "energy",
-            #                     "fertility": "fertility",
-            #                     "shell_length_mm": "shell_length_mm",
-            #                     "dry_biomass": "dry_biomass",
-            #                     "wet_biomass": "wet_biomass",
-            #                     "mortality_prob": "mortality_prob"
-            #                     },
-            # tables = {"Lifespan": ["unique_id", "age"]}
+            agent_reporters = {#oyster metrics
+                                "energy": lambda a: a.energy if a.type == "Oyster" else None,
+                                "fertility": lambda a: a.fertility if a.type == "Oyster" else None,
+                                "shell_length_mm": lambda a: a.shell_length_mm if a.type == "Oyster" else None,
+                                "dry_biomass": lambda a: a.dry_biomass if a.type == "Oyster" else None,
+                                "wet_biomass": lambda a: a.wet_biomass if a.type == "Oyster" else None,
+                                "mortality_prob": lambda a: a.mortality_prob if a.type == "Oyster" else None,
+                                #reef metrics
+                                "oyster_count": lambda a: a.oyster_count if a.type == "Reef" else None
+                                },
+            tables = {"Lifespan": [lambda a: a.unique_id if a.type == "Oyster" else None, 
+            lambda a: a.age if a.type == "Oyster" else None]}
             )
 
     #definte step
     def step(self):
         """Advance the model by one step."""
-        self.datacollector.collect(self)
         self.schedule.step()
         self.step_count += 1
+        self.space._recreate_rtree()  # Recalculate spatial tree, because agents are moving
+        self.datacollector.collect(self)
