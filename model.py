@@ -12,14 +12,16 @@ class OysterModel(mesa.Model):
     
     """A model class for oysters in the Chesapeake Bay"""
 
+    #path to reef file and unique reef ID
     reefs = "data/Schulte_reefs.shp"
     unique_id = "Id"
 
     #define init parameters
-    def __init__(self, N, harvest_rate):
-        self.num_oysters = N
-        self.harvest_rate = harvest_rate
-        self.space = mg.GeoSpace(warn_crs_conversion=False)
+    def __init__(self, N, harvest_rate, num_safe_reefs):
+        self.num_oysters = N #number of oysters (int)
+        self.harvest_rate = harvest_rate #proportion of oysters to take (between 0 and 1)
+        self.num_safe_reefs = num_safe_reefs #how many reefs are sanctuary reefs
+        self.space = mg.GeoSpace(warn_crs_conversion = False)
         self.schedule = mesa.time.RandomActivation(self)
         self.step_count = 0
         self.current_id = N
@@ -29,18 +31,19 @@ class OysterModel(mesa.Model):
             Reef, 
             model = self,
             agent_kwargs = {
-                "harvest_rate": harvest_rate,
-                "sanctuary_status" : True
+                "sanctuary_status" : random.random() < (num_safe_reefs/100)
                 }
             )
         self.reef_agents = ac.from_file(
             self.reefs, unique_id = self.unique_id
             )
+        
+        #add reef agents to space
         self.space.add_agents(self.reef_agents)
 
-        #generate location, add oysters to location
+        #create oysters
         for i in range(self.num_oysters):
-            #get random reef
+            #get random reef to locate oyster
             random_reef =  self.random.randint(
                 0, len(self.reef_agents) - 1
             )
@@ -67,15 +70,17 @@ class OysterModel(mesa.Model):
             self.space.add_agents(this_oyster)
             self.schedule.add(this_oyster)
 
-        #add reef agents after oysters created
+        #add reef agents to schedule after oysters
         for agent in self.reef_agents:
             self.schedule.add(agent)
 
         #init data collector
         self.running = True
         
+        #tell data collector what to collect
         self.datacollector = mesa.DataCollector(
-            agent_reporters = {#oyster metrics
+            agent_reporters = {"type" : "type",
+                                #oyster metrics
                                 "energy": lambda a: a.energy if a.type == "Oyster" else None,
                                 "fertility": lambda a: a.fertility if a.type == "Oyster" else None,
                                 "shell_length_mm": lambda a: a.shell_length_mm if a.type == "Oyster" else None,
@@ -85,14 +90,15 @@ class OysterModel(mesa.Model):
                                 #reef metrics
                                 "oyster_count": lambda a: a.oyster_count if a.type == "Reef" else None
                                 },
+            #get oyster lifespan                    
             tables = {"Lifespan": [lambda a: a.unique_id if a.type == "Oyster" else None, 
             lambda a: a.age if a.type == "Oyster" else None]}
             )
 
-    #definte step
+    #define step
     def step(self):
         """Advance the model by one step."""
         self.schedule.step()
         self.step_count += 1
-        self.space._recreate_rtree()  # Recalculate spatial tree, because agents are moving
+        self.space._recreate_rtree()  # Recalculate spatial tree, because agents are moving??
         self.datacollector.collect(self)

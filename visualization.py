@@ -6,7 +6,18 @@ import mesa_geo as mg
 from model import *
 from agents import *
 
-#set up visualization
+#set up sliders for model parames
+model_params = {
+    "N": mesa.visualization.Slider("Number of Oysters", 50, 100, 250, 500),
+    "harvest_rate": mesa.visualization.Slider(
+        "Harvest Rate",  value = .5, min_value = 0, max_value = 1, step = 0.1
+    ),
+    "num_safe_reefs": mesa.visualization.Slider(
+        "Number of Sanctuary Reefs", value = 5, min_value = 0, max_value = 10, step = 1
+    ),
+}
+
+#define how agents will be shown
 def agent_portrayal(agent):
     portrayal = dict()
     if isinstance(agent, Oyster):
@@ -14,16 +25,19 @@ def agent_portrayal(agent):
             portrayal["color"] = "red"
         else:
             portrayal["color"] = "grey"
-    else: portrayal["color"] = "Green"
+    else: 
+        if agent.sanctuary_status:
+            portrayal["color"] = "yellow"
+        else: portrayal["color"] = "Green"
     return portrayal
 
+#create map element
 map_element = mg.visualization.MapModule(agent_portrayal)
 
-#server code
+#server
 server = mesa.visualization.ModularServer(
-    OysterModel, [map_element], "Oyster Model", {"N": 100, "harvest_rate": 20}
+    OysterModel, [map_element], "Oyster Model", model_params = model_params
 )
 
-#code to launch
-server.port = 8521  # The default
+#launch server to port
 server.launch()

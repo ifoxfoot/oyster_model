@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 from model import *
 
 #set params
-params = {"N": 500, "harvest_rate": 20}
+params = {"N": 100, "harvest_rate": .20, "num_safe_reefs": 5}
 
 #batch run
 results = mesa.batch_run(
@@ -29,9 +29,8 @@ print(results_df.keys())
 #first filter the results for one iteration one agent to look at oyster metrics
 #iteration_one = results_df[(results_df.iteration == 1) & (results_df.AgentID == "oyster_" + str(random.randint(1,500)))]
 
-#filter results for one iteration to look at reef metrics
-iteration_one = results_df[(results_df.iteration == 1) & (results_df.AgentID == random.randint(0,10))]
-
+#get reef agents
+iteration_one = results_df[results_df.type == "Reef"]
 
 #plot things (Oyster)
 #plt.plot(iteration_one.Step, iteration_one.dry_biomass, label = "dry_biomass")
@@ -42,8 +41,7 @@ iteration_one = results_df[(results_df.iteration == 1) & (results_df.AgentID == 
 #plt.plot(iteration_one.Step, iteration_one.mortality_prob, label = "mortality prob")
 
 #plot things (Reef)
-plt.plot(iteration_one.Step, iteration_one.oyster_count, label = "Oyster Count per Reef")
-
+plt.plot(iteration_one.Step, iteration_one.oyster_count, label = "Oyster Count in Reef")
 plt.xlabel('step')
 plt.legend()
 plt.show()

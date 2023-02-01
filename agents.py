@@ -38,8 +38,8 @@ class Oyster(mg.GeoAgent):
     #define what happens at each step      
     def step(self):
 
-        #set living to true
-        living = True
+        #set status to alive
+        self.status = "alive"
         
         #age
         self.age += 1
@@ -66,7 +66,7 @@ class Oyster(mg.GeoAgent):
         self.dry_biomass = 9.6318 * (10**-6) * (self.shell_length_mm**2.743)
         self.wet_biomass =  (self.dry_biomass * 5.6667) + self.dry_biomass 
 
-        #death NOT ADDED INTO DEATH IF STATEMENT YET
+        #death probabiliyt NOT ADDED INTO DEATH IF STATEMENT YET
         self.mortality_prob = mort_prob(
             self.age, 
             self.home_reef.tds, 
@@ -81,15 +81,21 @@ class Oyster(mg.GeoAgent):
         
         #if conditions met, kill off
         if (self.energy < 0) or (self.age > 3650) or ((self.model.step_count >= 8) and all(v == 0 for v in self.energy_list[-8:])):
+            self.status = "dead"
             self.model.space.remove_agent(self)
             self.model.schedule.remove(self)
-            living = False
+            
+        #harvest on day 298 if home reef is not sancuary, according to harves rate
+        if (self.status == "alive") & (self.model.step_count%298 == 0) & (self.home_reef.sanctuary_status == False) & (random.random() < self.model.harvest_rate):
+            self.status = "harvested"
+            self.model.space.remove_agent(self)
+            self.model.schedule.remove(self)
 
         #establish reproductive days
         reproductive_days = list(range(203, 210)) + list(range(212, 215))
         
         #reproduction
-        if living and any(self.model.step_count%i == 0 for i in reproductive_days):
+        if (self.status == "alive") and any(self.model.step_count%i == 0 for i in reproductive_days):
 
             #get fertility
             self.fertility = n_babies(
@@ -133,13 +139,11 @@ class Reef(mg.GeoAgent):
     """Reef Agent"""
 
     def __init__(
-        self, unique_id, model, geometry, crs, harvest_rate, sanctuary_status
+        self, unique_id, model, geometry, crs, sanctuary_status
     ):
         super().__init__(unique_id, model, geometry, crs)
         self.type = "Reef"
-        self.harvest_rate = harvest_rate
         self.sanctuary_status = sanctuary_status
-        self.oyster_count = self.model.space.agents["home_reef" == self.unique_id]
 
         #create lists for multi-step effects
         self.tss_list = []
@@ -153,7 +157,8 @@ class Reef(mg.GeoAgent):
         self.tds = random.randrange(10,27)
 
     def step(self):
-        print(self.oyster_count)
+        #get step count
+        self.oyster_count = len(list(self.model.space.get_intersecting_agents(self)))
         #get new environmental variables
         self.do = random.randint(150, 340)*0.01
         self.tss = random.randint(0, 300)
