@@ -51,7 +51,7 @@ def mort_prob (age, tds, tds_list, tss, tss_list, temp, temp_list, do, do_list):
             tss_mort  = 0.005
         elif 500 < tss <= 1000:
             tss_mort = 0.002
-        elif len(tss_list) >= 12 and all(1000 < v < 1500 for v in tss_list[-12:]):
+        elif len(tss_list) >= 12 and all(1000 < v <= 1500 for v in tss_list[-12:]):
             tss_mort = 0.015
         elif 1000 < tss <= 1500:
             tss_mort = 0.01
@@ -65,9 +65,9 @@ def mort_prob (age, tds, tds_list, tss, tss_list, temp, temp_list, do, do_list):
             tss_mort = 0.15
     else:
         if len(tss_list) >= 12 and all(v < 500 for v in tss_list[-12:]):
-            tss_mort = 0
-        elif tss < 500:
             tss_mort = 0.001
+        elif tss < 500:
+            tss_mort = 0
         elif len(tss_list) >= 12 and all(500 <= v <= 1000 for v in tss_list[-12:]):
             tss_mort = 0.001
         elif 500 <= tss <= 1000:
@@ -76,7 +76,7 @@ def mort_prob (age, tds, tds_list, tss, tss_list, temp, temp_list, do, do_list):
             tss_mort  = 0.0015
         elif 1000 < tss <= 2000:
             tss_mort = 0.0005
-        elif len(tss_list) >= 12 and all(2000 < v < 3000 for v in tss_list[-12:]):
+        elif len(tss_list) >= 12 and all(2000 < v <= 3000 for v in tss_list[-12:]):
             tss_mort = 0.002
         elif 2000 < tss <= 3000:
             tss_mort = 0.0005
@@ -91,7 +91,7 @@ def mort_prob (age, tds, tds_list, tss, tss_list, temp, temp_list, do, do_list):
     
     #TEMPERATURE
     if len(temp_list) >= 7 and all(v <= 4 for v in temp_list[-7:]):
-        temp_mort = 0.01
+        temp_mort = 0.0025
     elif temp <= 4:
         temp_mort = 0.00125
     elif 4 < temp <= 8:
