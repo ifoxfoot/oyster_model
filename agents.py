@@ -133,6 +133,22 @@ class Oyster(mg.GeoAgent):
                 self.model.space.add_agents(baby_oyster)
                 self.model.schedule.add(baby_oyster)
 
+#set up class for shells
+class Shell(mg.GeoAgent):
+
+    """Shell Agent"""
+
+    def __init___(
+        self, unique_id, model, geometry, crs, shell_length_mm
+    ):
+        super().__init__(unique_id, model, geometry, crs)
+        self.type = "Shell"
+        self.shell_length_mm = shell_length_mm
+    
+    def step(self):
+        pass
+
+
 #set up class for ReefAgent
 class Reef(mg.GeoAgent):
 
