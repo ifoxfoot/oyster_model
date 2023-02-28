@@ -13,6 +13,19 @@ from functions.mortality_fun import *
 from model import *
 
 
+#set up class for shells
+class Shell(mg.GeoAgent):
+
+    """Shell Agent"""
+
+    def __init__(self, unique_id, model, geometry, crs, shell_length):
+        super().__init__(unique_id, model, geometry, crs)
+        self.shell_length = shell_length
+        self.type = "Shell"
+        
+    def step(self):
+        self.shell_length =- self.shell_length * .001
+
 #set up class for oyster agent
 class Oyster(mg.GeoAgent):
     
@@ -84,6 +97,19 @@ class Oyster(mg.GeoAgent):
             self.status = "dead"
             self.model.space.remove_agent(self)
             self.model.schedule.remove(self)
+
+            #convert dead oysters to shells
+            new_shell = Shell(
+                unique_id = "shell_" + str(self.unique_id),
+                model = self.model,
+                geometry = self.geometry, 
+                crs = self.model.space.crs,
+                shell_length = self.shell_length_mm
+                )
+
+            #add shell agents to grid and scheduler
+            self.model.space.add_agents(new_shell)
+            self.model.schedule.add(new_shell)
             
         #harvest on day 298 if home reef is not sancuary, according to harves rate
         if (self.status == "alive") & (self.model.step_count%298 == 0) & (self.home_reef.sanctuary_status == False) & (random.random() < self.model.harvest_rate):
@@ -132,21 +158,6 @@ class Oyster(mg.GeoAgent):
                 #add oyster agents to grid and scheduler
                 self.model.space.add_agents(baby_oyster)
                 self.model.schedule.add(baby_oyster)
-
-#set up class for shells
-class Shell(mg.GeoAgent):
-
-    """Shell Agent"""
-
-    def __init___(
-        self, unique_id, model, geometry, crs, shell_length_mm
-    ):
-        super().__init__(unique_id, model, geometry, crs)
-        self.type = "Shell"
-        self.shell_length_mm = shell_length_mm
-    
-    def step(self):
-        pass
 
 
 #set up class for ReefAgent

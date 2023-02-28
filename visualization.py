@@ -21,10 +21,9 @@ model_params = {
 def agent_portrayal(agent):
     portrayal = dict()
     if isinstance(agent, Oyster):
-        if agent.energy > 1.5:
-            portrayal["color"] = "red"
-        else:
-            portrayal["color"] = "grey"
+        portrayal["color"] = "red"
+    elif isinstance(agent, Shell):
+        portrayal["color"] = "black"
     else: 
         if agent.sanctuary_status:
             portrayal["color"] = "yellow"
