@@ -24,10 +24,12 @@ def agent_portrayal(agent):
         portrayal["color"] = "red"
     elif isinstance(agent, Shell):
         portrayal["color"] = "black"
-    else: 
+    elif isinstance(agent, Reef): 
         if agent.sanctuary_status:
             portrayal["color"] = "yellow"
         else: portrayal["color"] = "Green"
+    elif isinstance(agent, ReefCell):
+        portrayal["color"] = "Orange"
     return portrayal
 
 #create map element

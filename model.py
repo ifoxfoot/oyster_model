@@ -6,6 +6,7 @@ import random
 
 #import agents
 from agents import *
+from space import *
     
 #set up class for model
 class OysterModel(mesa.Model):
@@ -13,15 +14,15 @@ class OysterModel(mesa.Model):
     """A model class for oysters in the Chesapeake Bay"""
 
     #path to reef file and unique reef ID
-    reefs = "data/Schulte_reefs.shp"
-    unique_id = "Id"
+    reefs = "data/oyster_reef.gpkg"
+    unique_id = "OBJECTID"
 
     #define init parameters
     def __init__(self, N, harvest_rate, num_safe_reefs):
         self.num_oysters = N #number of oysters (int)
         self.harvest_rate = harvest_rate #proportion of oysters to take (between 0 and 1)
         self.num_safe_reefs = num_safe_reefs #how many reefs are sanctuary reefs
-        self.space = mg.GeoSpace(warn_crs_conversion = False)
+        self.space = SeaBed(crs="epsg:3512")
         self.schedule = mesa.time.RandomActivation(self)
         self.step_count = 0
         self.current_id = N
