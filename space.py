@@ -19,11 +19,13 @@ class ReefCell(mg.Cell):
 
 class SeaBed(mg.GeoSpace):
     def __init__(self, crs):
-        super().__init__(crs=crs)
+        super().__init__(crs = crs)
 
     def set_elevation_layer(self, crs):
         raster_layer = mg.RasterLayer.from_file(
-            "data/oyster_dem.tif", cell_cls = ReefCell, attr_name = "Band 1: Job833660_fl2016_usace_ncmp_fl_east_cst_dem"
+            "data/oyster_dem.tif", 
+            cell_cls = ReefCell, 
+            attr_name = "elevation"
             )
         raster_layer.crs = crs
         raster_layer.apply_raster(
@@ -35,4 +37,5 @@ class SeaBed(mg.GeoSpace):
     @property
     def raster_layer(self):
         return self.layers[0]
+    
 

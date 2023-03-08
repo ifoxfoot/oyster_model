@@ -22,10 +22,12 @@ class OysterModel(mesa.Model):
         self.num_oysters = N #number of oysters (int)
         self.harvest_rate = harvest_rate #proportion of oysters to take (between 0 and 1)
         self.num_safe_reefs = num_safe_reefs #how many reefs are sanctuary reefs
-        self.space = SeaBed(crs="epsg:3512")
+        self.space = SeaBed(crs = "EPSG:3512")
         self.schedule = mesa.time.RandomActivation(self)
         self.step_count = 0
         self.current_id = N
+
+        self.space.set_elevation_layer(crs = "EPSG:3512")
 
         #create reef agents
         ac = mg.AgentCreator(
@@ -54,7 +56,7 @@ class OysterModel(mesa.Model):
                     pnt = Point(0,0)
                     while not self.reef_agents[random_reef].geometry.contains(pnt):
                         pnt = Point(random.uniform(minx, maxx), random.uniform(miny, maxy))
-                    return pnt
+                    return Point(self.space.raster_layer.transform * (pnt.x, pnt.y))
         
             #create agent
             this_oyster = Oyster(
@@ -103,3 +105,10 @@ class OysterModel(mesa.Model):
         self.step_count += 1
         self.space._recreate_rtree()  # Recalculate spatial tree, because agents are moving??
         self.datacollector.collect(self)
+
+    #define run model function
+    def run_model(self, step_count=200):
+         for i in range(step_count):
+            self.step()
+
+

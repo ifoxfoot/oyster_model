@@ -143,7 +143,8 @@ class Oyster(mg.GeoAgent):
                         pnt = Point(0,0)
                         while not self.model.reef_agents[random_reef].geometry.contains(pnt):
                             pnt = Point(random.uniform(minx, maxx), random.uniform(miny, maxy))
-                        return pnt
+                        return Point(self.model.space.raster_layer.transform * (pnt.x, pnt.y))
+                
                 #create oyster
                 baby_oyster = Oyster(
                     unique_id = "oyster_" + str(self.model.next_id()),
