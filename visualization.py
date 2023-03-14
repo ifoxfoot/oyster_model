@@ -26,7 +26,7 @@ def agent_portrayal(agent):
             }
         elif isinstance(agent, Oyster):
             return {
-                "Color": "Yellow",
+                "Color": "red",
             }
         elif isinstance(agent, Shell):
             return {
