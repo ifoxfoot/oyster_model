@@ -1,10 +1,13 @@
 #import required libraries
 import mesa
-import numpy as np
 import mesa_geo as mg
+import numpy as np
 
-class ReefCell(mg.Cell):
+
+#class for cells in raster
+class SeaBedCell(mg.Cell):
     elevation: int | None
+    population: int | None
 
     def __init__(
         self,
@@ -13,10 +16,13 @@ class ReefCell(mg.Cell):
     ):
         super().__init__(pos, indices)
         self.elevation = None
+        self.population = None
 
     def step(self):
         pass
 
+
+#set up class for space
 class SeaBed(mg.GeoSpace):
     def __init__(self, crs):
         super().__init__(crs = crs)
@@ -24,12 +30,12 @@ class SeaBed(mg.GeoSpace):
     def set_elevation_layer(self, crs):
         raster_layer = mg.RasterLayer.from_file(
             "data/oyster_dem.tif", 
-            cell_cls = ReefCell, 
+            cell_cls = SeaBedCell, 
             attr_name = "elevation"
             )
         raster_layer.crs = crs
         raster_layer.apply_raster(
-            data = np.zeros(shape = (1, raster_layer.height, raster_layer.width)),
+            data = np.ones(shape = (1, raster_layer.height, raster_layer.width)),
             attr_name = "elevation",
         )
         super().add_layer(raster_layer)

@@ -137,19 +137,12 @@ class Oyster(mg.GeoAgent):
                 random_reef =  self.random.randint(
                 0, len(self.model.reef_agents) - 1
                 )
-                #create while loop to return point in reef
-                def point_in_reef (random_reef):
-                        minx, miny, maxx, maxy = self.model.reef_agents[random_reef].geometry.bounds
-                        pnt = Point(0,0)
-                        while not self.model.reef_agents[random_reef].geometry.contains(pnt):
-                            pnt = Point(random.uniform(minx, maxx), random.uniform(miny, maxy))
-                        return Point(self.model.space.raster_layer.transform * (pnt.x, pnt.y))
                 
                 #create oyster
                 baby_oyster = Oyster(
                     unique_id = "oyster_" + str(self.model.next_id()),
                     model = self.model,
-                    geometry = point_in_reef(random_reef), 
+                    geometry = self.model.point_in_reef(random_reef), 
                     crs = self.model.space.crs,
                     birth_reef = self.home_reef,
                     home_reef = random_reef,

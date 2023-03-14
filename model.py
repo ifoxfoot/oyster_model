@@ -4,6 +4,7 @@ import mesa_geo as mg
 from shapely.geometry import Point
 import random
 
+
 #import agents
 from agents import *
 from space import *
@@ -11,7 +12,7 @@ from space import *
 #set up class for model
 class OysterModel(mesa.Model):
     
-    """A model class for oysters in the Chesapeake Bay"""
+    """A model class for oysters"""
 
     #path to reef file and unique reef ID
     reefs = "data/oyster_reef.gpkg"
@@ -22,12 +23,12 @@ class OysterModel(mesa.Model):
         self.num_oysters = N #number of oysters (int)
         self.harvest_rate = harvest_rate #proportion of oysters to take (between 0 and 1)
         self.num_safe_reefs = num_safe_reefs #how many reefs are sanctuary reefs
-        self.space = SeaBed(crs = "EPSG:3512")
+        self.space = SeaBed(crs = "epsg:3512")
         self.schedule = mesa.time.RandomActivation(self)
         self.step_count = 0
         self.current_id = N
 
-        self.space.set_elevation_layer(crs = "EPSG:3512")
+        self.space.set_elevation_layer(crs = "epsg:3512")
 
         #create reef agents
         ac = mg.AgentCreator(
@@ -50,19 +51,12 @@ class OysterModel(mesa.Model):
             random_reef =  self.random.randint(
                 0, len(self.reef_agents) - 1
             )
-            #create while loop to return point in reef
-            def point_in_reef (random_reef):
-                    minx, miny, maxx, maxy = self.reef_agents[random_reef].geometry.bounds
-                    pnt = Point(0,0)
-                    while not self.reef_agents[random_reef].geometry.contains(pnt):
-                        pnt = Point(random.uniform(minx, maxx), random.uniform(miny, maxy))
-                    return Point(self.space.raster_layer.transform * (pnt.x, pnt.y))
         
             #create agent
             this_oyster = Oyster(
                 unique_id = "oyster_" + str(i),
                 model = self,
-                geometry = point_in_reef(random_reef),
+                geometry = self.point_in_reef(random_reef),
                 crs =  self.space.crs,
                 birth_reef = random_reef,
                 home_reef = random_reef,
@@ -97,6 +91,14 @@ class OysterModel(mesa.Model):
             tables = {"Lifespan": [lambda a: a.unique_id if a.type == "Oyster" else None, 
             lambda a: a.age if a.type == "Oyster" else None]}
             )
+    
+    #create while loop to return point in reef
+    def point_in_reef (self, random_reef):
+        minx, miny, maxx, maxy = self.reef_agents[random_reef].geometry.bounds
+        pnt = Point(0,0)
+        while not self.reef_agents[random_reef].geometry.contains(pnt):
+            pnt = Point(random.uniform(minx, maxx), random.uniform(miny, maxy))
+        return pnt
 
     #define step
     def step(self):

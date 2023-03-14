@@ -20,26 +20,19 @@ model_params = {
 #define how agents will be shown
 def agent_portrayal(agent):
     if isinstance(agent, mg.GeoAgent):
-        if isinstance(agent, Oyster):
+        if isinstance(agent, Reef):
             return {
-                "stroke": False,
-                "color": "Green",
-                "radius": 2,
-                "fillOpacity": 0.3,
+                "Color": "Blue",
+            }
+        elif isinstance(agent, Oyster):
+            return {
+                "Color": "Yellow",
             }
         elif isinstance(agent, Shell):
             return {
-                "stroke": False,
-                "color": "Gray",
-                "radius": 2,
-                "fillOpacity": 0.3,
+                "Color": "Gray",
             }
-        elif isinstance(agent, Reef):
-            return {
-                "fillColor": "Blue",
-                "fillOpacity": 1.0,
-            }
-    elif isinstance(agent, ReefCell):
+    elif isinstance(agent, SeaBedCell):
         return (agent.elevation, agent.elevation, agent.elevation, 1)
 
 #create map element
