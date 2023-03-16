@@ -1,6 +1,7 @@
 #import librariesf
 from rasterio.plot import show
-import landlab
+from landlab import RasterModelGrid, imshow_grid
+from landlab.io import read_esri_ascii
 import matplotlib.pyplot as plt
 
 #import mesa model
@@ -29,13 +30,13 @@ plot_reef_map(map)
 
 
 #import raster
-(dem, z) = landlab.read_esri_ascii("data/oyster_dem_1.asc.gz", name = "topographic_elevation")
+(dem, z) = read_esri_ascii("data/oyster_dem_1.asc.gz", name = "topographic_elevation")
 dem.at_node.keys()
 
 #plot raster
-plt.figure('Elevations from the field')  # new fig, with a name
-plt.imshow_grid_at_node(mg, "topographic_elevation")
-plt.show()
+imshow_grid.figure('Elevations from the field')  # new fig, with a name
+imshow_grid.imshow_grid_at_node(mg, "topographic_elevation")
+imshow_grid.show()
 
 # #run tidal flow calculator
 # tfc = TidalFlowCalculator(mg, tidal_range=2.0, tidal_period=4.0e4, roughness=0.01)
