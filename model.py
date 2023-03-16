@@ -4,7 +4,6 @@ import mesa_geo as mg
 from shapely.geometry import Point
 import random
 
-
 #import agents
 from agents import *
 from space import *
@@ -63,7 +62,8 @@ class OysterModel(mesa.Model):
                 age = random.randint(1, 3649)
             )
             
-            #add oyster agents to grid and scheduler
+            #add oyster agents to raster, agent layer, and scheduler
+            self.space.add_oyster(this_oyster)
             self.space.add_agents(this_oyster)
             self.schedule.add(this_oyster)
 

@@ -35,6 +35,7 @@ class Oyster(mg.GeoAgent):
     def __init__(self, unique_id, model, geometry, crs, birth_reef, home_reef, age = 0):
          super().__init__(unique_id, model, geometry, crs)
          self.type = "Oyster"
+         self.geometry = geometry
          self.age = age
          self.birth_reef = birth_reef
          self.home_reef = self.model.space.agents[home_reef]
@@ -149,7 +150,8 @@ class Oyster(mg.GeoAgent):
                     age = 0
                 )
             
-                #add oyster agents to grid and scheduler
+                #add oyster agents to raster, agent layer, and scheduler
+                self.model.space.add_oyster(baby_oyster)
                 self.model.space.add_agents(baby_oyster)
                 self.model.schedule.add(baby_oyster)
 
