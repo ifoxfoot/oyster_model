@@ -32,7 +32,9 @@ plot_reef_map(map)
 rmg = RasterModelGrid((oys_mod.space.raster_layer.width, oys_mod.space.raster_layer.height))
 
 #import raster
-(dem, z) = read_esri_ascii("data/oyster_dem_buf.asc", name = "topographic__elevation")
+(dem, z) = read_esri_ascii(
+    "data/oyster_dem_buf.asc", 
+    name = "topographic__elevation")
 dem.at_node.keys()
 
 #plot raster
@@ -49,8 +51,6 @@ oyster_roughness = 0.035
 rough[map.flatten()>0] = sand_roughness
 rough[map.flatten()==0] = oyster_roughness
 
-# tidal period in s, for convenient calculation
-period = 4.0e4
 
 #init tidal flow calculator
 tfc = TidalFlowCalculator(dem, tidal_range=2.0, tidal_period=4.0e4, roughness=rough)
@@ -58,6 +58,9 @@ tfc = TidalFlowCalculator(dem, tidal_range=2.0, tidal_period=4.0e4, roughness=ro
 #run the tidal flow calc
 for i in range(50):
     tfc.run_one_step()
+
+#store tidal period for depth
+period=4.0e4
 
 #get innudiation rate
 rate = tfc.calc_tidal_inundation_rate()
