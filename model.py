@@ -14,7 +14,7 @@ class OysterModel(mesa.Model):
     """A model class for oysters"""
 
     #path to reef file and unique reef ID
-    reefs = "data/oyster_reef.gpkg"
+    reefs = "data/oyster_reef_buf.gpkg"
     unique_id = "OBJECTID"
 
     #define init parameters
@@ -22,12 +22,12 @@ class OysterModel(mesa.Model):
         self.num_oysters = N #number of oysters (int)
         self.harvest_rate = harvest_rate #proportion of oysters to take (between 0 and 1)
         self.num_safe_reefs = num_safe_reefs #how many reefs are sanctuary reefs
-        self.space = SeaBed(crs = "epsg:3512")
+        self.space = SeaBed(crs = "epsg:3857")
         self.schedule = mesa.time.RandomActivation(self)
         self.step_count = 0
         self.current_id = N
 
-        self.space.set_elevation_layer(crs = "epsg:3512")
+        self.space.set_elevation_layer(crs = "epsg:3857")
 
         #create reef agents
         ac = mg.AgentCreator(

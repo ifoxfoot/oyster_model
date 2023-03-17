@@ -29,7 +29,7 @@ class SeaBed(mg.GeoSpace):
     #read in raster layer
     def set_elevation_layer(self, crs):
         raster_layer = mg.RasterLayer.from_file(
-            "data/oyster_dem.tif", 
+            "data/oyster_dem_buf.asc", 
             cell_cls = SeaBedCell, 
             attr_name = "elevation"
             )
