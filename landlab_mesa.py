@@ -6,6 +6,7 @@ from pylab import show, figure
 from landlab.components import TidalFlowCalculator
 import matplotlib.pyplot as plt
 from landlab import RasterModelGrid
+import numpy as np
 
 #import mesa model
 from model import *
@@ -51,7 +52,7 @@ imshow.imshow_grid_at_node(rmg, "topographic__elevation")
 show()
 
 #store roughness values
-rough = rmg.add_zeros('mannings_n', at='node')
+rough = rmg.add_zeros("node", 'mannings_n')
 sand_roughness = 0.02
 oyster_roughness = 0.035
 
@@ -64,8 +65,12 @@ figure('Roughness vals')  # new fig, with a name
 imshow.imshow_grid_at_node(rmg, "mannings_n")
 show()
 
+r_link = rmg.calc_grad_at_link(rough)
+rough_two = rmg.add_field("rough_link", r_link, at = "link")
+
+
 #init tidal flow calculator
-tfc = TidalFlowCalculator(rmg, tidal_range=2.0, tidal_period=4.0e4, roughness = rough)
+tfc = TidalFlowCalculator(rmg, tidal_range = 2.0, tidal_period = 4.0e4, roughness = rough_two)
 
 #run the tidal flow calc
 for i in range(50):
@@ -76,11 +81,11 @@ period=4.0e4
 
 #get innudiation rate
 rate = tfc.calc_tidal_inundation_rate()
-dem = 0.5 * rate["topographic__elevation"] * period # depth in m
-dem.at_node.keys()
+dem = 0.5 * rate[:] * period # depth in m
+rmg.add_field("water", dem, at = "node")
 
 #water depth ()
 figure('water depth')  # new fig, with a name
-imshow.imshow_grid_at_node(dem, 'mean_water__depth')
+imshow.imshow_grid_at_node(rmg, 'water')
 show()
 
