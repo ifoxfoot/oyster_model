@@ -16,19 +16,6 @@ from agents import *
 #store model
 oys_mod = OysterModel(500, 0, 0)
 
-#fun to generate reeef map
-# def generate_reef_map(model):
-#     raster = oys_mod.space.raster_layer.get_raster("num_oysters_in_cell")
-#     return(raster)
-
-# #fun to plot reef map
-# def plot_reef_map(reef_map):  
-#     showr(reef_map)
-
-# #test out funs
-# oys_mod.run_model(step_count=20)
-# map = generate_reef_map(oys_mod)
-# plot_reef_map(map)
 
 rmg = RasterModelGrid((oys_mod.space.raster_layer.height, 
                        oys_mod.space.raster_layer.width),
@@ -38,13 +25,6 @@ rmg.add_field("topographic__elevation",
               oys_mod.space.raster_layer.get_raster("elevation"))
 rmg.add_field("num_oysters",
               oys_mod.space.raster_layer.get_raster("num_oysters_in_cell"))
-
-#import raster
-# (dem, z) = read_esri_ascii(
-#     "data/oyster_dem_buf.asc", 
-#     name = "topographic__elevation",
-#     grid = rmg)
-# dem.at_node.keys()
 
 #plot raster
 figure('Elevations from the field')  # new fig, with a name
@@ -65,9 +45,9 @@ figure('Roughness vals')  # new fig, with a name
 imshow.imshow_grid_at_node(rmg, "mannings_n")
 show()
 
-r_link = rmg.calc_grad_at_link(rough)
+#map roughness to link
+r_link = rmg.map_max_of_link_nodes_to_link("mannings_n")
 rough_two = rmg.add_field("rough_link", r_link, at = "link")
-
 
 #init tidal flow calculator
 tfc = TidalFlowCalculator(rmg, tidal_range = 2.0, tidal_period = 4.0e4, roughness = rough_two)
@@ -81,8 +61,8 @@ period=4.0e4
 
 #get innudiation rate
 rate = tfc.calc_tidal_inundation_rate()
-dem = 0.5 * rate[:] * period # depth in m
-rmg.add_field("water", dem, at = "node")
+depth = 0.5 * rate[:] * period # depth in m
+rmg.add_field("water", depth, at = "node")
 
 #water depth ()
 figure('water depth')  # new fig, with a name
