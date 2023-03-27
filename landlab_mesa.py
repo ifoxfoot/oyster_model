@@ -1,12 +1,8 @@
 #import libraries
-from rasterio.plot import show as showr
-from landlab.plot import imshow
-from landlab.io import read_esri_ascii
+from landlab.plot import imshow, video_out
 from pylab import show, figure
 from landlab.components import TidalFlowCalculator
-import matplotlib.pyplot as plt
 from landlab import RasterModelGrid
-import numpy as np
 
 #import mesa model
 from model import *
@@ -46,26 +42,30 @@ imshow.imshow_grid_at_node(rmg, "mannings_n")
 show()
 
 #map roughness to link
-r_link = rmg.map_max_of_link_nodes_to_link("mannings_n")
-rough_two = rmg.add_field("rough_link", r_link, at = "link")
+r_link = rmg.map_mean_of_link_nodes_to_link("mannings_n")
 
 #init tidal flow calculator
-tfc = TidalFlowCalculator(rmg, tidal_range = 2.0, tidal_period = 4.0e4, roughness = rough_two)
+tfc = TidalFlowCalculator(rmg, tidal_range = 2.0, tidal_period = 4.0e4, roughness = r_link)
 
 #run the tidal flow calc
-for i in range(50):
-    tfc.run_one_step()
+tfc.run_one_step()
 
 #store tidal period for depth
-period=4.0e4
+period = 4.0e4
 
 #get innudiation rate
 rate = tfc.calc_tidal_inundation_rate()
-depth = 0.5 * rate[:] * period # depth in m
-rmg.add_field("water", depth, at = "node")
+depth_low = 0.5 * rate[:] * period # depth in m
+rmg.add_field("water_low", depth_low, at = "node")
+
+depth_high = 1 * rate[:] * period # depth in m
+rmg.add_field("water_high", depth_high, at = "node")
 
 #water depth ()
-figure('water depth')  # new fig, with a name
-imshow.imshow_grid_at_node(rmg, 'water')
+figure('water depth low')  # new fig, with a name
+imshow.imshow_grid(rmg, 'water_low')
 show()
+imshow.imshow_grid(rmg, 'water_high')
+show()
+
 
