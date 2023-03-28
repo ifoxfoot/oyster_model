@@ -94,7 +94,7 @@ class Oyster(mg.GeoAgent):
             )
         
         #if conditions met, kill off
-        if (self.energy < 0) or (self.age > 3650) or ((self.model.step_count >= 8) and all(v == 0 for v in self.energy_list[-8:])):
+        if (self.energy < 0) or (self.age > 3650) or (random.random() > self.mortality_prob) or ((self.model.step_count >= 8) and all(v == 0 for v in self.energy_list[-8:])):
             self.status = "dead"
             self.model.space.remove_agent(self)
             self.model.schedule.remove(self)
