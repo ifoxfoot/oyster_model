@@ -148,8 +148,20 @@ class OysterModel(mesa.Model):
         #get innudiation rate
         rate = tfc.calc_tidal_inundation_rate()
         #depth in m
-        water_level = 0.5 * rate[:] * self.tidal_period 
-        self.rmg.add_field("water_level", water_level, at = "node", clobber = True)
+        if(self.step_count%2 == 0):
+            water_level = 0.5 * rate[:] * self.tidal_period
+        else:
+            water_level = 1 * rate[:] * self.tidal_period
+        water_level_rmg = self.rmg.add_field("water_level", 
+                                             water_level, 
+                                             at = "node", 
+                                             clobber = True)
+        #apply rmg
+        self.space.raster_layer.apply_raster(
+            data = water_level_rmg.reshape(1, 149, 259),
+            attr_name = "water_level"
+        )
+
 
     #define run model function
     def run_model(self, step_count=365):

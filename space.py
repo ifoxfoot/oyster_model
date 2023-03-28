@@ -8,6 +8,7 @@ import rasterio as rio
 class SeaBedCell(mg.Cell):
     elevation: int | None
     num_oysters_in_cell: int | None
+    water_level: int | None
 
     def __init__(
         self,
@@ -17,6 +18,7 @@ class SeaBedCell(mg.Cell):
         super().__init__(pos, indices)
         self.elevation = None
         self.num_oysters_in_cell = None
+        self.water_level = None
 
     def step(self):
         pass
@@ -52,7 +54,7 @@ class SeaBed(mg.GeoSpace):
             self.raster_layer.transform, 
             oyster.geometry.x, oyster.geometry.y)
         x = col
-        y = row - self.raster_layer.height -1
+        y = row - self.raster_layer.height - 1
         self.raster_layer.cells[x][-y].num_oysters_in_cell += 1
     
 
