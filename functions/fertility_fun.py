@@ -4,7 +4,12 @@ import random
 def n_babies(age, do, tss, tds, temp):
     
     #SALINITY
-    tds_weight = (tds - 8)/5.5
+    if tds < 8:
+        tds_weight = 0
+    elif 8 <= tds <= 28:
+        tds_weight = 1
+    elif tds > 28:
+        tds_weight = 0
 
     #TOTAL SUSPENDED SOLIDS
     if tss < 250:
