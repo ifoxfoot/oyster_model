@@ -3,7 +3,7 @@ import random
 
 def n_babies(age, do, tss, tds, temp):
     
-    #SALINITY
+    #SALINITY (NOT BASED ON OG MODEL)
     if tds < 8:
         tds_weight = 0
     elif 8 <= tds <= 28:

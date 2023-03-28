@@ -3,6 +3,9 @@ import mesa
 import mesa_geo as mg
 from shapely.geometry import Point
 import random
+from landlab import RasterModelGrid
+from landlab.components import TidalFlowCalculator
+
 
 #import agents
 from agents import *
@@ -27,8 +30,26 @@ class OysterModel(mesa.Model):
         self.step_count = 0
         self.current_id = N
 
+        #add crs for space
         self.space.set_elevation_layer(crs = "epsg:3857")
 
+        #init RasterModelGrid object for landlab
+        self.rmg = RasterModelGrid((self.space.raster_layer.height, self.space.raster_layer.width),
+                                   1.157226984026, 
+                                   (-9051628.873678505, 3492744.042225802))
+        self.rmg.add_field("topographic__elevation", #add elevation data
+                           self.space.raster_layer.get_raster("elevation"))
+        
+        #init empty field for roughness values
+        self.rough = self.rmg.add_empty("node", 'mannings_n')
+
+        #store roughness vals
+        self.sand_roughness = 0.02
+        self.oyster_roughness = 0.035  
+
+        #store tidal period for depth
+        self.tidal_period = 4.0e4 
+        
         #create reef agents
         ac = mg.AgentCreator(
             Reef, 
@@ -99,7 +120,8 @@ class OysterModel(mesa.Model):
         while not self.reef_agents[random_reef].geometry.contains(pnt):
             pnt = Point(random.uniform(minx, maxx), random.uniform(miny, maxy))
         return pnt
-
+    
+   
     #define step
     def step(self):
         """Advance the model by one step."""
@@ -107,9 +129,30 @@ class OysterModel(mesa.Model):
         self.step_count += 1
         self.space._recreate_rtree()  # Recalculate spatial tree, because agents are moving??
         self.datacollector.collect(self)
+        #add oysters to rmg
+        self.rmg.add_field("num_oysters",
+                           self.space.raster_layer.get_raster("num_oysters_in_cell"),
+                           clobber = True)
+        #store roughness vals in attribute of rastermodel grid
+        self.rough[self.rmg.at_node["num_oysters"] == 0] = self.sand_roughness
+        self.rough[self.rmg.at_node["num_oysters"] > 0] = self.oyster_roughness
+        #map roughness to link
+        r_link = self.rmg.map_mean_of_link_nodes_to_link("mannings_n")
+        #init tidal flow calculator
+        tfc = TidalFlowCalculator(self.rmg, 
+                                  tidal_range = 2.0, 
+                                  tidal_period = self.tidal_period, 
+                                  roughness = r_link)
+        #run the tidal flow calc
+        tfc.run_one_step()
+        #get innudiation rate
+        rate = tfc.calc_tidal_inundation_rate()
+        #depth in m
+        water_level = 0.5 * rate[:] * self.tidal_period 
+        self.rmg.add_field("water_level", water_level, at = "node", clobber = True)
 
     #define run model function
-    def run_model(self, step_count=200):
+    def run_model(self, step_count=365):
          for i in range(step_count):
             self.step()
 

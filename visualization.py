@@ -22,7 +22,7 @@ def agent_portrayal(agent):
     if isinstance(agent, mg.GeoAgent):
         if isinstance(agent, Reef):
             return {
-                "Color": "Blue",
+                "Color": "Green",
             }
         elif isinstance(agent, Oyster):
             return {
