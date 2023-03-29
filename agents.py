@@ -2,6 +2,7 @@
 import mesa_geo as mg
 import random
 from shapely.geometry import Point
+import rasterio as rio
 
 #import funs
 from functions.energy_fun import *
@@ -36,6 +37,11 @@ class Oyster(mg.GeoAgent):
          super().__init__(unique_id, model, geometry, crs)
          self.type = "Oyster"
          self.geometry = geometry
+         row, col = rio.transform.rowcol(
+            self.model.space.raster_layer.transform, 
+            self.geometry.x, self.geometry.y)
+         self.x = col
+         self.y = row - self.model.space.raster_layer.height - 1
          self.age = age
          self.birth_reef = birth_reef
          self.home_reef = self.model.space.agents[home_reef]
@@ -45,6 +51,7 @@ class Oyster(mg.GeoAgent):
          self.wet_biomass =  (self.dry_biomass * 5.6667) + self.dry_biomass
          self.fertility = 0
          self.mortality_prob = 0
+         self.energy_gained = True
 
          #init energy list
          self.energy_list = []
@@ -58,19 +65,23 @@ class Oyster(mg.GeoAgent):
         #age
         self.age += 1
        
-        #energy gain
-        daily_energy = energy_gain(
-            self.age, 
-            self.home_reef.do,
-            self.home_reef.tss, 
-            self.home_reef.tss_list, 
-            self.home_reef.tds, 
-            self.home_reef.tds_list, 
-            self.home_reef.temp, 
-            self.home_reef.temp_list
-        )
-        self.energy += daily_energy
-        self.energy_list.append(daily_energy)
+        #energy gain if under water
+        if self.model.space.raster_layer.cells[self.x][self.y].water_level > 0:
+            daily_energy = energy_gain(
+                self.age, 
+                self.home_reef.do,
+                self.home_reef.tss, 
+                self.home_reef.tss_list, 
+                self.home_reef.tds, 
+                self.home_reef.tds_list, 
+                self.home_reef.temp, 
+                self.home_reef.temp_list
+            )
+            self.energy += daily_energy
+            self.energy_list.append(daily_energy)
+            self.enery_gained = True
+        else:
+            self.energy_gained = False
 
         #energy loss
         self.energy -= 1.2
