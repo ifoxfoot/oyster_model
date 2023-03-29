@@ -54,11 +54,6 @@ class SeaBed(mg.GeoSpace):
     
     #when an oyster is added, add it to raster layer
     def add_oyster(self, oyster):
-        # row, col = rio.transform.rowcol(
-        #     self.raster_layer.transform, 
-        #     oyster.geometry.x, oyster.geometry.y)
-        # x = col
-        # y = row - self.raster_layer.height - 1
         self.raster_layer.cells[oyster.x][-oyster.y].num_oysters_in_cell += 1
     
     def update_water_level(self, rmg):

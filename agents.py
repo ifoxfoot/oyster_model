@@ -46,12 +46,12 @@ class Oyster(mg.GeoAgent):
          self.birth_reef = birth_reef
          self.home_reef = self.model.space.agents[home_reef]
          self.energy = random.randint(0,10)
+         self.energy_gained = 1
          self.shell_length_mm = random.randint(1, 300)
          self.dry_biomass = 9.6318 * (10**-6) * (self.shell_length_mm**2.743)
          self.wet_biomass =  (self.dry_biomass * 5.6667) + self.dry_biomass
          self.fertility = 0
          self.mortality_prob = 0
-         self.energy_gained = True
 
          #init energy list
          self.energy_list = []
@@ -66,7 +66,7 @@ class Oyster(mg.GeoAgent):
         self.age += 1
        
         #energy gain if under water
-        if self.model.space.raster_layer.cells[self.x][self.y].water_level > 0:
+        if self.model.space.raster_layer.cells[self.x][-self.y].water_level > 0:
             daily_energy = energy_gain(
                 self.age, 
                 self.home_reef.do,
@@ -79,9 +79,9 @@ class Oyster(mg.GeoAgent):
             )
             self.energy += daily_energy
             self.energy_list.append(daily_energy)
-            self.enery_gained = True
+            self.enery_gained = 1
         else:
-            self.energy_gained = False
+            self.energy_gained = 0
 
         #energy loss
         self.energy -= 1.2

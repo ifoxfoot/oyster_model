@@ -24,22 +24,26 @@ def agent_portrayal(agent):
         if isinstance(agent, Reef):
             return {
                 "Color": "Blue",
+                "Layer": 0
             }
         elif isinstance(agent, Shell):
             return {
                 "color": "Gray",
-                "radius": 0.001
+                "radius": 0.001,
+                "Layer": 1
             }
         elif isinstance(agent, Oyster):
-            if agent.energy_gained:
+            if agent.energy_gained == 1:
                 return {
                     "color": "Green",
-                    "radius": .01
+                    "radius": .01,
+                    "Layer": 2
                 }
             else:
                 return {
                     "color": "Red",
-                    "radius": 0.01
+                    "radius": 0.01,
+                    "Layer": 2
                 }
     elif isinstance(agent, SeaBedCell):
         return (agent.water_level, agent.water_level, agent.water_level, 1)
