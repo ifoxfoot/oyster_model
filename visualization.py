@@ -8,7 +8,8 @@ from agents import *
 
 #set up sliders for model parames
 model_params = {
-    "N": mesa.visualization.Slider("Number of Oysters", 50, 100, 250, 500),
+    "N": mesa.visualization.Slider("Number of Oysters", 
+                                   value = 5000, min_value = 1000, max_value = 20000, step =100),
     "harvest_rate": mesa.visualization.Slider(
         "Harvest Rate",  value = .5, min_value = 0, max_value = 1, step = 0.1
     ),
@@ -24,14 +25,22 @@ def agent_portrayal(agent):
             return {
                 "Color": "Blue",
             }
-        elif isinstance(agent, Oyster):
-            return {
-                "color": "Green",
-            }
         elif isinstance(agent, Shell):
             return {
                 "color": "Gray",
+                "radius": 0.001
             }
+        elif isinstance(agent, Oyster):
+            if agent.energy_gained:
+                return {
+                    "color": "Green",
+                    "radius": .01
+                }
+            else:
+                return {
+                    "color": "Red",
+                    "radius": 0.01
+                }
     elif isinstance(agent, SeaBedCell):
         return (agent.water_level, agent.water_level, agent.water_level, 1)
 

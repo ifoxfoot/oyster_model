@@ -141,7 +141,7 @@ class OysterModel(mesa.Model):
         r_link = self.rmg.map_mean_of_link_nodes_to_link("mannings_n")
         #init tidal flow calculator
         tfc = TidalFlowCalculator(self.rmg, 
-                                  tidal_range = 2.0, 
+                                  tidal_range = 4.0, 
                                   tidal_period = self.tidal_period, 
                                   roughness = r_link)
         #run the tidal flow calc
@@ -153,12 +153,8 @@ class OysterModel(mesa.Model):
             water_level = 0.5 * rate[:] * self.tidal_period
         else:
             water_level = 1 * rate[:] * self.tidal_period
-        #apply rmg to mesa raster
-        self.space.raster_layer.apply_raster(
-            data = water_level.reshape(1, 149, 259),
-            attr_name = "water_level"
-        )
-
+        
+        self.space.update_water_level(water_level)
 
     #define run model function
     def run_model(self, step_count=365):

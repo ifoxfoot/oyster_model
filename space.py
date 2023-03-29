@@ -2,7 +2,7 @@
 import mesa
 import mesa_geo as mg
 import numpy as np
-import rasterio as rio
+
 
 #class for cells in raster
 class SeaBedCell(mg.Cell):
@@ -40,6 +40,10 @@ class SeaBed(mg.GeoSpace):
             data = np.zeros(shape = (1, raster_layer.height, raster_layer.width)),
             attr_name = "num_oysters_in_cell",
         )
+        raster_layer.apply_raster(
+            data = np.zeros(shape = (1, raster_layer.height, raster_layer.width)),
+            attr_name = "water_level"
+        )
         #add raster layer
         super().add_layer(raster_layer)
 
@@ -50,11 +54,18 @@ class SeaBed(mg.GeoSpace):
     
     #when an oyster is added, add it to raster layer
     def add_oyster(self, oyster):
-        row, col = rio.transform.rowcol(
-            self.raster_layer.transform, 
-            oyster.geometry.x, oyster.geometry.y)
-        x = col
-        y = row - self.raster_layer.height - 1
-        self.raster_layer.cells[x][-y].num_oysters_in_cell += 1
+        # row, col = rio.transform.rowcol(
+        #     self.raster_layer.transform, 
+        #     oyster.geometry.x, oyster.geometry.y)
+        # x = col
+        # y = row - self.raster_layer.height - 1
+        self.raster_layer.cells[oyster.x][-oyster.y].num_oysters_in_cell += 1
     
+    def update_water_level(self, rmg):
+        watermatrix = rmg.reshape((1, self.raster_layer.height, self.raster_layer.width))
+        self.raster_layer.apply_raster(
+            data = watermatrix,
+            attr_name = "water_level"
+        )
+
 
