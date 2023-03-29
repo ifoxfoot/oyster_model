@@ -34,7 +34,8 @@ class OysterModel(mesa.Model):
         self.space.set_elevation_layer(crs = "epsg:3857")
 
         #init RasterModelGrid object for landlab
-        self.rmg = RasterModelGrid((self.space.raster_layer.height, self.space.raster_layer.width),
+        self.rmg = RasterModelGrid((self.space.raster_layer.height, 
+                                    self.space.raster_layer.width),
                                    1.157226984026, 
                                    (-9051628.873678505, 3492744.042225802))
         self.rmg.add_field("topographic__elevation", #add elevation data
@@ -152,13 +153,9 @@ class OysterModel(mesa.Model):
             water_level = 0.5 * rate[:] * self.tidal_period
         else:
             water_level = 1 * rate[:] * self.tidal_period
-        water_level_rmg = self.rmg.add_field("water_level", 
-                                             water_level, 
-                                             at = "node", 
-                                             clobber = True)
-        #apply rmg
+        #apply rmg to mesa raster
         self.space.raster_layer.apply_raster(
-            data = water_level_rmg.reshape(1, 149, 259),
+            data = water_level.reshape(1, 149, 259),
             attr_name = "water_level"
         )
 

@@ -22,20 +22,19 @@ def agent_portrayal(agent):
     if isinstance(agent, mg.GeoAgent):
         if isinstance(agent, Reef):
             return {
-                "Color": "Green",
+                "Color": "Blue",
             }
         elif isinstance(agent, Oyster):
             return {
-                "Color": "Red",
+                "color": "Green",
             }
         elif isinstance(agent, Shell):
             return {
-                "Color": "Gray",
+                "color": "Gray",
             }
     elif isinstance(agent, SeaBedCell):
-        return (agent.water_level, 
-                agent.water_level, 
-                agent.water_level, 1)
+        return (agent.water_level, agent.water_level, agent.water_level, 1)
+
 
 #create map element
 map_element = mg.visualization.MapModule(agent_portrayal)
