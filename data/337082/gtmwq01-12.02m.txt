@@ -1,0 +1,3268 @@
+Guana Tolomato Matanzas (GTM) National Estuarine Research Reserve
+Water Quality Metadata Report
+January - December 2002 
+Latest Update: June 30, 2021
+
+1) Principal investigator & contact persons:
+
+Principal Investigator:
+
+Richard Gleeson, Ph.D., Research Coordinator
+9741 Ocean Shore Blvd.
+St. Augustine, FL 32080
+(904) 461-4054
+rglee@whitney.ufl.edu
+
+Other Contact Persons:
+
+Laura Herren, M.S., Research Assistant
+E-mail:  lauraherren@bellsouth.net; (904) 461-4054.
+
+
+The following individuals from the Florida Department of Environmental 
+Protection (Northeast District Office) provided valuable support by assuming 
+responsibility for sonde management (i.e., deployments, calibrations, 
+maintenance) at the Pine Island and San Sebastian GTM NERR SWMP sites during 
+much of 2002.
+
+Michael Kuhman, Environmental Specialist I
+E-mail: michael.kuhman@dep.state.fl.us; (904) 807-3300.
+
+Bipin Adhyaru, Environmental Specialist III
+Email: Bipin.Adhyaru@dep.state.fl.us; (904) 807-3300.
+
+Tom Kellemyne, Environmental Specialist III
+E-mail: tom.kellemyne@dep.state.fl.us; (904) 807-3300.
+
+
+2) Entry verification:
+
+Data are uploaded to a PC from the YSI Model 6600 data sonde and graphs are 
+produced using EcoWatch software Version 3.13.  EcoWatch is used to plot the 
+data and perform basic statistical analysis (i.e., min, max, mean, std dev).  
+Graphs are evaluated for suspect data, as may result from probe failure.  Notes 
+are made of any unusual data, and sensors are reconditioned as necessary.  Each 
+data file is exported as a comma delimited file (.cdf) using EcoWatch software.  
+Two copies of this .cdf file are saved in the .csv format; one file is used to 
+archive the raw data, whereas the second file is edited to adjust all records to 
+Eastern Standard Time (as needed), to adjust the time as needed to read exactly 
+at the top or bottom of the hour (e.g., 00:00:00; true times on sondes were in 
+many cases 00:00:40 past the top and bottom of the hour), to remove headers and 
+footers, and to delete data at the beginning and end of each record when the 
+instruments were out of the water.  These latter data are identified by field 
+notes that document the times in and out of the water, together with depth and 
+conductivity values near zero.
+Using the edited .csv files, monthly data are compiled and processed by various 
+macros distributed by the CDMO.  These macros are designed to: 1) check data 
+files for missing data points, 2) fill all cells that do not contain data with 
+periods (.), 3) convert the data columns to the CDMO-approved formats for time, 
+date and numeric variables, 4) find all data that are out of acceptable range 
+for the sensors, 5) save the files as Excel worksheets (*.xls) and 6) generate 
+single parameter monthly graphs.
+Anomalous data are evaluated to determine whether to flag or delete the suspect 
+values.  Data are flagged if the values are: 1) outside the range expected for 
+the site, or 2) outside the range of measurements established for the sensors 
+(see Table 1).  Data outside the "normal" range of water quality parameters for 
+a particular site were investigated for validity based on weather data, field 
+observations, QC checks, PC6000 printouts, and instrument diagnostics.  Data 
+are deleted if the anomalies are attributed to sensor malfunction.  In addition 
+to observations of any physical damage (e.g., a torn DO probe membrane), sensor 
+malfunctions are detected if the voltage reading of the probe is outside the 
+range established for the sensor or the sensor will not calibrate.  After 
+corrections are made to the monthly Excel worksheet (*.xls), the edited files 
+are exported as tab-delimited files (*.txt) and sent to the CDMO.  Raw data 
+(*.csv) files are also sent to the CDMO for archiving.  Laura Herren is 
+responsible for these tasks.
+
+
+3) Research objectives:
+
+The goal of the GTM NERR monitoring initiative is to examine the short term 
+variability and long term trends of water quality profiles at spatially and 
+hydrographically representative locations within the Reserve.  Two stations 
+[Fort Matanzas (FM) and San Sebastian (SS)] are positioned in close proximity 
+to the two inlets of the GTM estuarine system, and two [(Pine Island (PI) and 
+Pellicer Creek (PC)] are located within regions more influenced by freshwater 
+inputs in the northern and southern sections of the Reserve, respectively.  
+Profile comparisons can be made among and between stations based on this 
+"salinity gradient", but also based on an "urbanization gradient", since the SS 
+station is situated in a rather urbanized watershed relative to the other 
+sites.
+
+
+4) Research methods:
+
+In the GTM NERR, YSI 6600 data sondes have been continuously operated (data 
+collection interval: 30 minutes) at the Pine Island and Fort Matanzas monitoring 
+stations since December 2000 and at the San Sebastian and Pellicer Creek 
+monitoring stations since February 2002.  At each site the sonde is contained 
+within a 10 cm ID diameter PVC pipe mounted vertically on a piling.  A steel pin 
+at the bottom end of the pipe holds the sonde at a position within 1 meter from 
+the bottom.  To facilitate water flow across the sensors, several 2 cm diameter 
+holes were drilled into the submerged portion of the pipe.  Hole density is 
+greatest near the base where the sonde sensors are located.  To avoid heavy 
+fouling, sondes were exchanged more frequently during the summer than in cooler 
+months (see deployment times in section 6: Data collection period).  Exchanges 
+usually took less than 5 minutes, thus no planned downtime occurred.  At the end 
+of a sampling period, sondes were returned to the laboratory where post-
+deployment readings and reconditioning took place in accordance with the methods 
+outlined in the YSI Operating and Service Manual.  After a superficial rinse of 
+the sonde in tap water, post deployment readings were recorded for temperature 
+and in standards for pH (Fisher 7.00 buffer solution) and conductivity (Exaxol 
+50.00 mS/cm standard); a post-deployment turbidity reading in 0.0 NTU standard 
+(DI water) was recorded after a more thorough rinse of the turbidity sensor.  
+This rinse was done to avoid contamination of the NTU standard.  The results of 
+these post-deployment readings were used to evaluate the validity of data (see 
+Tables 6-9).  The dissolved oxygen (DO) membrane was replaced and allowed to 
+equilibrate for 24 hours before the DO sensor was pre-calibrated in water-
+saturated air for the following deployment.
+
+
+5) Site location and character:
+The GTM NERR (North section [NW and SE corners]: 30.1632º N, 81.3447º W 
+and 29.9698º N, 81.2488º W; South section: 29.8295º N, 81.3294º W and 29.6017º 
+N, 81.1936º W), located in the Florida Upper East Coast Drainage Basin, 
+includes over 60,000 acres of publicly owned forested uplands, tidal wetlands, 
+estuarine lagoons and offshore seas.  Geographically separated by the greater 
+St. Augustine area, the Reserve is associated with the riverine systems of the 
+Tolomato and Guana River estuaries to the north and the Matanzas River estuary 
+to the south.  The Tolomato River Basin is about 18 miles (29 km) in length 
+with a drainage area of approximately 53,802 acres; it converges with the 
+Matanzas River and Salt Run from the south before flowing into the Atlantic 
+Ocean at the St. Augustine Inlet.  The headwaters of the Guana River originate 
+in the Diego Plains drainage area in Ponte Vedra Beach.  This drainage basin 
+encompasses approximately 7,800 acres.  The Guana River runs parallel to the 
+Tolomato on the seaward side, with the two lagoons joining 7 miles (11.3 km) 
+north of the St. Augustine Inlet.  The Matanzas River estuary is approximately 
+20 miles (32 km) in length and extends 8 miles (13 km) south of the Matanzas 
+Inlet.  The Matanzas River sub-basin has a drainage area of approximately 
+103,615 acres and is bounded to the west by the Atlantic Coastal Ridge, which 
+separates it from the lower St. Johns River basin.  Both the St. Augustine and 
+Matanzas Inlets provide oceanic exchange to the system.  The Matanzas Inlet, 
+one of the last "natural" inlets on Florida's east coast, has been unimproved 
+and is suitable only for small watercraft.  The natural hydrology of the Guana 
+Tolomato Matanzas system has been somewhat altered by water control structures, 
+including dikes, inland wells, drainage ditches and a dam across a portion of 
+the Guana River.  In addition, the Intracoastal Waterway traverses both the 
+Tolomato and Matanzas estuaries.
+The climate of northeast Florida is classified as humid subtropical and 
+is characteristic of the Gulf and Atlantic coastal plain of the Southeastern 
+United States.  The average annual rainfall is approximately 52 inches per 
+year, with the wet season extending from June through September.  Seasonal 
+variation in temperature within the Reserve follows that of rainfall with a 
+summer period of high temperatures between June and September and a cooler 
+period extending from December through March.  The annual mean air temperature 
+within the Reserve is approximately 21ºC.
+Station details: The SWMP water quality initiative began within the GTM 
+NERR in 2001 at one permanent station in both the northern and the southern 
+sections of the Reserve.  The stations were somewhat centrally located to be 
+representative of the conditions within that region.  Existing Channel Markers 
+in the Atlantic Intracoastal Waterway (ICW) were selected as the preferred 
+mounting locations.  The sonde at the Pine Island site is deployed in a PVC 
+pipe fixed to Channel Marker 25 (30º 03.051´N; 81º 22.048´W) in the Tolomato 
+River.  This site is located within the Guana River Marsh Aquatic Preserve in 
+the northern section of the GTM NERR.  Channel Marker 25 is adjacent to Pine 
+Island near the mouth of Deep Creek, which provides freshwater drainage from 
+silviculture-dominated uplands in the northwestern portion of the Tolomato 
+River Basin.  The sonde at the Fort Matanzas site (in the southern section of 
+the GTM NERR) is deployed in a PVC pipe fixed to ICW Channel Marker 75 (29º 
+44.222´N; 81º 14.757´W) in the Matanzas River.  This site is located 4 km north 
+of the Matanzas Inlet and is near a shoreline on Anastasia Island that is 
+undergoing moderate residential development.  Both the Matanzas River and 
+Tolomato River sites are situated within Class II Shellfish Harvesting Waters.  
+In February 2002, two additional monitoring stations were added to the 
+program.  The San Sebastian site is at Channel Marker 1 (29º 52.131´N; 81º 
+18.446´W) located at the confluence of the San Sebastian and Matanzas Rivers, 
+approximately 4 km south of the St. Augustine Inlet.  Sonde deployment is as 
+described above.  The San Sebastian River drains an urbanized watershed in the 
+western portion of St. Augustine; it is characterized by both residential and 
+commercial development including five marinas.  The Pellicer Creek site (29º 
+40.024´N; 81º 15.444´W), located within the Pellicer Creek Aquatic Preserve, is in 
+the southern section of the GTM Reserve.  Pellicer Creek is tidal and bordered 
+for much of its length by relatively pristine publically-owned conservation 
+lands.  The PVC pipe used to house the sonde is mounted on a concrete-filled 
+PVC piling driven into the sediment at the end of a floating dock in Faver 
+Dykes State Park.
+Based on available data, the average depth (i.e., sonde depth), tidal 
+range and salinity range, respectively, for each of the four stations is: (Pine 
+Island) 2.8 m, 1.6 m, 6.3-37.6 ppt; (Fort Matanzas) 2.6 m, 1.4 m, 11.2-37.2 
+ppt; (San Sebastian) 3.4 m, 1.7 m, 26.3-37.9 ppt; (Pellicer Creek) 1.3 m, 0.6 
+m, 0.1-34.9 ppt.  At all sites, the bottom is characterized by a muddy sand 
+type habitat.
+
+
+
+6) Data collection period:
+
+Data sondes were first deployed on December 21, 2000 at the Pine Island and the 
+Fort Matanzas sites, and on February 18, 2002 at the Pellicer Creek and San 
+Sebastian Sites.  All stations have been continuously in service since then.  
+All monitoring is considered long-term.  Individual sonde deployment and 
+retrieval dates and times for 2002 are as follows:
+
+BEGAN			ENDED
+
+Pine Island Site
+*12/21/01, 13:30:00		01/07/01, 13:30:00
+*01/07/02, 14:00:00		02/08/02, 11:30:00
+*02/08/02, 12:30:00		03/01/02, 14:30:00
+*03/01/02, 15:00:00		03/16/02, 08:30:00
+*03/16/02, 09:30:00		03/29/02, 10:30:00
+03/29/02, 11:00:00		04/12/02, 10:00:00
+04/12/02, 10:30:00		05/23/02, 10:30:00
+05/23/02, 10:00:00		06/10/02, 08:30:00
+06/10/02, 09:00:00		06/28/02, 14:00:00
+06/28/02, 14:30:00		07/31/02, 08:30:00
+07/31/02, 10:00:00		08/13/02, 11:30:00
+08/13/02, 12:00:00		08/22/02, 12:00:00
+*08/22/02, 12:30:00		09/06/02, 11:30:00
+09/06/02, 12:00:00		09/12/02, 09:30:00
+09/12/02, 10:00:00		09/19/02, 09:30:00
+09/19/02, 10:00:00		09/27/02, 09:30:00
+09/27/02, 10:00:00		10/03/02, 09:00:00
+10/03/02, 10:00:00		10/14/02, 13:00:00
+10/14/02, 13:30:00		10/22/02, 08:00:00
+10/22/02, 08:30:00		10/29/02, 09:30:00
+10/29/02, 10:00:00		11/05/02, 12:00:00
+11/05/02, 12:30:00		11/15/02, 12:30:00
+11/15/02, 13:00:00		11/26/02, 10:00:00
+11/26/02, 10:30:00		12/12/02, 13:00:00
+12/12/02, 13:30:00		12/20/02, 13:30:00
+12/20/02, 14:00:00		01/09/03, 11:00:00
+
+San Sebastian Site
+*02/18/02, 17:00:00		03/16/02, 07:00:00
+03/16/02, 07:30:00		03/28/02, 18:00:00
+03/28/02, 18:30:00		04/14/02, 16:30:00
+04/14/02, 17:00:00		04/29/02, 18:30:00
+04/29/02, 19:00:00		05/26/02, 10:00:00
+05/26/02, 11:00:00		06/08/02, 07:00:00
+06/08/02, 07:30:00		06/28/02, 13:30:00
+06/28/02, 14:00:00		07/23/02, 13:00:00
+07/23/02, 13:30:00		08/14/02, 18:30:00
+08/14/02, 19:30:00		08/27/02, 16:30:00
+08/27/02, 17:00:00		09/06/02, 10:30:00
+09/06/02, 11:00:00		09/12/02, 08:30:00
+09/12/02, 09:00:00		09/19/02, 09:00:00
+09/19/02, 09:30:00		09/27/02, 09:00:00
+09/27/02, 09:30:00		10/03/02, 08:30:00
+10/03/02, 09:00:00		10/14/02, 11:30:00
+10/14/02, 12:00:00		10/22/02, 13:30:00
+10/22/02, 14:00:00		10/29/02, 08:00:00
+10/29/02, 09:00:00		11/05/02, 10:00:00
+11/05/02, 10:30:00		11/15/02, 11:00:00
+11/15/02, 11:30:00		11/26/02, 09:00:00
+11/26/02, 09:30:00		12/12/02, 13:30:00
+12/12/02, 14:00:00		12/20/02, 12:30:00
+12/20/02, 13:00:00		01/09/03, 10:30:00
+
+Fort Matanzas Site
+*12/21/01, 15:30:00		01/09/02, 12:00:00
+*01/09/02, 12:30:00		02/08/02, 13:30:00
+*02/08/02, 14:00:00		03/01/02, 17:00:00
+03/01/02, 17:30:00		03/22/02, 09:00:00
+03/22/02, 09:30:00		04/04/02, 15:30:00
+04/04/02, 16:00:00		04/22/02, 15:00:00
+04/22/02, 15:30:00		05/08/02, 13:00:00
+05/08/02, 13:30:00		05/20/02, 13:00:00
+05/20/02, 13:30:00		06/03/02, 13:00:00
+06/03/02, 14:00:00		06/24/02, 11:00:00
+06/24/02, 11:30:00		07/05/02, 09:30:00
+07/05/02, 10:00:00		07/15/02, 14:30:00
+07/15/02, 15:30:00		07/30/02, 08:00:00
+07/30/02, 08:30:00		08/14/02, 13:30:00
+08/14/02, 14:00:00		08/26/02, 14:00:00
+08/26/02, 14:30:00		09/03/02, 11:00:00
+09/03/02, 11:30:00		09/13/02, 08:30:00
+09/13/02, 09:00:00		09/23/02, 13:00:00
+09/23/02, 14:00:00		09/30/02, 09:00:00
+09/30/02, 09:30:00		10/07/02, 12:30:00
+10/07/02, 13:00:00		10/15/02, 09:30:00
+10/15/02, 10:30:00		10/29/02, 12:00:00
+10/29/02, 12:30:00		11/05/02, 10:30:00
+11/05/02, 11:00:00		11/15/02, 14:30:00
+11/15/02, 15:00:00		11/21/02, 11:30:00
+11/21/02, 12:00:00		12/09/02, 13:30:00
+12/09/02, 14:00:00		12/20/02, 15:00:00
+12/20/02, 15:30:00		12/30/02, 11:30:00
+12/30/02, 12:00:00		01/14/03, 10:00:00
+
+Pellicer Creek Site
+*02/18/02, 16:00:00		03/14/02, 17:00:00
+03/14/02, 17:30:00		03/22/02, 10:00:00
+03/22/02, 10:30:00		04/04/02, 09:30:00
+04/04/02, 10:00:00		04/11/02, 09:00:00
+04/11/02, 09:30:00		04/18/02, 09:30:00
+04/18/02, 10:00:00		04/25/02, 08:00:00
+04/25/02, 08:30:00		05/08/02, 12:00:00
+05/08/02, 12:30:00		05/20/02, 08:30:00
+05/20/02, 09:00:00		05/29/02, 09:00:00
+05/29/02, 09:30:00		06/04/02, 08:30:00
+06/04/02, 09:00:00		06/10/02, 11:00:00
+06/10/02, 11:30:00		06/18/02, 17:00:00
+06/18/02, 17:30:00		06/25/02, 12:00:00
+06/25/02, 12:30:00		07/01/02, 11:00:00
+07/01/02, 11:30:00		07/08/02, 09:00:00
+07/08/02, 09:30:00		07/15/02, 15:30:00
+07/15/02, 16:00:00		07/22/02, 10:00:00
+07/22/02, 10:30:00		07/29/02, 12:30:00
+07/29/02, 13:00:00		08/05/02, 11:00:00
+08/05/02, 11:30:00		08/14/02, 14:00:00
+08/14/02, 14:30:00		08/21/02, 10:30:00
+08/21/02, 11:00:00		08/26/02, 13:00:00
+08/26/02, 13:30:00		09/03/02, 11:30:00
+09/03/02, 12:00:00		09/09/02, 15:00:00
+09/09/02, 15:30:00		09/16/02, 11:30:00
+09/16/02, 12:00:00		09/23/02, 14:00:00
+09/23/02, 14:30:00		09/30/02, 10:00:00
+09/30/02, 10:30:00		10/07/02, 13:00:00
+10/07/02, 13:30:00		10/15/02, 10:30:00
+10/15/02, 11:00:00		10/29/02, 17:30:00
+10/29/02, 18:00:00		11/13/02, 11:30:00
+11/13/02, 12:00:00		11/21/02, 10:30:00
+11/21/02, 11:00:00		12/03/02, 10:30:00
+12/03/02, 11:00:00		12/18/02, 10:00:00
+12/18/02, 10:30:00		12/30/02, 12:30:00
+12/30/02, 13:00:00		01/14/03, 11:00:00
+
+* indicates deployments for which time data required correction to Eastern 
+Standard Time or the conversion of seconds to read exactly the top or bottom of 
+the hour in the edited .csv file.
+	
+7) Distribution:
+
+According to the Ocean and Coastal Resource Management Data Dissemination Policy 
+for the NERRS System-wide Monitoring Program, NOAA/ERD retains the right to 
+analyze, synthesize and publish summaries of the NERRS System-wide Monitoring 
+Program data.  The PI retains the right to be fully credited for having 
+collected and processed the data.  Following academic courtesy standards, the PI 
+and NERR site where the data were collected will be contacted and fully 
+acknowledged in any subsequent publications in which any part of the data 
+are used.  Manuscripts resulting from the NOAA/OCRM supported research that are 
+produced for publication in open literature, including refereed scientific 
+journals. Will acknowledge that the research was conducted under an award from 
+the Estuarine Reserves Division, Office of Ocean and Coastal Resource 
+Management, National Ocean Service, National Oceanic and Atmospheric 
+Administration.  The data set enclosed within this package/transmission is only 
+as good as the quality assurance and quality control procedures outlined by the 
+enclosed metadata reporting statement.  The user bears all responsibility for 
+its subsequent use/misuse in any further analyses or comparisons.  The Federal 
+government does not assume liability to the Recipient of third persons, nor will 
+the Federal government reimburse or indemnify the Recipient for its liability 
+due to any losses resulting in any way from the use of this data.
+
+NERR water quality data and metadata can be obtained from the Research 
+Coordinator at the individual NERR site (see section 1), from the Data Manager 
+at the Centralized Data Management Office (see personnel directory under general 
+information link on CDMO homepage) and online at the CDMO homepage 
+http://cdmo.baruch.sc.edu/.  Data are available in text tab-delimited format, 
+Microsoft Excel spreadsheet format and comma-delimited format.
+
+ 
+8) Associated researchers and projects:
+
+The GTM NERR has formed partnerships with other agencies and organizations 
+actively involved in resource protection in the GTM NERR watershed.  Cooperating 
+managers of lands within the NERR include:  1) National Park Service (NPS), 2) 
+St. Johns River Water Management District (SJRWMD), 3) Department of 
+Environmental Protection (DEP) Division of Recreation and Parks/Florida Park 
+Service (FPS), 4) DEP Aquatic Preserve Program, 5) Florida Fish and Wildlife 
+Conservation Commission, and 6) Flagler County.  
+The SJRWMD Northern Coastal Basin Program, established in 1995, covers the 
+watersheds along the Intracoastal Waterway from Ponce Inlet in Volusia County, 
+north through Flagler and St. Johns Counties, to the Guana River marshes at 
+Ponte Vedra in southern Duval County. This program was developed in response to 
+concerns about the impacts of population growth and development on water quality 
+in the Northern Coastal Basin (NCB).  Some of the major research activities 
+conducted within the boundaries of the NERR through the NCB program include: 1) 
+a fisheries monitoring project in conjunction with United States Geological 
+Survey, 2) hydrodynamic modeling of the estuarine systems, and 3) water quality 
+monitoring.  Many of the water quality monitoring and assessment activities of 
+the NCB program are aimed at pollution source identification and the development 
+of pollution load reduction goals.
+Other water quality research and monitoring initiatives within the GTM NERR 
+include: 
+1) studies of nutrient profiles by the laboratory of Dr. Edward Phlips at the 
+University of Florida (this work compliments and extends the GTM NERR's SWMP 
+nutrient monitoring efforts), and 
+2) regular monitoring of fecal coliform levels in shellfish harvesting waters by 
+the Department of Agriculture and Consumer Services.
+NERR-specific research projects currently in progress include: 1) a CICEET 
+funded study by Dr. Jody Harwood at the University of South Florida to develop a 
+real-time, fiber-optic biosensor for human pathogens in estuarine waters, 2) a 
+NERR-funded graduate research project to decipher the parameters affecting 
+reforestation of spoil islands, 3) a NERR-funded graduate research project to 
+develop an estuarine planning strategy through an assessment of human use 
+patterns together with a delineation of ecological resources, 4) a collaboration 
+with the National Weather Service in Jacksonville and University of North 
+Florida to test a web-enabled, wireless communication system for real-time data 
+acquisition from field instruments, 5) a collaboration with the University of 
+South Carolina to monitor the abundance and distribution of non-indigenous crab 
+species at selected NERR sites on the east and west coasts of the US, and 6) a 
+study to examine the winter recruitment of juvenile bluefish (Pomatomus 
+saltatrix) in Northeast Florida.
+
+9) Variable sequence, range of measurements, units, resolution and accuracy:
+
+Table 1.  Range, resolution and accuracy of the YSI sensors used in monitoring 
+water quality parameters within the GTM NERR.
+YSI 6000/6600 datalogger
+
+Variable      Range of Measurements          Resolution           Accuracy
+Date          1-12, 1-31, 00-99 (Mo,Day,Yr)  1 mo, 1 day, 1 yr    NA
+Time          0-24, 0-60, 0-60 (Hr,Min,Sec)  1 hr, 1 min, 1 s     NA
+Temp               -5 to 45 (c)              0.01  C              +/-0.15C
+Sp COND            0-100(mS/cm)              0.01mS/cm            +/-0.5% Of 
+reading + 0.001mS/Cm
+Salinity      0-70 Parts per thousand (ppt)  0.01 ppt             +/- 1% of 
+Reading or 0.1 ppt, (whichever is greater)
+DO            0-200 (% air saturation)       0.1% @air sat        +/-2% @air 
+Saturation
+DO            200-500 (% air saturation      0.1% @ air sat       +/- 6% @ 
+Saturation
+DO                 0-20 (mg/l)               0.01 mg/l            +/- 0.2mg/l
+DO                 20-50 (mg/l)              0.01 mg/l            +/- 0.6mg/l
+Depth (shallow)    0-9.1 (m)                 0.001m               +/- 0.018m
+PH                 2-14 units                0.01 units           +/- 0.2units
+Turb               0-1000 NTU                0.1 NTU              +/- 5% of 
+Reading or 2 NTU (whichever is greater)
+
+Data columns are separated by tabs.  Each file contains a two line
+column header at the top of the page which identifies measurements and 
+units for each column.
+
+
+10) Coded variable indicator and variable code definitions:
+
+File definitions: YSI deployment site/file definition/month/year (e.g., FMWQ0302 
+= monthly water quality data from the Fort Matanzas site for March of 2002).  PI 
+= Pine Island; SS = San Sebastian; FM = Fort Matanzas; and PC = Pellicer Creek. 
+
+
+11) Anomalous data:
+  	
+Note that slight shifts in data are sometimes correlated with sonde exchanges.  
+These shifts are most noticeable in pH, specific conductivity, salinity, DO% and 
+DO conc, and may be related to sensor drift (e.g., due to fouling) and/or 
+calibration differences between sondes.
+
+Depth data at SS shifted up approximately 2.3 m between 7/22 10:30 and 12/12 
+13:30 due to interference of fouling organisms attached to the inside of the PVC 
+housing.  These fouling organisms prevented the sonde from reaching the bottom 
+in all deployments between the above time with the exception of the 11/5 10:30 
+to 11/15 11:00 deployment, in which case the sonde was physically pushed down to 
+its original position at the bottom of the PVC housing.  
+  
+Turbidity "outliers" (i.e., values that are negative or greater than 1000 NTU) 
+are listed separately in Tables 2 and 3; unless specifically stated in the 
+listings below, these data were not deleted from the monthly records.  Negative 
+turbidity values occur throughout the year at all four sites. These negative 
+values are within range of the sensor (+/- 2 NTU) and, therefore, were not 
+removed from the dataset.  Data < -2 NTU may indicate a slight shift due to 
+calibration error.
+  
+DO shifts associated with calibration/performance differences were seen when 
+sonde exchanges occurred at the Fort Matanzas site in May, June, and July.
+
+January 1-31, 2002
+
+PI
+a) 	Suspect turbidity data between 1/22 19:30:00 and 1/31 23:30:00 possibly 
+due to the heavy bioaccumulation and a 10 cm blenny seen upon retrieval.
+
+FM
+a)	Dropouts occurred on 1/30 at 09:00:00 and 09:30:00 and 1/31 at 06:30:00, 
+09:30:00, 19:30:00, and 22:00:00, reason unknown (low battery voltage?).
+b)	DO data were deleted between 1/1 00:00:00 and 1/9 12:00:00.  The DO 
+membrane and o-ring were missing when retrieved from the field.  A 10 cm crab 
+was also found in the guard upon retrieval.
+c)	DO data were deleted between 1/9 12:30:00 and 1/31 23:30:00 due to an out 
+of range charge reading during the calibration process.
+
+February 1-28, 2002
+PI
+a)	Missing data point on 2/8 at 12:00:00 due to sonde exchange.
+b)	Suspect turbidity data between 2/1 00:00:00 and 2/8 11:30:00 possibly due 
+to the heavy bioaccumulation and a 10 cm blenny seen upon retrieval.  
+c)  	Deleted DO data between 2/3 15:00:00 and 2/8 11:30:00 due to high amounts 
+of algal growth and bioaccumulation on the sensor.
+d)	Strange dip in sp. conductivity and salinity data on 2/21, reason unknown.
+e)	The high jump in sp. conductivity on 2/8 12:30:00 may be due to the large 
+amount of algal growth on the sensor seen upon retrieval.
+
+SS
+Data collection at this site began 2/18 17:00:00.
+a)	The sonde was not equipped with a turbidity sensor until 3/16 07:30:00.
+b)	Suspect DO data between 2/26 12:00 and 2/28 23:30:00, reason for the 
+downward shift unknown.
+
+FM
+a)	Dropouts (apparently due to power failures) occurred on 2/1 at 05:00:00, 
+05:30:00, 07:30:00, 10:00:00, 12:00:00, 21:00:00, 22:30:00, 23:00:00.  On 2/2 at 
+05:00:00, 05:30:00, 07:30:00, 09:30:00, 13:00:00, 20:30:00, 22:30:00, and 
+23:00:00.  On 2/3 at 08:30:00, 13:00:00, 13:30:00, 14:00:00, 22:30:00, 23:00:00, 
+and 23:30:00.  On 2/4 at 07:00:00, 07:30:00, and 08:00:00.  The last reading for 
+the deployment occurred on 2/4 at 13:30:00.  Sonde exchange occurred 2/8 
+14:00:00, therefore no data were recorded between 2/4 14:00:00 and 2/8 13:30:00.
+b)	DO data were deleted between 2/1 00:00:00 and 2/4 13:30:00 due to an out 
+of range charge reading during the calibration process.
+
+PC
+a)	No turbidity data collected between 2/18 16:00:00 and 2/28 23:30:00.  
+Waiting for 6136 probe to arrive from YSI.
+
+
+March 1-31, 2002
+PI
+a)	Suspect turbidity data between 3/12 15:30:00 and 3/16 08:30:00, reason 
+unclear.  
+b)	Missing data on 3/16 at 09:00:00 due to sonde exchange.
+
+FM
+No data anomalies.	
+
+SS
+a)	Suspect DO data between 3/1 00:00:00 and 3/16 07:00:00, reason unknown.
+b)	Suspect sp. conductivity and salinity data between 3/8 03:00 and 3/16 
+7:00, reason unknown.
+
+PC
+a)	Duplicated data collection for 3/14 17:00:00 due to sonde exchange.  
+Deleted the first in-water reading 17:00:00 on the 3/14 to 3/22 deployment.
+b)	No turbidity data collected between 3/1 00:00:00 and 3/14 17:00:00.  
+Waiting for 6136 probe to arrive from YSI.
+c)	Suspect turbidity data between 3/22 10:30:00 and 3/31 23:30:00 due to an 
+apparent offset created during the calibration process.
+
+April 1-30, 2002
+PI
+a)	Suspect turbidity data between 4/4 11:00:00 and 4/12 10:00:00 possibly due 
+to either heavy bioaccumulation or a stone crab found within the guard upon 
+retrieval. 
+b)	High number of dropouts between 4/14 and 4/25 probably due to either low 
+battery voltage (7.0 upon retrieval) or corroded battery connections.  Dropouts 
+occurred on 4/14 between 07:00 and 18:30:00, 20:00:00 and 22:00:00, 4/14 
+23:00:00 and 4/15 21:30:00, 4/15 23:30:00 and 4/16 07:30:00, 4/16 08:30:00 and 
+21:30:00, 4/16 22:30 and 4/17 04:30:00, then the sonde worked again until 4/25 
+11:30:00, and shut down on 4/25 at 20:30:00 and remained off until the end of 
+the deployment on 5/23 at 10:00:00.
+
+SS	 
+a)	Suspect sp. conductivity and salinity data between 4/10 19:30:00 and 4/14 
+16:30:00, possibly due to bioaccumulation or the presence of shrimp in the guard 
+upon retrieval.
+
+FM
+a)	Deleted sp. conductivity, salinity, DO mg/l, and depth data between 4/22 
+15:30:00 and 4/30 23:30:00.  Conductivity cell constant (5.60539) was out of 
+range and due to the incorporation of this data into formulas, DO mg/l and depth 
+were also deleted.
+b)	Suspect DO data between 4/20 10:30 and 4/22 15:00 possibly due to 
+bioaccumulation found upon retrieval.
+
+PC
+a)	Suspect turbidity data between 4/1 00:00:00 and 4/4 09:30:00 due to an 
+apparent offset 
+created during the calibration process.
+
+May 1-31, 2002
+PI
+a) 	No data between 5/1 00:00:00 and 5/23 10:00:00 due to battery failure (7.0 
+V upon retrieval).	
+
+SS
+a)	Suspect sp. conductivity and salinity data between 5/26 11:00:00 and 5/31 
+23:30:00.  The shift may be due to a calibration error. 
+
+FM
+a)	Deleted sp. conductivity, salinity, DO mg/l, and depth data between 5/1 
+00:00:00 and 5/8 13:00:00.  Conductivity cell constant (5.60539) was out of 
+range and due to the incorporation of this data into formulas, DO mg/l and depth 
+were also deleted.
+
+PC
+a)	Deleted DO data between 5/20 09:00:00 and 5/29 09:00:00.  Two small holes 
+were seen in the DO membrane upon retrieval.  
+
+June 1-30, 2002
+PI
+a)	Suspect salinity data between 6/1 00:00:00 and 6/10 08:30:00, reason 
+unclear.
+
+SS
+a)	Suspect sp. conductivity and salinity data between 6/1 00:00:00 and 6/8 
+07:00:00.  The shift may be due to a calibration error. 
+b)	Suspect all parameters between 6/8 07:30:00 and 6/28 13:30:00 due to 
+misplaced pre-calibration data.
+c)	Unusual salinity data between 6/12 00:00:00 and 6/19 16:30:00.  These 
+unusual data fall in the middle of a single deployment and, therefore, may be 
+valid.  
+d)	Interesting turbidity data between 6/24 08:00:00 and 6/28 13:30:00, 
+possibly the result of rainfall.
+ 
+FM
+a)	6/3 13:30:00 reading missed due to the sonde exchange process.
+
+PC
+a)	Unusually low sp. conductivity and salinity readings from 6/21 on towards 
+the end of the month.  These unusual data appear to be valid.  There were heavy 
+local rain showers on 6/21.
+
+July 1-31, 2002
+PI
+The sonde deployed between 6/28 14:30:00 and 7/31 08:30:00 was completely 
+covered with fouling organisms/crabs and stuck in the PVC housing.  The old PVC 
+tube was replaced with a new housing and data collection began again on 7/31 
+10:00:00. 
+ 
+a)	Deleted DO data between 7/4 08:30:00 and 7/31 08:30:00 due to extremely 
+heavy bioaccumulation, a missing DO membrane, and small barnacles growing on the 
+surface of the sensor (area usually covered by the Teflon membrane) upon 
+retrieval.
+b)	Suspect sp. conductivity, salinity, pH, and turbidity data between 7/5 
+10:00:00 and 7/10 18:30:00 due to extremely heavy bioaccumulation on the sensor 
+upon retrieval.
+c)	Deleted sp. conductivity, salinity, depth, pH, and turbidity data between 
+7/10 19:00 and 7/31 08:30:00 due to extremely heavy bioaccumulation on the 
+sensors and a missing turbidity wiper upon retrieval.  Depth data were deleted 
+due to the incorporation of sp. conductivity values in the calculation for 
+depth. 
+d)	No data collected between 7/31 09:00:00 and 7/31 09:30:00 due to the 
+exchange of the PVC housing.
+
+SS
+a)	Suspect turbidity data between 7/13 20:30:00 and 7/23 13:00:00, possibly 
+due to the heavy bioaccumulation and/or 2 large crabs found within the guard 
+upon retrieval.
+b)	Suspect depth data between 7/23 13:30 and 7/31 23:30:00 (see general 
+statement at the beginning of section 11).
+c)	Deleted aberrant DO data between 7/29 10:00:00 and 7/31 23:30:00 - 
+possibly due to a 13 cm toadfish (Opsanus tau) found within the guard upon 
+retrieval and probably a broken DO membrane based on negative readings and a 
+high post-cal reading (115% DO).
+d)	Suspect sp. conductivity and salinity data between 7/29 13:30:00 and 7/31 
+23:30:00 possibly due to the 13 cm toadfish (Opsanus tau) found within the guard 
+upon retrieval.
+
+FM
+a)	7/15 15:00:00 reading missed due to the sonde exchange process.
+
+PC
+No data anomalies.
+
+August 1-31, 2002
+PI
+a)	Suspect sp. conductivity and salinity data between 8/8 11:30:00 and 8/13 
+11:30:00 possibly due to heavy barnacle bioaccumulation discovered upon 
+retrieval.
+b)	Suspect turbidity data between 8/9 15:00:00 and 8/13 11:30:00 possibly due 
+to the large amount of bioaccumulation (algae and barnacles) found on the sonde 
+upon retrieval.
+c)	Suspect DO data between 8/9 06:00:00 and 8/13 11:30:00 and 8/19 20:30:00 
+and 8/22 12:00:00 possible due to the heavy bioaccumulation on the sonde upon 
+retrieval.
+
+SS
+a)	Deleted aberrant DO data between 8/1 00:00:00 and 8/14 18:30:00 - possibly 
+due to the presence of a 13 cm toadfish (Opsanus tau) in the guard upon 
+retrieval.
+b)	Suspect depth data between 8/1 00:00:00 and 8/31 23:30:00 (see general 
+statement at the beginning of section 11).
+c)	Suspect sp. conductivity and salinity data between 8/1 00:00:00 and 8/14 
+18:30:00 possibly due to the presence of a 13 cm toadfish (Opsanus tau) in the 
+guard upon retrieval.
+d)	The 8/14 19:00:00 reading was missed due to the sonde exchange process.
+
+FM
+No data anomalies.
+
+PC
+No data anomalies.
+
+September 1-30, 2002
+PI
+a)	Suspect turbidity data between 9/22 12:30:00 and 9/27 09:30:00.  Although 
+there are no field notes to justify the statement, based on the previous 
+deployment and the abundance of settling organisms at this time of the year, the 
+drift is probably due to heavy bioaccumulation on the sonde.
+
+SS
+The 6136 Turbidity sensor was recalled to YSI for repair of the malfunctioning 
+wiper motor.  Therefore, no turbidity data were recorded at the SS site between 
+9/27 09:30:00 and 11/15 11:00:00.
+a)	Deleted turbidity data between 9/12 09:00:00 and 9/19 09:00:00 due to an 
+"out of range" pre-calibration warning. 
+b) No turbidity data between 9/27 09:30:00 and 9/30 23:30:00 due to the recall 
+mentioned above.
+c)	Suspect DO data between 9/8 20:30:00 and 9/12 08:30:00 possibly due to 
+heavy bioaccumulation on the sensors.
+d)	Suspect depth data between 9/1 00:00:00 and 9/30 23:30:00 (see general 
+statement at the beginning of section 11).
+
+FM
+The 6136 Turbidity sensor was recalled to YSI for repair of the malfunctioning 
+wiper motor.  Therefore, no turbidity data were recorded at the FM site between 
+9/23 14:00:00 and 11/15 14:30:00.
+
+a)	9/23 13:30:00 reading missed due to the sonde exchange process.
+b)	No turbidity data between 9/23 14:00:00 and 9/30 23:30:00 due to the 
+recall mentioned above.	
+c)	Suspect DO data between 9/21 20:00:00 and 9/23 13:00:00 possibly due to 
+heavy bioaccumulation and a 10 cm blenny found in the guard upon retrieval.
+
+PC
+The 6136 Turbidity sensor was recalled to YSI for repair of the malfunctioning 
+wiper motor.  Therefore, no turbidity data were recorded at the PC site between 
+9/23 14:30:00 and 10/29 17:30:00.
+
+October 1-31, 2002
+PI
+a)	Suspect turbidity data between 10/6 12:00:00 and 10/14 13:00:00.  Although 
+there are no post-deployment notes, the drift is possibly due to bioaccumulation 
+on the sonde.
+b)	Deleted DO data between 10/27 05:30:00 and 10/29 09:30:00 due to a 
+punctured DO membrane found upon retrieval.
+
+SS
+The 6136 Turbidity sensor was recalled to YSI for repair of the malfunctioning 
+wiper motor.  Therefore, no turbidity data were recorded at the SS site between 
+9/27 09:30:00 and 11/15 11:00:00.
+
+a)	Suspect depth data between 10/1 00:00:00 and 10/31 23:30:00 (see general 
+statement at the beginning of section 11).
+b)	No turbidity data were collected between 10/1 00:00:00 and 10/31 23:00:00 
+due to the recall described above.
+c)	10/29 08:30:00 data missing due to the sonde exchange process.
+
+FM
+The 6136 Turbidity sensor was recalled to YSI for repair of the malfunctioning 
+wiper motor.  Therefore, no turbidity data were recorded at the FM site between 
+9/23 14:00:00 and 11/15 14:30:00.
+
+a)	No turbidity data between 10/1 00:00:00 and 10/31 23:30:00 due to the 
+recall mentioned above.		
+b)	10/15 10:00:00 missed reading due to the sonde exchange process.
+
+PC
+The 6136 Turbidity sensor was recalled to YSI for repair of the malfunctioning 
+wiper motor.  Therefore, no turbidity data were recorded at the PC site between 
+9/23 14:30:00 and 10/29 17:30:00.
+a)	No turbidity data between 10/1 00:00:00 and 10/29 17:30:00 due to the 
+recall mentioned above.  
+b)	Turbidity data were deleted between 10/29 18:00:00 and 10/31 23:00:00 due 
+to "out of range" readings during the calibration process.
+
+
+November 1-30, 2002
+PI
+a)	Deleted DO data between 11/22 00:00:00 and 11/26 10:00:00 due to a torn DO 
+membrane.	
+
+SS
+The 6136 Turbidity sensor was recalled to YSI for repair of the malfunctioning 
+wiper motor.  Therefore, no turbidity data were recorded at the SS site between 
+9/27 09:30:00 and 11/15 11:00:00.
+
+a)	No turbidity data were collected between 11/1 00:00:00 and 11/15 11:00:00 
+due to the recall described above.
+
+b)	Suspect depth data between 11/1 00:00:00 and 11/31 23:30:00 (see general 
+statement at the beginning of section 11).   Note that sonde appeared to drop 
+down to the original location (~1 m from the bottom) during the 11/5 10:30:00 to 
+11/15 11:00:00 deployment.
+
+c) 	All data deleted 11/30 23:00:00 – 23:30:00. The reason for these anomalous 
+data are unknown. 
+
+FM
+The 6136 Turbidity sensor was recalled to YSI for repair of the malfunctioning 
+wiper motor. Therefore, no turbidity data were recorded at the FM site between 
+9/23 14:00:00 and 11/15 14:30:00.
+
+a)	No turbidity data were collected between 11/1 00:00:00 and 11/15 14:30:00 
+due to the recall described above.
+
+PC
+a)	Turbidity data were deleted between 11/1 00:00:00 and 11/13 11:30:00 due 
+to "out of range" readings during the calibration process.
+b)	Although the DO membrane was torn upon retrieval on 11/13 11:30:00, it is 
+suspected that the membrane was punctured during the retrieval process by the 3 
+large crayfish found in the guard.  DO data show no evidence of a torn membrane 
+while in the field. 
+
+December 1-31, 2002
+PI
+No data anomalies.
+
+SS
+a)	Suspect depth data between 12/1 00:00:00 and 12/12 13:30:00 (see general 
+statement at the beginning of section 11).
+b)	Suspect pH data between 12/12 14:00:00 and 12/20 12:30:00 possibly due to 
+a calibration offset.
+
+FM
+a)	Suspect DO data between 12/9 14:00:00 and 12/20 15:00:00 possibly due to 
+the deployment of a sonde with a dirty DO membrane (the membrane was not cleaned 
+or replaced prior to the deployment).
+
+PC
+No data anomalies. 
+
+Table 2.  Turbidity outliers in 2002 at the Pine Island site.
+
+Date		Time		Value
+02/01/2002	02:00:00	1038
+02/01/2002	06:00:00	1718
+02/01/2002	06:30:00	1314
+02/02/2002	07:30:00	1083
+02/02/2002	14:00:00	1616
+02/03/2002	00:00:00	1135
+02/03/2002	16:00:00	1555
+02/04/2002	08:30:00	1722
+02/06/2002	03:30:00	1002
+02/19/2002	18:30:00	1378
+02/26/2002	11:00:00	1362
+02/26/2002	12:00:00	1375
+03/14/2002	02:00:00	1224
+03/14/2002	14:00:00	1784
+03/14/2002	23:00:00	1285
+03/15/2002	01:30:00	1786
+03/15/2002	02:30:00	1786
+03/15/2002	08:00:00	1784
+03/15/2002	09:30:00	1783
+03/15/2002	11:30:00	1782
+03/15/2002	12:00:00	1783
+03/15/2002	13:30:00	1787
+03/15/2002	14:00:00	1788
+03/15/2002	14:30:00	1789
+03/15/2002	15:00:00	1790
+03/15/2002	15:30:00	1792
+03/15/2002	16:00:00	1794
+03/15/2002	16:30:00	1795
+03/15/2002	17:00:00	1794
+03/15/2002	18:00:00	1792
+03/15/2002	18:30:00	1791
+03/15/2002	19:00:00	1791
+03/15/2002	19:30:00	1791
+03/15/2002	20:00:00	1790
+03/15/2002	20:30:00	1790
+03/15/2002	21:00:00	1790
+03/15/2002	21:30:00	1789
+03/15/2002	22:00:00	1788
+03/15/2002	22:30:00	1788
+03/16/2002	01:00:00	1789
+03/16/2002	01:30:00	1789
+03/16/2002	02:00:00	1285
+03/16/2002	03:00:00	1790
+03/16/2002	03:30:00	1790
+03/16/2002	04:00:00	1790
+03/16/2002	04:30:00	1790
+03/16/2002	05:00:00	1790
+03/16/2002	05:30:00	1789
+03/16/2002	06:00:00	1789
+03/16/2002	06:30:00	1789
+03/16/2002	07:30:00	1788
+03/16/2002	08:00:00	1788
+03/16/2002	08:30:00	1788
+04/08/2002	19:00:00	1079
+04/08/2002	23:00:00	1760
+04/09/2002	01:00:00	1108
+04/09/2002	06:00:00	1745
+04/09/2002	10:00:00	1162
+04/09/2002	12:30:00	1252
+04/10/2002	11:30:00	1444
+04/10/2002	16:30:00	1695
+04/10/2002	23:00:00	1075
+04/10/2002	23:30:00	1760
+04/11/2002	00:30:00	1762
+04/11/2002	01:00:00	1462
+04/11/2002	02:00:00	1704
+04/11/2002	05:00:00	1763
+04/11/2002	05:30:00	1391
+04/11/2002	11:00:00	1539
+04/11/2002	17:30:00	1558
+04/11/2002	23:30:00	1765
+04/12/2002	00:30:00	1001
+04/12/2002	01:00:00	1765
+04/12/2002	01:30:00	1039
+04/12/2002	02:00:00	1212
+04/12/2002	02:30:00	1765
+04/12/2002	03:00:00	1765
+04/12/2002	04:30:00	1736
+05/30/2002	02:30:00	1425
+07/02/2002	03:00:00	1466
+07/04/2002	17:00:00	1345
+08/02/2002	03:00:00	1297
+08/04/2002	01:00:00	1924
+08/04/2002	02:30:00	1749
+08/08/2002	04:30:00	1923
+08/09/2002	03:30:00	1683
+08/09/2002	05:30:00	1389
+08/11/2002	12:00:00	1919
+08/11/2002	12:30:00	1919
+08/12/2002	01:00:00	1924
+08/12/2002	08:00:00	1268
+08/12/2002	08:30:00	1924
+08/12/2002	09:00:00	1924
+08/12/2002	09:30:00	1923
+08/12/2002	12:00:00	1924
+08/12/2002	12:30:00	1924
+08/12/2002	13:00:00	1924
+08/12/2002	13:30:00	1924
+08/12/2002	15:30:00	1926
+08/12/2002	16:00:00	1926
+08/12/2002	16:30:00	1926
+08/12/2002	17:00:00	1922
+08/12/2002	21:30:00	1927
+08/12/2002	22:00:00	1927
+08/12/2002	22:30:00	1927
+08/22/2002	03:00:00	1502
+09/27/2002	02:30:00	1463
+10/19/2002	17:00:00	2001
+11/15/2002	21:30:00	1755
+11/21/2002	02:30:00	1738
+
+Table 3.  Turbidity outliers in 2002 at the San Sebastian site.
+
+Date		Time		Value
+03/25/2002	18:30:00	0000
+04/01/2002	19:30:00	1023
+06/03/2002	03:30:00	0000
+06/04/2002	04:30:00	0000
+06/04/2002	05:00:00	0000
+06/04/2002	16:30:00	0000
+06/04/2002	17:00:00	0000
+06/05/2002	18:00:00	0000
+06/29/2002	00:30:00	-0001
+06/29/2002	01:00:00	-0002
+06/30/2002	00:30:00	0000
+06/30/2002	01:00:00	-0002
+06/30/2002	01:30:00	0000
+06/30/2002	02:00:00	0000
+06/30/2002	13:30:00	-0001
+06/30/2002	14:00:00	0000
+07/01/2002	01:30:00	-0001
+07/01/2002	02:00:00	-0002
+07/01/2002	02:30:00	0000
+07/01/2002	03:00:00	-0001
+07/01/2002	14:00:00	-0001
+07/01/2002	14:30:00	-0001
+07/02/2002	01:00:00	0000
+07/02/2002	02:00:00	-0002
+07/02/2002	02:30:00	-0002
+07/02/2002	03:30:00	0000
+07/02/2002	14:30:00	0000
+07/02/2002	15:00:00	-0001
+07/02/2002	15:30:00	-0002
+07/02/2002	16:00:00	-0001
+07/03/2002	02:00:00	-0001
+07/03/2002	02:30:00	-0002
+07/03/2002	03:00:00	-0002
+07/03/2002	03:30:00	-0003
+07/03/2002	04:00:00	-0001
+07/03/2002	04:30:00	-0001
+07/03/2002	15:30:00	-0001
+07/03/2002	16:00:00	-0003
+07/03/2002	16:30:00	-0001
+07/04/2002	01:30:00	0000
+07/04/2002	03:00:00	-0001
+07/04/2002	03:30:00	-0001
+07/04/2002	04:00:00	-0002
+07/04/2002	04:30:00	-0002
+07/04/2002	05:00:00	-0001
+07/04/2002	05:30:00	-0002
+07/04/2002	17:00:00	-0001
+07/05/2002	03:00:00	0000
+07/05/2002	04:00:00	-0001
+07/05/2002	04:30:00	-0001
+07/05/2002	05:00:00	-0002
+07/05/2002	06:00:00	-0001
+07/05/2002	13:30:00	-0001
+07/05/2002	16:30:00	-0001
+07/05/2002	17:00:00	-0002
+07/05/2002	17:30:00	-0002
+07/06/2002	03:00:00	0000
+07/06/2002	04:00:00	0000
+07/06/2002	06:00:00	-0001
+07/06/2002	06:30:00	0000
+07/06/2002	17:30:00	0000
+07/06/2002	18:30:00	-0001
+07/06/2002	19:00:00	-0001
+07/07/2002	07:00:00	-0001
+07/07/2002	13:30:00	-0001
+07/07/2002	19:30:00	-0001
+07/09/2002	20:30:00	0000
+07/09/2002	21:00:00	-0001
+07/10/2002	09:30:00	0000
+07/14/2002	18:00:00	1018
+07/14/2002	23:30:00	1177
+07/15/2002	01:30:00	1108
+07/15/2002	12:00:00	1690
+07/15/2002	13:30:00	1734
+07/15/2002	15:00:00	1109
+07/15/2002	20:00:00	1077
+07/16/2002	06:30:00	1255
+07/16/2002	12:00:00	1200
+07/16/2002	15:00:00	-0001
+07/16/2002	20:00:00	1163
+07/16/2002	21:30:00	1098
+07/17/2002	01:00:00	1155
+07/17/2002	01:30:00	1352
+07/17/2002	02:30:00	-0001
+07/17/2002	09:00:00	1103
+07/18/2002	16:30:00	0000
+07/19/2002	17:30:00	-0001
+07/19/2002	18:00:00	-0001
+07/22/2002	18:30:00	1017
+07/22/2002	20:00:00	1130
+07/22/2002	20:30:00	-0001
+07/23/2002	12:30:00	1717
+07/23/2002	13:30:00	-0001
+07/23/2002	14:00:00	-0002
+07/23/2002	14:30:00	-0002
+07/23/2002	15:00:00	-0003
+07/23/2002	15:30:00	-0002
+07/23/2002	16:00:00	-0003
+07/23/2002	16:30:00	-0001
+07/23/2002	17:00:00	0000
+07/23/2002	19:30:00	-0001
+07/23/2002	20:00:00	-0002
+07/23/2002	20:30:00	-0003
+07/23/2002	21:00:00	-0004
+07/23/2002	21:30:00	-0004
+07/23/2002	22:00:00	-0002
+07/23/2002	22:30:00	-0001
+07/23/2002	23:00:00	-0001
+07/23/2002	23:30:00	-0001
+07/24/2002	03:00:00	-0003
+07/24/2002	04:00:00	-0004
+07/24/2002	04:30:00	-0001
+07/24/2002	05:00:00	-0004
+07/24/2002	05:30:00	-0002
+07/24/2002	06:00:00	-0001
+07/24/2002	06:30:00	0000
+07/24/2002	07:30:00	-0001
+07/24/2002	08:00:00	-0001
+07/24/2002	08:30:00	-0001
+07/24/2002	09:00:00	-0003
+07/24/2002	09:30:00	-0003
+07/24/2002	10:00:00	-0002
+07/24/2002	10:30:00	-0001
+07/24/2002	12:30:00	-0001
+07/24/2002	13:00:00	-0001
+07/24/2002	15:30:00	-0004
+07/24/2002	16:00:00	-0002
+07/24/2002	16:30:00	-0002
+07/24/2002	17:00:00	-0002
+07/24/2002	20:00:00	-0001
+07/24/2002	21:00:00	-0002
+07/24/2002	21:30:00	-0004
+07/24/2002	22:00:00	-0004
+07/24/2002	22:30:00	-0004
+07/24/2002	23:30:00	-0001
+07/25/2002	04:30:00	0000
+07/25/2002	05:00:00	0000
+07/25/2002	05:30:00	-0002
+07/25/2002	06:00:00	-0002
+07/25/2002	06:30:00	-0002
+07/25/2002	09:30:00	-0001
+07/25/2002	10:30:00	-0001
+07/25/2002	11:00:00	-0001
+07/25/2002	13:30:00	-0001
+07/25/2002	15:00:00	-0002
+07/25/2002	15:30:00	-0001
+07/25/2002	16:30:00	-0003
+07/25/2002	17:00:00	-0001
+07/25/2002	17:30:00	-0003
+07/25/2002	18:00:00	-0002
+07/25/2002	18:30:00	0000
+07/25/2002	21:00:00	-0001
+07/25/2002	22:00:00	-0002
+07/25/2002	22:30:00	-0004
+07/25/2002	23:00:00	-0003
+07/25/2002	23:30:00	-0002
+07/26/2002	00:00:00	-0001
+07/26/2002	00:30:00	0000
+07/26/2002	03:30:00	0000
+07/26/2002	04:00:00	-0002
+07/26/2002	04:30:00	-0002
+07/26/2002	05:00:00	-0003
+07/26/2002	05:30:00	-0002
+07/26/2002	06:00:00	-0001
+07/26/2002	06:30:00	-0003
+07/26/2002	07:00:00	-0002
+07/26/2002	07:30:00	-0001
+07/26/2002	10:00:00	0000
+07/26/2002	10:30:00	-0003
+07/26/2002	11:00:00	-0003
+07/26/2002	11:30:00	-0002
+07/26/2002	12:00:00	-0002
+07/26/2002	14:30:00	-0001
+07/26/2002	15:30:00	-0001
+07/26/2002	16:00:00	-0001
+07/26/2002	16:30:00	-0004
+07/26/2002	17:00:00	-0005
+07/26/2002	17:30:00	-0002
+07/26/2002	18:00:00	-0003
+07/26/2002	18:30:00	-0004
+07/26/2002	21:30:00	-0001
+07/26/2002	22:00:00	-0002
+07/26/2002	22:30:00	-0003
+07/26/2002	23:00:00	-0004
+07/26/2002	23:30:00	-0004
+07/27/2002	00:00:00	-0003
+07/27/2002	01:00:00	-0001
+07/27/2002	04:30:00	-0001
+07/27/2002	05:30:00	-0003
+07/27/2002	06:00:00	-0002
+07/27/2002	06:30:00	-0002
+07/27/2002	07:00:00	-0003
+07/27/2002	07:30:00	-0002
+07/27/2002	08:00:00	0000
+07/27/2002	10:00:00	-0001
+07/27/2002	10:30:00	-0001
+07/27/2002	11:00:00	-0002
+07/27/2002	11:30:00	-0003
+07/27/2002	12:00:00	-0003
+07/27/2002	12:30:00	-0003
+07/27/2002	13:00:00	-0001
+07/27/2002	14:30:00	-0001
+07/27/2002	15:00:00	0000
+07/27/2002	16:00:00	-0001
+07/27/2002	16:30:00	-0003
+07/27/2002	17:00:00	-0005
+07/27/2002	17:30:00	-0005
+07/27/2002	18:00:00	-0003
+07/27/2002	18:30:00	-0003
+07/27/2002	19:00:00	-0005
+07/27/2002	19:30:00	-0001
+07/27/2002	20:00:00	-0002
+07/27/2002	21:30:00	-0001
+07/27/2002	22:00:00	-0002
+07/27/2002	22:30:00	-0003
+07/27/2002	23:00:00	-0003
+07/27/2002	23:30:00	-0004
+07/28/2002	00:00:00	-0004
+07/28/2002	00:30:00	-0004
+07/28/2002	01:00:00	-0002
+07/28/2002	01:30:00	-0001
+07/28/2002	02:00:00	-0002
+07/28/2002	05:00:00	-0002
+07/28/2002	05:30:00	0000
+07/28/2002	06:00:00	-0005
+07/28/2002	06:30:00	0000
+07/28/2002	07:00:00	-0002
+07/28/2002	07:30:00	-0004
+07/28/2002	08:00:00	-0004
+07/28/2002	08:30:00	-0002
+07/28/2002	09:00:00	0000
+07/28/2002	10:30:00	0000
+07/28/2002	11:00:00	0000
+07/28/2002	11:30:00	-0003
+07/28/2002	12:00:00	-0004
+07/28/2002	12:30:00	-0003
+07/28/2002	13:00:00	-0003
+07/28/2002	13:30:00	-0004
+07/28/2002	14:00:00	0000
+07/28/2002	14:30:00	-0002
+07/28/2002	16:00:00	-0003
+07/28/2002	16:30:00	-0003
+07/28/2002	17:00:00	-0004
+07/28/2002	17:30:00	-0004
+07/28/2002	18:00:00	-0003
+07/28/2002	18:30:00	-0001
+07/28/2002	19:00:00	-0003
+07/28/2002	19:30:00	-0004
+07/28/2002	20:00:00	-0003
+07/28/2002	21:00:00	-0001
+07/28/2002	22:00:00	-0001
+07/28/2002	22:30:00	-0002
+07/28/2002	23:00:00	-0002
+07/28/2002	23:30:00	-0003
+07/29/2002	00:00:00	-0004
+07/29/2002	00:30:00	-0003
+07/29/2002	01:00:00	-0004
+07/29/2002	01:30:00	-0002
+07/29/2002	02:00:00	-0002
+07/29/2002	05:30:00	0000
+07/29/2002	06:00:00	-0002
+07/29/2002	06:30:00	-0003
+07/29/2002	07:00:00	-0002
+07/29/2002	08:00:00	-0002
+07/29/2002	08:30:00	-0003
+07/29/2002	09:00:00	-0001
+07/29/2002	09:30:00	-0002
+07/29/2002	11:00:00	0000
+07/29/2002	11:30:00	-0001
+07/29/2002	12:30:00	-0003
+07/29/2002	13:00:00	-0003
+07/29/2002	13:30:00	-0001
+07/29/2002	14:00:00	-0002
+07/29/2002	14:30:00	-0003
+07/29/2002	15:00:00	0000
+07/29/2002	17:00:00	-0001
+07/29/2002	18:00:00	-0001
+07/29/2002	18:30:00	-0004
+07/29/2002	19:00:00	-0002
+07/29/2002	19:30:00	-0004
+07/29/2002	20:00:00	-0002
+07/29/2002	20:30:00	-0003
+07/29/2002	21:00:00	-0001
+07/29/2002	21:30:00	-0002
+07/29/2002	22:00:00	0000
+07/29/2002	23:30:00	-0002
+07/30/2002	00:00:00	-0003
+07/30/2002	00:30:00	-0004
+07/30/2002	01:00:00	-0004
+07/30/2002	01:30:00	-0003
+07/30/2002	02:00:00	-0002
+07/30/2002	02:30:00	-0001
+07/30/2002	06:00:00	-0001
+07/30/2002	06:30:00	-0001
+07/30/2002	07:00:00	-0001
+07/30/2002	07:30:00	-0002
+07/30/2002	08:00:00	-0003
+07/30/2002	08:30:00	-0002
+07/30/2002	09:00:00	-0002
+07/30/2002	09:30:00	-0002
+07/30/2002	10:00:00	-0002
+07/30/2002	10:30:00	-0001
+07/30/2002	12:00:00	-0001
+07/30/2002	12:30:00	-0001
+07/30/2002	13:00:00	-0002
+07/30/2002	13:30:00	-0003
+07/30/2002	14:00:00	-0003
+07/30/2002	14:30:00	-0002
+07/30/2002	15:00:00	-0002
+07/30/2002	15:30:00	-0002
+07/30/2002	16:00:00	-0002
+07/30/2002	18:30:00	0000
+07/30/2002	19:00:00	-0002
+07/30/2002	19:30:00	-0004
+07/30/2002	20:00:00	-0004
+07/30/2002	20:30:00	-0004
+07/30/2002	21:00:00	-0003
+07/30/2002	21:30:00	-0003
+07/30/2002	22:00:00	-0001
+07/30/2002	22:30:00	-0003
+07/30/2002	23:00:00	-0002
+07/30/2002	23:30:00	-0002
+07/31/2002	00:00:00	-0002
+07/31/2002	00:30:00	-0003
+07/31/2002	01:00:00	-0003
+07/31/2002	01:30:00	-0005
+07/31/2002	02:00:00	-0003
+07/31/2002	02:30:00	-0002
+07/31/2002	03:00:00	-0002
+07/31/2002	04:00:00	-0001
+07/31/2002	06:30:00	0000
+07/31/2002	07:30:00	0000
+07/31/2002	08:00:00	-0004
+07/31/2002	08:30:00	-0003
+07/31/2002	09:00:00	-0004
+07/31/2002	09:30:00	-0003
+07/31/2002	10:00:00	-0004
+07/31/2002	10:30:00	-0002
+07/31/2002	12:00:00	-0001
+07/31/2002	12:30:00	-0002
+07/31/2002	13:00:00	-0003
+07/31/2002	13:30:00	-0002
+07/31/2002	14:00:00	-0004
+07/31/2002	14:30:00	-0004
+07/31/2002	15:00:00	-0003
+07/31/2002	15:30:00	-0002
+07/31/2002	16:00:00	-0002
+07/31/2002	16:30:00	-0001
+07/31/2002	19:30:00	-0001
+07/31/2002	20:00:00	-0005
+07/31/2002	20:30:00	-0004
+07/31/2002	21:00:00	-0004
+07/31/2002	21:30:00	-0005
+07/31/2002	22:00:00	-0004
+07/31/2002	22:30:00	-0002
+07/31/2002	23:30:00	-0002
+08/01/2002	00:00:00	-0002
+08/01/2002	00:30:00	-0002
+08/01/2002	01:00:00	-0002
+08/01/2002	01:30:00	-0003
+08/01/2002	02:00:00	-0004
+08/01/2002	02:30:00	-0003
+08/01/2002	03:00:00	-0002
+08/01/2002	03:30:00	-0002
+08/01/2002	04:00:00	-0001
+08/01/2002	07:30:00	0000
+08/01/2002	08:30:00	-0003
+08/01/2002	09:00:00	-0004
+08/01/2002	09:30:00	-0002
+08/01/2002	10:00:00	-0003
+08/01/2002	10:30:00	-0003
+08/01/2002	11:00:00	-0004
+08/01/2002	11:30:00	-0001
+08/01/2002	12:00:00	-0001
+08/01/2002	12:30:00	-0002
+08/01/2002	13:00:00	-0003
+08/01/2002	13:30:00	-0003
+08/01/2002	14:00:00	-0003
+08/01/2002	14:30:00	-0004
+08/01/2002	15:00:00	-0005
+08/01/2002	15:30:00	-0004
+08/01/2002	16:00:00	-0003
+08/01/2002	16:30:00	-0003
+08/01/2002	17:00:00	-0002
+08/01/2002	17:30:00	-0001
+08/01/2002	18:00:00	0000
+08/01/2002	20:00:00	0000
+08/01/2002	20:30:00	-0001
+08/01/2002	21:30:00	-0004
+08/01/2002	22:00:00	-0003
+08/01/2002	22:30:00	1293
+08/01/2002	23:00:00	-0003
+08/01/2002	23:30:00	-0001
+08/02/2002	00:00:00	-0003
+08/02/2002	01:30:00	-0002
+08/02/2002	02:00:00	-0003
+08/02/2002	02:30:00	-0002
+08/02/2002	03:00:00	-0001
+08/02/2002	03:30:00	-0004
+08/02/2002	04:30:00	-0003
+08/02/2002	05:00:00	-0002
+08/02/2002	05:30:00	-0001
+08/02/2002	08:30:00	-0002
+08/02/2002	09:00:00	-0003
+08/02/2002	09:30:00	-0003
+08/02/2002	10:00:00	-0003
+08/02/2002	10:30:00	-0005
+08/02/2002	11:00:00	-0001
+08/02/2002	11:30:00	-0002
+08/02/2002	12:00:00	-0003
+08/02/2002	12:30:00	-0002
+08/02/2002	13:00:00	-0002
+08/02/2002	13:30:00	-0003
+08/02/2002	14:00:00	-0002
+08/02/2002	15:00:00	-0004
+08/02/2002	15:30:00	-0004
+08/02/2002	16:00:00	-0005
+08/02/2002	16:30:00	-0005
+08/02/2002	17:00:00	-0005
+08/02/2002	17:30:00	-0002
+08/02/2002	18:00:00	-0002
+08/02/2002	18:30:00	-0001
+08/02/2002	19:00:00	-0001
+08/02/2002	19:30:00	-0001
+08/02/2002	20:30:00	-0001
+08/02/2002	21:00:00	-0003
+08/02/2002	21:30:00	-0002
+08/02/2002	22:00:00	-0003
+08/02/2002	23:00:00	-0003
+08/02/2002	23:30:00	-0003
+08/03/2002	00:00:00	-0003
+08/03/2002	00:30:00	-0003
+08/03/2002	01:00:00	-0003
+08/03/2002	01:30:00	-0002
+08/03/2002	02:00:00	-0003
+08/03/2002	02:30:00	-0003
+08/03/2002	03:00:00	-0004
+08/03/2002	03:30:00	-0004
+08/03/2002	04:00:00	-0005
+08/03/2002	04:30:00	-0003
+08/03/2002	05:00:00	-0004
+08/03/2002	05:30:00	-0002
+08/03/2002	06:00:00	-0002
+08/03/2002	06:30:00	-0001
+08/03/2002	08:30:00	0000
+08/03/2002	09:00:00	-0001
+08/03/2002	09:30:00	-0001
+08/03/2002	10:30:00	-0002
+08/03/2002	11:00:00	-0001
+08/03/2002	11:30:00	-0003
+08/03/2002	12:00:00	-0002
+08/03/2002	12:30:00	-0002
+08/03/2002	13:00:00	-0002
+08/03/2002	13:30:00	-0001
+08/03/2002	14:00:00	-0001
+08/03/2002	14:30:00	-0003
+08/03/2002	15:00:00	-0004
+08/03/2002	15:30:00	-0004
+08/03/2002	16:00:00	-0004
+08/03/2002	16:30:00	-0004
+08/03/2002	17:00:00	-0005
+08/03/2002	17:30:00	-0004
+08/03/2002	18:00:00	-0004
+08/03/2002	19:00:00	-0003
+08/03/2002	19:30:00	-0003
+08/03/2002	20:30:00	0000
+08/03/2002	21:00:00	0000
+08/03/2002	22:00:00	-0002
+08/03/2002	23:00:00	-0004
+08/03/2002	23:30:00	-0005
+08/04/2002	00:00:00	-0003
+08/04/2002	00:30:00	-0003
+08/04/2002	01:00:00	-0003
+08/04/2002	01:30:00	-0003
+08/04/2002	02:00:00	-0004
+08/04/2002	02:30:00	-0003
+08/04/2002	03:00:00	-0004
+08/04/2002	03:30:00	-0004
+08/04/2002	04:00:00	-0004
+08/04/2002	05:00:00	-0004
+08/04/2002	06:00:00	-0004
+08/04/2002	06:30:00	-0003
+08/04/2002	07:00:00	-0001
+08/04/2002	07:30:00	-0001
+08/04/2002	09:30:00	0000
+08/04/2002	10:00:00	-0001
+08/04/2002	10:30:00	-0002
+08/04/2002	11:00:00	-0002
+08/04/2002	11:30:00	-0002
+08/04/2002	12:00:00	-0003
+08/04/2002	12:30:00	-0004
+08/04/2002	13:00:00	-0002
+08/04/2002	13:30:00	-0001
+08/04/2002	14:00:00	-0002
+08/04/2002	14:30:00	-0002
+08/04/2002	15:00:00	-0003
+08/04/2002	15:30:00	-0003
+08/04/2002	16:00:00	-0003
+08/04/2002	16:30:00	-0004
+08/04/2002	17:00:00	-0004
+08/04/2002	17:30:00	-0004
+08/04/2002	18:00:00	-0005
+08/04/2002	18:30:00	-0004
+08/04/2002	19:00:00	-0003
+08/04/2002	19:30:00	-0003
+08/04/2002	20:00:00	0000
+08/04/2002	20:30:00	0000
+08/04/2002	23:00:00	0000
+08/04/2002	23:30:00	-0001
+08/05/2002	00:00:00	-0003
+08/05/2002	00:30:00	-0004
+08/05/2002	01:30:00	-0003
+08/05/2002	02:00:00	-0003
+08/05/2002	02:30:00	-0003
+08/05/2002	03:00:00	-0002
+08/05/2002	03:30:00	-0003
+08/05/2002	04:00:00	-0002
+08/05/2002	04:30:00	-0003
+08/05/2002	05:00:00	-0003
+08/05/2002	05:30:00	-0004
+08/05/2002	06:00:00	-0004
+08/05/2002	06:30:00	-0003
+08/05/2002	07:00:00	-0002
+08/05/2002	07:30:00	0000
+08/05/2002	08:00:00	0000
+08/05/2002	08:30:00	-0001
+08/05/2002	10:30:00	-0001
+08/05/2002	11:00:00	-0001
+08/05/2002	11:30:00	-0002
+08/05/2002	12:00:00	-0004
+08/05/2002	12:30:00	-0001
+08/05/2002	13:00:00	-0003
+08/05/2002	13:30:00	-0002
+08/05/2002	14:00:00	-0001
+08/05/2002	15:30:00	0000
+08/05/2002	16:00:00	-0002
+08/05/2002	16:30:00	-0002
+08/05/2002	17:00:00	-0003
+08/05/2002	17:30:00	-0004
+08/05/2002	18:00:00	-0004
+08/05/2002	18:30:00	-0004
+08/05/2002	19:00:00	-0005
+08/05/2002	19:30:00	-0005
+08/05/2002	20:00:00	-0003
+08/05/2002	20:30:00	-0002
+08/05/2002	21:00:00	-0003
+08/05/2002	22:00:00	0000
+08/06/2002	01:00:00	-0003
+08/06/2002	01:30:00	-0004
+08/06/2002	02:00:00	-0004
+08/06/2002	02:30:00	-0001
+08/06/2002	03:00:00	-0002
+08/06/2002	03:30:00	-0002
+08/06/2002	04:00:00	-0001
+08/06/2002	04:30:00	-0002
+08/06/2002	05:30:00	-0002
+08/06/2002	06:00:00	-0003
+08/06/2002	06:30:00	-0004
+08/06/2002	07:00:00	-0005
+08/06/2002	07:30:00	-0003
+08/06/2002	08:00:00	-0002
+08/06/2002	08:30:00	-0001
+08/06/2002	12:30:00	-0002
+08/06/2002	13:30:00	-0002
+08/06/2002	14:00:00	-0003
+08/06/2002	16:30:00	-0002
+08/06/2002	17:00:00	-0002
+08/06/2002	17:30:00	-0003
+08/06/2002	18:00:00	-0003
+08/06/2002	18:30:00	-0002
+08/06/2002	19:00:00	-0003
+08/06/2002	19:30:00	-0005
+08/06/2002	20:30:00	0000
+08/06/2002	21:30:00	-0002
+08/06/2002	22:00:00	-0003
+08/06/2002	22:30:00	-0002
+08/07/2002	01:30:00	0000
+08/07/2002	02:30:00	-0004
+08/07/2002	03:00:00	-0003
+08/07/2002	03:30:00	-0004
+08/07/2002	04:30:00	-0003
+08/07/2002	05:00:00	-0002
+08/07/2002	05:30:00	0000
+08/07/2002	06:00:00	-0002
+08/07/2002	06:30:00	-0003
+08/07/2002	07:00:00	-0002
+08/07/2002	07:30:00	-0002
+08/07/2002	08:00:00	-0004
+08/07/2002	08:30:00	-0001
+08/07/2002	09:00:00	-0001
+08/07/2002	10:30:00	-0001
+08/07/2002	13:00:00	-0001
+08/07/2002	13:30:00	-0002
+08/07/2002	14:00:00	-0002
+08/07/2002	14:30:00	-0003
+08/07/2002	15:00:00	-0002
+08/07/2002	15:30:00	-0001
+08/07/2002	16:00:00	-0002
+08/07/2002	16:30:00	-0002
+08/07/2002	17:00:00	-0001
+08/07/2002	21:00:00	-0002
+08/08/2002	05:00:00	-0002
+08/08/2002	09:30:00	-0001
+08/08/2002	14:30:00	-0002
+08/08/2002	15:00:00	-0001
+08/08/2002	15:30:00	-0003
+08/08/2002	16:00:00	-0001
+08/08/2002	16:30:00	-0002
+08/08/2002	17:30:00	-0001
+08/08/2002	21:00:00	0000
+08/08/2002	22:00:00	-0001
+08/08/2002	22:30:00	0000
+08/08/2002	23:30:00	-0001
+08/09/2002	03:30:00	-0001
+08/09/2002	05:00:00	-0002
+08/09/2002	05:30:00	-0001
+08/09/2002	08:00:00	0000
+08/09/2002	09:00:00	0000
+08/09/2002	09:30:00	0000
+08/09/2002	10:00:00	-0004
+08/09/2002	10:30:00	-0002
+08/09/2002	15:30:00	-0001
+08/09/2002	16:00:00	-0004
+08/09/2002	16:30:00	-0003
+08/09/2002	17:00:00	-0003
+08/09/2002	17:30:00	0000
+08/09/2002	20:30:00	-0001
+08/09/2002	21:00:00	0000
+08/09/2002	21:30:00	-0001
+08/09/2002	22:00:00	-0002
+08/09/2002	23:00:00	-0001
+08/10/2002	00:00:00	-0001
+08/10/2002	04:30:00	-0004
+08/10/2002	05:00:00	-0002
+08/10/2002	05:30:00	-0003
+08/10/2002	06:00:00	-0002
+08/10/2002	06:30:00	-0001
+08/10/2002	07:00:00	-0001
+08/10/2002	07:30:00	-0002
+08/10/2002	08:00:00	-0001
+08/10/2002	08:30:00	-0001
+08/10/2002	09:00:00	-0001
+08/10/2002	09:30:00	0000
+08/10/2002	10:00:00	-0001
+08/10/2002	10:30:00	-0001
+08/10/2002	16:30:00	-0003
+08/10/2002	17:00:00	-0004
+08/10/2002	17:30:00	-0003
+08/10/2002	18:00:00	-0003
+08/10/2002	19:00:00	-0001
+08/10/2002	19:30:00	0000
+08/10/2002	20:30:00	-0001
+08/10/2002	21:00:00	-0001
+08/10/2002	21:30:00	-0002
+08/10/2002	22:00:00	-0003
+08/10/2002	22:30:00	-0003
+08/10/2002	23:00:00	0000
+08/10/2002	23:30:00	-0003
+08/11/2002	00:00:00	-0001
+08/11/2002	00:30:00	-0001
+08/11/2002	01:00:00	-0002
+08/11/2002	01:30:00	0000
+08/11/2002	06:00:00	-0001
+08/11/2002	08:00:00	-0001
+08/11/2002	09:30:00	-0002
+08/11/2002	10:00:00	-0002
+08/11/2002	11:00:00	-0001
+08/11/2002	11:30:00	-0004
+08/11/2002	17:30:00	-0003
+08/11/2002	19:00:00	-0002
+08/11/2002	23:30:00	0000
+08/12/2002	00:00:00	-0004
+08/12/2002	00:30:00	-0003
+08/12/2002	01:00:00	-0002
+08/12/2002	02:30:00	0000
+08/12/2002	06:00:00	-0004
+08/12/2002	06:30:00	-0004
+08/12/2002	07:00:00	-0003
+08/12/2002	07:30:00	-0001
+08/12/2002	08:00:00	0000
+08/12/2002	10:30:00	-0002
+08/12/2002	11:00:00	-0003
+08/12/2002	11:30:00	-0002
+08/12/2002	12:00:00	-0004
+08/12/2002	13:00:00	-0002
+08/12/2002	13:30:00	-0001
+08/12/2002	18:00:00	-0002
+08/12/2002	20:00:00	0000
+08/12/2002	21:00:00	-0002
+08/12/2002	22:30:00	-0002
+08/12/2002	23:00:00	-0003
+08/12/2002	23:30:00	-0004
+08/13/2002	00:00:00	-0004
+08/13/2002	00:30:00	-0004
+08/13/2002	01:30:00	-0002
+08/13/2002	02:30:00	-0001
+08/13/2002	07:30:00	-0002
+08/13/2002	08:00:00	-0003
+08/13/2002	08:30:00	-0002
+08/13/2002	11:30:00	-0002
+08/13/2002	12:00:00	-0003
+08/13/2002	12:30:00	-0004
+08/13/2002	13:00:00	-0001
+08/13/2002	13:30:00	-0002
+08/13/2002	14:00:00	-0001
+08/13/2002	15:30:00	0000
+08/13/2002	16:00:00	-0001
+08/13/2002	17:30:00	-0002
+08/13/2002	18:00:00	-0003
+08/13/2002	20:00:00	-0003
+08/13/2002	20:30:00	-0003
+08/13/2002	21:00:00	-0001
+08/13/2002	21:30:00	-0001
+08/13/2002	22:00:00	0000
+08/13/2002	22:30:00	0000
+08/13/2002	23:00:00	0000
+08/13/2002	23:30:00	-0001
+08/14/2002	00:00:00	-0002
+08/14/2002	00:30:00	-0003
+08/14/2002	01:00:00	-0004
+08/14/2002	01:30:00	-0001
+08/14/2002	02:00:00	-0004
+08/14/2002	02:30:00	-0002
+08/14/2002	03:00:00	-0001
+08/14/2002	07:00:00	0000
+08/14/2002	07:30:00	-0001
+08/14/2002	08:30:00	-0002
+08/14/2002	09:00:00	-0001
+08/14/2002	09:30:00	-0001
+08/14/2002	10:00:00	-0001
+08/14/2002	12:00:00	-0001
+08/14/2002	13:00:00	-0001
+08/14/2002	13:30:00	-0003
+08/14/2002	14:00:00	-0003
+08/14/2002	14:30:00	-0004
+08/14/2002	15:00:00	-0002
+08/14/2002	16:00:00	-0001
+08/14/2002	16:30:00	0000
+08/14/2002	20:00:00	0000
+08/14/2002	22:30:00	-0001
+08/15/2002	21:30:00	-0001
+08/15/2002	22:00:00	-0001
+08/16/2002	10:30:00	0000
+08/16/2002	16:00:00	-0001
+08/16/2002	23:00:00	-0001
+08/17/2002	10:30:00	0000
+08/18/2002	18:30:00	0000
+08/19/2002	01:00:00	0000
+08/19/2002	13:00:00	-0001
+08/20/2002	14:00:00	-0001
+08/20/2002	19:30:00	-0001
+08/20/2002	20:00:00	-0001
+08/21/2002	02:30:00	-0001
+08/21/2002	07:30:00	0000
+08/21/2002	08:00:00	0000
+08/21/2002	14:30:00	-0001
+08/21/2002	19:30:00	-0001
+08/21/2002	20:00:00	-0001
+08/21/2002	20:30:00	-0001
+08/21/2002	21:00:00	-0001
+08/22/2002	04:00:00	1114
+08/22/2002	08:00:00	0000
+08/22/2002	09:00:00	0000
+08/22/2002	15:00:00	-0001
+08/22/2002	15:30:00	0000
+08/22/2002	20:00:00	0000
+08/22/2002	20:30:00	-0001
+08/22/2002	21:00:00	-0001
+08/22/2002	21:30:00	-0001
+08/23/2002	09:30:00	-0001
+08/23/2002	10:00:00	0000
+08/23/2002	15:30:00	0000
+08/23/2002	16:00:00	0000
+08/23/2002	21:00:00	-0001
+08/23/2002	21:30:00	-0001
+08/23/2002	22:00:00	-0001
+08/24/2002	10:00:00	0000
+08/24/2002	10:30:00	0000
+08/24/2002	16:30:00	0000
+08/24/2002	22:00:00	-0001
+08/24/2002	22:30:00	-0001
+08/25/2002	22:00:00	0000
+08/25/2002	22:30:00	0000
+08/25/2002	23:00:00	-0001
+08/26/2002	05:30:00	0000
+08/26/2002	18:30:00	0000
+08/26/2002	19:00:00	0000
+08/26/2002	23:00:00	0000
+08/27/2002	00:00:00	-0001
+08/27/2002	05:30:00	0000
+08/27/2002	12:00:00	0000
+08/27/2002	18:30:00	-0001
+08/27/2002	19:00:00	-0001
+08/28/2002	13:00:00	-0001
+08/28/2002	19:00:00	0000
+08/28/2002	20:00:00	0000
+08/29/2002	01:00:00	0000
+08/29/2002	19:30:00	-0001
+08/29/2002	20:00:00	-0001
+08/29/2002	20:30:00	0000
+08/29/2002	21:30:00	0000
+08/30/2002	01:30:00	0000
+08/30/2002	14:00:00	-0001
+08/31/2002	21:30:00	-0001
+08/31/2002	22:00:00	0000
+08/31/2002	22:30:00	0000
+09/01/2002	02:30:00	0000
+09/01/2002	03:00:00	-0001
+09/01/2002	04:00:00	0000
+09/01/2002	05:00:00	0000
+09/01/2002	10:00:00	-0001
+09/01/2002	10:30:00	0000
+09/01/2002	15:30:00	-0001
+09/01/2002	16:00:00	-0001
+09/01/2002	16:30:00	-0001
+09/01/2002	22:30:00	0000
+09/01/2002	23:00:00	-0001
+09/02/2002	00:00:00	-0001
+09/02/2002	02:30:00	0000
+09/02/2002	03:30:00	-0001
+09/02/2002	04:00:00	-0001
+09/02/2002	04:30:00	-0001
+09/02/2002	11:00:00	0000
+09/02/2002	16:00:00	0000
+09/02/2002	16:30:00	-0001
+09/02/2002	17:00:00	-0001
+09/02/2002	17:30:00	-0001
+09/02/2002	18:00:00	-0001
+09/02/2002	23:30:00	0000
+09/03/2002	00:00:00	0000
+09/03/2002	00:30:00	0000
+09/03/2002	05:30:00	-0001
+09/03/2002	12:00:00	0000
+09/03/2002	12:30:00	-0001
+09/03/2002	18:30:00	-0001
+09/04/2002	01:00:00	0000
+09/04/2002	01:30:00	0000
+09/05/2002	20:00:00	-0001
+09/06/2002	19:30:00	1161
+09/06/2002	21:00:00	2132
+09/07/2002	10:00:00	2129
+09/08/2002	11:00:00	1186
+09/09/2002	03:30:00	1312
+09/26/2002	23:00:00	1436
+11/15/2002	12:30:00	0000
+11/15/2002	13:00:00	-0001
+11/15/2002	13:30:00	0000
+11/15/2002	14:00:00	-0001
+11/15/2002	15:00:00	0000
+11/15/2002	17:00:00	0000
+11/15/2002	17:30:00	-0001
+11/15/2002	18:00:00	-0001
+11/15/2002	18:30:00	-0001
+11/15/2002	19:00:00	-0001
+11/15/2002	19:30:00	-0001
+11/15/2002	20:00:00	-0001
+11/15/2002	20:30:00	-0001
+11/15/2002	21:00:00	-0002
+11/16/2002	00:00:00	-0001
+11/16/2002	00:30:00	-0001
+11/16/2002	01:00:00	-0001
+11/16/2002	02:00:00	0000
+11/16/2002	02:30:00	-0001
+11/16/2002	05:30:00	0000
+11/16/2002	06:30:00	-0001
+11/16/2002	07:00:00	-0001
+11/16/2002	07:30:00	-0001
+11/16/2002	08:30:00	-0001
+11/16/2002	09:00:00	-0001
+11/16/2002	09:30:00	0000
+11/16/2002	10:00:00	0000
+11/16/2002	13:00:00	0000
+11/16/2002	18:30:00	0000
+11/16/2002	19:00:00	0000
+11/16/2002	19:30:00	-0001
+11/16/2002	20:00:00	-0001
+11/16/2002	21:00:00	0000
+11/16/2002	23:00:00	0000
+11/17/2002	02:30:00	1370
+11/17/2002	07:30:00	-0001
+11/17/2002	08:00:00	0000
+11/17/2002	08:30:00	-0001
+11/17/2002	09:00:00	-0001
+11/17/2002	21:00:00	-0001
+11/17/2002	22:30:00	1288
+11/18/2002	01:30:00	0000
+11/18/2002	08:30:00	-0001
+11/18/2002	14:30:00	0000
+11/18/2002	16:00:00	1344
+11/18/2002	20:00:00	-0001
+11/18/2002	20:30:00	-0001
+11/18/2002	21:00:00	-0001
+11/19/2002	02:00:00	-0001
+11/19/2002	08:00:00	-0001
+11/19/2002	09:00:00	1087
+11/19/2002	09:30:00	1356
+11/19/2002	15:00:00	0000
+11/19/2002	20:00:00	0000
+11/19/2002	20:30:00	-0001
+11/19/2002	21:00:00	-0001
+11/19/2002	22:00:00	-0001
+11/19/2002	22:30:00	0000
+11/19/2002	23:00:00	0000
+11/20/2002	02:30:00	-0001
+11/20/2002	09:00:00	0000
+11/20/2002	09:30:00	-0001
+11/20/2002	10:00:00	0000
+11/20/2002	10:30:00	-0001
+11/20/2002	11:00:00	-0001
+11/20/2002	11:30:00	-0001
+11/20/2002	17:00:00	0000
+11/20/2002	17:30:00	0000
+11/20/2002	19:00:00	1345
+11/20/2002	20:00:00	-0001
+11/20/2002	21:00:00	-0001
+11/20/2002	21:30:00	-0001
+11/20/2002	22:00:00	-0001
+11/20/2002	22:30:00	-0001
+11/20/2002	23:00:00	0000
+11/21/2002	03:30:00	-0001
+11/21/2002	04:30:00	0000
+11/21/2002	05:00:00	0000
+11/21/2002	05:30:00	0000
+11/21/2002	08:00:00	0000
+11/21/2002	08:30:00	0000
+11/21/2002	09:00:00	-0001
+11/21/2002	09:30:00	-0001
+11/21/2002	10:00:00	-0001
+11/21/2002	10:30:00	-0001
+11/21/2002	11:00:00	-0001
+11/21/2002	11:30:00	0000
+11/21/2002	12:30:00	0000
+11/21/2002	16:00:00	0000
+11/21/2002	16:30:00	0000
+11/21/2002	17:30:00	0000
+11/21/2002	18:00:00	0000
+11/21/2002	20:30:00	-0001
+11/21/2002	21:00:00	-0001
+11/21/2002	21:30:00	-0001
+11/21/2002	22:00:00	-0001
+11/21/2002	22:30:00	-0001
+11/21/2002	23:00:00	-0001
+11/21/2002	23:30:00	-0001
+11/22/2002	00:00:00	-0001
+11/22/2002	04:00:00	-0001
+11/22/2002	05:00:00	0000
+11/22/2002	05:30:00	-0001
+11/22/2002	06:00:00	0000
+11/22/2002	06:30:00	0000
+11/22/2002	08:30:00	0000
+11/22/2002	09:00:00	0000
+11/22/2002	10:00:00	-0001
+11/22/2002	10:30:00	-0001
+11/22/2002	11:00:00	-0001
+11/22/2002	11:30:00	-0001
+11/22/2002	12:00:00	-0001
+11/22/2002	12:30:00	0000
+11/22/2002	17:30:00	-0001
+11/22/2002	18:30:00	-0001
+11/22/2002	19:00:00	0000
+11/22/2002	20:00:00	-0001
+11/22/2002	20:30:00	-0001
+11/22/2002	21:00:00	-0001
+11/22/2002	22:30:00	1352
+11/22/2002	23:00:00	-0001
+11/22/2002	23:30:00	0000
+11/23/2002	00:00:00	0000
+11/23/2002	03:00:00	0000
+11/23/2002	04:00:00	0000
+11/23/2002	04:30:00	-0001
+11/23/2002	05:30:00	0000
+11/23/2002	06:00:00	0000
+11/23/2002	07:00:00	1093
+11/23/2002	10:30:00	-0001
+11/23/2002	11:00:00	-0001
+11/23/2002	11:30:00	-0001
+11/23/2002	12:00:00	-0001
+11/23/2002	12:30:00	-0001
+11/23/2002	13:00:00	-0001
+11/23/2002	17:00:00	0000
+11/23/2002	17:30:00	-0001
+11/23/2002	18:00:00	0000
+11/23/2002	18:30:00	0000
+11/23/2002	19:00:00	-0001
+11/23/2002	20:00:00	-0001
+11/23/2002	21:00:00	-0001
+11/23/2002	21:30:00	0000
+11/23/2002	22:00:00	-0001
+11/23/2002	22:30:00	0000
+11/23/2002	23:30:00	-0001
+11/24/2002	00:00:00	-0001
+11/24/2002	00:30:00	0000
+11/24/2002	01:30:00	0000
+11/24/2002	05:00:00	0000
+11/24/2002	05:30:00	-0001
+11/24/2002	07:00:00	0000
+11/24/2002	10:00:00	0000
+11/24/2002	11:00:00	-0001
+11/24/2002	11:30:00	-0001
+11/24/2002	12:00:00	-0001
+11/24/2002	12:30:00	-0001
+11/24/2002	13:00:00	-0001
+11/24/2002	13:30:00	-0001
+11/24/2002	14:00:00	1222
+11/24/2002	18:00:00	0000
+11/24/2002	19:00:00	-0001
+11/24/2002	19:30:00	-0001
+11/24/2002	20:00:00	-0001
+11/24/2002	20:30:00	-0001
+11/24/2002	21:00:00	0000
+11/24/2002	22:00:00	0000
+11/24/2002	22:30:00	0000
+11/25/2002	00:30:00	1318
+11/25/2002	01:00:00	-0001
+11/25/2002	03:00:00	0000
+11/25/2002	03:30:00	0000
+11/25/2002	04:30:00	0000
+11/25/2002	06:30:00	-0001
+11/25/2002	07:00:00	0000
+11/25/2002	07:30:00	-0001
+11/25/2002	08:00:00	-0001
+11/25/2002	08:30:00	0000
+11/25/2002	09:00:00	0000
+11/25/2002	09:30:00	-0001
+11/25/2002	10:30:00	0000
+11/25/2002	11:00:00	0000
+11/25/2002	11:30:00	-0001
+11/25/2002	12:00:00	-0001
+11/25/2002	12:30:00	-0001
+11/25/2002	13:00:00	-0001
+11/25/2002	13:30:00	-0001
+11/25/2002	14:00:00	-0002
+11/25/2002	14:30:00	-0001
+11/25/2002	15:30:00	0000
+11/25/2002	19:00:00	0000
+11/25/2002	19:30:00	-0001
+11/25/2002	20:30:00	-0001
+11/25/2002	21:30:00	-0002
+11/25/2002	22:00:00	-0001
+11/25/2002	22:30:00	-0001
+11/25/2002	23:00:00	0000
+11/26/2002	00:30:00	-0001
+11/26/2002	01:00:00	-0001
+11/26/2002	01:30:00	-0001
+11/26/2002	02:00:00	-0001
+11/26/2002	02:30:00	0000
+11/26/2002	03:30:00	0000
+11/26/2002	04:30:00	0000
+11/26/2002	05:00:00	0000
+11/26/2002	05:30:00	0000
+11/26/2002	06:00:00	0000
+11/26/2002	06:30:00	0000
+11/26/2002	07:30:00	0000
+11/26/2002	08:00:00	-0001
+11/26/2002	08:30:00	1339
+11/26/2002	09:00:00	1340
+11/29/2002	07:00:00	1349
+12/05/2002	20:00:00	1392
+12/07/2002	22:30:00	1386
+12/09/2002	21:00:00	1161
+12/20/2002	06:30:00	1676
+
+Table 4.  Turbidity outliers in 2002 at the Fort Matanzas site.
+
+Date		Time		Value
+01/21/2002	18:30:00	1364
+02/08/2002	18:00:00	0000
+02/08/2002	22:00:00	0000
+02/08/2002	23:00:00	0000
+02/08/2002	23:30:00	0000
+02/09/2002	04:30:00	0000
+02/09/2002	05:30:00	-0001
+02/09/2002	06:00:00	-0001
+02/09/2002	07:00:00	0000
+02/09/2002	11:00:00	0000
+02/09/2002	19:00:00	0000
+02/09/2002	19:30:00	0000
+02/09/2002	22:00:00	0000
+02/09/2002	22:30:00	-0001
+02/09/2002	23:00:00	0000
+02/09/2002	23:30:00	0000
+02/10/2002	00:00:00	-0001
+02/10/2002	00:30:00	0000
+02/10/2002	06:00:00	-0001
+02/10/2002	06:30:00	0000
+02/10/2002	07:00:00	-0001
+02/10/2002	07:30:00	0000
+02/10/2002	08:00:00	0000
+02/10/2002	12:00:00	0000
+02/10/2002	13:30:00	0000
+02/10/2002	18:30:00	0000
+02/10/2002	19:00:00	0000
+02/10/2002	19:30:00	-0001
+02/10/2002	20:00:00	-0001
+02/10/2002	20:30:00	0000
+02/10/2002	22:30:00	0000
+02/10/2002	23:30:00	0000
+02/11/2002	00:30:00	0000
+02/11/2002	01:00:00	0000
+02/11/2002	08:30:00	0000
+02/11/2002	12:00:00	-0001
+02/11/2002	13:00:00	0000
+02/11/2002	13:30:00	0000
+02/11/2002	14:00:00	0000
+02/11/2002	19:00:00	0000
+02/11/2002	19:30:00	-0001
+02/11/2002	20:00:00	-0001
+02/11/2002	20:30:00	0000
+02/11/2002	23:30:00	-0001
+02/12/2002	00:00:00	0000
+02/12/2002	00:30:00	-0001
+02/12/2002	01:00:00	-0001
+02/12/2002	01:30:00	-0001
+02/12/2002	08:30:00	-0001
+02/12/2002	13:00:00	0000
+02/12/2002	19:30:00	-0001
+02/12/2002	20:00:00	-0001
+02/12/2002	20:30:00	-0001
+02/12/2002	21:00:00	0000
+02/12/2002	21:30:00	-0001
+02/13/2002	00:30:00	-0001
+02/13/2002	01:00:00	-0001
+02/13/2002	01:30:00	-0001
+02/13/2002	02:00:00	-0001
+02/13/2002	02:30:00	-0001
+02/13/2002	07:00:00	0000
+02/13/2002	07:30:00	-0001
+02/13/2002	08:00:00	0000
+02/13/2002	08:30:00	0000
+02/13/2002	09:00:00	-0001
+02/13/2002	09:30:00	-0001
+02/13/2002	10:00:00	-0001
+02/13/2002	13:30:00	0000
+02/13/2002	15:00:00	0000
+02/13/2002	15:30:00	0000
+02/13/2002	20:00:00	-0001
+02/13/2002	20:30:00	-0001
+02/13/2002	21:00:00	-0002
+02/13/2002	21:30:00	-0001
+02/13/2002	22:00:00	-0001
+02/13/2002	22:30:00	0000
+02/14/2002	01:00:00	0000
+02/14/2002	01:30:00	-0001
+02/14/2002	02:00:00	-0001
+02/14/2002	02:30:00	0000
+02/14/2002	03:00:00	0000
+02/14/2002	03:30:00	0000
+02/14/2002	04:00:00	0000
+02/14/2002	09:00:00	-0001
+02/14/2002	09:30:00	-0001
+02/14/2002	10:00:00	-0001
+02/14/2002	10:30:00	-0001
+02/14/2002	14:30:00	0000
+02/14/2002	15:30:00	-0001
+02/14/2002	20:00:00	-0001
+02/14/2002	20:30:00	0000
+02/14/2002	21:00:00	-0001
+02/14/2002	21:30:00	-0002
+02/14/2002	22:00:00	-0001
+02/14/2002	22:30:00	-0001
+02/14/2002	23:00:00	-0001
+02/15/2002	02:30:00	0000
+02/15/2002	03:30:00	0000
+02/15/2002	04:00:00	-0001
+02/15/2002	10:30:00	-0001
+02/15/2002	11:00:00	-0001
+02/15/2002	11:30:00	0000
+02/15/2002	14:30:00	-0001
+02/15/2002	15:30:00	-0001
+02/15/2002	21:00:00	0000
+02/15/2002	21:30:00	0000
+02/15/2002	22:00:00	-0001
+02/15/2002	22:30:00	0000
+02/15/2002	23:00:00	-0001
+02/15/2002	23:30:00	-0001
+02/16/2002	03:00:00	-0001
+02/16/2002	03:30:00	-0001
+02/16/2002	04:00:00	-0001
+02/16/2002	04:30:00	0000
+02/16/2002	09:30:00	0000
+02/16/2002	11:00:00	0000
+02/16/2002	15:30:00	-0001
+02/16/2002	16:00:00	0000
+02/16/2002	17:00:00	0000
+02/16/2002	22:00:00	-0001
+02/16/2002	22:30:00	0000
+02/16/2002	23:00:00	0000
+02/16/2002	23:30:00	-0001
+02/17/2002	00:00:00	0000
+02/17/2002	03:30:00	-0001
+02/17/2002	04:00:00	-0001
+02/17/2002	05:00:00	-0001
+02/17/2002	10:30:00	-0001
+02/17/2002	11:30:00	-0001
+02/18/2002	00:00:00	-0001
+02/18/2002	03:30:00	0000
+02/18/2002	04:00:00	-0001
+02/18/2002	04:30:00	-0001
+02/18/2002	05:00:00	-0001
+02/18/2002	06:00:00	-0001
+02/18/2002	11:00:00	-0001
+02/18/2002	12:00:00	0000
+02/18/2002	16:30:00	0000
+02/18/2002	18:30:00	0000
+02/19/2002	00:00:00	-0001
+02/19/2002	00:30:00	-0001
+02/19/2002	03:30:00	0000
+02/19/2002	04:00:00	-0001
+02/19/2002	04:30:00	0000
+02/19/2002	05:30:00	-0001
+02/19/2002	16:00:00	0000
+02/19/2002	17:00:00	0000
+02/19/2002	17:30:00	0000
+02/19/2002	18:00:00	0000
+02/19/2002	19:00:00	0000
+02/20/2002	00:30:00	-0001
+02/20/2002	01:00:00	-0001
+02/20/2002	01:30:00	-0001
+02/20/2002	02:00:00	-0001
+02/20/2002	05:00:00	0000
+02/20/2002	05:30:00	0000
+02/20/2002	06:00:00	0000
+02/20/2002	06:30:00	-0001
+02/20/2002	07:00:00	0000
+02/20/2002	13:30:00	0000
+02/20/2002	14:30:00	-0001
+02/20/2002	17:30:00	0000
+02/20/2002	18:30:00	0000
+02/20/2002	20:00:00	0000
+02/21/2002	01:00:00	0000
+02/21/2002	01:30:00	-0001
+02/21/2002	02:00:00	-0001
+02/21/2002	07:00:00	0000
+02/21/2002	07:30:00	0000
+02/21/2002	19:30:00	-0001
+02/21/2002	20:00:00	0000
+02/22/2002	15:30:00	0000
+02/22/2002	19:30:00	-0001
+02/22/2002	20:30:00	-0001
+02/23/2002	03:30:00	0000
+02/23/2002	09:30:00	0000
+02/23/2002	22:30:00	0000
+02/25/2002	18:30:00	0000
+03/01/2002	09:30:00	0000
+03/27/2002	20:00:00	0000
+03/28/2002	21:00:00	0000
+04/02/2002	12:30:00	0000
+04/03/2002	01:00:00	0000
+04/04/2002	01:30:00	0000
+04/04/2002	02:00:00	0000
+04/04/2002	18:00:00	-0002
+04/04/2002	18:30:00	-0004
+04/04/2002	19:00:00	-0004
+04/04/2002	19:30:00	-0002
+04/04/2002	20:00:00	-0002
+04/04/2002	20:30:00	-0002
+04/04/2002	21:00:00	0000
+04/04/2002	23:30:00	-0002
+04/05/2002	00:00:00	-0003
+04/05/2002	00:30:00	-0004
+04/05/2002	01:00:00	-0005
+04/05/2002	01:30:00	-0005
+04/05/2002	02:00:00	-0005
+04/05/2002	02:30:00	-0005
+04/05/2002	03:00:00	-0004
+04/05/2002	03:30:00	-0003
+04/05/2002	04:00:00	-0001
+04/05/2002	04:30:00	-0001
+04/05/2002	07:00:00	-0001
+04/05/2002	07:30:00	-0001
+04/05/2002	08:00:00	-0002
+04/05/2002	09:00:00	-0003
+04/05/2002	10:00:00	-0003
+04/05/2002	10:30:00	-0002
+04/05/2002	13:30:00	-0002
+04/05/2002	14:00:00	-0003
+04/05/2002	15:00:00	-0003
+04/05/2002	15:30:00	-0001
+04/05/2002	16:00:00	0000
+04/05/2002	16:30:00	-0002
+04/05/2002	17:30:00	-0001
+04/05/2002	19:00:00	-0002
+04/05/2002	19:30:00	-0004
+04/05/2002	20:00:00	-0004
+04/05/2002	20:30:00	-0003
+04/05/2002	21:00:00	-0004
+04/05/2002	21:30:00	-0002
+04/06/2002	01:30:00	-0003
+04/06/2002	02:00:00	-0004
+04/06/2002	02:30:00	-0005
+04/06/2002	03:00:00	-0004
+04/06/2002	03:30:00	-0005
+04/06/2002	04:00:00	-0005
+04/06/2002	04:30:00	-0003
+04/06/2002	05:00:00	-0003
+04/06/2002	05:30:00	-0001
+04/06/2002	06:30:00	-0002
+04/06/2002	07:30:00	-0002
+04/06/2002	08:00:00	-0002
+04/06/2002	08:30:00	-0003
+04/06/2002	09:00:00	-0003
+04/06/2002	09:30:00	-0003
+04/06/2002	10:00:00	-0004
+04/06/2002	11:00:00	-0002
+04/06/2002	15:30:00	-0004
+04/06/2002	16:00:00	-0004
+04/06/2002	16:30:00	-0004
+04/06/2002	17:00:00	-0003
+04/06/2002	17:30:00	-0002
+04/06/2002	19:00:00	-0002
+04/06/2002	19:30:00	-0003
+04/06/2002	20:00:00	-0004
+04/06/2002	20:30:00	-0004
+04/06/2002	21:00:00	-0005
+04/06/2002	21:30:00	-0004
+04/06/2002	22:00:00	-0004
+04/06/2002	22:30:00	-0003
+04/07/2002	02:30:00	-0004
+04/07/2002	03:00:00	-0005
+04/07/2002	03:30:00	-0004
+04/07/2002	04:00:00	-0005
+04/07/2002	04:30:00	-0004
+04/07/2002	05:00:00	-0004
+04/07/2002	05:30:00	-0004
+04/07/2002	06:00:00	-0003
+04/07/2002	06:30:00	-0003
+04/07/2002	07:00:00	-0002
+04/07/2002	07:30:00	0000
+04/07/2002	08:30:00	-0001
+04/07/2002	09:30:00	-0003
+04/07/2002	10:00:00	-0003
+04/07/2002	11:00:00	-0001
+04/07/2002	15:30:00	-0002
+04/07/2002	16:00:00	-0001
+04/07/2002	17:00:00	-0003
+04/07/2002	17:30:00	-0004
+04/07/2002	18:00:00	-0004
+04/07/2002	18:30:00	-0002
+04/07/2002	19:00:00	-0004
+04/07/2002	19:30:00	-0001
+04/07/2002	20:00:00	-0004
+04/07/2002	20:30:00	-0004
+04/07/2002	21:00:00	-0003
+04/07/2002	21:30:00	-0005
+04/07/2002	22:00:00	-0004
+04/07/2002	22:30:00	-0003
+04/07/2002	23:00:00	-0001
+04/07/2002	23:30:00	-0001
+04/08/2002	03:30:00	-0001
+04/08/2002	04:00:00	-0002
+04/08/2002	04:30:00	-0003
+04/08/2002	05:00:00	-0003
+04/08/2002	05:30:00	-0002
+04/08/2002	06:00:00	-0003
+04/08/2002	06:30:00	-0002
+04/08/2002	07:00:00	-0003
+04/08/2002	07:30:00	-0001
+04/08/2002	10:00:00	-0002
+04/08/2002	10:30:00	-0001
+04/08/2002	11:30:00	0000
+04/08/2002	12:30:00	-0001
+04/08/2002	17:30:00	-0002
+04/08/2002	18:00:00	-0003
+04/08/2002	18:30:00	-0002
+04/08/2002	19:00:00	-0003
+04/08/2002	19:30:00	-0004
+04/08/2002	21:00:00	-0001
+04/08/2002	21:30:00	-0003
+04/08/2002	22:00:00	-0004
+04/08/2002	22:30:00	-0004
+04/08/2002	23:00:00	-0005
+04/08/2002	23:30:00	-0003
+04/09/2002	00:00:00	-0002
+04/09/2002	00:30:00	0000
+04/09/2002	05:00:00	-0003
+04/09/2002	05:30:00	-0004
+04/09/2002	06:00:00	-0002
+04/09/2002	06:30:00	-0004
+04/09/2002	07:00:00	-0002
+04/09/2002	07:30:00	-0003
+04/09/2002	09:00:00	0000
+04/09/2002	09:30:00	-0003
+04/09/2002	10:00:00	-0003
+04/09/2002	10:30:00	-0001
+04/09/2002	18:00:00	-0001
+04/09/2002	18:30:00	-0003
+04/09/2002	19:00:00	-0005
+04/09/2002	19:30:00	-0002
+04/09/2002	20:00:00	-0004
+04/09/2002	20:30:00	0000
+04/09/2002	22:00:00	-0003
+04/09/2002	22:30:00	-0002
+04/09/2002	23:00:00	-0004
+04/09/2002	23:30:00	-0004
+04/10/2002	00:00:00	-0004
+04/10/2002	01:00:00	-0001
+04/10/2002	05:00:00	-0003
+04/10/2002	05:30:00	-0002
+04/10/2002	06:30:00	-0001
+04/10/2002	07:30:00	-0003
+04/10/2002	08:30:00	0000
+04/10/2002	09:00:00	0000
+04/10/2002	09:30:00	-0001
+04/10/2002	10:00:00	-0002
+04/10/2002	10:30:00	-0003
+04/10/2002	11:00:00	-0002
+04/10/2002	11:30:00	0000
+04/10/2002	12:00:00	-0003
+04/10/2002	12:30:00	-0002
+04/10/2002	18:00:00	-0001
+04/10/2002	18:30:00	-0004
+04/10/2002	19:00:00	-0003
+04/10/2002	19:30:00	-0002
+04/10/2002	23:00:00	-0002
+04/10/2002	23:30:00	-0003
+04/11/2002	00:00:00	-0004
+04/11/2002	00:30:00	-0004
+04/11/2002	01:00:00	-0004
+04/11/2002	01:30:00	-0003
+04/11/2002	06:00:00	-0002
+04/11/2002	06:30:00	-0003
+04/11/2002	08:00:00	0000
+04/11/2002	13:00:00	-0003
+04/11/2002	18:30:00	-0001
+04/11/2002	19:00:00	-0003
+04/11/2002	19:30:00	-0004
+04/11/2002	20:00:00	-0005
+04/11/2002	20:30:00	0000
+04/12/2002	00:00:00	-0003
+04/12/2002	00:30:00	-0003
+04/12/2002	01:00:00	-0004
+04/12/2002	01:30:00	-0003
+04/12/2002	02:00:00	-0003
+04/12/2002	02:30:00	-0003
+04/12/2002	06:30:00	-0001
+04/12/2002	07:00:00	-0002
+04/12/2002	08:00:00	-0005
+04/12/2002	08:30:00	-0003
+04/12/2002	09:00:00	-0002
+04/12/2002	12:00:00	-0003
+04/12/2002	13:00:00	-0001
+04/12/2002	19:00:00	-0004
+04/12/2002	19:30:00	-0003
+04/12/2002	20:00:00	-0004
+04/12/2002	20:30:00	-0004
+04/12/2002	21:00:00	-0003
+04/12/2002	21:30:00	-0001
+04/12/2002	22:00:00	0000
+04/13/2002	00:00:00	-0001
+04/13/2002	00:30:00	-0003
+04/13/2002	01:00:00	-0003
+04/13/2002	01:30:00	-0005
+04/13/2002	02:00:00	-0004
+04/13/2002	02:30:00	-0004
+04/13/2002	08:30:00	-0003
+04/13/2002	09:00:00	-0003
+04/13/2002	09:30:00	-0004
+04/13/2002	12:30:00	-0002
+04/13/2002	13:00:00	-0002
+04/13/2002	19:30:00	-0001
+04/13/2002	20:00:00	-0003
+04/13/2002	20:30:00	-0003
+04/13/2002	21:00:00	-0002
+04/13/2002	21:30:00	-0001
+04/14/2002	01:00:00	-0002
+04/14/2002	01:30:00	-0004
+04/14/2002	02:00:00	-0003
+04/14/2002	02:30:00	-0003
+04/14/2002	03:00:00	-0002
+04/14/2002	03:30:00	-0003
+04/14/2002	08:30:00	-0001
+04/14/2002	09:00:00	-0003
+04/14/2002	09:30:00	-0002
+04/14/2002	10:00:00	-0003
+04/14/2002	13:00:00	-0002
+04/14/2002	13:30:00	-0001
+04/14/2002	14:00:00	-0002
+04/14/2002	14:30:00	-0002
+04/14/2002	15:00:00	-0002
+04/14/2002	16:00:00	-0001
+04/14/2002	19:30:00	0000
+04/14/2002	20:00:00	-0002
+04/14/2002	20:30:00	-0003
+04/14/2002	21:00:00	-0005
+04/14/2002	21:30:00	-0005
+04/14/2002	22:00:00	-0004
+04/15/2002	01:30:00	-0002
+04/15/2002	02:00:00	-0003
+04/15/2002	02:30:00	-0004
+04/15/2002	03:00:00	-0003
+04/15/2002	03:30:00	-0002
+04/15/2002	04:00:00	-0002
+04/15/2002	04:30:00	-0002
+04/15/2002	05:00:00	-0002
+04/15/2002	09:30:00	-0003
+04/15/2002	10:00:00	-0003
+04/15/2002	10:30:00	-0002
+04/15/2002	11:00:00	-0001
+04/15/2002	14:00:00	-0004
+04/15/2002	14:30:00	-0001
+04/15/2002	15:30:00	-0004
+04/15/2002	16:00:00	-0002
+04/15/2002	16:30:00	-0001
+04/15/2002	20:00:00	-0001
+04/15/2002	20:30:00	-0002
+04/15/2002	21:00:00	-0004
+04/15/2002	21:30:00	-0005
+04/15/2002	22:00:00	-0004
+04/15/2002	22:30:00	-0003
+04/15/2002	23:00:00	-0004
+04/16/2002	01:30:00	0000
+04/16/2002	02:00:00	-0002
+04/16/2002	02:30:00	-0002
+04/16/2002	03:00:00	-0004
+04/16/2002	03:30:00	-0004
+04/16/2002	04:00:00	-0003
+04/16/2002	04:30:00	-0003
+04/16/2002	05:00:00	-0003
+04/16/2002	05:30:00	-0001
+04/16/2002	06:30:00	-0001
+04/16/2002	07:30:00	-0001
+04/16/2002	08:00:00	-0003
+04/16/2002	08:30:00	-0003
+04/16/2002	09:00:00	-0003
+04/16/2002	09:30:00	-0004
+04/16/2002	10:00:00	-0002
+04/16/2002	10:30:00	-0003
+04/16/2002	14:00:00	0000
+04/16/2002	14:30:00	-0002
+04/16/2002	15:00:00	0000
+04/16/2002	15:30:00	-0002
+04/16/2002	16:00:00	-0003
+04/16/2002	16:30:00	-0001
+04/16/2002	17:00:00	-0002
+04/16/2002	18:00:00	0000
+04/16/2002	20:30:00	0000
+04/16/2002	21:00:00	-0003
+04/16/2002	21:30:00	-0004
+04/16/2002	22:00:00	-0004
+04/16/2002	22:30:00	-0005
+04/16/2002	23:00:00	-0004
+04/16/2002	23:30:00	-0004
+04/17/2002	00:00:00	-0002
+04/17/2002	02:30:00	0000
+04/17/2002	03:00:00	-0003
+04/17/2002	03:30:00	-0003
+04/17/2002	04:00:00	-0003
+04/17/2002	04:30:00	-0003
+04/17/2002	05:00:00	-0001
+04/17/2002	05:30:00	-0001
+04/17/2002	06:30:00	0000
+04/17/2002	08:30:00	0000
+04/17/2002	09:00:00	-0002
+04/17/2002	10:30:00	-0001
+04/17/2002	11:00:00	-0002
+04/17/2002	11:30:00	-0004
+04/17/2002	12:00:00	-0004
+04/17/2002	12:30:00	0000
+04/17/2002	14:30:00	-0002
+04/17/2002	15:00:00	-0003
+04/17/2002	15:30:00	-0003
+04/17/2002	16:00:00	-0003
+04/17/2002	16:30:00	-0003
+04/17/2002	17:00:00	-0002
+04/17/2002	17:30:00	0000
+04/17/2002	18:00:00	-0001
+04/17/2002	20:30:00	-0003
+04/17/2002	21:00:00	0000
+04/17/2002	21:30:00	-0003
+04/17/2002	22:00:00	-0002
+04/17/2002	22:30:00	-0003
+04/17/2002	23:00:00	-0005
+04/17/2002	23:30:00	-0005
+04/18/2002	00:00:00	-0004
+04/18/2002	00:30:00	-0002
+04/18/2002	01:00:00	-0001
+04/18/2002	03:00:00	-0002
+04/18/2002	03:30:00	-0004
+04/18/2002	04:00:00	-0004
+04/18/2002	04:30:00	-0004
+04/18/2002	05:00:00	-0003
+04/18/2002	05:30:00	-0004
+04/18/2002	06:00:00	-0003
+04/18/2002	06:30:00	-0003
+04/18/2002	07:00:00	-0003
+04/18/2002	07:30:00	-0001
+04/18/2002	09:30:00	-0003
+04/18/2002	10:00:00	-0002
+04/18/2002	10:30:00	-0004
+04/18/2002	11:30:00	-0002
+04/18/2002	12:00:00	-0001
+04/18/2002	12:30:00	-0005
+04/18/2002	13:00:00	-0001
+04/18/2002	13:30:00	-0001
+04/18/2002	14:30:00	0000
+04/18/2002	15:00:00	-0002
+04/18/2002	15:30:00	-0003
+04/18/2002	16:30:00	0000
+04/18/2002	17:00:00	-0001
+04/18/2002	18:00:00	-0001
+04/18/2002	21:30:00	-0001
+04/18/2002	22:00:00	-0003
+04/18/2002	22:30:00	-0003
+04/18/2002	23:00:00	-0004
+04/18/2002	23:30:00	-0004
+04/19/2002	00:00:00	-0005
+04/19/2002	00:30:00	-0005
+04/19/2002	01:00:00	-0004
+04/19/2002	01:30:00	-0002
+04/19/2002	04:30:00	0000
+04/19/2002	05:00:00	-0003
+04/19/2002	05:30:00	-0003
+04/19/2002	06:00:00	-0003
+04/19/2002	06:30:00	-0003
+04/19/2002	07:00:00	-0004
+04/19/2002	07:30:00	-0002
+04/19/2002	09:00:00	-0001
+04/19/2002	10:30:00	-0001
+04/19/2002	11:00:00	-0002
+04/19/2002	12:00:00	-0004
+04/19/2002	12:30:00	-0001
+04/19/2002	13:00:00	-0004
+04/19/2002	13:30:00	0000
+04/19/2002	14:00:00	-0002
+04/19/2002	15:00:00	-0001
+04/19/2002	16:00:00	-0003
+04/19/2002	16:30:00	-0002
+04/19/2002	17:00:00	-0002
+04/19/2002	17:30:00	-0004
+04/19/2002	18:00:00	-0003
+04/19/2002	18:30:00	-0003
+04/19/2002	19:00:00	-0002
+04/19/2002	19:30:00	-0002
+04/19/2002	20:00:00	-0001
+04/19/2002	20:30:00	-0001
+04/19/2002	21:30:00	-0001
+04/19/2002	22:00:00	-0003
+04/19/2002	22:30:00	-0001
+04/19/2002	23:00:00	-0001
+04/19/2002	23:30:00	-0004
+04/20/2002	00:00:00	-0003
+04/20/2002	00:30:00	-0003
+04/20/2002	01:00:00	-0004
+04/20/2002	01:30:00	-0003
+04/20/2002	02:00:00	-0004
+04/20/2002	06:00:00	-0003
+04/20/2002	06:30:00	-0002
+04/20/2002	07:00:00	-0001
+04/20/2002	07:30:00	-0002
+04/20/2002	08:00:00	-0002
+04/20/2002	09:30:00	-0001
+04/20/2002	11:30:00	0000
+04/20/2002	13:00:00	-0001
+04/20/2002	13:30:00	-0001
+04/20/2002	14:00:00	-0004
+04/20/2002	14:30:00	-0002
+04/20/2002	16:30:00	-0002
+04/20/2002	17:00:00	-0003
+04/20/2002	18:30:00	-0001
+04/20/2002	19:30:00	-0001
+04/20/2002	21:00:00	-0002
+04/21/2002	00:30:00	0000
+04/21/2002	01:30:00	-0001
+04/21/2002	02:00:00	-0003
+04/21/2002	02:30:00	-0004
+04/21/2002	03:00:00	0000
+04/21/2002	03:30:00	-0002
+04/21/2002	05:30:00	-0001
+04/21/2002	06:00:00	-0002
+04/21/2002	06:30:00	-0002
+04/21/2002	07:00:00	-0003
+04/21/2002	15:00:00	0000
+04/21/2002	15:30:00	0000
+04/21/2002	16:30:00	0000
+04/21/2002	19:00:00	-0001
+04/21/2002	19:30:00	-0003
+04/21/2002	20:00:00	-0001
+04/21/2002	20:30:00	-0002
+04/22/2002	01:30:00	-0001
+04/22/2002	02:00:00	-0003
+04/22/2002	02:30:00	-0004
+04/22/2002	03:00:00	-0003
+04/22/2002	03:30:00	-0004
+04/22/2002	04:00:00	-0004
+04/22/2002	04:30:00	-0003
+04/22/2002	07:00:00	0000
+04/22/2002	07:30:00	-0002
+04/22/2002	08:00:00	-0003
+04/22/2002	09:00:00	-0002
+04/22/2002	09:30:00	0000
+04/22/2002	14:00:00	-0002
+04/22/2002	14:30:00	-0002
+04/22/2002	15:00:00	-0004
+04/22/2002	15:30:00	-0001
+04/22/2002	16:00:00	-0002
+04/22/2002	16:30:00	-0001
+04/22/2002	17:00:00	-0002
+04/22/2002	20:30:00	-0001
+04/22/2002	21:00:00	-0001
+04/22/2002	21:30:00	-0001
+04/22/2002	22:00:00	0000
+04/23/2002	02:30:00	-0002
+04/23/2002	03:00:00	-0003
+04/23/2002	03:30:00	-0003
+04/23/2002	04:00:00	-0003
+04/23/2002	04:30:00	-0003
+04/23/2002	05:00:00	-0002
+04/23/2002	05:30:00	-0001
+04/23/2002	06:00:00	-0001
+04/23/2002	15:00:00	0000
+04/23/2002	16:00:00	-0001
+04/23/2002	16:30:00	-0002
+04/23/2002	17:00:00	-0003
+04/23/2002	17:30:00	-0002
+04/23/2002	18:00:00	-0002
+04/23/2002	18:30:00	0000
+04/23/2002	22:00:00	0000
+04/24/2002	00:00:00	0000
+04/24/2002	04:00:00	0000
+04/24/2002	04:30:00	0000
+04/24/2002	05:00:00	-0002
+04/24/2002	06:30:00	0000
+04/24/2002	11:30:00	-0001
+04/24/2002	12:30:00	-0001
+04/24/2002	17:00:00	0000
+04/24/2002	17:30:00	-0001
+04/24/2002	18:00:00	-0002
+04/24/2002	18:30:00	-0001
+04/24/2002	19:00:00	-0001
+04/24/2002	19:30:00	0000
+04/24/2002	22:30:00	-0002
+04/24/2002	23:00:00	-0002
+04/25/2002	06:00:00	-0001
+04/25/2002	06:30:00	-0002
+04/25/2002	07:00:00	-0001
+04/25/2002	07:30:00	-0002
+04/25/2002	08:00:00	-0001
+04/25/2002	10:30:00	-0001
+04/25/2002	11:00:00	-0001
+04/25/2002	23:30:00	-0001
+04/26/2002	00:00:00	-0001
+04/26/2002	19:00:00	-0001
+04/26/2002	19:30:00	-0002
+04/26/2002	20:00:00	-0001
+04/26/2002	20:30:00	-0002
+04/27/2002	01:30:00	-0001
+04/27/2002	02:00:00	-0001
+04/27/2002	02:30:00	0000
+04/27/2002	08:00:00	-0002
+04/27/2002	08:30:00	-0001
+04/27/2002	09:00:00	0000
+04/27/2002	20:00:00	-0001
+04/27/2002	20:30:00	-0001
+04/27/2002	21:00:00	-0001
+04/27/2002	21:30:00	-0001
+04/28/2002	02:00:00	-0001
+04/28/2002	08:30:00	-0001
+04/28/2002	21:00:00	-0001
+04/28/2002	22:00:00	-0001
+04/29/2002	02:00:00	-0001
+04/29/2002	02:30:00	-0001
+04/29/2002	10:00:00	-0002
+04/29/2002	10:30:00	-0001
+04/29/2002	11:00:00	-0001
+04/29/2002	21:00:00	0000
+04/29/2002	21:30:00	-0001
+04/29/2002	22:00:00	-0002
+04/29/2002	23:00:00	-0001
+04/30/2002	02:30:00	0000
+04/30/2002	03:00:00	-0002
+04/30/2002	03:30:00	-0003
+04/30/2002	04:00:00	-0001
+04/30/2002	09:00:00	-0001
+04/30/2002	09:30:00	-0001
+04/30/2002	10:00:00	-0002
+04/30/2002	10:30:00	-0003
+04/30/2002	11:00:00	-0002
+04/30/2002	11:30:00	-0002
+04/30/2002	12:00:00	-0001
+04/30/2002	21:00:00	0000
+04/30/2002	21:30:00	-0002
+04/30/2002	22:00:00	-0003
+04/30/2002	22:30:00	-0003
+04/30/2002	23:00:00	-0002
+04/30/2002	23:30:00	-0003
+05/01/2002	00:00:00	-0003
+05/01/2002	00:30:00	-0001
+05/01/2002	03:30:00	-0001
+05/01/2002	04:00:00	-0002
+05/01/2002	04:30:00	-0002
+05/01/2002	09:00:00	-0001
+05/01/2002	09:30:00	-0001
+05/01/2002	10:00:00	-0002
+05/01/2002	10:30:00	-0003
+05/01/2002	11:00:00	-0002
+05/01/2002	11:30:00	-0002
+05/01/2002	12:00:00	-0003
+05/01/2002	12:30:00	-0002
+05/01/2002	13:00:00	-0001
+05/01/2002	16:30:00	-0001
+05/01/2002	20:00:00	0000
+05/01/2002	21:00:00	0000
+05/01/2002	21:30:00	-0001
+05/01/2002	22:00:00	-0001
+05/01/2002	22:30:00	-0002
+05/01/2002	23:00:00	-0003
+05/01/2002	23:30:00	-0003
+05/02/2002	00:00:00	-0003
+05/02/2002	00:30:00	-0003
+05/02/2002	01:00:00	-0002
+05/02/2002	01:30:00	0000
+05/02/2002	04:00:00	0000
+05/02/2002	04:30:00	-0002
+05/02/2002	05:00:00	-0002
+05/02/2002	10:00:00	0000
+05/02/2002	10:30:00	0000
+05/02/2002	11:00:00	-0002
+05/02/2002	11:30:00	-0003
+05/02/2002	12:00:00	-0004
+05/02/2002	12:30:00	-0004
+05/02/2002	13:30:00	-0002
+05/02/2002	17:30:00	-0001
+05/02/2002	20:00:00	0000
+05/02/2002	21:00:00	-0001
+05/02/2002	22:30:00	-0001
+05/02/2002	23:00:00	-0001
+05/02/2002	23:30:00	-0002
+05/03/2002	00:00:00	-0003
+05/03/2002	00:30:00	-0001
+05/03/2002	01:00:00	-0003
+05/03/2002	01:30:00	-0003
+05/03/2002	02:00:00	-0002
+05/03/2002	05:00:00	-0002
+05/03/2002	05:30:00	-0002
+05/03/2002	06:00:00	-0002
+05/03/2002	10:00:00	-0001
+05/03/2002	11:30:00	-0001
+05/03/2002	12:00:00	-0001
+05/03/2002	12:30:00	-0001
+05/03/2002	13:30:00	-0002
+05/03/2002	14:00:00	-0002
+05/03/2002	14:30:00	-0002
+05/03/2002	15:00:00	-0001
+05/03/2002	17:00:00	-0001
+05/03/2002	17:30:00	-0001
+05/03/2002	18:00:00	0000
+05/03/2002	18:30:00	-0001
+05/03/2002	22:30:00	0000
+05/04/2002	00:00:00	-0002
+05/04/2002	00:30:00	-0002
+05/04/2002	01:00:00	-0002
+05/04/2002	01:30:00	-0002
+05/04/2002	02:00:00	-0003
+05/04/2002	02:30:00	-0002
+05/04/2002	03:00:00	-0001
+05/04/2002	07:00:00	0000
+05/04/2002	07:30:00	0000
+05/04/2002	11:00:00	-0001
+05/04/2002	12:30:00	-0002
+05/04/2002	13:00:00	-0003
+05/04/2002	13:30:00	-0003
+05/04/2002	14:00:00	-0003
+05/04/2002	14:30:00	-0003
+05/04/2002	15:00:00	-0002
+05/04/2002	15:30:00	-0002
+05/04/2002	18:30:00	0000
+05/04/2002	20:00:00	-0001
+05/04/2002	20:30:00	-0001
+05/04/2002	23:00:00	-0001
+05/04/2002	23:30:00	-0002
+05/05/2002	00:00:00	-0002
+05/05/2002	00:30:00	-0001
+05/05/2002	01:00:00	-0002
+05/05/2002	01:30:00	-0002
+05/05/2002	02:00:00	-0003
+05/05/2002	02:30:00	-0003
+05/05/2002	03:00:00	-0003
+05/05/2002	03:30:00	-0002
+05/05/2002	04:00:00	-0002
+05/05/2002	04:30:00	-0001
+05/05/2002	07:00:00	-0001
+05/05/2002	07:30:00	-0002
+05/05/2002	09:00:00	0000
+05/05/2002	12:30:00	0000
+05/05/2002	13:00:00	-0002
+05/05/2002	13:30:00	-0003
+05/05/2002	14:00:00	-0003
+05/05/2002	14:30:00	-0003
+05/05/2002	15:00:00	-0003
+05/05/2002	15:30:00	-0003
+05/05/2002	16:00:00	-0003
+05/05/2002	16:30:00	-0001
+05/05/2002	20:00:00	-0002
+05/05/2002	21:00:00	-0001
+05/06/2002	01:30:00	-0002
+05/06/2002	02:00:00	-0002
+05/06/2002	02:30:00	-0003
+05/06/2002	03:00:00	-0003
+05/06/2002	03:30:00	-0003
+05/06/2002	04:00:00	-0003
+05/06/2002	04:30:00	-0002
+05/06/2002	05:00:00	-0001
+05/06/2002	08:00:00	-0001
+05/06/2002	08:30:00	0000
+05/06/2002	15:30:00	-0002
+05/06/2002	16:00:00	-0001
+05/06/2002	16:30:00	-0001
+05/06/2002	17:00:00	-0002
+05/06/2002	17:30:00	-0001
+05/06/2002	21:00:00	-0001
+05/06/2002	21:30:00	0000
+05/07/2002	02:30:00	-0001
+05/07/2002	03:00:00	-0001
+05/07/2002	04:00:00	-0003
+05/07/2002	04:30:00	-0003
+05/07/2002	05:00:00	-0003
+05/07/2002	05:30:00	-0002
+05/07/2002	06:00:00	-0001
+05/07/2002	08:00:00	-0001
+05/07/2002	08:30:00	-0001
+05/07/2002	09:00:00	-0002
+05/07/2002	09:30:00	0000
+05/07/2002	15:00:00	-0001
+05/07/2002	15:30:00	-0001
+05/07/2002	16:00:00	-0002
+05/07/2002	16:30:00	-0003
+05/07/2002	17:00:00	-0002
+05/07/2002	17:30:00	-0002
+05/07/2002	18:00:00	-0002
+05/07/2002	18:30:00	-0002
+05/07/2002	19:00:00	-0001
+05/07/2002	20:30:00	0000
+05/07/2002	21:00:00	-0001
+05/07/2002	21:30:00	-0002
+05/07/2002	22:00:00	-0001
+05/07/2002	22:30:00	-0001
+05/07/2002	23:00:00	0000
+05/08/2002	04:00:00	-0002
+05/08/2002	04:30:00	-0003
+05/08/2002	05:00:00	-0003
+05/08/2002	05:30:00	-0003
+05/08/2002	06:00:00	-0003
+05/08/2002	06:30:00	-0003
+05/08/2002	07:00:00	-0002
+05/08/2002	09:30:00	-0001
+05/08/2002	10:00:00	-0002
+05/08/2002	10:30:00	-0001
+05/08/2002	11:00:00	0000
+05/08/2002	11:30:00	0000
+07/22/2002	23:00:00	1743
+07/24/2002	14:00:00	1159
+07/28/2002	01:30:00	1745
+07/30/2002	00:30:00	1241
+07/30/2002	02:00:00	1029
+07/30/2002	04:00:00	1723
+07/30/2002	04:30:00	1307
+07/30/2002	05:00:00	1318
+08/03/2002	18:30:00	1703
+08/25/2002	14:00:00	1585
+11/15/2002	16:30:00	0000
+11/20/2002	07:30:00	0000
+11/20/2002	19:30:00	0000
+11/20/2002	20:30:00	0000
+
+	Table 5.  Turbidity outliers in 2002 at the Pellicer Creek site.
+	
+Date		Time		Value
+03/22/2002	23:00:00	-0001
+03/22/2002	23:30:00	0000
+03/23/2002	00:00:00	-0001
+03/23/2002	00:30:00	-0001
+03/23/2002	01:00:00	0000
+03/23/2002	01:30:00	0000
+03/23/2002	02:00:00	0000
+03/23/2002	13:00:00	0000
+03/23/2002	13:30:00	-0001
+03/23/2002	14:00:00	-0001
+03/23/2002	14:30:00	0000
+03/23/2002	15:00:00	-0001
+03/23/2002	22:30:00	0000
+03/23/2002	23:00:00	-0001
+03/23/2002	23:30:00	-0001
+03/24/2002	00:00:00	0000
+03/24/2002	00:30:00	-0001
+03/24/2002	01:00:00	-0001
+03/24/2002	02:00:00	0000
+03/24/2002	03:00:00	-0001
+03/24/2002	12:30:00	-0001
+03/24/2002	13:00:00	-0001
+03/24/2002	13:30:00	-0001
+03/24/2002	14:00:00	-0001
+03/24/2002	14:30:00	-0001
+03/24/2002	15:00:00	-0002
+03/24/2002	15:30:00	0000
+03/25/2002	00:30:00	-0001
+03/25/2002	01:00:00	-0001
+03/25/2002	01:30:00	-0001
+03/25/2002	02:00:00	-0001
+03/25/2002	02:30:00	-0001
+03/25/2002	03:00:00	-0001
+03/25/2002	13:30:00	-0001
+03/25/2002	14:00:00	-0001
+03/25/2002	14:30:00	-0001
+03/25/2002	15:00:00	-0002
+03/25/2002	15:30:00	-0002
+03/25/2002	16:00:00	-0002
+03/25/2002	16:30:00	-0002
+03/26/2002	01:30:00	0000
+03/26/2002	02:00:00	-0001
+03/26/2002	02:30:00	-0001
+03/26/2002	03:00:00	-0001
+03/26/2002	03:30:00	-0002
+03/26/2002	04:00:00	-0002
+03/26/2002	04:30:00	-0001
+03/26/2002	05:00:00	-0001
+03/26/2002	05:30:00	0000
+03/26/2002	14:00:00	-0001
+03/26/2002	14:30:00	-0001
+03/26/2002	15:00:00	-0001
+03/26/2002	15:30:00	-0001
+03/26/2002	16:00:00	-0002
+03/26/2002	16:30:00	-0002
+03/26/2002	17:00:00	-0002
+03/26/2002	17:30:00	-0001
+03/27/2002	03:00:00	-0001
+03/27/2002	03:30:00	-0001
+03/27/2002	04:00:00	-0002
+03/27/2002	04:30:00	-0002
+03/27/2002	05:00:00	-0001
+03/27/2002	06:00:00	-0001
+03/27/2002	06:30:00	0000
+03/27/2002	07:00:00	0000
+03/27/2002	15:00:00	0000
+03/27/2002	15:30:00	0000
+03/27/2002	16:00:00	-0001
+03/27/2002	16:30:00	-0001
+03/27/2002	17:00:00	-0002
+03/27/2002	17:30:00	-0002
+03/27/2002	18:00:00	-0001
+03/28/2002	03:00:00	0000
+03/28/2002	03:30:00	0000
+03/28/2002	05:00:00	0000
+03/28/2002	06:00:00	-0001
+03/28/2002	06:30:00	-0001
+03/28/2002	16:30:00	0000
+03/28/2002	17:00:00	-0001
+03/28/2002	17:30:00	-0001
+03/28/2002	18:00:00	-0001
+03/28/2002	18:30:00	0000
+03/29/2002	17:30:00	0000
+03/29/2002	18:00:00	0000
+03/30/2002	07:00:00	-0001
+03/30/2002	08:00:00	-0001
+03/30/2002	08:30:00	-0001
+03/30/2002	18:00:00	0000
+03/30/2002	19:00:00	0000
+03/30/2002	19:30:00	0000
+03/30/2002	20:30:00	0000
+03/30/2002	21:00:00	0000
+03/31/2002	07:00:00	0000
+03/31/2002	08:00:00	0000
+03/31/2002	08:30:00	-0001
+03/31/2002	09:00:00	-0001
+03/31/2002	09:30:00	0000
+03/31/2002	18:00:00	0000
+03/31/2002	18:30:00	-0001
+03/31/2002	19:30:00	-0001
+03/31/2002	20:00:00	-0001
+03/31/2002	20:30:00	-0001
+03/31/2002	21:00:00	-0001
+04/01/2002	08:00:00	0000
+04/01/2002	09:00:00	-0001
+04/01/2002	09:30:00	-0001
+04/01/2002	10:00:00	-0001
+04/01/2002	10:30:00	0000
+04/01/2002	19:00:00	-0001
+04/01/2002	19:30:00	0000
+04/01/2002	20:00:00	0000
+04/01/2002	20:30:00	0000
+04/01/2002	21:00:00	-0001
+04/01/2002	21:30:00	-0001
+04/01/2002	22:00:00	0000
+04/01/2002	22:30:00	-0001
+04/01/2002	23:00:00	-0001
+04/02/2002	09:30:00	0000
+04/02/2002	10:00:00	-0001
+04/02/2002	10:30:00	-0001
+04/02/2002	11:00:00	-0002
+04/02/2002	11:30:00	-0001
+04/02/2002	19:30:00	0000
+04/02/2002	20:00:00	0000
+04/02/2002	20:30:00	-0001
+04/02/2002	21:00:00	-0001
+04/02/2002	21:30:00	-0001
+04/02/2002	22:00:00	-0002
+04/02/2002	22:30:00	0000
+04/02/2002	23:30:00	-0001
+04/03/2002	00:00:00	-0001
+04/03/2002	08:30:00	0000
+04/03/2002	09:00:00	-0001
+04/03/2002	09:30:00	-0001
+04/03/2002	10:00:00	-0001
+04/03/2002	10:30:00	-0002
+04/03/2002	11:00:00	-0002
+04/03/2002	11:30:00	-0002
+04/03/2002	12:00:00	-0002
+04/03/2002	13:00:00	0000
+04/03/2002	17:30:00	0000
+04/03/2002	18:00:00	0000
+04/03/2002	18:30:00	0000
+04/03/2002	19:00:00	-0001
+04/03/2002	19:30:00	-0001
+04/03/2002	20:00:00	-0001
+04/03/2002	20:30:00	0000
+04/03/2002	21:00:00	-0001
+04/03/2002	21:30:00	-0002
+04/03/2002	22:00:00	-0002
+04/03/2002	22:30:00	-0002
+04/03/2002	23:00:00	-0002
+04/03/2002	23:30:00	-0002
+04/04/2002	00:00:00	-0001
+04/04/2002	09:00:00	-0001
+04/04/2002	09:30:00	-0001
+04/11/2002	16:00:00	0000
+04/11/2002	16:30:00	0000
+04/11/2002	17:30:00	0000
+04/11/2002	18:00:00	0000
+04/12/2002	17:00:00	-0001
+04/12/2002	17:30:00	0000
+04/12/2002	18:00:00	-0001
+04/12/2002	18:30:00	-0001
+04/13/2002	05:30:00	0000
+04/13/2002	06:00:00	-0001
+04/13/2002	06:30:00	-0001
+04/13/2002	07:00:00	0000
+04/13/2002	07:30:00	-0001
+04/13/2002	15:30:00	0000
+04/13/2002	16:00:00	0000
+04/13/2002	16:30:00	0000
+04/13/2002	17:00:00	-0001
+04/13/2002	17:30:00	-0001
+04/13/2002	18:00:00	-0001
+04/13/2002	18:30:00	-0001
+04/13/2002	19:00:00	-0001
+04/13/2002	19:30:00	-0001
+04/14/2002	07:00:00	0000
+04/14/2002	07:30:00	-0001
+04/14/2002	08:00:00	-0001
+04/14/2002	08:30:00	-0001
+04/14/2002	17:00:00	0000
+04/14/2002	17:30:00	-0001
+04/14/2002	18:00:00	-0001
+04/14/2002	18:30:00	-0001
+04/14/2002	19:00:00	-0001
+04/14/2002	19:30:00	-0001
+04/14/2002	20:00:00	-0001
+04/15/2002	07:30:00	0000
+04/15/2002	08:00:00	-0001
+04/15/2002	08:30:00	0000
+04/15/2002	17:30:00	0000
+04/15/2002	18:30:00	0000
+04/15/2002	19:30:00	0000
+04/15/2002	20:00:00	0000
+04/15/2002	20:30:00	-0001
+04/17/2002	21:00:00	0000
+04/17/2002	21:30:00	0000
+09/06/2002	12:00:00	1388
+
+12) Missing data:  
+
+Missing data are denoted by a period in the data set.  Data are missing due to 
+equipment failure where no probes were deployed, maintenance/calibration of 
+equipment, elimination of obvious outliers, or elimination of data due to 
+calibration (both pre and post) problems.  For details on deleted data, see 
+Anomalous Data Section (Section 11).  For more details about missing data, 
+contact the Research Coordinator. 
+
+13) Post deployment information:
+
+Table 6.  Post-deployment readings of all sondes deployed at the Pine Island 
+site during 2001.
+Date		PH 		Temp	SC(mS/cm) 	DO%sat. 	Turb(NTU)	Depth
+		(7.00 Std)  (C) 	(50.00 Std)	(100.0 Std)					
+		
+01/07/02	7.03    	21.65	  49.29	102.3		102.3		no data
+02/08/02	no data	no data no data	no data	no data	no data
+03/01/02	7.09		21.24	  50.35	102.7		100.4		no data
+03/16/02	7.03		21.15	  49.51	96.4		102.9*	no data
+03/29/02	7.02		20.16	  50.66	91.7		0.2		no data
+04/12/02	no data	no data no data	105.5		no data	no data
+05/23/02	7.06		20.12	  47.93	30.00		101.7		no data
+06/10/02	7.14		no data 49.75	101.1		1.2		-0.109
+06/28/02	7.21		20.16	  48.65	101.6		-0.1		0.055
+07/31/02	5.06		21.31	  12.48	71.4		4.3		-0.078
+08/13/02	7.06		21.17	  39.57	26.1		0.4		0.000
+08/22/02	7.11		20.49	  50.36	100.5		-0.7		-0.078
+09/06/02	7.08		25.46	  51.35	89.7		-0.9		-0.024
+09/12/02	7.07		24.10	  51.79	99.5		-1.4		0.035
+09/19/02	7.09		23.35	  50.21	103.1		-0.5		0.017
+09/27/02	7.05		23.68	  49.95	96.0		6.2		-0.067
+10/03/02	7.15		23.51	  49.50	89.0		-0.1		0.040
+10/14/02	7.11		20.08	  48.70	97.3		5.0		-0.128
+10/22/02	7.12		21.96	  49.86	102.4		0.6		0.039
+10/29/02	7.02		19.41	  50.10	70.2		-0.1		0.000
+11/05/02	7.05		21.26	  51.18	101.0		0.0		0.050
+11/15/02	7.04		21.98	  50.78	100.3		-0.1		0.000
+11/26/02	7.06		20.10	  51.88	64.2		-0.4		0.050
+12/12/02	7.07		20.69	  49.66	88.4		0.1		0.001
+12/20/02	7.07		20.90	  49.26	102.8		0.8		-0.057
+01/09/03	7.02		21.77	  49.69	96.5		0.2		-0.110
+
+
+Table 7.  Post-deployment readings of all sondes deployed at the San Sebastian 
+site during 2002.
+Date		PH 		Temp	SC(mS/cm) 	DO%sat. 	Turb(NTU)	Depth
+		(7.00 Std)  (C) 	(50.00 Std)	(100.0 Std)					
+		
+03/16/02	7.12		21.11	49.89		77.5		no data	no data
+03/28/02	7.13		20.04	50.91		94.1		-0.8		no data
+04/14/02	7.02		20.10	49.66		101.4		1.40		no data
+04/29/02	7.07		19.95	49.35		52.30		no data	no data
+05/26/02	7.07		21.72	49.43		94.80		127.10	no data
+06/08/02	7.06		no data 49.86	101.8		-0.2		-0.080
+06/28/02	7.05		20.27	50.23		103.0		-0.9		0.062
+07/23/02	7.08		19.69	49.86		98.9		-1.2		0.004
+08/14/02	6.98		21.18	49.15		115.5		-3.6		-0.001
+08/27/02	7.07		24.01	50.04		100.2		-1.6		-0.042
+09/06/02	7.07		25.09	49.67		95.8		1131.2	-0.031
+09/12/02	7.06		23.89	51.01		77.0		0.2		-0.032
+09/19/02	7.09		23.29	50.08		101.5		25.0		0.049
+09/27/02	7.07		23.83	50.93		101.0		0.4		-0.068
+10/03/02	7.11		23.11	49.57		105.0	sensor recalled	0.040
+10/14/02	6.98		20.07	49.63		101.7	sensor recalled	-0.118
+10/22/02	7.06		21.02	50.32		99.2	sensor recalled	0.220
+10/29/02	6.89		19.40	50.00		105.1	sensor recalled	0.000
+11/05/02	7.03		21.18	49.40		106.1	sensor recalled	0.034
+11/15/02	7.16		22.05	51.36		99.9	sensor recalled	-0.005
+11/26/02	7.05		20.24	50.88		103.3		-1.8		0.050
+12/12/02	6.91		20.80	50.60		98.9		0.2		0.013
+12/20/02	7.00		21.52	49.66		99.9		0.0		-0.054
+01/09/03	6.85		22.06	50.22		102.3		0.2		-0.089
+
+
+Table 8.  Post-deployment readings of all sondes deployed at the Fort Matanzas 
+site during 2002.
+
+Date		PH 		Temp	SC(mS/cm) 	DO%sat. 	Turb(NTU)	Depth
+		(7.00 Std)  (C) 	(50.00 Std)	(100.0 Std)					
+		
+01/09/02	no data	no data no data	no data	no data	no data
+02/08/02	7.06		21.06	 51.86	102.1		1.1		no data
+03/01/02	7.04		17.93	 51.10	100.0		2.2		no data
+03/22/02	7.00		no data 50.47	96.6		-0.3		0.064
+04/04/02	7.07		22.29	 50.96	98.4		-0.9		-0.022
+04/22/02	7.08		24.12	 49.22	107.6		-5.3		0.034
+05/08/02	7.03		25.26	 56.17	79.1		-5.2		-0.118
+05/20/02	7.20		24.47	 50.22	112.4		0.0		-0.040
+06/03/02	7.17		24.11	 49.06	46.7		-0.3		0.016
+06/24/02	7.11		24.78	 50.81	100.0		0.1		0.079
+07/05/02	7.12		24.19	 50.14	81.0		0.0		-0.031
+07/15/02	6.94		24.38	 49.54	87.0		-0.4		0.021
+07/30/02	7.16		25.00	 49.88	78.4		0.0		0.106
+08/14/02	7.16		25.15	 49.94	102.9		-0.2		-0.019
+08/26/02	6.94		23.29	 48.53	94.3		0.2		-0.255
+09/03/02	7.11		25.20	 49.92	103.0		0.0		0.015
+09/13/02	6.45		24.17	 50.38	89.2		0.4		0.008
+09/23/02	7.04		22.78	 50.65	63.9		-0.3		0.009
+09/30/02	7.00		23.55	 50.15	86.3	recalled sensor	0.097
+10/07/02	7.05		24.47	49.90		98.5	recalled sensor	0.048
+10/15/02	7.04		25.15	50.51		83.6	recalled sensor	-0.446
+10/29/02	7.10		20.37	48.72		102.8	recalled sensor	0.000
+11/05/02	7.06		21.26	49.74		96.5	recalled sensor	0.176
+11/15/02	6.98		22.03	51.24		97.0	recalled sensor	-0.006
+11/21/02	6.99		22.57	51.14		95.9		-0.9		-0.100
+12/09/02	7.16		22.34	50.04		98.0		0.1		0.032
+12/20/02	7.18		21.27	49.56		89.1		0.0		-0.239
+12/30/02	7.08		20.95	49.89		103.3		-0.2		0.024
+01/14/03	7.12		21.09	49.80		87.8		-0.3		-0.22
+
+
+Table 9.  Post-deployment readings of all sondes deployed at the Pellicer Creek 
+site during 2002.
+
+Date		PH 		Temp	SC(mS/cm) 	DO%sat. 	Turb(NTU)	Depth
+		(7.00 Std)  (C) 	(50.00 Std)	(100.0 Std)					
+			
+03/14/02	7.22		no data 41.00	100.0		no data	-0.029
+03/22/02	7.17		no data 48.81	101.2		-0.7		-0.015
+04/04/02	7.07		21.10	  50.19	102.4		-6.9		-0.007
+04/11/02	7.15		23.83	  50.14	95.8		-0.2		0.077
+04/18/02	7.11		24.78	  49.71	90.0		-7.1		-0.011
+04/25/02	7.11		23.32	  49.63	87.7		0.3		-0.028
+05/08/02	7.09		24.97	  49.02	82.2		0.1		0.027
+05/20/02	7.13		23.77	  49.08	101.1		3.2		-0.035
+05/29/02	7.21		25.64	  49.93	92.5		0.2		0.000
+06/04/02	7.12		24.78	  48.45	98.5		-0.1		0.024
+06/10/02	7.06		23.98	  50.65	99.2		1.1		0.017
+06/18/02	7.16		25.38	  49.70	95.5		-0.2		0.020
+06/25/02	7.06		25.04	  49.96	97.3		0.0		0.280
+07/01/02	7.06		25.12	  49.73	100.8		0.1		-0.007
+07/08/02	7.01		24.15	  49.56	101.7		-0.2		0.015
+07/15/02	7.05		23.51	  49.88	98.1		-0.5		0.023
+07/22/02	7.09		24.18	  49.82	104.1		0.4		0.004
+07/29/02	7.00		24.58	  49.69	102.4		-0.5		0.053
+08/05/02	7.02		24.59	  50.02	108.5		0.7		-0.035
+08/14/02	7.11		24.68	  49.44	102.7		-0.1		0.012
+08/21/02	7.11		25.18	  50.00	101.7		-0.1		0.006
+08/26/02	7.07		23.20	  50.00	97.3		0.1		-0.085
+09/03/02	7.09		25.42	  49.79	97.6		0.8		0.008
+09/09/02	7.06		21.12	  50.74	102.1		0.5		-0.031
+09/16/02	6.96		22.93	  50.22	104.2		-1.0	 	0.008
+09/23/02	7.05		23.79	  50.29	102.4		0.5		-0.052
+09/30/02	7.13		23.37	  49.63	102.7	 sensor recalled	0.015
+10/07/02	7.04		24.71	  50.30	100.7	sensor recalled	0.053
+10/15/02	7.17		24.87	  50.70	77.4	sensor recalled	-0.144
+10/29/02	7.14		23.59	  50.28	102.9	sensor recalled	-0.070
+11/13/02	7.03		24.54	  55.05	73.1	     -5.3		0.085
+11/21/02	6.99		23.14	  50.29	101.1		-0.2		-0.050
+12/03/02	7.12		16.64	  50.41	97.8		0.8		0.020
+12/18/02	7.01		21.16	  49.85	107.0		-0.2		-0.023
+12/30/02	7.02		20.88	  50.05	99.3		0.0		0.020
+01/14/03	6.99		21.30	  50.27	98.0		0.0		-0.057
+
+
+14) Other remarks/notes:
+
+On 06/30/2021 this dataset was updated to include embedded QAQC flags for 
+anomalous/suspect data.  System-wide monitoring data beginning in 2007 were 
+processed to allow for QAQC flags and codes to be embedded in the data 
+files rather than detailed in the metadata alone (as in the anomalous/suspect, 
+deleted, and missing data sections above).  Prior to 2006, rejected data were 
+deleted from the dataset so they are unavailable to be used at all, but 
+suspect data were only noted in the metadata document.  Suspect data flags 
+<1> were embedded retroactively in order to allow suspect data to be easily 
+identified and filtered from the dataset if desired for analysis and reporting 
+purposes.  No other flags or codes were embedded in the dataset and users 
+should still refer to the detailed explanations above for more information.
+
+a)	Calibration of DO was preformed on the day of deployment.
+
+

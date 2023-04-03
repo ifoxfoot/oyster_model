@@ -45,7 +45,7 @@ show()
 r_link = rmg.map_mean_of_link_nodes_to_link("mannings_n")
 
 #init tidal flow calculator
-tfc = TidalFlowCalculator(rmg, tidal_range = 2.0, tidal_period = 4.0e4, roughness = r_link)
+tfc = TidalFlowCalculator(rmg, tidal_range = 6.0, tidal_period = 4.0e4, roughness = r_link)
 
 #run the tidal flow calc
 tfc.run_one_step()
@@ -62,10 +62,11 @@ depth_high = 1 * rate[:] * period # depth in m
 rmg.add_field("water_high", depth_high, at = "node")
 
 #water depth ()
-figure('water depth low')  # new fig, with a name
-imshow.imshow_grid(rmg, 'water_low')
+figure('water depth low tide')  # new fig, with a name
+imshow.imshow_grid(grid = rmg, values = 'water_low', limits = (0,10))
 show()
-imshow.imshow_grid(rmg, 'water_high')
+figure('water depth high tide') 
+imshow.imshow_grid(grid = rmg, values = 'water_high', limits = (0,10))
 show()
 
 

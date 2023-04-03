@@ -1,0 +1,2289 @@
+Guana Tolomato Matanzas (GTM) National Estuarine Research Reserve
+Water Quality Metadata Report
+January - December 2003 
+Latest Update: June 30, 2021
+
+1) Principal investigator & contact persons:
+
+Principal Investigator:
+
+Richard Gleeson, Ph.D., Research Coordinator
+9741 Ocean Shore Blvd.
+St. Augustine, FL 32080
+(904) 461-4054
+rglee@whitney.ufl.edu
+
+Other Contact Persons:
+
+Jonathan Brucker B.S., Research Assistant
+E-mail:  jonbrucker@bellsouth.net; (904) 461-4054.
+
+The following individual from the Florida Department of Environmental Protection 
+(Northeast District Office) provided valuable support for sonde management 
+(i.e., deployments, calibrations, maintenance) during much of 2003.
+
+Sharon Evans, Environmental Specialist I
+E-mail: Sharon.A.Evans@dep.state.fl.us; (904) 807-3300.
+
+2) Entry verification:
+
+Data are uploaded to a PC from the YSI Model 6600 data sonde and graphs are 
+produced using EcoWatch software Version 3.15. EcoWatch is used to plot the data 
+and perform basic statistical analysis (i.e., min, max, mean, std dev).  Graphs 
+are evaluated for suspect data, as may result from probe failure.  Notes are 
+made of any unusual data, and sensors are reconditioned as necessary.  Each data 
+file is exported as a comma delimited file (.cdf) using EcoWatch software.  
+Two copies of this .cdf file are saved in the .csv format; one file is used to 
+archive the raw data, whereas the second file is edited to adjust all records to 
+Eastern Standard Time (as needed), to adjust the time as needed to read exactly 
+at the top or bottom of the hour (e.g., 00:00:00; true times on sondes were in 
+many cases 00:00:40 past the top and bottom of the hour), to remove headers and 
+footers, and to delete data at the beginning and end of each record when the 
+instruments were out of the water.  These latter data are identified by field 
+notes that document the times in and out of the water, together with depth and 
+conductivity values near zero. Using the edited .csv files, monthly data are 
+compiled and processed by various macros distributed by the CDMO.  These macros 
+are designed to: 1) check data files for missing data points, 2) fill all cells 
+that do not contain data with periods (.), 3) convert the data columns to the 
+CDMO-approved formats for time, date and numeric variables, 4) find all data 
+that are out of acceptable range for the sensors, 5) save the files as Excel 
+worksheets (*.xls) and 6) generate single parameter monthly graphs.
+
+Anomalous data are evaluated to determine whether to flag or delete the suspect 
+values.  Data are flagged if the values are: 1) outside the range expected for 
+the site, or 2) outside the range of measurements established for the sensors 
+(see Table 1).  Data outside the "normal" range of water quality parameters for 
+a particular site were investigated for validity based on weather data, field 
+observations, QC checks, PC6000 printouts, and instrument diagnostics.  Data 
+are deleted if the anomalies are attributed to sensor malfunction.  In addition 
+to observations of any physical damage (e.g., a torn DO probe membrane), sensor 
+malfunctions are detected if the voltage reading of the probe is outside the 
+range established for the sensor or the sensor will not calibrate.  After 
+corrections are made to the monthly Excel worksheet (*.xls), the edited files 
+are exported as tab-delimited files (*.txt) and sent to the CDMO.  Raw data 
+(*.csv) files are also sent to the CDMO for archiving. Periods were later 
+removed for data dissemination purposes and left blank. Jonathan Brucker is 
+responsible for these tasks.
+
+3) Research Objectives:
+
+The System-wide Monitoring Program (SWMP) water quality initiative began 
+within the GTMNERR in 2001.  There are presently four permanent stations at 
+which YSI 6600 data sondes have been deployed for continuously monitoring a 
+suite of selected abiotic parameters at 30 min intervals.  The positions of 
+these stations allow for comparisons between relatively pristine versus more 
+urbanized drainage basins as well as higher versus lower salinity regions of the 
+estuary (see "Station Descriptions" under "Site Location and Character").  
+Nutrient analyses are also performed on water samples collected monthly at each 
+of these sites.  The objective of this effort is to quantify the 
+spatial/temporal variability and trends, both seasonally and as a function 
+of tidal forcing, of selected abiotic and nutrient parameters within the 
+Reserve, and to explore how these are related to concurrently generated 
+meteorological data.
+
+4) Research methods:
+
+YSI 6600 data sondes have been continuously operated (data 
+collection interval: 30 minutes) at the Pine Island and Fort Matanzas monitoring 
+stations since December 2000 and at the San Sebastian and Pellicer Creek 
+monitoring stations since February 2002.  At each site the sonde is contained 
+within a 10 cm (inside diameter) PVC housing pipe mounted vertically on a 
+piling.  A steel pin at the bottom of the pipe holds the sonde at a position 
+within 1 meter from the bottom.  To facilitate water flow across the sensors, 
+several 2 cm diameter holes were drilled into the submerged portion of the pipe.  
+Hole density is greatest near the base where the sonde sensors are located.  As 
+of April 2, 2003 at 16:30:00, deployment of the sonde at the Pine Island 
+station was reconfigured using a PVC housing that does not have drilled holes or 
+a steel pin at the bottom.  The sonde is now suspended by a stainless steel 
+cable (attached to the cap of the PVC pipe) such that the sensor portion of the 
+sonde extends beyond the end of the PVC housing at a position within 1 meter 
+from the bottom.  Exchanges usually took less than 5 minutes, thus no planned 
+downtime occurred.  At the end of a sampling period, sondes were returned to the 
+laboratory where post-deployment readings and reconditioning took place in 
+accordance with the methods outlined in the YSI Operating and Service Manual.  
+After a superficial rinse of the sonde in tap water, post deployment readings 
+were recorded for temperature and in standards for pH (Fisher 7.00 buffer 
+solution) and conductivity (Exaxol 50.00 mS/cm standard); a post-deployment 
+turbidity reading in 0.0 NTU standard (DI water) was recorded after a more 
+thorough rinse of the turbidity sensor.  This rinse was done to avoid 
+contamination of the NTU standard.  The results of these post-deployment 
+readings were used to evaluate the validity of data (See Tables 9-12).  Whenever 
+the dissolved oxygen (DO) membrane was replaced, it was allowed to equilibrate 
+for 24 hours before the DO sensor was pre-calibrated in water-saturated air 
+for the following deployment.
+
+5)  Site location and character:
+
+The GTMNERR (North section [NW and SE corners]: 30.1632º N, 81.3447º W and 
+29.9698º N, 81.2488º W; South section: 29.8295º N, 81.3294º W and 29.6017º N, 
+81.1936º W), located in the Florida Upper East Coast Drainage Basin, includes 
+over 60,000 acres (24,281 hectares) of publicly owned forested uplands, tidal 
+wetlands, estuarine lagoons and offshore seas.  Geographically separated by the 
+greater St. Augustine area, the Reserve is associated with the riverine systems 
+of the Tolomato and Guana River estuaries to the north and the Matanzas River 
+estuary to the south.  The Tolomato River Basin is about 18 miles (29 km) in 
+length with a drainage area of approximately 53,802 acres (21,773 hectares); it 
+converges with the Matanzas River and Salt Run from the south before flowing 
+into the Atlantic Ocean at the St. Augustine Inlet.  The headwaters of the Guana 
+River originate in the Diego Plains drainage area in Ponte Vedra Beach.  This 
+drainage basin encompasses approximately 7,800 acres (3,157 hectares).  
+The Guana River runs parallel to the Tolomato on the seaward side, with the two 
+lagoons joining 7 miles (11.3 km) north of the St. Augustine Inlet.  The 
+Matanzas River estuary is approximately 20 miles (32 km) in length and extends 8 
+miles (13 km) south of the Matanzas Inlet.  The Matanzas River sub-basin has a 
+drainage area of approximately 103,615 acres (41,931 hectares) and is bounded to 
+the west by the Atlantic Coastal Ridge, which separates it from the lower St. 
+Johns River basin.  Both the St. Augustine and Matanzas Inlets provide oceanic 
+exchange to the system.  The Matanzas Inlet, one of the last "natural" inlets on 
+Florida's east coast, has been unimproved and is suitable only for small 
+watercraft.  The natural hydrology of the Guana Tolomato Matanzas system has 
+been somewhat altered by water control structures, including dikes, inland 
+wells, drainage ditches and a dam across a portion of the Guana River.  In 
+addition, the Intracoastal Waterway traverses both the Tolomato and Matanzas 
+estuaries.
+	
+The climate of northeast Florida is classified as humid subtropical and is 
+characteristic of the Gulf and Atlantic coastal plain of the Southeastern United 
+States.  The average annual rainfall is approximately 52 inches (132 cm) per 
+year, with the wet season extending from June through September.  Seasonal 
+variation in temperature within the Reserve follows that of rainfall 
+with a summer period of high temperatures between June and September and a 
+cooler period extending from December through March.  The annual mean air 
+temperature within the Reserve is approximately 21ºC.
+
+Station Descriptions: The Pine Island (PI) station is at Channel Marker 
+25 (30 03.051´N; 81 22.048´W) in the Tolomato River.  This site is located within 
+the Guana River Marsh Aquatic Preserve in the northern section of the GTMNERR.  
+Channel Marker 25 is adjacent to Pine Island near the mouth of Deep Creek, 
+which provides freshwater drainage from silviculture-dominated uplands in the 
+northwestern portion of the Tolomato River Basin.  The average depth at this 
+site is approximately 3.8 m with a tidal range of about 1.6 m; the bottom type 
+is muddy sand. Salinity ranged from 2.6 to 35.8 ppt during 2003.  The Fort 
+Matanzas (FM) site (in the southern section of the GTMNERR) is located at 
+Channel Marker 75 (29 44.222´N; 81 14.757´W) in the Matanzas River.  This site is 
+approximately 4 km north of the Matanzas Inlet and near a shoreline on 
+Anastasia Island that is undergoing residential development.  The average depth 
+at this site is approximately 3.6 m with a tidal range of about 1.4 m; the 
+bottom type is muddy sand.  The salinity ranged from 19.6 to 36.1 ppt during 
+2003.  Both the FM and PI stations are situated within Class II Shellfish 
+Harvesting Waters.  The San Sebastian (SS) station is at Channel Marker 1 (29 
+52.131´N; 81 18.446´W) located at the confluence of the San Sebastian and 
+Matanzas Rivers, approximately 4 km south of the St. Augustine Inlet.  The San 
+Sebastian River drains an urbanized watershed in the western portion of St. 
+Augustine; it is characterized by both residential and commercial development 
+including five marinas.  The average depth at this site is approximately 4.4 m 
+with a tidal range of about 1.7 m; the bottom type is muddy sand.  The salinity 
+range during 2003 was from 18.6 to 36.3 ppt.  The Pellicer Creek (PC) station 
+(29 40.024´N; 81 15.444´W) is at the end of a recreational dock in Faver Dykes 
+State Park located within the Pellicer Creek Aquatic Preserve in the southern 
+section of the GTM Reserve.  Pellicer Creek is tidal and bordered for much of 
+its length by publicly-owned conservation lands.  The average depth at this 
+site is approximately 2.3 m with a tidal range of about 0.6 m; the bottom type 
+is muddy sand.  The salinity ranged from nearly 0 to 31.9 ppt during 2003.
+
+6) Data collection period:
+
+Data collection at the Pine Island and San Sebastian sites began December 20, 
+2002, while data collection at the Pellicer Creek and Fort Matanzas locations, 
+began December 30, 2002.  All stations have been continuously in service since 
+then.  Individual sonde deployment and retrieval dates and times for 2003 are as 
+follows:
+
+BEGAN			ENDED
+
+Pine Island Site
+12/20/02, 14:00:00		01/09/03, 11:00:00
+01/09/03, 11:30:00		01/22/03, 11:30:00
+01/22/03, 12:00:00		02/05/03, 21:00:00
+02/14/03, 11:00:00		02/26/03, 15:00:00
+02/26/03, 15:30:00		03/12/03, 10:30:00
+03/12/03, 11:00:00		03/28/03, 13:00:00
+04/02/03, 16:30:00		04/11/03, 09:00:00
+04/11/03, 09:30:00		05/02/03, 10:00:00
+05/02/03, 10:30:00		05/16/03, 09:00:00
+05/16/03, 09:30:00		05/30/03, 10:00:00
+05/30/03, 10:30:00		06/13/03, 11:00:00
+06/13/03, 11:30:00		06/25/03, 12:30:00
+06/25/03, 13:00:00		07/10/03, 10:30:00
+07/10/03, 11:00:00		07/24/03, 10:30:00
+07/24/03, 11:00:00		08/07/03, 10:00:00
+08/07/03, 10:30:00		08/20/03, 09:30:00
+08/20/03, 10:00:00		09/03/03, 09:30:00
+09/03/03, 10:00:00		09/11/03, 09:00:00
+09/11/03, 09:30:00		09/26/03, 10:00:00
+*09/26/03, 10:30:00		10/12/03, 14:00:00
+10/12/03, 14:30:00		10/22/03, 11:30:00
+10/22/03, 12:00:00		11/07/03, 11:30:00
+11/07/03, 12:00:00		11/20/03, 12:30:00
+11/20/03, 13:00:00		12/05/03, 11:30:00
+12/05/03, 12:00:00		12/18/03, 13:00:00
+12/18/03, 13:30:00		01/02/04, 12:00:00
+
+San Sebastian Site
+12/20/02, 13:00:00		01/09/03, 10:30:00
+01/09/03, 11:00:00		01/22/03, 13:00:00
+01/22/03, 13:30:00		02/14/03, 09:30:00
+02/14/03, 10:00:00		02/26/03, 14:30:00
+02/26/03, 15:00:00		03/12/03, 11:00:00
+03/12/03, 11:30:00		03/28/03, 16:30:00
+03/28/03, 17:00:00		04/11/03, 10:00:00
+04/11/03, 10:30:00		05/02/03, 11:00:00
+05/02/03, 11:30:00		05/16/03, 10:00:00
+05/16/03, 10:30:00		05/30/03, 11:30:00
+05/30/03, 12:00:00		06/13/03, 12:00:00
+06/13/03, 12:30:00		06/25/03, 13:30:00
+06/25/03, 14:00:00		07/10/03, 09:30:00
+07/10/03, 10:00:00		07/24/03, 09:30:00
+07/24/03, 10:00:00		08/07/03, 11:00:00
+08/07/03, 11:30:00		08/20/03, 10:30:00
+08/20/03, 11:00:00		09/03/03, 10:30:00
+09/03/03, 11:00:00		09/11/03, 10:00:00
+09/11/03, 10:30:00		09/26/03, 10:30:00
+*09/26/03, 11:00:00		10/12/03, 14:30:00
+10/12/03, 15:00:00		10/22/03, 10:00:00
+10/22/03, 10:30:00		11/07/03, 12:30:00
+11/07/03, 13:00:00		11/20/03, 13:30:00
+11/20/02, 14:00:00		12/05/03, 12:00:00
+12/05/03, 12:30:00		12/18/03, 12:00:00
+12/18/03, 12:30:00		01/02/04, 11:00:00
+
+Fort Matanzas Site
+12/30/02, 12:00:00		01/14/03, 10:00:00
+01/14/03, 10:30:00		01/23/03, 10:30:00
+01/23/03, 11:00:00		02/06/03, 14:30:00
+02/06/03, 15:00:00		02/25/03, 09:30:00
+02/25/03, 10:00:00		03/11/03, 13:30:00
+03/11/03, 14:00:00		03/28/03, 15:30:00
+03/28/03, 16:00:00		04/08/03, 15:30:00
+*04/08/03, 16:00:00		05/02/03, 12:30:00
+05/02/03, 13:00:00		05/14/03, 12:30:00
+05/14/03, 13:00:00		05/29/03, 12:30:00
+*05/29/03, 13:00:00		06/11/03, 10:30:00
+06/11/03, 11:00:00		06/27/03, 09:30:00
+06/27/03, 10:00:00		07/11/03, 09:30:00
+07/11/03, 10:00:00		07/26/03, 09:30:00
+07/26/03, 10:00:00		08/08/03, 09:30:00
+08/08/03, 10:00:00		08/29/03, 09:30:00
+08/29/03, 10:00:00		09/12/03, 12:30:00
+09/12/03, 13:00:00		09/25/03, 13:30:00
+09/25/03, 14:00:00		10/08/03, 10:30:00
+10/08/03, 11:00:00		10/21/03, 13:30:00
+10/21/03, 14:00:00		11/06/03, 10:30:00
+11/06/03, 11:00:00		11/21/03, 10:30:00
+11/21/03, 11:00:00		12/04/03, 12:00:00
+12/04/03, 12:30:00		12/16/03, 14:30:00
+12/16/03, 15:00:00		12/31/03, 11:30:00
+12/31/03, 12:00:00		01/21/04, 14:30:00
+
+Pellicer Creek Site
+12/30/02, 13:00:00		01/14/03, 11:00:00
+01/14/03, 11:30:00		01/23/03, 11:00:00
+01/23/03, 11:30:00		02/05/03, 16:00:00
+02/05/03, 16:30:00		02/20/03, 15:30:00
+02/20/03, 16:00:00		02/25/03, 10:30:00
+02/25/03, 11:00:00		03/12/03, 16:30:00
+03/12/03, 17:00:00		03/29/03, 08:30:00
+03/29/03, 09:00:00		04/11/03, 07:30:00
+04/11/03, 08:00:00		05/01/03, 17:30:00
+05/01/03, 18:00:00		05/15/03, 13:30:00
+05/15/03, 14:00:00		05/30/03, 13:30:00
+05/30/03, 14:00:00		06/11/03, 11:30:00
+06/11/03, 12:00:00		06/26/03, 09:30:00
+06/26/03, 10:00:00		07/11/03, 10:30:00
+07/11/03, 11:00:00		07/25/03, 09:30:00
+07/25/03, 10:00:00		08/08/03, 10:30:00
+08/08/03, 11:00:00		08/21/03, 13:00:00
+08/21/03, 13:30:00		09/04/03, 09:00:00
+09/04/03, 09:30:00		09/12/03, 11:00:00
+09/12/03, 11:30:00		09/25/03, 12:00:00
+09/25/03, 12:30:00		10/08/03, 11:30:00
+10/08/03, 12:00:00		10/21/03, 09:00:00
+10/21/03, 09:30:00		11/06/03, 11:30:00
+11/06/03, 12:30:00		11/21/03, 11:30:00
+11/21/03, 12:00:00		12/04/03, 15:30:00
+12/04/03, 16:00:00		12/16/03, 13:00:00
+12/16/03, 13:30:00		12/31/03, 12:30:00
+12/31/03, 13:00:00		01/21/04, 13:00:00
+
+* Indicates deployments for which time data required correction to Eastern 
+Standard Time or the conversion of seconds to read exactly the top or bottom of 
+the hour in the edited .csv file.
+
+7) Distribution:
+
+According to the Ocean and Coastal Resource Management Data Dissemination Policy 
+for the NERRS System-wide Monitoring Program, NOAA/ERD retains the right to 
+analyze, synthesize and publish summaries of the NERRS System-wide Monitoring 
+Program data.  The PI retains the right to be fully credited for having 
+collected and processed the data.  Following academic courtesy standards, the PI 
+and NERR site where the data were collected will be contacted and fully 
+acknowledged in any subsequent publications in which any part of the data 
+are used.  Manuscripts resulting from the NOAA/OCRM supported research that are 
+produced for publication in open literature, including refereed scientific 
+journals, will acknowledge that the research was conducted under an award from 
+the Estuarine Reserves Division, Office of Ocean and Coastal Resource 
+Management, National Ocean Service, National Oceanic and Atmospheric 
+Administration.  The data set enclosed within this package/transmission is only 
+as good as the quality assurance and quality control procedures outlined by the 
+enclosed metadata reporting statement.  The user bears all responsibility for 
+its subsequent use/misuse in any further analyses or comparisons.  The Federal 
+government does not assume liability to the Recipient or third persons, nor will 
+the Federal government reimburse or indemnify the Recipient for its liability 
+due to any losses resulting in any way from the use of this data.
+NERR water quality data and metadata can be obtained from the Research 
+Coordinator at the individual NERR site (see section 1), from the Data Manager 
+at the Centralized Data Management Office (see personnel directory under the 
+general information link at the CDMO website) and online at the CDMO website 
+http://cdmo.baruch.sc.edu.  Data are available in text tab-delimited format, 
+Microsoft Excel spreadsheet format and comma-delimited format.
+
+8) Associated researchers and projects:
+
+The GTMNERR has formed partnerships with other agencies and organizations 
+actively involved in resource protection in the GTMNERR watershed.  Cooperating 
+managers of lands within the NERR include the:  1) National Park Service (NPS), 
+2) St. Johns River Water Management District (SJRWMD), 3) Department of 
+Environmental Protection (DEP) Division of Recreation and Parks/Florida Park 
+Service (FPS), 4) DEP Aquatic Preserve Program, 5) Florida Fish and Wildlife 
+Conservation Commission, and 6) Flagler County.  
+
+The SJRWMD Northern Coastal Basin Program, established in 1995, covers the 
+watersheds along the Intracoastal Waterway from Ponce Inlet in Volusia County, 
+north through Flagler and St. Johns Counties, to the Guana River marshes at 
+Ponte Vedra in southern Duval County. This program was developed in response to 
+concerns about the impacts of population growth and development on water quality 
+in the Northern Coastal Basin (NCB).  Some of the major research activities 
+conducted within the boundaries of the GTMNERR through the NCB program include: 
+1) a fisheries monitoring project in conjunction with United States Geological 
+Survey, 2) hydrodynamic modeling of the estuarine systems, and 3) water quality 
+monitoring.  Many of the water quality monitoring and assessment activities of 
+the NCB program are aimed at pollution source identification and the development 
+of pollution load reduction goals.
+
+Other water quality research and monitoring initiatives within the GTMNERR 
+include: 1) studies of nutrient profiles by the laboratory of Dr. Edward Phlips 
+at the University of Florida (This work includes GTMNERR-contracted nutrient 
+analyses (part of SWMP) as well as separately-funded studies), and 2) regular 
+monitoring of fecal coliform levels in shellfish harvesting waters by the 
+Department of Agriculture and Consumer Services.
+
+GTMNERR-specific research projects currently in progress include: 1) a CICEET 
+funded study by Dr. Valerie Harwood at the University of South Florida to 
+develop a real-time, fiber-optic biosensor for human pathogens in estuarine 
+waters, 2) a NERR-funded graduate research project to decipher the parameters 
+affecting reforestation of spoil islands, 3) a NERR-funded graduate research 
+project to develop an estuarine planning strategy through an assessment of 
+human use patterns together with a delineation of ecological resources, 4) a 
+collaboration with the National Weather Service in Jacksonville and University 
+of North Florida to test a web-enabled, wireless communication system for real-
+time data acquisition from field instruments, 5) a collaboration with the 
+University of South Carolina to monitor the abundance and distribution 
+of non-indigenous crab species at selected NERR sites on the east and west 
+coasts of the US, and 6) a study to examine the winter recruitment of juvenile 
+bluefish (Pomatomus saltatrix) in Northeast Florida.
+
+9) Variable Sequence, Range of measurements, Units, Resolution, and Accuracy: 
+
+Table 1.  YSI 6000/6600 data logger
+
+Variable      Range of Measurements          Resolution           Accuracy
+Date          1-12, 1-31, 00-99 (Mo,Day,Yr)  1 mo, 1 day, 1 yr    NA
+Time          0-24, 0-60, 0-60 (Hr,Min,Sec)  1 hr, 1 min, 1 s     NA
+Temp               -5 to 45 (c)              0.01  C              +/-0.15C
+Sp COND            0-100(mS/cm)              0.01mS/cm            +/-0.5% Of 
+reading + 0.001mS/Cm
+Salinity      0-70 Parts per thousand (ppt)  0.01 ppt             +/- 1% of 
+Reading or 0.1 ppt, (whichever is greater)
+DO            0-200 (% air saturation)       0.1% @air sat        +/-2% @air 
+Saturation
+DO            200-500 (% air saturation      0.1% @ air sat       +/- 6% @ 
+Saturation
+DO                 0-20 (mg/l)               0.01 mg/l            +/- 0.2mg/l
+DO                 20-50 (mg/l)              0.01 mg/l            +/- 0.6mg/l
+Depth (shallow)    0-9.1 (m)                 0.001m               +/- 0.018m
+PH                 2-14 units                0.01 units           +/- 0.2units
+Turb               0-1000 NTU                0.1 NTU              +/- 5% of 
+Reading or 2 NTU (whichever is greater)
+
+Data columns are separated by tabs.  Each file contains a two line
+column header at the top of the page which identifies measurements and 
+units for each column.
+
+
+10) Coded variable indicator and variable code definitions:
+
+File definitions: YSI deployment site/file definition/month/year (e.g., FMWQ0303 
+= monthly water quality data from the Fort Matanzas site for March of 2003).  PI 
+= Pine Island; SS = San Sebastian; FM = Fort Matanzas; and PC = Pellicer Creek. 
+
+11) Anomalous data:
+  	
+Note #1: Slight shifts in data are sometimes correlated with sonde exchanges.  
+These shifts are most noticeable in pH, specific conductivity, salinity, DO% and 
+DO conc, and may be related to sensor drift (e.g., due to fouling) and/or 
+calibration/performance differences between sondes.
+
+Note #2: Turbidity "outliers" (i.e., values that are negative or greater than 
+1000 NTU) are listed separately in Tables 2, 3, 4, and 5; unless specifically 
+stated in the listings below, these data were not deleted from the monthly 
+records.  Negative turbidity values occur throughout the year at all 
+four sites.  These negative values are within the accuracy range of the sensor 
+(+/- 2.0 NTU) and, therefore, were not removed from the dataset.
+
+Depth outliers at the San Sebastian site are listed in Table 6, and DO% and DO 
+concentration outliers at the Fort Matanzas site are presented in Tables 7 and 
+8, respectively.  None of these outliers were deleted.
+
+January 1-31, 2003
+
+SS
+a)	Depth data between 1/9 11:00:00 and 1/22 13:00:00 suggests sonde did not 
+deploy to the bottom of the PVC housing pipe.
+
+FM
+a)	Shifts in DO data at 1/14 10:30:00 and 1/23 11:00:00 associated with sonde 
+exchanges (see Note #1).
+ 
+PC
+a)	Deleted turbidity data between 1/14 11:30:00 and 1/23 11:00:00; turbidity 
+probe failure.
+
+PI
+No data anomalies
+
+February 1-28, 2003
+SS
+a)	Depth data between 2/26 15:00:00 and 2/26 22:30:00 suggest sonde did not 
+deploy to the bottom of the PVC housing pipe until 2/26 22:30:00.
+
+FM
+No data anomalies
+ 
+PC
+a)	Suspect DO spike at 2/25 11:00:00, possibly associated with sonde 
+exchange.
+
+PI
+a)	Missing data from 2/5 21:30:00 through 2/14 10:30:00 due to battery 
+failure.
+
+March 1-31, 2003
+PI
+No data anomalies 
+
+SS
+No data anomalies 
+
+FM
+No data anomalies 
+
+PC
+No data anomalies 
+
+PI
+a)	The shift in depth at 3/19 16:30:00 was due to a break in the PVC housing 
+pipe that altered the position of the sonde within the pipe; therefore, all data 
+between 3/19 16:30:00 and 3/28 13:00:00 were collected at this shallower depth.
+b)	Sonde out of water 3/28 13:30:00 to 3/31 23:30:00 for PVC housing 
+replacement.
+c)	Suspect turbidity data between 3/6 14:00:00 and 3/12 10:30:00, values out 
+of range; possibly caused by accumulation of mud around turbidity sensor 
+(apparent upon retrieval).
+
+April 1-30, 2003
+SS	 
+a)	Interesting specific conductivity and salinity values between 4/19 
+04:30:00 and 4/20 00:30:00 and between 4/24 04:30:00 and 4/24 18:30:00, cause 
+unknown; a similar drop was observed at the Fort Matanzas site on 4/19.
+
+FM
+a)	Interesting specific conductivity and salinity values between 4/19 
+07:30:00 and 4/19 20:00:00, cause unknown; a similar profile was observed at the 
+San Sebastian site on 4/19.
+b)	Suspect turbidity rise from 4/24 07:30:00 to 4/30 23:30:00; cause unknown.
+
+PC
+No data anomalies
+
+PI
+On 4/2, the PVC housing pipe was replaced and the sonde redeployed.  This was 
+the first deployment where the sonde, suspended by a stainless steel cable, 
+extended out of the bottom of the PVC housing.
+a)	Sonde out of water for PVC housing replacement 4/1 00:00:00 to 4/2/ 
+16:00:00.
+b)	Suspect DO data between 4/8 02:00:00 and 4/11 09:00:00; fouling on DO 
+membrane.
+c)	Suspect DO data between 4/28 14:30:00 and 4/30 23:30:00; extensive 
+fouling.
+d)	Deleted turbidity data between 4/21 00:00:00 and 4/30 23:30:00; apparently 
+caused by fouling and/or accumulation of mud on probe. Probe had very high post-
+calibration reading (1196 NTU in 0.0 NTU water).
+e)	Suspect specific conductivity and salinity data between 4/27 17:00:00 and 
+4/30 23:30:00; very low post calibration value (3.752 mS/cm).
+
+May 1-31, 2003
+SS
+No data anomalies 
+
+FM
+a)	Suspect turbidity data from 5/1 00:00:00 to 5/2 12:30:00; cause unknown.
+
+PC
+No data anomalies 
+
+
+PI
+a)	Suspect conductivity and salinity data between 5/1 00:00:00 and 5/2 
+10:00:00; very low post-calibration conductivity reading (3.752 mS/cm).
+b)	Deleted turbidity data between 5/1 00:00:00 and 5/2 10:00:00 and between 
+5/10 04:30:00 and 5/16 09:00:00, values out of range; apparently caused by mud 
+accumulation/heavy fouling on probe (observed upon retrieval).  Probes had very 
+high post-calibration readings (1196 NTU and 1558.1 NTU, respectively, in 0.0 
+NTU water).
+c)	Suspect DO data between 5/1 00:00:00 and 5/2 10:00:00 and between 5/12 
+00:00:00 and 5/16 09:00:00; heavy fouling (barnacles on membrane at 5/16 
+retrieval).
+d) 	The reason for the rather large drops in DO that occurred on 5/6 at 
+01:30:00, 07:30:00, and 13:30:00 is not known; however, the proximity to slack 
+tide conditions in each case may have been a contributing factor.
+
+June 1-30, 2003
+SS
+a)	Shift in pH at 6/25 14:00:00 associated with sonde exchange (see Note #1).
+
+FM
+No data anomalies
+
+PC
+No data anomalies
+
+PI
+a)	Suspect turbidity data 6/3 16:00:00, between 6/4 10:00:00 and 6/8 13:00:00, 
+between 6/9 19:30:00 and 6/10 03:00:00, and between 6/10 22:30:00 and 6/13 
+11:00:00, values out of range; heavy fouling observed at retrieval on 6/13.
+b)	Shift in pH on 6/25 13:00:00 associated with sonde exchange (see Note #1).
+
+
+July 1-31, 2003
+SS
+a)	pH shifts on 7/10 10:00:00 and 7/24 10:00:00 are associated with sonde 
+exchanges (see Note #1).
+
+FM
+
+PC
+No data anomalies
+
+PI
+a)	Deleted turbidity data between 7/14 20:00:00 and 7/24 10:30:00; upon sonde 
+retrieval, both turbidity and chlorophyll probes were missing the wipers.  Also, 
+turbidity probe had a high post-calibration reading (20.4 NTU in 0.0 NTU water).
+b)	Shift to lower DO values commencing 7/24 11:00:00 associated with sonde 
+exchange (see Note #1).
+
+
+August 1-31, 2003
+SS
+a)	Upward DO shift at 8/20 11:00:00 associated with sonde exchange (see Note 
+#1).
+
+FM
+a)	Unusual (and suspect) DO data between 8/11 and 8/18.  DO charge was out of 
+range between 8/11 12:30:00 and 8/18 15:30:00.  The percent and concentration 
+values were very low, and included negative values between 8/15 10:00:00 and 
+8/18 00:30:00.  These events were followed by a return to positive DO percent 
+and concentration values and DO charge within acceptable range.  Post deployment 
+checks showed that the probe was performing correctly (DO percent was 95.2 in 
+full saturation).  Consulted Michael Lizotte at YSI, and he indicated that 
+hydrogen sulfide in the water can cause the DO probes to react this way.
+
+PC
+No data anomalies
+
+PI
+a)	Shift to higher DO level at 8/7 10:30:00 and lower level at 8/20 10:00:00 
+associated with sonde exchanges (see Note #1).
+
+
+September 1-30, 2003
+SS
+a)	DO shift at 9/11 10:30:00 associated with sonde exchange (see Note #1).
+b)	Negative turbidity values for much of deployment from 9/11 10:30:00 to 
+9/26 10:30:00 attributed to a negative calibration offset.  Turbidity probe had 
+a post-calibration reading of -9.2 NTU in 0.0 NTU water.
+
+FM
+a)	Suspect DO data between 9/12 and 9/14, possibly attributable to hydrogen 
+sulfide in the water (see August FMb above).  DO charge out of range between 
+9/12 13:00:00 and 9/15 05:00:00.  DO percent and concentration maintained 
+negative values between 9/12 15:00:00 and 9/14 04:30:00.  These events were 
+followed by a return to positive DO percent and concentration values and DO 
+charge within acceptable range.  Post calibration checks showed that the probe 
+was operating normally (DO percent was 100.0 in full saturation).
+
+PC
+No data anomalies
+
+PI
+a)	Shifts in DO data at 9/3 10:00:00 and 9/11 09:30:00 associated with sonde 
+exchange (see Note #1).
+b)	Deleted DO data between 9/23 01:00:00 and 9/26 10:00:00, DO membrane 
+missing at sonde retrieval; damage attributed to a stone crab, Menippe 
+mercenaria, (5-7 cm carapace width) found inside of the sonde guard.
+c)	Deleted pH data between 9/23 02:30:00 and 9/26 10:00:00, pH bulb found 
+broken when sonde retrieved; damage attributed to a stone crab, Menippe 
+mercenaria, found inside of the sonde guard.
+
+
+October 1-31, 2003
+SS
+No data anomalies
+
+FM
+No data anomalies
+
+PC
+a)	Suspect turbidity profile for 10/8 12:00:00 to 10/21 09:00:00 deployment.  
+This particular turbidity probe subsequently required repair in December.
+
+PI 
+No data anomalies
+
+November 1-30, 2003
+SS
+No data anomalies 
+
+FM
+a)	Suspect DO data between 11/21 11:00:00 and 11/30 23:30:00, post 
+calibration value low (77.5 DO %).
+
+PC
+a)	The 11/6 12:00:00 reading was missed during the sonde exchange process.
+b)	Suspect turbidity profile for 11/6 12:30:00 to 11/21 11:30:00.  This 
+particular turbidity probe subsequently required repair in December.
+c)  	The prominent increase in depth between approximately 11/8 18:00:00 and 
+11/11 20:30:00 is associated with strong N/NE winds during this period, 
+together with the occurrence of a full moon.
+
+PI 
+a)  Suspect DO spike on 11/29 at 17:30:00; cause unknown
+
+December 1-31, 2003
+SS
+a)	Shifts in pH data between 12/5 12:30:00 and 12/18 12:30:00 associated with 
+sonde exchange (see Note #1).
+
+FM
+a)	Suspect DO data between 12/1 00:00:00 and 12/4 12:00:00, post calibration 
+value low (77.5 DO %).
+
+PC
+No data anomalies
+
+PI
+a)	DO spike at 12/18 13:30:00 may be artifact associated with sonde exchange.
+b)	Shifts in pH data at 12/5 12:00:00 and 12/18 13:30:00 associated with 
+sonde exchange (see Note #1).
+
+
+Table 2.  Turbidity outliers in 2003 at the Pine Island site.
+
+Date		Time		Value
+03/08/2003	21:00:00	1486
+03/08/2003	22:00:00	1446
+03/08/2003	23:30:00	1487
+03/09/2003	00:00:00	1273
+03/09/2003	09:30:00	1485
+03/09/2003	11:30:00	1485
+03/09/2003	12:00:00	1012
+03/09/2003	13:30:00	1296
+03/09/2003	15:00:00	1485
+03/09/2003	21:00:00	1485
+03/09/2003	22:00:00	1485
+03/09/2003	23:30:00	1485
+03/10/2003	00:00:00	1485
+03/10/2003	00:30:00	1430
+03/10/2003	01:00:00	1485
+03/10/2003	01:30:00	1099
+03/10/2003	02:00:00	1485
+03/10/2003	03:00:00	1485
+03/10/2003	03:30:00	1485
+03/10/2003	04:00:00	1485
+03/10/2003	04:30:00	1485
+03/10/2003	06:00:00	1484
+03/10/2003	06:30:00	1484
+03/10/2003	07:30:00	1483
+03/10/2003	08:30:00	1482
+03/10/2003	09:00:00	1428
+03/10/2003	09:30:00	1483
+03/10/2003	10:00:00	1483
+03/10/2003	11:00:00	1024
+03/10/2003	11:30:00	1484
+03/10/2003	15:30:00	1485
+03/10/2003	16:00:00	1011
+03/10/2003	17:00:00	1488
+03/10/2003	17:30:00	1469
+03/10/2003	18:30:00	1488
+03/10/2003	19:00:00	1489
+03/10/2003	19:30:00	1489
+03/10/2003	21:30:00	1333
+03/10/2003	22:00:00	1489
+03/10/2003	22:30:00	1489
+03/10/2003	23:30:00	1489
+03/11/2003	00:00:00	1018
+03/11/2003	01:00:00	1489
+03/11/2003	01:30:00	1489
+03/11/2003	02:00:00	1169
+03/11/2003	02:30:00	1450
+03/11/2003	04:00:00	1489
+03/11/2003	06:30:00	1488
+03/11/2003	07:00:00	1488
+03/11/2003	12:30:00	1179
+03/11/2003	16:00:00	1490
+03/11/2003	16:30:00	1490
+06/03/2003	16:00:00	1349
+06/04/2003	10:00:00	1575
+06/04/2003	16:00:00	1574
+06/04/2003	17:30:00	1574
+06/04/2003	18:00:00	1574
+06/04/2003	19:30:00	1574
+06/04/2003	20:00:00	1574
+06/04/2003	21:00:00	1574
+06/04/2003	21:30:00	1574
+06/04/2003	22:30:00	1570
+06/04/2003	23:30:00	1573
+06/05/2003	01:00:00	1573
+06/05/2003	02:30:00	1573
+06/05/2003	03:30:00	1573
+06/05/2003	04:30:00	1572
+06/05/2003	05:30:00	1571
+06/05/2003	07:00:00	1570
+06/05/2003	08:00:00	1570
+06/05/2003	09:30:00	1548
+06/05/2003	10:00:00	1193
+06/05/2003	11:00:00	1572
+06/05/2003	12:30:00	1573
+06/05/2003	13:00:00	1573
+06/05/2003	14:00:00	1573
+06/05/2003	16:00:00	1576
+06/05/2003	16:30:00	1576
+06/05/2003	18:00:00	1578
+06/05/2003	19:00:00	1578
+06/05/2003	20:00:00	1578
+06/05/2003	21:30:00	1577
+06/05/2003	22:30:00	1577
+06/06/2003	00:00:00	1576
+06/06/2003	01:00:00	1495
+06/06/2003	01:30:00	1576
+06/06/2003	03:00:00	1576
+06/06/2003	05:00:00	1576
+06/06/2003	06:00:00	1575
+06/06/2003	07:00:00	1575
+06/06/2003	08:00:00	1574
+06/06/2003	09:00:00	1575
+06/06/2003	10:00:00	1576
+06/06/2003	11:00:00	1576
+06/06/2003	12:30:00	1576
+06/06/2003	13:30:00	1577
+06/06/2003	14:30:00	1578
+06/06/2003	15:30:00	1578
+06/06/2003	17:00:00	1579
+06/06/2003	18:00:00	1580
+06/06/2003	19:30:00	1580
+06/06/2003	20:30:00	1581
+06/06/2003	21:30:00	1581
+06/06/2003	22:30:00	1580
+06/07/2003	00:00:00	1580
+06/07/2003	01:00:00	1579
+06/07/2003	02:30:00	1578
+06/07/2003	03:30:00	1578
+06/07/2003	05:00:00	1578
+06/07/2003	06:00:00	1578
+06/07/2003	07:30:00	1577
+06/07/2003	08:30:00	1577
+06/07/2003	10:00:00	1577
+06/07/2003	11:00:00	1578
+06/07/2003	11:30:00	1042
+06/07/2003	12:30:00	1578
+06/07/2003	14:00:00	1578
+06/07/2003	15:00:00	1578
+06/07/2003	15:30:00	1505
+06/07/2003	16:30:00	1578
+06/07/2003	18:00:00	1579
+06/07/2003	19:00:00	1579
+06/07/2003	19:30:00	1521
+06/07/2003	20:30:00	1578
+06/07/2003	21:30:00	1578
+06/07/2003	23:00:00	1578
+06/08/2003	00:00:00	1578
+06/08/2003	01:30:00	1577
+06/08/2003	02:00:00	1346
+06/08/2003	02:30:00	1516
+06/08/2003	03:00:00	1576
+06/08/2003	04:30:00	1576
+06/08/2003	05:30:00	1576
+06/08/2003	06:30:00	1323
+06/08/2003	07:00:00	1576
+06/08/2003	08:00:00	1199
+06/08/2003	08:30:00	1575
+06/08/2003	09:30:00	1574
+06/08/2003	11:00:00	1574
+06/08/2003	12:00:00	1575
+06/08/2003	13:00:00	1575
+06/09/2003	19:30:00	1580
+06/09/2003	22:30:00	1581
+06/10/2003	00:00:00	1581
+06/10/2003	01:00:00	1581
+06/10/2003	02:00:00	1580
+06/10/2003	03:00:00	1580
+06/10/2003	22:30:00	1584
+06/11/2003	00:00:00	1584
+06/11/2003	02:00:00	1583
+06/11/2003	03:00:00	1582
+06/11/2003	04:00:00	1582
+06/11/2003	09:00:00	1581
+06/11/2003	09:30:00	1582
+06/11/2003	10:30:00	1583
+06/11/2003	11:30:00	1585
+06/11/2003	12:30:00	1587
+06/11/2003	13:30:00	1587
+06/11/2003	14:30:00	1587
+06/11/2003	15:30:00	1515
+06/11/2003	17:00:00	1586
+06/11/2003	18:00:00	1584
+06/11/2003	20:30:00	1581
+06/11/2003	21:30:00	1583
+06/11/2003	22:30:00	1584
+06/11/2003	23:30:00	1585
+06/12/2003	00:30:00	1584
+06/12/2003	02:30:00	1583
+06/12/2003	03:30:00	1583
+06/12/2003	04:30:00	1583
+06/12/2003	05:30:00	1582
+06/12/2003	07:30:00	1581
+06/12/2003	09:00:00	1581
+06/12/2003	10:30:00	1020
+06/12/2003	11:30:00	1259
+06/12/2003	14:00:00	1586
+06/12/2003	15:00:00	1585
+06/12/2003	16:00:00	1585
+06/12/2003	17:00:00	1583
+06/12/2003	18:00:00	1583
+06/12/2003	19:00:00	1582
+06/12/2003	20:30:00	1580
+06/12/2003	21:30:00	1579
+06/12/2003	22:30:00	1581
+06/12/2003	23:30:00	1581
+06/13/2003	00:30:00	1582
+06/13/2003	01:30:00	1488
+06/13/2003	02:00:00	1551
+06/13/2003	03:00:00	1579
+06/13/2003	04:00:00	1579
+06/13/2003	05:00:00	1579
+06/13/2003	06:00:00	1579
+06/13/2003	08:30:00	1578
+06/13/2003	09:30:00	1578
+06/13/2003	10:30:00	1111
+06/13/2003	11:00:00	1111
+07/05/2003	05:30:00	1542
+08/01/2003	22:00:00	1533
+08/23/2003	14:00:00	1275
+08/23/2003	20:00:00	1534
+08/28/2003	17:30:00	1473
+Table 3.  Turbidity outliers in 2003 at the San Sebastian site.
+
+Date		Time		Value
+04/27/2003	20:30:00	1906
+04/27/2003	21:30:00	1595
+04/27/2003	22:00:00	1222
+09/11/2003	10:30:00	-0004
+09/11/2003	11:00:00	-0004
+09/11/2003	11:30:00	-0001
+09/11/2003	12:30:00	-0001
+09/11/2003	13:00:00	-0001
+09/11/2003	16:00:00	-0005
+09/11/2003	16:30:00	-0005
+09/11/2003	17:00:00	-0001
+09/11/2003	17:30:00	-0001
+09/11/2003	18:00:00	-0002
+09/11/2003	18:30:00	-0004
+09/11/2003	19:00:00	-0001
+09/11/2003	19:30:00	-0001
+09/11/2003	21:00:00	0000
+09/11/2003	22:00:00	-0001
+09/11/2003	22:30:00	-0006
+09/11/2003	23:00:00	-0005
+09/11/2003	23:30:00	-0003
+09/12/2003	00:00:00	-0001
+09/12/2003	00:30:00	-0003
+09/12/2003	01:00:00	-0001
+09/12/2003	01:30:00	-0001
+09/12/2003	02:00:00	-0001
+09/12/2003	02:30:00	-0001
+09/12/2003	03:00:00	-0001
+09/12/2003	03:30:00	-0001
+09/12/2003	04:00:00	-0002
+09/12/2003	04:30:00	-0005
+09/12/2003	05:00:00	-0002
+09/12/2003	05:30:00	-0002
+09/12/2003	06:00:00	-0002
+09/12/2003	06:30:00	-0003
+09/12/2003	07:00:00	-0002
+09/12/2003	10:00:00	-0001
+09/12/2003	10:30:00	-0006
+09/12/2003	11:00:00	-0004
+09/12/2003	11:30:00	-0005
+09/12/2003	12:00:00	-0003
+09/12/2003	12:30:00	-0001
+09/12/2003	13:00:00	-0001
+09/12/2003	13:30:00	-0003
+09/12/2003	14:00:00	-0001
+09/12/2003	15:00:00	-0001
+09/12/2003	15:30:00	-0002
+09/12/2003	16:00:00	-0003
+09/12/2003	16:30:00	-0006
+09/12/2003	17:00:00	-0005
+09/12/2003	17:30:00	-0002
+09/12/2003	18:00:00	-0002
+09/12/2003	18:30:00	-0001
+09/12/2003	19:00:00	-0003
+09/12/2003	19:30:00	0000
+09/12/2003	20:00:00	-0001
+09/12/2003	20:30:00	-0003
+09/12/2003	21:00:00	-0003
+09/12/2003	21:30:00	-0002
+09/12/2003	22:00:00	-0003
+09/12/2003	22:30:00	-0006
+09/12/2003	23:00:00	-0007
+09/12/2003	23:30:00	-0007
+09/13/2003	00:00:00	-0006
+09/13/2003	00:30:00	-0003
+09/13/2003	01:00:00	-0004
+09/13/2003	01:30:00	-0004
+09/13/2003	02:00:00	-0002
+09/13/2003	02:30:00	0000
+09/13/2003	03:00:00	-0001
+09/13/2003	03:30:00	-0002
+09/13/2003	04:00:00	-0002
+09/13/2003	04:30:00	-0005
+09/13/2003	05:00:00	-0004
+09/13/2003	05:30:00	-0004
+09/13/2003	06:00:00	-0003
+09/13/2003	06:30:00	-0003
+09/13/2003	07:00:00	-0002
+09/13/2003	07:30:00	-0003
+09/13/2003	08:00:00	-0002
+09/13/2003	09:00:00	-0002
+09/13/2003	09:30:00	-0003
+09/13/2003	10:00:00	-0004
+09/13/2003	10:30:00	-0004
+09/13/2003	11:00:00	-0007
+09/13/2003	11:30:00	-0007
+09/13/2003	12:00:00	-0005
+09/13/2003	12:30:00	-0004
+09/13/2003	13:00:00	-0003
+09/13/2003	13:30:00	-0001
+09/13/2003	14:00:00	-0002
+09/13/2003	14:30:00	-0001
+09/13/2003	15:00:00	0000
+09/13/2003	16:00:00	-0001
+09/13/2003	16:30:00	-0002
+09/13/2003	17:00:00	-0006
+09/13/2003	17:30:00	-0004
+09/13/2003	18:00:00	-0003
+09/13/2003	18:30:00	-0003
+09/13/2003	19:00:00	-0001
+09/13/2003	19:30:00	-0004
+09/13/2003	20:00:00	-0004
+09/13/2003	20:30:00	-0001
+09/13/2003	21:00:00	-0002
+09/13/2003	21:30:00	-0005
+09/13/2003	22:00:00	-0005
+09/13/2003	22:30:00	-0006
+09/13/2003	23:00:00	-0007
+09/13/2003	23:30:00	-0008
+09/14/2003	00:00:00	-0007
+09/14/2003	00:30:00	-0005
+09/14/2003	01:00:00	-0004
+09/14/2003	01:30:00	-0004
+09/14/2003	02:00:00	-0002
+09/14/2003	02:30:00	-0002
+09/14/2003	03:30:00	-0001
+09/14/2003	04:00:00	-0002
+09/14/2003	04:30:00	-0002
+09/14/2003	05:00:00	-0004
+09/14/2003	05:30:00	-0005
+09/14/2003	06:00:00	-0003
+09/14/2003	06:30:00	-0002
+09/14/2003	07:00:00	-0002
+09/14/2003	07:30:00	-0001
+09/14/2003	08:00:00	-0003
+09/14/2003	09:30:00	-0004
+09/14/2003	10:00:00	-0004
+09/14/2003	10:30:00	-0004
+09/14/2003	11:00:00	-0006
+09/14/2003	11:30:00	-0007
+09/14/2003	12:00:00	-0006
+09/14/2003	12:30:00	-0006
+09/14/2003	13:00:00	-0004
+09/14/2003	13:30:00	-0002
+09/14/2003	14:30:00	-0001
+09/14/2003	15:30:00	0000
+09/14/2003	16:00:00	-0001
+09/14/2003	16:30:00	-0002
+09/14/2003	17:00:00	-0005
+09/14/2003	17:30:00	-0006
+09/14/2003	18:00:00	-0007
+09/14/2003	18:30:00	-0003
+09/14/2003	19:00:00	-0003
+09/14/2003	19:30:00	-0003
+09/14/2003	20:00:00	-0003
+09/14/2003	20:30:00	-0004
+09/14/2003	21:00:00	0000
+09/14/2003	21:30:00	-0002
+09/14/2003	22:00:00	-0004
+09/14/2003	22:30:00	-0004
+09/14/2003	23:00:00	-0006
+09/14/2003	23:30:00	-0008
+09/15/2003	00:00:00	-0008
+09/15/2003	00:30:00	-0004
+09/15/2003	01:00:00	-0006
+09/15/2003	01:30:00	-0004
+09/15/2003	02:30:00	-0004
+09/15/2003	03:00:00	-0001
+09/15/2003	03:30:00	-0002
+09/15/2003	04:00:00	-0001
+09/15/2003	04:30:00	-0003
+09/15/2003	05:00:00	-0003
+09/15/2003	05:30:00	-0005
+09/15/2003	06:00:00	-0005
+09/15/2003	06:30:00	-0004
+09/15/2003	07:00:00	-0002
+09/15/2003	07:30:00	-0003
+09/15/2003	08:00:00	-0003
+09/15/2003	08:30:00	-0004
+09/15/2003	09:30:00	-0001
+09/15/2003	10:00:00	-0004
+09/15/2003	10:30:00	-0004
+09/15/2003	11:00:00	-0004
+09/15/2003	11:30:00	-0006
+09/15/2003	12:00:00	-0007
+09/15/2003	12:30:00	-0007
+09/15/2003	13:00:00	-0004
+09/15/2003	13:30:00	-0006
+09/15/2003	14:00:00	-0004
+09/15/2003	14:30:00	-0004
+09/15/2003	15:00:00	-0002
+09/15/2003	15:30:00	-0001
+09/15/2003	16:00:00	0000
+09/15/2003	16:30:00	0000
+09/15/2003	17:00:00	-0002
+09/15/2003	17:30:00	-0002
+09/15/2003	18:00:00	-0006
+09/15/2003	18:30:00	-0006
+09/15/2003	19:00:00	-0004
+09/15/2003	19:30:00	-0005
+09/15/2003	20:00:00	-0004
+09/15/2003	20:30:00	-0003
+09/15/2003	21:00:00	-0004
+09/15/2003	21:30:00	-0005
+09/15/2003	22:00:00	-0003
+09/15/2003	22:30:00	-0004
+09/15/2003	23:00:00	-0005
+09/15/2003	23:30:00	-0007
+09/16/2003	00:00:00	-0007
+09/16/2003	00:30:00	-0008
+09/16/2003	01:00:00	-0007
+09/16/2003	02:00:00	-0006
+09/16/2003	02:30:00	-0004
+09/16/2003	03:00:00	-0003
+09/16/2003	03:30:00	-0001
+09/16/2003	04:00:00	-0002
+09/16/2003	04:30:00	-0002
+09/16/2003	05:00:00	-0002
+09/16/2003	05:30:00	-0003
+09/16/2003	06:00:00	-0006
+09/16/2003	06:30:00	-0005
+09/16/2003	07:00:00	-0005
+09/16/2003	07:30:00	-0002
+09/16/2003	08:00:00	-0003
+09/16/2003	08:30:00	-0004
+09/16/2003	09:00:00	-0004
+09/16/2003	09:30:00	-0003
+09/16/2003	10:00:00	-0003
+09/16/2003	10:30:00	-0004
+09/16/2003	11:00:00	-0003
+09/16/2003	11:30:00	-0003
+09/16/2003	12:00:00	-0004
+09/16/2003	12:30:00	-0005
+09/16/2003	13:00:00	-0007
+09/16/2003	13:30:00	-0007
+09/16/2003	14:00:00	-0005
+09/16/2003	14:30:00	-0005
+09/16/2003	15:00:00	-0003
+09/16/2003	15:30:00	-0003
+09/16/2003	16:00:00	-0003
+09/16/2003	16:30:00	-0002
+09/16/2003	17:00:00	-0003
+09/16/2003	17:30:00	-0002
+09/16/2003	18:00:00	-0002
+09/16/2003	18:30:00	-0005
+09/16/2003	19:00:00	-0006
+09/16/2003	20:00:00	-0005
+09/16/2003	20:30:00	-0005
+09/16/2003	21:00:00	-0002
+09/16/2003	21:30:00	-0005
+09/16/2003	22:00:00	-0004
+09/16/2003	22:30:00	-0006
+09/16/2003	23:00:00	-0004
+09/16/2003	23:30:00	-0004
+09/17/2003	00:00:00	-0006
+09/17/2003	00:30:00	-0006
+09/17/2003	01:00:00	-0007
+09/17/2003	01:30:00	-0007
+09/17/2003	02:00:00	-0006
+09/17/2003	02:30:00	-0005
+09/17/2003	03:00:00	-0004
+09/17/2003	03:30:00	-0004
+09/17/2003	04:00:00	-0004
+09/17/2003	04:30:00	0000
+09/17/2003	05:00:00	-0003
+09/17/2003	05:30:00	-0004
+09/17/2003	06:00:00	-0004
+09/17/2003	06:30:00	-0004
+09/17/2003	07:00:00	-0005
+09/17/2003	07:30:00	-0003
+09/17/2003	08:00:00	-0006
+09/17/2003	08:30:00	-0005
+09/17/2003	09:00:00	-0006
+09/17/2003	09:30:00	-0005
+09/17/2003	10:00:00	-0005
+09/17/2003	10:30:00	-0005
+09/17/2003	11:00:00	-0004
+09/17/2003	11:30:00	-0002
+09/17/2003	12:00:00	-0003
+09/17/2003	12:30:00	-0002
+09/17/2003	13:00:00	-0001
+09/17/2003	13:30:00	-0004
+09/17/2003	14:00:00	-0006
+09/17/2003	14:30:00	-0005
+09/17/2003	15:00:00	-0005
+09/17/2003	15:30:00	-0005
+09/17/2003	16:00:00	-0004
+09/17/2003	16:30:00	-0001
+09/17/2003	17:00:00	-0003
+09/17/2003	17:30:00	-0003
+09/17/2003	18:00:00	-0003
+09/17/2003	18:30:00	-0003
+09/17/2003	19:00:00	-0004
+09/17/2003	19:30:00	-0004
+09/17/2003	20:00:00	-0005
+09/17/2003	20:30:00	-0006
+09/17/2003	21:00:00	-0007
+09/17/2003	22:00:00	-0006
+09/17/2003	22:30:00	-0005
+09/17/2003	23:00:00	-0006
+09/17/2003	23:30:00	-0005
+09/18/2003	00:00:00	-0005
+09/18/2003	00:30:00	-0006
+09/18/2003	01:00:00	-0007
+09/18/2003	01:30:00	-0007
+09/18/2003	02:00:00	-0007
+09/18/2003	02:30:00	-0007
+09/18/2003	03:00:00	-0005
+09/18/2003	03:30:00	-0006
+09/18/2003	04:00:00	-0006
+09/18/2003	04:30:00	-0005
+09/18/2003	05:00:00	-0004
+09/18/2003	05:30:00	-0005
+09/18/2003	06:00:00	-0005
+09/18/2003	06:30:00	-0005
+09/18/2003	07:00:00	-0004
+09/18/2003	07:30:00	-0004
+09/18/2003	08:00:00	-0006
+09/18/2003	08:30:00	-0005
+09/18/2003	09:00:00	-0003
+09/18/2003	09:30:00	-0004
+09/18/2003	10:00:00	-0005
+09/18/2003	10:30:00	-0004
+09/18/2003	11:00:00	-0005
+09/18/2003	11:30:00	-0004
+09/18/2003	12:00:00	-0003
+09/18/2003	12:30:00	-0001
+09/18/2003	14:30:00	-0002
+09/18/2003	15:00:00	-0003
+09/18/2003	15:30:00	-0005
+09/18/2003	16:00:00	-0003
+09/18/2003	16:30:00	-0002
+09/18/2003	17:00:00	-0004
+09/18/2003	17:30:00	-0005
+09/18/2003	18:00:00	-0004
+09/18/2003	18:30:00	-0003
+09/18/2003	19:00:00	-0004
+09/18/2003	19:30:00	-0004
+09/18/2003	20:00:00	-0005
+09/18/2003	20:30:00	-0005
+09/18/2003	21:00:00	-0004
+09/18/2003	21:30:00	-0007
+09/18/2003	22:00:00	-0006
+09/18/2003	22:30:00	-0006
+09/18/2003	23:00:00	-0003
+09/18/2003	23:30:00	-0003
+09/19/2003	00:00:00	-0004
+09/19/2003	00:30:00	-0004
+09/19/2003	01:00:00	-0004
+09/19/2003	01:30:00	-0007
+09/19/2003	02:00:00	-0007
+09/19/2003	02:30:00	-0005
+09/19/2003	03:00:00	-0005
+09/19/2003	03:30:00	-0004
+09/19/2003	04:00:00	-0002
+09/19/2003	04:30:00	-0005
+09/19/2003	05:00:00	-0004
+09/19/2003	05:30:00	-0003
+09/19/2003	06:00:00	-0001
+09/19/2003	06:30:00	-0004
+09/19/2003	07:00:00	-0002
+09/19/2003	07:30:00	-0003
+09/19/2003	08:00:00	-0004
+09/19/2003	08:30:00	-0006
+09/19/2003	09:00:00	-0005
+09/19/2003	09:30:00	-0006
+09/19/2003	10:00:00	-0005
+09/19/2003	10:30:00	-0004
+09/19/2003	11:00:00	-0004
+09/19/2003	11:30:00	-0003
+09/19/2003	15:00:00	-0002
+09/19/2003	15:30:00	-0004
+09/19/2003	16:00:00	-0003
+09/19/2003	16:30:00	-0003
+09/19/2003	17:00:00	-0005
+09/19/2003	17:30:00	-0003
+09/19/2003	18:00:00	-0002
+09/19/2003	18:30:00	-0002
+09/19/2003	19:00:00	-0002
+09/19/2003	19:30:00	-0001
+09/19/2003	20:00:00	-0001
+09/19/2003	20:30:00	-0004
+09/19/2003	21:00:00	-0002
+09/19/2003	21:30:00	-0004
+09/19/2003	22:00:00	-0005
+09/19/2003	22:30:00	-0004
+09/19/2003	23:00:00	-0003
+09/19/2003	23:30:00	-0004
+09/20/2003	00:00:00	-0004
+09/20/2003	00:30:00	-0001
+09/20/2003	01:00:00	0000
+09/20/2003	01:30:00	-0002
+09/20/2003	02:00:00	-0002
+09/20/2003	04:00:00	-0005
+09/20/2003	04:30:00	-0004
+09/20/2003	05:00:00	-0003
+09/20/2003	05:30:00	-0001
+09/20/2003	06:00:00	-0003
+09/20/2003	06:30:00	-0002
+09/20/2003	07:30:00	-0002
+09/20/2003	08:00:00	-0003
+09/20/2003	08:30:00	-0004
+09/20/2003	09:00:00	-0005
+09/20/2003	09:30:00	-0005
+09/20/2003	10:00:00	-0005
+09/20/2003	10:30:00	-0006
+09/20/2003	11:00:00	-0005
+09/20/2003	11:30:00	-0005
+09/20/2003	12:00:00	-0002
+09/20/2003	15:30:00	0000
+09/20/2003	16:00:00	-0004
+09/20/2003	16:30:00	-0008
+09/20/2003	17:00:00	-0006
+09/20/2003	17:30:00	-0004
+09/20/2003	18:00:00	-0004
+09/20/2003	18:30:00	-0004
+09/20/2003	19:00:00	-0003
+09/20/2003	19:30:00	-0002
+09/20/2003	20:00:00	-0001
+09/20/2003	21:30:00	-0003
+09/20/2003	22:00:00	-0004
+09/20/2003	22:30:00	-0005
+09/20/2003	23:00:00	-0005
+09/20/2003	23:30:00	-0004
+09/21/2003	00:00:00	-0005
+09/21/2003	00:30:00	-0003
+09/21/2003	01:00:00	-0002
+09/21/2003	01:30:00	-0003
+09/21/2003	02:00:00	-0004
+09/21/2003	02:30:00	0000
+09/21/2003	03:00:00	-0001
+09/21/2003	03:30:00	-0003
+09/21/2003	04:00:00	-0003
+09/21/2003	04:30:00	-0007
+09/21/2003	05:00:00	-0004
+09/21/2003	05:30:00	-0006
+09/21/2003	06:00:00	-0005
+09/21/2003	06:30:00	-0006
+09/21/2003	07:00:00	-0003
+09/21/2003	07:30:00	-0002
+09/21/2003	08:00:00	-0001
+09/21/2003	08:30:00	-0002
+09/21/2003	09:00:00	-0004
+09/21/2003	09:30:00	-0003
+09/21/2003	10:00:00	-0005
+09/21/2003	10:30:00	-0004
+09/21/2003	11:00:00	-0005
+09/21/2003	11:30:00	-0004
+09/21/2003	12:00:00	-0004
+09/21/2003	12:30:00	-0002
+09/21/2003	17:00:00	-0002
+09/21/2003	17:30:00	-0005
+09/21/2003	18:00:00	-0006
+09/21/2003	18:30:00	-0006
+09/21/2003	19:00:00	-0004
+09/21/2003	19:30:00	-0002
+09/21/2003	20:00:00	-0003
+09/21/2003	20:30:00	-0003
+09/21/2003	21:00:00	-0002
+09/21/2003	21:30:00	-0001
+09/21/2003	22:00:00	-0001
+09/21/2003	22:30:00	-0001
+09/22/2003	00:00:00	-0005
+09/22/2003	00:30:00	-0006
+09/22/2003	01:00:00	-0003
+09/22/2003	01:30:00	-0003
+09/22/2003	02:00:00	-0003
+09/22/2003	02:30:00	-0003
+09/22/2003	03:00:00	-0003
+09/22/2003	04:30:00	-0002
+09/22/2003	05:00:00	-0002
+09/22/2003	05:30:00	-0003
+09/22/2003	06:00:00	-0007
+09/22/2003	06:30:00	-0005
+09/22/2003	07:00:00	-0004
+09/22/2003	07:30:00	-0003
+09/22/2003	08:00:00	-0002
+09/22/2003	08:30:00	-0003
+09/22/2003	09:00:00	-0002
+09/22/2003	10:00:00	-0001
+09/22/2003	10:30:00	-0001
+09/22/2003	11:00:00	-0005
+09/22/2003	11:30:00	-0004
+09/22/2003	12:00:00	-0003
+09/22/2003	12:30:00	-0003
+09/22/2003	13:00:00	-0003
+09/22/2003	13:30:00	-0001
+09/22/2003	18:00:00	-0002
+09/22/2003	18:30:00	-0007
+09/22/2003	19:00:00	2037
+09/22/2003	19:30:00	-0002
+09/22/2003	20:00:00	-0003
+09/22/2003	20:30:00	-0004
+09/22/2003	21:00:00	-0001
+09/22/2003	21:30:00	-0001
+09/22/2003	22:00:00	-0002
+09/22/2003	23:30:00	-0002
+09/23/2003	00:00:00	-0002
+09/23/2003	02:30:00	-0001
+09/23/2003	06:30:00	-0002
+09/23/2003	07:00:00	-0002
+09/23/2003	07:30:00	-0002
+09/23/2003	08:30:00	-0002
+09/23/2003	09:00:00	-0001
+09/23/2003	09:30:00	-0001
+09/23/2003	11:00:00	-0003
+09/23/2003	11:30:00	-0004
+09/23/2003	12:00:00	-0004
+09/23/2003	13:00:00	-0002
+09/23/2003	13:30:00	-0003
+09/23/2003	14:00:00	-0003
+09/23/2003	19:30:00	-0007
+09/23/2003	20:00:00	-0004
+09/23/2003	20:30:00	-0001
+09/23/2003	21:30:00	0000
+09/24/2003	00:00:00	-0001
+09/24/2003	01:00:00	-0004
+09/24/2003	01:30:00	-0004
+09/24/2003	02:00:00	-0003
+09/24/2003	02:30:00	-0003
+09/24/2003	03:30:00	-0001
+09/24/2003	07:00:00	-0001
+09/24/2003	07:30:00	-0004
+09/24/2003	08:00:00	-0003
+09/24/2003	08:30:00	-0004
+09/24/2003	09:00:00	-0002
+09/24/2003	12:00:00	-0001
+09/24/2003	12:30:00	-0002
+09/24/2003	13:00:00	-0002
+09/24/2003	13:30:00	-0005
+09/24/2003	14:00:00	-0006
+09/24/2003	15:00:00	-0001
+09/24/2003	18:30:00	-0001
+09/24/2003	19:00:00	-0001
+09/24/2003	19:30:00	-0002
+09/24/2003	20:00:00	-0002
+09/24/2003	20:30:00	-0005
+09/24/2003	22:00:00	-0003
+09/24/2003	22:30:00	-0004
+09/25/2003	02:00:00	-0001
+09/25/2003	02:30:00	-0005
+09/25/2003	03:00:00	-0002
+09/25/2003	03:30:00	-0001
+09/25/2003	04:00:00	-0002
+09/25/2003	04:30:00	-0001
+09/25/2003	05:00:00	1579
+09/25/2003	07:00:00	0000
+09/25/2003	07:30:00	-0003
+09/25/2003	08:00:00	-0005
+09/25/2003	08:30:00	-0007
+09/25/2003	09:00:00	-0005
+09/25/2003	09:30:00	-0005
+09/25/2003	10:00:00	-0005
+09/25/2003	10:30:00	-0003
+09/25/2003	11:00:00	-0004
+09/25/2003	11:30:00	-0002
+09/25/2003	12:00:00	-0001
+09/25/2003	14:00:00	-0005
+09/25/2003	14:30:00	-0007
+09/25/2003	15:00:00	-0006
+09/25/2003	16:30:00	0000
+09/25/2003	19:30:00	-0002
+09/25/2003	20:00:00	-0003
+09/25/2003	20:30:00	-0005
+09/25/2003	21:00:00	-0007
+09/25/2003	22:30:00	-0005
+09/25/2003	23:00:00	-0003
+09/25/2003	23:30:00	-0004
+09/26/2003	00:00:00	-0002
+09/26/2003	02:00:00	0000
+09/26/2003	02:30:00	-0003
+09/26/2003	03:00:00	-0002
+09/26/2003	03:30:00	-0004
+09/26/2003	07:30:00	-0003
+09/26/2003	08:00:00	-0004
+09/26/2003	09:00:00	-0006
+09/26/2003	09:30:00	-0007
+09/26/2003	10:00:00	-0006
+09/26/2003	10:30:00	-0005
+10/28/2003	08:00:00	1026
+
+Table 4.  Turbidity outliers in 2003 at the Fort Matanzas site.
+
+Date		Time		Value
+01/18/2003	19:00:00	1252
+01/19/2003	07:30:00	1275
+09/10/2003	04:30:00	2370
+09/10/2003	23:00:00	1386
+11/13/2003	00:00:00	1739
+
+Table 5.  Turbidity outliers in 2003 at the Pellicer Creek site.
+	
+Date		Time		Value
+09/14/2003	07:30:00	0000
+09/14/2003	14:30:00	-0002
+09/14/2003	18:30:00	0000
+09/14/2003	19:00:00	-0001
+09/14/2003	19:30:00	-0001
+09/14/2003	20:00:00	-0001
+09/14/2003	20:30:00	-0001
+09/14/2003	21:00:00	-0001
+09/14/2003	21:30:00	-0001
+09/14/2003	22:00:00	-0001
+09/14/2003	22:30:00	0000
+09/14/2003	23:00:00	0000
+09/15/2003	07:00:00	-0002
+09/15/2003	07:30:00	-0001
+09/15/2003	08:00:00	-0001
+09/15/2003	09:00:00	-0001
+09/15/2003	19:30:00	-0001
+09/15/2003	20:00:00	-0002
+09/15/2003	20:30:00	-0001
+09/15/2003	21:00:00	-0002
+09/15/2003	21:30:00	-0002
+09/15/2003	22:00:00	-0001
+09/15/2003	22:30:00	-0001
+09/16/2003	07:00:00	-0001
+09/16/2003	07:30:00	-0001
+09/16/2003	08:00:00	-0001
+09/16/2003	11:00:00	-0001
+09/16/2003	21:00:00	-0001
+09/16/2003	21:30:00	-0001
+09/16/2003	22:00:00	-0001
+09/16/2003	22:30:00	-0001
+09/16/2003	23:00:00	-0001
+09/17/2003	23:30:00	-0002
+09/18/2003	00:00:00	-0001
+09/18/2003	01:00:00	-0001
+09/18/2003	09:30:00	-0001
+09/18/2003	10:00:00	-0001
+09/18/2003	10:30:00	-0001
+09/18/2003	11:00:00	0000
+09/18/2003	17:00:00	-0003
+09/18/2003	17:30:00	-0004
+09/18/2003	18:00:00	0000
+09/18/2003	22:30:00	0000
+09/18/2003	23:00:00	-0002
+09/18/2003	23:30:00	-0003
+09/19/2003	00:00:00	-0002
+09/19/2003	00:30:00	-0002
+09/19/2003	01:00:00	-0003
+09/19/2003	01:30:00	-0002
+09/19/2003	02:00:00	-0002
+09/19/2003	02:30:00	0000
+09/19/2003	03:30:00	-0002
+09/19/2003	04:00:00	-0001
+09/19/2003	04:30:00	-0003
+09/19/2003	05:00:00	-0003
+09/19/2003	05:30:00	-0003
+09/19/2003	06:00:00	-0003
+09/19/2003	06:30:00	-0003
+09/19/2003	07:00:00	-0002
+09/19/2003	07:30:00	-0003
+09/19/2003	08:00:00	-0003
+09/19/2003	08:30:00	-0004
+09/19/2003	09:00:00	-0002
+09/19/2003	09:30:00	-0003
+09/19/2003	10:00:00	-0002
+09/19/2003	10:30:00	-0002
+09/19/2003	11:00:00	-0002
+09/19/2003	11:30:00	-0002
+09/19/2003	12:00:00	-0002
+09/19/2003	12:30:00	-0002
+09/19/2003	13:00:00	-0001
+09/19/2003	13:30:00	-0001
+09/19/2003	14:00:00	-0001
+09/19/2003	14:30:00	0000
+09/19/2003	16:00:00	-0001
+09/19/2003	16:30:00	-0001
+09/19/2003	17:00:00	-0002
+09/19/2003	17:30:00	-0005
+09/19/2003	18:00:00	-0005
+09/19/2003	18:30:00	-0005
+09/19/2003	19:00:00	-0004
+09/19/2003	19:30:00	-0004
+09/19/2003	20:30:00	-0003
+09/19/2003	21:00:00	-0005
+09/19/2003	21:30:00	-0006
+09/19/2003	22:00:00	-0006
+09/19/2003	22:30:00	-0007
+09/19/2003	23:00:00	-0006
+09/19/2003	23:30:00	-0005
+09/20/2003	00:00:00	-0005
+09/20/2003	00:30:00	-0005
+09/20/2003	01:00:00	-0005
+09/20/2003	01:30:00	-0005
+09/20/2003	02:00:00	-0002
+09/20/2003	02:30:00	-0003
+09/20/2003	03:00:00	-0002
+09/20/2003	03:30:00	-0003
+09/20/2003	04:00:00	-0002
+09/20/2003	04:30:00	-0002
+09/20/2003	05:00:00	-0002
+09/20/2003	05:30:00	-0002
+09/20/2003	06:00:00	-0003
+09/20/2003	06:30:00	-0002
+09/20/2003	07:00:00	-0004
+09/20/2003	07:30:00	-0003
+09/20/2003	08:00:00	-0003
+09/20/2003	08:30:00	-0001
+09/20/2003	09:00:00	-0004
+09/20/2003	09:30:00	-0004
+09/20/2003	10:00:00	-0004
+09/20/2003	10:30:00	-0003
+09/20/2003	11:00:00	-0002
+09/20/2003	11:30:00	-0004
+09/20/2003	12:00:00	-0004
+09/20/2003	12:30:00	-0003
+09/20/2003	13:00:00	-0003
+09/20/2003	13:30:00	-0002
+09/20/2003	23:30:00	-0001
+09/21/2003	00:30:00	-0002
+09/21/2003	01:00:00	-0002
+09/21/2003	01:30:00	-0004
+09/21/2003	02:00:00	-0003
+09/21/2003	02:30:00	-0002
+09/21/2003	03:00:00	-0001
+09/21/2003	03:30:00	-0001
+09/21/2003	04:00:00	-0001
+09/21/2003	12:00:00	-0001
+09/21/2003	12:30:00	-0002
+09/21/2003	13:00:00	-0003
+09/21/2003	13:30:00	-0002
+09/21/2003	14:00:00	-0001
+09/22/2003	02:00:00	0000
+09/22/2003	02:30:00	-0001
+09/22/2003	03:00:00	-0001
+09/22/2003	03:30:00	-0001
+09/22/2003	13:30:00	0000
+09/22/2003	14:00:00	-0001
+09/22/2003	14:30:00	-0001
+09/22/2003	15:30:00	-0001
+09/22/2003	16:30:00	-0001
+09/22/2003	17:00:00	0000
+09/23/2003	01:30:00	0000
+09/23/2003	02:00:00	0000
+09/23/2003	02:30:00	-0003
+09/23/2003	03:00:00	-0003
+09/23/2003	03:30:00	-0004
+09/23/2003	04:00:00	-0003
+09/23/2003	04:30:00	-0003
+09/23/2003	05:00:00	-0002
+09/23/2003	06:00:00	0000
+09/23/2003	06:30:00	0000
+09/23/2003	12:00:00	0000
+09/23/2003	12:30:00	-0001
+09/23/2003	13:00:00	-0002
+09/23/2003	13:30:00	-0002
+09/23/2003	14:00:00	-0002
+09/23/2003	14:30:00	-0002
+09/23/2003	15:00:00	-0002
+09/23/2003	15:30:00	-0004
+09/23/2003	16:00:00	-0003
+09/23/2003	16:30:00	-0003
+09/23/2003	17:00:00	-0001
+09/23/2003	17:30:00	-0001
+09/24/2003	01:30:00	-0002
+09/24/2003	02:00:00	-0001
+09/24/2003	02:30:00	-0004
+09/24/2003	03:00:00	-0004
+09/24/2003	03:30:00	-0004
+09/24/2003	04:00:00	-0005
+09/24/2003	04:30:00	-0005
+09/24/2003	05:00:00	-0006
+09/24/2003	05:30:00	-0004
+09/24/2003	06:00:00	-0002
+09/24/2003	06:30:00	-0001
+09/24/2003	10:30:00	-0002
+09/24/2003	13:30:00	-0002
+09/24/2003	14:00:00	-0003
+09/24/2003	14:30:00	-0003
+09/24/2003	15:00:00	-0004
+09/24/2003	15:30:00	-0003
+09/24/2003	16:00:00	-0005
+09/24/2003	16:30:00	-0005
+09/24/2003	17:00:00	-0002
+09/24/2003	17:30:00	-0004
+09/24/2003	18:00:00	-0003
+09/24/2003	18:30:00	-0001
+09/24/2003	19:00:00	-0002
+09/25/2003	04:00:00	0000
+09/25/2003	04:30:00	-0003
+09/25/2003	05:00:00	-0005
+09/25/2003	05:30:00	-0003
+09/25/2003	06:00:00	-0001
+09/25/2003	06:30:00	-0002
+09/25/2003	11:00:00	-0002
+09/25/2003	11:30:00	-0004
+10/13/2003	14:00:00	-0001
+10/14/2003	01:30:00	-0002
+10/14/2003	14:30:00	0000
+10/15/2003	02:00:00	-0001
+10/15/2003	02:30:00	0000
+11/02/2003	04:30:00	1625
+11/08/2003	17:30:00	-0001
+11/08/2003	19:30:00	0000
+11/09/2003	04:00:00	0000
+11/09/2003	04:30:00	-0001
+11/09/2003	05:00:00	-0001
+11/09/2003	05:30:00	-0001
+11/09/2003	06:00:00	-0001
+11/09/2003	06:30:00	-0001
+11/11/2003	13:30:00	0000
+11/11/2003	20:30:00	0000
+11/11/2003	21:30:00	0000
+11/11/2003	22:30:00	0000
+11/12/2003	00:00:00	0000
+11/12/2003	00:30:00	0000
+11/12/2003	01:00:00	-0002
+11/12/2003	01:30:00	0000
+11/12/2003	13:30:00	-0001
+11/12/2003	14:30:00	-0002
+11/12/2003	15:30:00	0000
+11/12/2003	19:30:00	-0001
+11/12/2003	20:00:00	-0001
+11/12/2003	20:30:00	-0001
+11/12/2003	21:00:00	-0001
+11/12/2003	21:30:00	-0001
+11/12/2003	22:00:00	-0001
+11/12/2003	22:30:00	-0001
+11/12/2003	23:00:00	-0001
+11/12/2003	23:30:00	-0001
+11/13/2003	00:00:00	-0001
+11/13/2003	00:30:00	-0001
+11/13/2003	01:00:00	-0002
+11/13/2003	01:30:00	-0002
+11/13/2003	02:00:00	-0002
+11/13/2003	02:30:00	-0002
+11/13/2003	03:00:00	-0001
+11/13/2003	03:30:00	0000
+11/13/2003	04:00:00	0000
+11/13/2003	04:30:00	0000
+11/13/2003	05:00:00	-0001
+11/13/2003	05:30:00	-0001
+11/13/2003	06:00:00	0000
+11/13/2003	06:30:00	-0001
+11/13/2003	07:00:00	0000
+11/13/2003	14:00:00	-0001
+11/13/2003	14:30:00	-0002
+11/13/2003	15:00:00	-0003
+11/13/2003	15:30:00	-0002
+11/13/2003	16:00:00	-0002
+11/13/2003	16:30:00	-0003
+11/13/2003	17:00:00	-0003
+11/13/2003	17:30:00	-0003
+11/13/2003	18:00:00	-0004
+11/13/2003	18:30:00	-0004
+11/13/2003	19:00:00	-0004
+11/13/2003	19:30:00	-0003
+11/13/2003	20:00:00	-0003
+11/13/2003	20:30:00	-0004
+11/13/2003	21:00:00	-0003
+11/13/2003	21:30:00	-0003
+11/13/2003	23:30:00	0000
+11/14/2003	00:00:00	-0001
+11/14/2003	00:30:00	-0001
+11/14/2003	01:30:00	0000
+11/14/2003	02:00:00	0000
+11/14/2003	02:30:00	-0001
+11/14/2003	03:00:00	-0003
+11/14/2003	03:30:00	-0003
+11/14/2003	04:00:00	-0004
+11/14/2003	04:30:00	-0004
+11/14/2003	05:00:00	-0003
+11/14/2003	05:30:00	-0003
+11/14/2003	06:00:00	-0003
+11/14/2003	06:30:00	-0004
+11/14/2003	07:00:00	-0003
+11/14/2003	07:30:00	-0003
+11/14/2003	08:00:00	-0003
+11/14/2003	08:30:00	-0001
+11/14/2003	22:00:00	0000
+11/15/2003	06:00:00	0000
+11/15/2003	06:30:00	0000
+11/15/2003	07:00:00	-0001
+11/15/2003	07:30:00	-0001
+11/15/2003	08:00:00	-0001
+11/15/2003	08:30:00	0000
+11/15/2003	09:00:00	0000
+11/15/2003	16:00:00	-0001
+11/15/2003	16:30:00	0000
+11/15/2003	17:30:00	-0001
+11/15/2003	18:00:00	-0001
+11/15/2003	18:30:00	-0002
+11/15/2003	19:00:00	-0002
+11/15/2003	19:30:00	-0002
+11/15/2003	20:00:00	-0002
+11/15/2003	20:30:00	-0002
+11/15/2003	21:00:00	-0002
+11/15/2003	21:30:00	-0002
+11/15/2003	22:00:00	-0002
+11/15/2003	22:30:00	-0002
+11/15/2003	23:00:00	-0001
+11/15/2003	23:30:00	-0002
+11/16/2003	00:00:00	-0001
+11/16/2003	00:30:00	-0001
+11/16/2003	01:00:00	-0001
+11/16/2003	01:30:00	-0001
+11/16/2003	02:00:00	-0002
+11/16/2003	02:30:00	-0002
+11/16/2003	03:00:00	-0002
+11/16/2003	03:30:00	-0003
+11/16/2003	04:00:00	-0003
+11/16/2003	04:30:00	-0004
+11/16/2003	05:00:00	-0004
+11/16/2003	05:30:00	-0004
+11/16/2003	06:00:00	-0004
+11/16/2003	06:30:00	-0004
+11/16/2003	07:00:00	-0004
+11/16/2003	07:30:00	-0004
+11/16/2003	08:00:00	-0004
+11/16/2003	08:30:00	-0004
+11/16/2003	09:00:00	-0004
+11/16/2003	09:30:00	-0004
+11/16/2003	15:30:00	0000
+11/16/2003	16:00:00	-0001
+11/16/2003	16:30:00	-0003
+11/16/2003	17:00:00	-0003
+11/16/2003	17:30:00	-0003
+11/16/2003	18:00:00	-0002
+11/16/2003	18:30:00	-0002
+11/16/2003	19:00:00	-0003
+11/16/2003	19:30:00	-0003
+11/16/2003	20:00:00	-0004
+11/16/2003	20:30:00	-0004
+11/16/2003	21:00:00	-0004
+11/16/2003	21:30:00	-0003
+11/16/2003	22:00:00	-0004
+11/16/2003	22:30:00	-0003
+11/16/2003	23:00:00	-0003
+11/16/2003	23:30:00	-0003
+11/17/2003	00:00:00	-0002
+11/17/2003	00:30:00	-0001
+11/17/2003	02:00:00	0000
+11/17/2003	02:30:00	-0001
+11/17/2003	03:00:00	-0002
+11/17/2003	03:30:00	-0001
+11/17/2003	04:00:00	-0002
+11/17/2003	04:30:00	-0003
+11/17/2003	05:00:00	-0004
+11/17/2003	05:30:00	-0004
+11/17/2003	06:00:00	-0004
+11/17/2003	06:30:00	-0004
+11/17/2003	07:00:00	-0004
+11/17/2003	07:30:00	-0005
+11/17/2003	08:00:00	-0005
+11/17/2003	08:30:00	-0004
+11/17/2003	09:00:00	-0004
+11/17/2003	09:30:00	-0005
+11/17/2003	10:00:00	-0005
+11/17/2003	10:30:00	-0005
+11/17/2003	11:00:00	-0005
+11/17/2003	11:30:00	-0004
+11/17/2003	12:00:00	-0003
+11/17/2003	12:30:00	-0002
+11/17/2003	13:30:00	0000
+11/17/2003	14:00:00	-0002
+11/17/2003	14:30:00	-0002
+11/17/2003	15:00:00	-0002
+11/17/2003	15:30:00	-0001
+11/17/2003	16:00:00	-0003
+11/17/2003	16:30:00	-0004
+11/17/2003	17:00:00	-0004
+11/17/2003	17:30:00	-0006
+11/17/2003	18:00:00	-0006
+11/17/2003	18:30:00	-0006
+11/17/2003	19:00:00	-0006
+11/17/2003	19:30:00	-0006
+11/17/2003	20:00:00	-0006
+11/17/2003	20:30:00	-0006
+11/17/2003	21:00:00	-0006
+11/17/2003	21:30:00	-0006
+11/17/2003	22:00:00	-0006
+11/17/2003	22:30:00	-0006
+11/17/2003	23:00:00	-0006
+11/17/2003	23:30:00	-0006
+11/18/2003	00:00:00	-0006
+11/18/2003	00:30:00	-0005
+11/18/2003	01:00:00	-0005
+11/18/2003	01:30:00	-0003
+11/18/2003	02:00:00	-0002
+11/18/2003	02:30:00	-0002
+11/18/2003	03:00:00	-0003
+11/18/2003	03:30:00	-0003
+11/18/2003	04:00:00	-0003
+11/18/2003	04:30:00	-0004
+11/18/2003	05:00:00	-0004
+11/18/2003	05:30:00	-0004
+11/18/2003	06:00:00	-0005
+11/18/2003	06:30:00	-0005
+11/18/2003	07:00:00	-0005
+11/18/2003	07:30:00	-0004
+11/18/2003	08:00:00	-0005
+11/18/2003	08:30:00	-0005
+11/18/2003	09:00:00	-0006
+11/18/2003	09:30:00	-0005
+11/18/2003	10:00:00	-0005
+11/18/2003	10:30:00	-0005
+11/18/2003	11:00:00	-0005
+11/18/2003	11:30:00	-0005
+11/18/2003	12:00:00	-0005
+11/18/2003	12:30:00	-0005
+11/18/2003	13:00:00	-0005
+11/18/2003	13:30:00	-0001
+11/18/2003	17:30:00	-0001
+11/18/2003	18:00:00	-0003
+11/18/2003	18:30:00	-0004
+11/18/2003	19:00:00	-0004
+11/18/2003	19:30:00	-0003
+11/18/2003	20:00:00	-0004
+11/18/2003	20:30:00	-0004
+11/18/2003	21:00:00	-0004
+11/18/2003	21:30:00	-0003
+11/18/2003	22:00:00	-0004
+11/18/2003	22:30:00	-0004
+11/18/2003	23:00:00	-0004
+11/18/2003	23:30:00	-0004
+11/19/2003	00:00:00	-0003
+11/19/2003	00:30:00	-0002
+11/19/2003	01:00:00	-0002
+11/19/2003	01:30:00	0000
+11/19/2003	02:00:00	-0002
+11/19/2003	04:30:00	0000
+11/19/2003	06:00:00	0000
+11/19/2003	06:30:00	-0001
+11/19/2003	07:00:00	-0002
+11/19/2003	07:30:00	-0001
+11/19/2003	08:30:00	-0001
+11/19/2003	09:00:00	-0001
+11/19/2003	09:30:00	-0002
+11/19/2003	10:30:00	-0001
+
+Table 6.  Depth outliers in 2003 at the San Sebastian site.
+
+01/17/2003	01:00:00	-0.01
+01/17/2003	01:30:00	-0.04
+01/19/2003	02:30:00	0.00
+01/21/2003	04:00:00	-0.02
+01/21/2003	04:30:00	-0.04
+
+Table 7.  DO% outliers in 2003 at the Fort Matanzas site.
+
+08/15/2003	10:00:00	-000.7
+08/15/2003	10:30:00	-001.7
+08/16/2003	01:00:00	-017.4
+08/16/2003	05:00:00	-010.6
+08/16/2003	07:00:00	-013.7
+08/16/2003	10:30:00	-014.1
+08/16/2003	14:00:00	-010.4
+08/16/2003	21:30:00	-015.5
+08/17/2003	01:30:00	-050.0
+08/17/2003	03:00:00	-049.2
+08/17/2003	03:30:00	-008.8
+08/17/2003	06:30:00	-009.4
+08/17/2003	07:00:00	-050.0
+08/17/2003	08:30:00	-009.7
+08/17/2003	09:00:00	-027.7
+08/17/2003	12:30:00	-012.2
+08/17/2003	14:00:00	-022.2
+08/17/2003	14:30:00	-030.7
+08/17/2003	22:30:00	-014.8
+08/18/2003	00:30:00	-014.2
+09/12/2003	15:00:00	-050.0
+09/12/2003	15:30:00	-050.0
+09/12/2003	16:00:00	-050.0
+09/12/2003	16:30:00	-050.0
+09/12/2003	17:00:00	-050.0
+09/12/2003	17:30:00	-050.0
+09/12/2003	18:00:00	-050.0
+09/12/2003	18:30:00	-050.0
+09/12/2003	19:00:00	-050.0
+09/12/2003	19:30:00	-050.0
+09/12/2003	20:00:00	-050.0
+09/12/2003	20:30:00	-050.0
+09/12/2003	21:00:00	-050.0
+09/12/2003	21:30:00	-050.0
+09/12/2003	22:00:00	-050.0
+09/12/2003	22:30:00	-050.0
+09/12/2003	23:00:00	-050.0
+09/12/2003	23:30:00	-050.0
+09/13/2003	00:00:00	-050.0
+09/13/2003	00:30:00	-050.0
+09/13/2003	01:00:00	-050.0
+09/13/2003	01:30:00	-050.0
+09/13/2003	02:00:00	-050.0
+09/13/2003	02:30:00	-050.0
+09/13/2003	03:00:00	-050.0
+09/13/2003	03:30:00	-050.0
+09/13/2003	04:00:00	-050.0
+09/13/2003	04:30:00	-050.0
+09/13/2003	05:00:00	-050.0
+09/13/2003	05:30:00	-050.0
+09/13/2003	06:00:00	-050.0
+09/13/2003	06:30:00	-050.0
+09/13/2003	07:00:00	-050.0
+09/13/2003	07:30:00	-050.0
+09/13/2003	08:00:00	-050.0
+09/13/2003	08:30:00	-050.0
+09/13/2003	09:00:00	-050.0
+09/13/2003	09:30:00	-050.0
+09/13/2003	10:00:00	-050.0
+09/13/2003	10:30:00	-050.0
+09/13/2003	11:00:00	-050.0
+09/13/2003	11:30:00	-050.0
+09/13/2003	12:00:00	-050.0
+09/13/2003	12:30:00	-050.0
+09/13/2003	13:00:00	-050.0
+09/13/2003	13:30:00	-050.0
+09/13/2003	14:00:00	-050.0
+09/13/2003	14:30:00	-050.0
+09/13/2003	15:00:00	-050.0
+09/13/2003	15:30:00	-050.0
+09/13/2003	16:00:00	-050.0
+09/13/2003	17:30:00	-005.6
+09/13/2003	18:00:00	-050.0
+09/13/2003	18:30:00	-050.0
+09/13/2003	19:00:00	-048.7
+09/13/2003	19:30:00	-050.0
+09/13/2003	20:00:00	-050.0
+09/13/2003	20:30:00	-050.0
+09/13/2003	21:00:00	-050.0
+09/13/2003	21:30:00	-050.0
+09/13/2003	22:00:00	-050.0
+09/13/2003	22:30:00	-050.0
+09/13/2003	23:00:00	-050.0
+09/13/2003	23:30:00	-050.0
+09/14/2003	00:00:00	-050.0
+09/14/2003	00:30:00	-050.0
+09/14/2003	01:00:00	-050.0
+09/14/2003	01:30:00	-049.9
+09/14/2003	02:00:00	-050.0
+09/14/2003	02:30:00	-050.0
+09/14/2003	03:00:00	-050.0
+09/14/2003	03:30:00	-029.4
+09/14/2003	04:00:00	-037.3
+09/14/2003	04:30:00	-024.5
+
+Table 8.  DO concentration outliers in 2003 at the Fort Matanzas site.
+
+08/15/2003	10:00:00	-00.1
+08/15/2003	10:30:00	-00.1
+08/16/2003	01:00:00	-01.2
+08/16/2003	05:00:00	-00.7
+08/16/2003	07:00:00	-00.9
+08/16/2003	10:30:00	-01.0
+08/16/2003	14:00:00	-00.7
+08/16/2003	21:30:00	-01.0
+08/17/2003	01:30:00	-03.3
+08/17/2003	03:00:00	-03.3
+08/17/2003	03:30:00	-00.6
+08/17/2003	06:30:00	-00.6
+08/17/2003	07:00:00	-03.3
+08/17/2003	08:30:00	-00.7
+08/17/2003	09:00:00	-01.9
+08/17/2003	12:30:00	-00.8
+08/17/2003	14:00:00	-01.5
+08/17/2003	14:30:00	-02.0
+08/17/2003	22:30:00	-01.0
+08/18/2003	00:30:00	-00.9
+09/12/2003	15:00:00	-03.3
+09/12/2003	15:30:00	-03.2
+09/12/2003	16:00:00	-03.2
+09/12/2003	16:30:00	-03.2
+09/12/2003	17:00:00	-03.2
+09/12/2003	17:30:00	-03.2
+09/12/2003	18:00:00	-03.2
+09/12/2003	18:30:00	-03.2
+09/12/2003	19:00:00	-03.3
+09/12/2003	19:30:00	-03.3
+09/12/2003	20:00:00	-03.3
+09/12/2003	20:30:00	-03.3
+09/12/2003	21:00:00	-03.3
+09/12/2003	21:30:00	-03.3
+09/12/2003	22:00:00	-03.3
+09/12/2003	22:30:00	-03.3
+09/12/2003	23:00:00	-03.3
+09/12/2003	23:30:00	-03.2
+09/13/2003	00:00:00	-03.2
+09/13/2003	00:30:00	-03.2
+09/13/2003	01:00:00	-03.2
+09/13/2003	01:30:00	-03.2
+09/13/2003	02:00:00	-03.3
+09/13/2003	02:30:00	-03.3
+09/13/2003	03:00:00	-03.3
+09/13/2003	03:30:00	-03.3
+09/13/2003	04:00:00	-03.3
+09/13/2003	04:30:00	-03.3
+09/13/2003	05:00:00	-03.3
+09/13/2003	05:30:00	-03.3
+09/13/2003	06:00:00	-03.3
+09/13/2003	06:30:00	-03.3
+09/13/2003	07:00:00	-03.3
+09/13/2003	07:30:00	-03.3
+09/13/2003	08:00:00	-03.3
+09/13/2003	08:30:00	-03.3
+09/13/2003	09:00:00	-03.3
+09/13/2003	09:30:00	-03.3
+09/13/2003	10:00:00	-03.3
+09/13/2003	10:30:00	-03.3
+09/13/2003	11:00:00	-03.3
+09/13/2003	11:30:00	-03.3
+09/13/2003	12:00:00	-03.3
+09/13/2003	12:30:00	-03.3
+09/13/2003	13:00:00	-03.2
+09/13/2003	13:30:00	-03.2
+09/13/2003	14:00:00	-03.2
+09/13/2003	14:30:00	-03.2
+09/13/2003	15:00:00	-03.2
+09/13/2003	15:30:00	-03.2
+09/13/2003	16:00:00	-03.2
+09/13/2003	17:30:00	-00.4
+09/13/2003	18:00:00	-03.2
+09/13/2003	18:30:00	-03.2
+09/13/2003	19:00:00	-03.1
+09/13/2003	19:30:00	-03.2
+09/13/2003	20:00:00	-03.2
+09/13/2003	20:30:00	-03.2
+09/13/2003	21:00:00	-03.2
+09/13/2003	21:30:00	-03.2
+09/13/2003	22:00:00	-03.2
+09/13/2003	22:30:00	-03.2
+09/13/2003	23:00:00	-03.2
+09/13/2003	23:30:00	-03.2
+09/14/2003	00:00:00	-03.2
+09/14/2003	00:30:00	-03.2
+09/14/2003	01:00:00	-03.2
+09/14/2003	01:30:00	-03.2
+09/14/2003	02:00:00	-03.2
+09/14/2003	02:30:00	-03.2
+09/14/2003	03:00:00	-03.2
+09/14/2003	03:30:00	-01.9
+09/14/2003	04:00:00	-02.4
+09/14/2003	04:30:00	-01.6
+
+12) Missing data:  
+
+Missing data are denoted by a period in the data set. Periods were later removed 
+for data dissemination purposes and left blank. Data are missing due to 
+equipment failure where no probes were deployed, maintenance/calibration of 
+equipment, elimination of obvious outliers, or elimination of data due to 
+calibration (both pre and post) problems.  For details on deleted data, see 
+"Anomalous data" (Section 11).  For more details about missing data, contact 
+the Research Coordinator. 
+
+13) Post deployment information:
+
+Table 9.  Post-deployment readings of all sondes deployed at the Pine Island 
+site during 2003.
+		pH	     Temp (C)    	SC (mS/cm)   	DO %	        Turb(NTU) 	Depth(m)
+Date/Std. 	7.00		n/a		50.00		100.0		    0.0       	n/a
+01/09/03	7.02		21.77		49.69		 96.5		    0.2		-0.110
+01/22/03	7.16		21.00		50.00		 77.4		    0.5		-0.126
+02/14/03	7.18		22.11		49.86		102.0		    -0.4	-0.066
+02/26/03	7.11		23.01		49.36		100.4		    0.1		0.007
+03/12/03	7.10		20.91		50.40		107.9		    2.8		0.014
+03/28/03	7.05		21.57		50.22		100.2		    0.2		-0.013
+04/11/03	7.12		18.50		49.92		98.9		    -0.1	-0.029
+05/02/03	7.16		23.35		3.75		89.7		    1196	-0.015
+05/16/03	6.96		23.34		50.49		81.0		    1558.7  	0.028
+05/30/03	7.15		22.96		47.23		97.2		    -0.2	-0.061
+06/13/03	7.00		22.77		49.00		41.1		    0.9      	0.070
+06/25/03	6.96		21.73		50.64		103.7		    -0.7	 0.032
+07/10/03	7.07		22.70		51.23		100.2		    0.0	 	0.007
+07/24/03	7.07		20.40		49.65		91.3		    20.4	-0.028
+08/07/03	6.87		22.02		49.85		91.6		    -0.2	-0.025
+08/20/03	7.07		22.68		49.88		99.5		    0.0	 	0.046
+09/03/03	7.03		22.67		50.98		101.0		    0.0		-0.015
+09/11/03	7.09		22.83		50.50		103.3		    -0.2	-0.017
+09/26/03	5.21		22.17		48.96		385.7		    -0.1	-0.012
+10/12/02	6.99		22.73		49.49		97.9		    -0.1	-0.011
+10/22/03	7.05		22.74		50.54		98.3		    -0.7	-0.108
+11/07/03	7.00		22.68		49.90		99.5		    -0.5	-0.027
+11/20/03	7.08		21.54		50.23		101.9		    -0.4	-0.005
+12/05/03	7.10		21.98		50.41		95.5		    0.1		-0.096
+12/18/03	7.21		15.78		50.16		104.2		    -0.5	-0.104
+01/02/04	7.00		21.00		49.88		97.8		    -0.3    	 0.007
+
+
+Table 10.  Post-deployment readings of all sondes deployed at the San Sebastian 
+site during 
+2003.
+		pH	     Temp (C)    	SC (mS/cm)   	DO %	        Turb(NTU) 	Depth(m)
+Date/Std. 	7.00		n/a		50.00		100.0		    0.0       	n/a
+01/09/03	6.85		22.06		50.22		102.3		    0.2		-0.089
+01/22/03	6.96		21.07		49.81		98.4		    0.2		-0.122
+02/14/03	6.82		21.84		50.67		85.4		    -0.6	-0.044
+02/26/03	7.06		22.93		50.09		100.5		    0.1		0.008
+03/12/03	7.01		21.12		50.40		101.8		    0.0		-0.042
+03/28/03	6.99		21.73		49.52		85.0		    -0.1	-0.013
+04/11/03	6.85		18.77		50.37		89.6		    -0.6	-0.018
+05/02/03	6.94		23.11		49.79		87.9		    -0.9	-0.036
+05/16/03	6.98		23.05		50.68		100.2		    -0.3	0.028
+05/30/03	6.95		23.17		50.27		101.7		    0.0		-0.080
+06/13/03	6.80		22.92		50.74		99.3		    0.0		0.073
+06/25/03	6.76		21.29		50.23		100.8		    0.0		0.016
+07/10/03	7.10		23.19		49.95		99.7		    -0.2	-0.010
+07/24/03	6.89		23.27		50.40		94.1		    0.0		-0.021
+08/07/03	6.91		22.57		50.23		101.7		    0.9		-0.047
+08/20/03	6.86		22.76		50.07		101.0		    -0.5	0.044
+09/03/03	6.58		22.53		50.28		95.8		    1.9		-0.020
+09/11/03	6.96		23.18		50.25		96.5		    -0.5	-0.014
+09/26/03	6.96		22.08		49.26		80.5		    -9.2	-0.026
+10/12/03	6.77		22.93		48.69		96.4		    -0.2	-0.012
+10/22/03	6.93		22.66		50.24		90.1		    -0.8	-0.093
+11/07/03	6.86		22.49		50.34		95.9		    -1.1	-0.020
+11/20/03	7.07		21.43		50.78		97.8		    -0.2	0.015
+12/05/03	6.81		22.01		50.41		106.3		    -0.2	-0.094
+12/18/03	7.05		15.27		50.72		96.9		    -1.0	-0.076
+01/02/04	6.87		21.38		50.01		93.8		    -0.4     	0.011
+
+Table 11.  Post-deployment readings of all sondes deployed at the Fort Matanzas 
+site during 
+2003.
+		pH	     Temp (C)    	SC (mS/cm)   	DO %	        Turb(NTU) 	Depth(m)
+Date/Std. 	7.00		n/a		50.00		100.0		    0.0       	n/a
+01/14/03	7.12		21.09		49.80		87.8		    -0.3	-0.22
+01/23/03	7.07		21.40		49.96		100.5		    -0.1	0.016
+02/06/03	7.17		22.14		49.87		91.5		    -0.3	-0.327
+02/25/03	7.20		20.52		50.09		101.5		    0.0    	0.081
+03/11/03	7.10		21.25		49.73		72.4		    0.0		-0.081
+03/28/03	7.04		21.46		49.76		100.1		    -0.1	-0.029
+04/08/03	7.10		22.30		49.68		85.5		    -0.1	0.012
+05/02/03	7.18		23.56		49.76		54.8		    -0.9	-0.038
+05/14/03    	7.06		23.10		49.37		96.1		    0.2  	0.013
+05/29/03	7.18		23.48		49.73		101.2		    -0.3	-0.073
+06/11/03	7.15		22.95		50.00		94.6		    0.0		0.046
+06/27/03	7.08		21.71		49.43		101.4		    0.0		0.001
+07/11/03	7.17		23.37		49.54		91.0		    0.0		0.005
+07/26/03	7.11		22.75		49.64		100.3		    0.0		0.034
+08/08/03	7.06		22.24		49.50		95.2		    -0.5	-0.048
+08/29/02	6.92		23.12		48.98		95.2		    0.0		0.055
+09/12/03	7.00		23.34		50.36		99.0		    0.0		-0.016
+09/25/03	6.89		23.12		49.63		100.0		    -0.2	-0.024
+10/08/03	7.08		22.14		50.25		100.9		    -0.1	0.033
+10/21/03	6.96		23.57		48.73		97.8		    0.0		-0.020
+11/06/03	7.13		22.00		50.63		94.3		    0.1		-0.022
+11/21/03	7.14		20.32		49.80		111.5		    0.0		0.048
+12/04/03	7.18		21.57		49.50		77.5		    -0.3	-0.057
+12/16/03	7.26		22.36		49.87		103.2		    -0.2	-0.046
+12/31/03	7.30		21.64		49.98		96.5		    0.3		0.017
+01/21/04	7.24		20.88		50.69		98.0		    0.0		0.001
+
+Table 12.  Post-deployment readings of all sondes deployed at the Pellicer Creek 
+site during 
+2003.
+		pH	     Temp (C)    	SC (mS/cm) 	DO %	        Turb(NTU) 	Depth(m)
+Date/Std. 	7.00		n/a		50.00		100.0		    0.0       	n/a
+01/14/03	6.99		21.30		50.27		98.0		    0.0		-0.057
+01/23/03	7.18		21.00		50.00		99.1		no data 	 0.003
+02/05/03	7.15		20.89		49.52		99.7		    -0.7	-0.049
+02/20/03	7.11		23.29		49.74		101.6		    -0.3	0.058
+02/25/03	6.93		20.93		50.11		101.4		    0.2		-0.007
+03/12/03	7.03		22.81		49.95		101.0		    -0.3	-0.035
+03/29/03	7.14		21.54		50.12		103.8		    -0.2	-0.036
+04/11/03	7.09		18.22		50.17		104.6		    -0.7	-0.016
+05/01/03	6.95		23.63		50.24		94.7		    -1.5	-0.031
+05/15/03	6.89		22.85		50.27		82.3		    0.2		0.026
+05/30/03	7.03		22.74		46.05		94.2		    0.1		-0.084
+06/11/03	6.92		23.03		49.83		90.4		    0.0		0.087
+06/26/03	7.03		21.81		49.75		99.1		    0.5		0.018
+07/11/03	7.18		22.49		50.02		100.7		    -1.1	0.004
+07/25/03	7.06		23.23		49.92		102.7		    0.0		0.010
+08/08/03	7.05		22.03		50.69		99.2		    0.1		-0.036
+08/21/03	6.93		22.81		50.65		100.6		    -0.6	0.028
+09/04/03	7.05		22.44		50.43		100.5		    -1.9	-0.018
+09/12/03	7.00		23.51		50.52		100.6		    -0.5	-0.027
+09/25/03	6.99		21.74		49.20		98.4		    -2.7	-0.005
+10/08/03	6.97		22.08		49.97		98.3		    -0.2	0.034
+10/21/03	7.03		22.66		50.43		98.5		    -2.7	0.020
+11/06/03	6.99		22.33		50.15		104.1		    -0.5	-0.010
+11/21/03	7.03		20.26		50.71		98.7		    -2.9     	0.043
+12/04/03	7.11		22.70		50.06		97.5		    -0.2	-0.055
+12/16/03	7.03		22.20		50.30		101.5		    0.2		-0.040
+12/31/03	7.06		22.05		50.12		97.2		    0.0		0.030
+01/21/04	7.15		20.83		50.12		97.3		    0.4		0.012
+
+14) Other remarks/notes:
+
+On 06/30/2021 this dataset was updated to include embedded QAQC flags for anomalous/suspect data.  
+System-wide monitoring data beginning in 2007 were processed to allow for QAQC flags and codes to 
+be embedded in the data files rather than detailed in the metadata alone (as in the anomalous/suspect, 
+deleted, and missing data sections above).  Prior to 2006, rejected data were deleted from the dataset 
+so they are unavailable to be used at all, but suspect data were only noted in the metadata document.  
+Suspect data flags <1> were embedded retroactively in order to allow suspect data to be easily 
+identified and filtered from the dataset if desired for analysis and reporting purposes.  No other 
+flags or codes were embedded in the dataset and users should still refer to the detailed explanations 
+above for more information.
+
+a)	Calibration of DO was performed on the day of deployment.
+
+b)	GTMPIWQ: The downward slope in specific conductivity and salinity at all stations during the first part of March is correlated 
+	with significant rainfall events between 3/1 and 3/9.
+
+b)	GTMPIWQ: Significant rainfall was recorded during the last twenty days of July, particularly the last four days.
+
+c)	GTMPIWQ: Significant rain events occurred during the first 11 days of August.
+
+d)	GTMPSSWQ: The abnormally low water temperatures observed during July are attributed, in part, to a coastal upwelling event during July and August.
+
+e)	GTMSSWQ: Decreased water temperatures during the first half of August attributed, in part, to a coastal upwelling event during July and August.
+
+f)	GTMFMWQ: The abnormally low water temperatures observed during this month (July) are attributed, in part, to a coastal upwelling event during July and August.
+
+g)	GTMFMWQ: Decreased water temperatures during the first half of August attributed, in part, to a coastal upwelling event during July and August.

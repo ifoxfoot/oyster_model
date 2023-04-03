@@ -128,7 +128,6 @@ class OysterModel(mesa.Model):
         """Advance the model by one step."""
         self.schedule.step()
         self.step_count += 1
-        self.space._recreate_rtree()  # Recalculate spatial tree, because agents are moving??
         self.datacollector.collect(self)
         #add oysters to rmg
         self.rmg.add_field("num_oysters",
@@ -153,8 +152,8 @@ class OysterModel(mesa.Model):
             water_level = 0.5 * rate[:] * self.tidal_period
         else:
             water_level = 1 * rate[:] * self.tidal_period
-        water_level.reshape(1, 149, 259)
         self.space.update_water_level(water_level)
+        self.space._recreate_rtree()  # Recalculate spatial tree, because agents are moving??
 
     #define run model function
     def run_model(self, step_count=365):

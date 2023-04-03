@@ -8,7 +8,7 @@ import numpy as np
 class SeaBedCell(mg.Cell):
     elevation: int | None
     num_oysters_in_cell: int | None
-    water_level: int | None
+    water_level: float | None
 
     def __init__(
         self,
@@ -58,7 +58,7 @@ class SeaBed(mg.GeoSpace):
     
     def update_water_level(self, rmg):
         watermatrix = rmg.reshape((1, self.raster_layer.height, self.raster_layer.width))
-        self.raster_layer.apply_raster(
+        water = self.raster_layer.apply_raster(
             data = watermatrix,
             attr_name = "water_level"
         )
