@@ -3,6 +3,7 @@ import mesa_geo as mg
 import random
 from shapely.geometry import Point
 import rasterio as rio
+import pandas as pd
 
 #import funs
 from functions.energy_fun import *
@@ -46,7 +47,6 @@ class Oyster(mg.GeoAgent):
          self.birth_reef = birth_reef
          self.home_reef = self.model.space.agents[home_reef]
          self.energy = random.randint(0,10)
-         self.energy_gained = 1
          self.shell_length_mm = random.randint(1, 300)
          self.dry_biomass = 9.6318 * (10**-6) * (self.shell_length_mm**2.743)
          self.wet_biomass =  (self.dry_biomass * 5.6667) + self.dry_biomass
@@ -64,10 +64,8 @@ class Oyster(mg.GeoAgent):
         
         #age
         self.age += 1
-       
-        #energy gain if under water
-        if self.model.space.raster_layer.cells[self.x][-self.y].water_level > 0:
-            daily_energy = energy_gain(
+
+        daily_energy = energy_gain(
                 self.age, 
                 self.home_reef.do,
                 self.home_reef.tss, 
@@ -77,11 +75,26 @@ class Oyster(mg.GeoAgent):
                 self.home_reef.temp, 
                 self.home_reef.temp_list
             )
-            self.energy += daily_energy
-            self.energy_list.append(daily_energy)
-            self.enery_gained = 1
-        else:
-            self.energy_gained = 0
+        self.energy += daily_energy
+        self.energy_list.append(daily_energy)
+       
+        # #energy gain if under water
+        # if self.model.space.raster_layer.cells[self.x][-self.y].water_level > 0:
+        #     daily_energy = energy_gain(
+        #         self.age, 
+        #         self.home_reef.do,
+        #         self.home_reef.tss, 
+        #         self.home_reef.tss_list, 
+        #         self.home_reef.tds, 
+        #         self.home_reef.tds_list, 
+        #         self.home_reef.temp, 
+        #         self.home_reef.temp_list
+        #     )
+        #     self.energy += daily_energy
+        #     self.energy_list.append(daily_energy)
+        #     self.enery_gained = 1
+        # else:
+        #     self.energy_gained = 0
 
         #energy loss
         self.energy -= 1.2
@@ -178,6 +191,7 @@ class Reef(mg.GeoAgent):
         super().__init__(unique_id, model, geometry, crs)
         self.type = "Reef"
         self.sanctuary_status = sanctuary_status
+        self.data = pd.read_csv("data/wq_perams_04apr23.csv")
 
         #create lists for multi-step effects
         self.tss_list = []
@@ -185,19 +199,19 @@ class Reef(mg.GeoAgent):
         self.tds_list = []
         self.do_list = []
         #init env values
-        self.do = random.randint(150, 340)*0.01
-        self.tss = random.randint(0, 300)
-        self.temp = random.randint(4, 33)
-        self.tds = random.randrange(10,27)
+        self.do = self.data.loc[1, 'mean_do']
+        self.tss = self.data.loc[1, 'mean_turb'] #needs to be converted to tss still
+        self.temp = self.data.loc[1, 'mean_temp']
+        self.tds = self.data.loc[1, 'mean_sal']
 
     def step(self):
         #get step count
         self.oyster_count = len(list(self.model.space.get_intersecting_agents(self)))
         #get new environmental variables
-        self.do = random.randint(150, 340)*0.01
-        self.tss = random.randint(0, 300)
-        self.temp = random.randint(4, 33)
-        self.tds = random.randrange(10,27)
+        self.do = self.data.loc[self.model.step_count + 1, 'mean_do']
+        self.tss = self.data.loc[self.model.step_count + 1, 'mean_turb'] #needs to be converted to tss still
+        self.temp = self.data.loc[self.model.step_count + 1, 'mean_temp']
+        self.tds = self.data.loc[self.model.step_count + 1, 'mean_sal']
         #store variables in list
         self.tss_list.append(self.tss)
         self.temp_list.append(self.temp)

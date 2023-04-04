@@ -33,18 +33,23 @@ def agent_portrayal(agent):
                 "Layer": 1
             }
         elif isinstance(agent, Oyster):
-            if agent.energy_gained == 1:
-                return {
-                    "color": "Green",
-                    "radius": .01,
-                    "Layer": 2
-                }
-            else:
-                return {
-                    "color": "Red",
-                    "radius": 0.01,
-                    "Layer": 2
-                }
+            return {
+                "color": "Green",
+                "radius": 0.001,
+                "Layer": 1
+            }
+            # if agent.energy_gained == 1:
+            #     return {
+            #         "color": "Green",
+            #         "radius": .01,
+            #         "Layer": 2
+            #     }
+            # else:
+            #     return {
+            #         "color": "Red",
+            #         "radius": 0.01,
+            #         "Layer": 2
+            #     }
     elif isinstance(agent, SeaBedCell):
         return (agent.water_level, agent.water_level, agent.water_level, 1)
 

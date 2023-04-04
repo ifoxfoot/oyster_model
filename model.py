@@ -129,30 +129,30 @@ class OysterModel(mesa.Model):
         self.schedule.step()
         self.step_count += 1
         self.datacollector.collect(self)
-        #add oysters to rmg
-        self.rmg.add_field("num_oysters",
-                           self.space.raster_layer.get_raster("num_oysters_in_cell"),
-                           clobber = True)
-        #store roughness vals in attribute of rastermodel grid
-        self.rough[self.rmg.at_node["num_oysters"] == 0] = self.sand_roughness
-        self.rough[self.rmg.at_node["num_oysters"] > 0] = self.oyster_roughness
-        #map roughness to link
-        r_link = self.rmg.map_mean_of_link_nodes_to_link("mannings_n")
-        #init tidal flow calculator
-        tfc = TidalFlowCalculator(self.rmg, 
-                                  tidal_range = 1.289919, 
-                                  tidal_period = self.tidal_period, 
-                                  roughness = r_link)
-        #run the tidal flow calc
-        tfc.run_one_step()
-        #get innudiation rate
-        rate = tfc.calc_tidal_inundation_rate()
-        #depth in m
-        if(self.step_count%2 == 0):
-            water_level = 0.5 * rate[:] * self.tidal_period
-        else:
-            water_level = 1 * rate[:] * self.tidal_period
-        self.space.update_water_level(water_level)
+        # #add oysters to rmg
+        # self.rmg.add_field("num_oysters",
+        #                    self.space.raster_layer.get_raster("num_oysters_in_cell"),
+        #                    clobber = True)
+        # #store roughness vals in attribute of rastermodel grid
+        # self.rough[self.rmg.at_node["num_oysters"] == 0] = self.sand_roughness
+        # self.rough[self.rmg.at_node["num_oysters"] > 0] = self.oyster_roughness
+        # #map roughness to link
+        # r_link = self.rmg.map_mean_of_link_nodes_to_link("mannings_n")
+        # #init tidal flow calculator
+        # tfc = TidalFlowCalculator(self.rmg, 
+        #                           tidal_range = 1.289919, 
+        #                           tidal_period = self.tidal_period, 
+        #                           roughness = r_link)
+        # #run the tidal flow calc
+        # tfc.run_one_step()
+        # #get innudiation rate
+        # rate = tfc.calc_tidal_inundation_rate()
+        # #depth in m
+        # if(self.step_count%2 == 0):
+        #     water_level = 0.5 * rate[:] * self.tidal_period
+        # else:
+        #     water_level = 1 * rate[:] * self.tidal_period
+        # self.space.update_water_level(water_level)
         self.space._recreate_rtree()  # Recalculate spatial tree, because agents are moving??
 
     #define run model function

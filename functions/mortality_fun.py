@@ -112,7 +112,7 @@ def mort_prob (age, tds, tds_list, tss, tss_list, temp, temp_list, do, do_list):
         do_mort = 0.2
     elif do <= 2.4:
         do_mort = 0.1
-    elif 2.4 < do <= 4:
+    elif 2.4 < do: #changed this from 2.4 < do < 4
         do_mort = 0.0125
 
     #return the max mortality prob for any env condition
