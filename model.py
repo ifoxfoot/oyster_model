@@ -49,7 +49,7 @@ class OysterModel(mesa.Model):
         self.oyster_roughness = 0.035  
 
         #store tidal period for depth
-        self.tidal_period = 4.0e4 
+        self.tidal_period = 43482.58
         
         #create reef agents
         ac = mg.AgentCreator(
@@ -140,7 +140,7 @@ class OysterModel(mesa.Model):
         r_link = self.rmg.map_mean_of_link_nodes_to_link("mannings_n")
         #init tidal flow calculator
         tfc = TidalFlowCalculator(self.rmg, 
-                                  tidal_range = 2.0, 
+                                  tidal_range = 1.289919, 
                                   tidal_period = self.tidal_period, 
                                   roughness = r_link)
         #run the tidal flow calc

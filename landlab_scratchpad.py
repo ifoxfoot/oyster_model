@@ -14,7 +14,7 @@ imshow.imshow_grid_at_node(grid, "topographic__elevation")
 show()
 
 
-tfc = TidalFlowCalculator(grid, tidal_range=2.0, tidal_period=4.0e4, roughness=0.05)
+tfc = TidalFlowCalculator(grid, tidal_range=1.289919, tidal_period=43482.58, roughness=0.05)
 
 #run the tidal flow calc
 tfc.run_one_step()

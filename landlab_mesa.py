@@ -45,7 +45,7 @@ show()
 r_link = rmg.map_mean_of_link_nodes_to_link("mannings_n")
 
 #init tidal flow calculator
-tfc = TidalFlowCalculator(rmg, tidal_range = 6.0, tidal_period = 4.0e4, roughness = r_link)
+tfc = TidalFlowCalculator(rmg, tidal_range = 1.289919, tidal_period = 43482.58, roughness = r_link)
 
 #run the tidal flow calc
 tfc.run_one_step()
