@@ -3,8 +3,8 @@ import mesa
 import mesa_geo as mg
 from shapely.geometry import Point
 import random
-from landlab import RasterModelGrid
-from landlab.components import TidalFlowCalculator
+# from landlab import RasterModelGrid
+# from landlab.components import TidalFlowCalculator
 
 
 #import agents
@@ -17,7 +17,7 @@ class OysterModel(mesa.Model):
     """A model class for oysters"""
 
     #path to reef file and unique reef ID
-    reefs = "data/oyster_reef_buf.gpkg"
+    reefs_data = "data/oyster_reef_buf.gpkg"
     unique_id = "OBJECTID"
 
     #define init parameters
@@ -28,28 +28,28 @@ class OysterModel(mesa.Model):
         self.space = SeaBed(crs = "epsg:3857")
         self.schedule = mesa.time.RandomActivation(self)
         self.step_count = 0
-        self.current_id = N
+        self.current_id = 0
 
         #add crs for space
         self.space.set_elevation_layer(crs = "epsg:3857")
 
-        #init RasterModelGrid object for landlab
-        self.rmg = RasterModelGrid((self.space.raster_layer.height, 
-                                    self.space.raster_layer.width),
-                                   1.157226984026, 
-                                   (-9051628.873678505, 3492744.042225802))
-        self.rmg.add_field("topographic__elevation", #add elevation data
-                           self.space.raster_layer.get_raster("elevation"))
+        # #init RasterModelGrid object for landlab
+        # self.rmg = RasterModelGrid((self.space.raster_layer.height, 
+        #                             self.space.raster_layer.width),
+        #                            1.157226984026, 
+        #                            (-9051628.873678505, 3492744.042225802))
+        # self.rmg.add_field("topographic__elevation", #add elevation data
+        #                    self.space.raster_layer.get_raster("elevation"))
         
-        #init empty field for roughness values
-        self.rough = self.rmg.add_empty("node", 'mannings_n')
+        # #init empty field for roughness values
+        # self.rough = self.rmg.add_empty("node", 'mannings_n')
 
-        #store roughness vals
-        self.sand_roughness = 0.02
-        self.oyster_roughness = 0.035  
+        # #store roughness vals
+        # self.sand_roughness = 0.02
+        # self.oyster_roughness = 0.035  
 
-        #store tidal period for depth
-        self.tidal_period = 43482.58
+        # #store tidal period for depth
+        # self.tidal_period = 43482.58
         
         #create reef agents
         ac = mg.AgentCreator(
@@ -60,34 +60,53 @@ class OysterModel(mesa.Model):
                 }
             )
         self.reef_agents = ac.from_file(
-            self.reefs, unique_id = self.unique_id
+            self.reefs_data, 
+            unique_id = self.unique_id,
+            set_attributes = True
             )
         
         #add reef agents to space
         self.space.add_agents(self.reef_agents)
 
-        #create oysters
-        for i in range(self.num_oysters):
-            #get random reef to locate oyster
-            random_reef =  self.random.randint(
-                0, len(self.reef_agents) - 1
-            )
+        for agent in self.reef_agents:
+            for i in range(round((agent.SHAPE_Area * 1620)/100000)):
+                 #create agent
+                this_oyster = Oyster(
+                    unique_id = "oyster_" + str(self.next_id()),
+                    model = self,
+                    geometry = self.point_in_reef(agent),
+                    crs =  self.space.crs,
+                    birth_reef = agent,
+                    home_reef = agent,
+                    age = random.randint(1, 3649)
+                )
+                #add oyster agents to raster, agent layer, and scheduler
+                self.space.add_oyster(this_oyster)
+                self.space.add_agents(this_oyster)
+                self.schedule.add(this_oyster)
+
+        # #create oysters
+        # for i in range(self.num_oysters):
+        #     #get random reef to locate oyster
+        #     random_reef =  self.random.randint(
+        #         0, len(self.reef_agents) - 1
+        #     )
         
-            #create agent
-            this_oyster = Oyster(
-                unique_id = "oyster_" + str(i),
-                model = self,
-                geometry = self.point_in_reef(random_reef),
-                crs =  self.space.crs,
-                birth_reef = random_reef,
-                home_reef = random_reef,
-                age = random.randint(1, 3649)
-            )
+        #     #create agent
+        #     this_oyster = Oyster(
+        #         unique_id = "oyster_" + str(i),
+        #         model = self,
+        #         geometry = self.point_in_reef(random_reef),
+        #         crs =  self.space.crs,
+        #         birth_reef = random_reef,
+        #         home_reef = random_reef,
+        #         age = random.randint(1, 3649)
+        #     )
             
-            #add oyster agents to raster, agent layer, and scheduler
-            self.space.add_oyster(this_oyster)
-            self.space.add_agents(this_oyster)
-            self.schedule.add(this_oyster)
+        #     #add oyster agents to raster, agent layer, and scheduler
+        #     self.space.add_oyster(this_oyster)
+        #     self.space.add_agents(this_oyster)
+        #     self.schedule.add(this_oyster)
 
         #add reef agents to schedule after oysters
         for agent in self.reef_agents:
@@ -116,9 +135,9 @@ class OysterModel(mesa.Model):
     
     #create while loop to return point in reef
     def point_in_reef (self, random_reef):
-        minx, miny, maxx, maxy = self.reef_agents[random_reef].geometry.bounds
+        minx, miny, maxx, maxy = random_reef.geometry.bounds
         pnt = Point(0,0)
-        while not self.reef_agents[random_reef].geometry.contains(pnt):
+        while not random_reef.geometry.contains(pnt):
             pnt = Point(random.uniform(minx, maxx), random.uniform(miny, maxy))
         return pnt
     
@@ -156,8 +175,8 @@ class OysterModel(mesa.Model):
         self.space._recreate_rtree()  # Recalculate spatial tree, because agents are moving??
 
     #define run model function
-    def run_model(self, step_count=365):
-         for i in range(step_count):
+    def run_model(self, steps=365):
+         for i in range(steps):
             self.step()
 
 

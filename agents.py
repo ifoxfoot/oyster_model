@@ -1,7 +1,6 @@
 #import packages
 import mesa_geo as mg
 import random
-from shapely.geometry import Point
 import rasterio as rio
 import pandas as pd
 
@@ -45,7 +44,7 @@ class Oyster(mg.GeoAgent):
          self.y = row - self.model.space.raster_layer.height - 1
          self.age = age
          self.birth_reef = birth_reef
-         self.home_reef = self.model.space.agents[home_reef]
+         self.home_reef = home_reef
          self.energy = random.randint(0,10)
          self.shell_length_mm = random.randint(1, 300)
          self.dry_biomass = 9.6318 * (10**-6) * (self.shell_length_mm**2.743)
@@ -159,9 +158,7 @@ class Oyster(mg.GeoAgent):
             #create new oysters
             for i in range(self.fertility):
                 #get random reef
-                random_reef =  self.random.randint(
-                0, len(self.model.reef_agents) - 1
-                )
+                random_reef = random.choice(self.model.reef_agents)
                 
                 #create oyster
                 baby_oyster = Oyster(
