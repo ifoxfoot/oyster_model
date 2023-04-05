@@ -23,8 +23,8 @@ class OysterModel(mesa.Model):
     #define init parameters
     def __init__(self, N, harvest_rate, num_safe_reefs):
         self.num_oysters = N #number of oysters (int)
-        self.harvest_rate = harvest_rate #proportion of oysters to take (between 0 and 1)
-        self.num_safe_reefs = num_safe_reefs #how many reefs are sanctuary reefs
+        # self.harvest_rate = harvest_rate #proportion of oysters to take (between 0 and 1)
+        # self.num_safe_reefs = num_safe_reefs #how many reefs are sanctuary reefs
         self.space = SeaBed(crs = "epsg:3857")
         self.schedule = mesa.time.RandomActivation(self)
         self.step_count = 0
@@ -55,9 +55,9 @@ class OysterModel(mesa.Model):
         ac = mg.AgentCreator(
             Reef, 
             model = self,
-            agent_kwargs = {
-                "sanctuary_status" : random.random() < (num_safe_reefs/100)
-                }
+            # agent_kwargs = {
+            #     "sanctuary_status" : random.random() < (num_safe_reefs/100)
+            #     }
             )
         self.reef_agents = ac.from_file(
             self.reefs_data, 
@@ -68,6 +68,7 @@ class OysterModel(mesa.Model):
         #add reef agents to space
         self.space.add_agents(self.reef_agents)
 
+        #add oysters to each reef, proportional to reef size
         for agent in self.reef_agents:
             for i in range(round((agent.SHAPE_Area * 1620)/100000)):
                  #create agent
@@ -84,29 +85,6 @@ class OysterModel(mesa.Model):
                 self.space.add_oyster(this_oyster)
                 self.space.add_agents(this_oyster)
                 self.schedule.add(this_oyster)
-
-        # #create oysters
-        # for i in range(self.num_oysters):
-        #     #get random reef to locate oyster
-        #     random_reef =  self.random.randint(
-        #         0, len(self.reef_agents) - 1
-        #     )
-        
-        #     #create agent
-        #     this_oyster = Oyster(
-        #         unique_id = "oyster_" + str(i),
-        #         model = self,
-        #         geometry = self.point_in_reef(random_reef),
-        #         crs =  self.space.crs,
-        #         birth_reef = random_reef,
-        #         home_reef = random_reef,
-        #         age = random.randint(1, 3649)
-        #     )
-            
-        #     #add oyster agents to raster, agent layer, and scheduler
-        #     self.space.add_oyster(this_oyster)
-        #     self.space.add_agents(this_oyster)
-        #     self.schedule.add(this_oyster)
 
         #add reef agents to schedule after oysters
         for agent in self.reef_agents:
@@ -140,7 +118,7 @@ class OysterModel(mesa.Model):
         while not random_reef.geometry.contains(pnt):
             pnt = Point(random.uniform(minx, maxx), random.uniform(miny, maxy))
         return pnt
-    
+
    
     #define step
     def step(self):

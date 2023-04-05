@@ -135,11 +135,11 @@ class Oyster(mg.GeoAgent):
             self.model.space.add_agents(new_shell)
             self.model.schedule.add(new_shell)
             
-        #harvest on day 298 if home reef is not sancuary, according to harves rate
-        if (self.status == "alive") & (self.model.step_count%298 == 0) & (self.home_reef.sanctuary_status == False) & (random.random() < self.model.harvest_rate):
-            self.status = "harvested"
-            self.model.space.remove_agent(self)
-            self.model.schedule.remove(self)
+        # #harvest on day 298 if home reef is not sancuary, according to harves rate
+        # if (self.status == "alive") & (self.model.step_count%298 == 0) & (self.home_reef.sanctuary_status == False) & (random.random() < self.model.harvest_rate):
+        #     self.status = "harvested"
+        #     self.model.space.remove_agent(self)
+        #     self.model.schedule.remove(self)
 
         #establish reproductive days
         reproductive_days = list(range(203, 210)) + list(range(212, 215))
@@ -183,11 +183,12 @@ class Reef(mg.GeoAgent):
     """Reef Agent"""
 
     def __init__(
-        self, unique_id, model, geometry, crs, sanctuary_status
+        self, unique_id, model, geometry, crs, 
+        # sanctuary_status
     ):
         super().__init__(unique_id, model, geometry, crs)
         self.type = "Reef"
-        self.sanctuary_status = sanctuary_status
+        # self.sanctuary_status = sanctuary_status
         self.data = pd.read_csv("data/wq_perams_04apr23.csv")
 
         #create lists for multi-step effects
