@@ -27,7 +27,7 @@ class OysterModel(mesa.Model):
         # self.num_safe_reefs = num_safe_reefs #how many reefs are sanctuary reefs
         self.space = SeaBed(crs = "epsg:3857")
         self.schedule = mesa.time.RandomActivation(self)
-        self.step_count = 0
+        self.step_count = 1
         self.current_id = 0
 
         #add crs for space

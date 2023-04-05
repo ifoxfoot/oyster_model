@@ -46,7 +46,7 @@ class Oyster(mg.GeoAgent):
          self.birth_reef = birth_reef
          self.home_reef = home_reef
          self.energy = random.randint(0,10)
-         self.shell_length_mm = random.randint(1, 300)
+         self.shell_length_mm = 0.08219178 * self.age #found using line between (0,0) and (3650-max age, 300-max size)
          self.dry_biomass = 9.6318 * (10**-6) * (self.shell_length_mm**2.743)
          self.wet_biomass =  (self.dry_biomass * 5.6667) + self.dry_biomass
          self.fertility = 0
@@ -115,7 +115,7 @@ class Oyster(mg.GeoAgent):
             self.home_reef.do, 
             self.home_reef.do_list
             )
-        
+
         #if conditions met, kill off
         if (self.energy < 0) or (self.age > 3650) or (random.random() < self.mortality_prob) or ((self.model.step_count >= 8) and all(v == 0 for v in self.energy_list[-8:])):
             self.status = "dead"

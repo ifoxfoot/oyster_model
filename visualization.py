@@ -57,6 +57,7 @@ def agent_portrayal(agent):
 #create map element
 map_element = mg.visualization.MapModule(agent_portrayal)
 
+
 #server
 server = mesa.visualization.ModularServer(
     OysterModel, [map_element], "Oyster Model", model_params = model_params

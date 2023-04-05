@@ -6,9 +6,9 @@ def n_babies(age, do, tss, tds, temp):
     #SALINITY (NOT BASED ON OG MODEL)
     if tds < 8:
         tds_weight = 0
-    elif 8 <= tds <= 28:
+    elif 8 <= tds <= 37:
         tds_weight = 1
-    elif tds > 28:
+    elif tds > 37:
         tds_weight = 0
 
     #TOTAL SUSPENDED SOLIDS
