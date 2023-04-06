@@ -189,7 +189,7 @@ class Reef(mg.GeoAgent):
         super().__init__(unique_id, model, geometry, crs)
         self.type = "Reef"
         # self.sanctuary_status = sanctuary_status
-        self.data = pd.read_csv("data/wq_perams_04apr23.csv")
+        self.data = pd.read_csv("data/wq_perams_06apr23.csv")
 
         #create lists for multi-step effects
         self.tss_list = []
@@ -198,7 +198,7 @@ class Reef(mg.GeoAgent):
         self.do_list = []
         #init env values
         self.do = self.data.loc[1, 'mean_do']
-        self.tss = self.data.loc[1, 'mean_turb'] #needs to be converted to tss still
+        self.tss = self.data.loc[1, 'pred_tss'] #needs to be converted to tss still
         self.temp = self.data.loc[1, 'mean_temp']
         self.tds = self.data.loc[1, 'mean_sal']
 
