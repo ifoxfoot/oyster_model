@@ -3,6 +3,7 @@ import mesa
 import mesa_geo as mg
 from shapely.geometry import Point
 import random
+random.seed(3)
 # from landlab import RasterModelGrid
 # from landlab.components import TidalFlowCalculator
 
