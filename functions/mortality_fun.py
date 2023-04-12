@@ -123,4 +123,4 @@ def mort_prob (age, tds, tds_list, tss, tss_list, temp, temp_list, do, do_list):
         do_mort
         )
 
-    return(max_mort)
+    return(max_mort * 0.5) #times 0.5 to represent time out of water

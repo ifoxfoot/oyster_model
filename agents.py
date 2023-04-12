@@ -49,6 +49,7 @@ class Oyster(mg.GeoAgent):
          self.shell_length_mm = 0.08219178 * self.age #found using line between (0,0) and (3650-max age, 300-max size)
          self.dry_biomass = 9.6318 * (10**-6) * (self.shell_length_mm**2.743)
          self.wet_biomass =  (self.dry_biomass * 5.6667) + self.dry_biomass
+         self.shell_weight = self.wet_biomass * 3.4
          self.fertility = 0
          self.mortality_prob = 0
 
@@ -102,6 +103,7 @@ class Oyster(mg.GeoAgent):
         self.shell_length_mm += shell_length_gain(self.shell_length_mm, self.energy)
         self.dry_biomass = 9.6318 * (10**-6) * (self.shell_length_mm**2.743)
         self.wet_biomass =  (self.dry_biomass * 5.6667) + self.dry_biomass 
+        self.shell_weight = self.wet_biomass * 3.4
 
         #death probabiliyt NOT ADDED INTO DEATH IF STATEMENT YET
         self.mortality_prob = mort_prob(
@@ -121,6 +123,8 @@ class Oyster(mg.GeoAgent):
             self.status = "dead"
             self.model.space.remove_agent(self)
             self.model.schedule.remove(self)
+        
+            print(self.mortality_prob)
 
             #convert dead oysters to shells
             new_shell = Shell(
