@@ -207,8 +207,10 @@ class Reef(mg.GeoAgent):
         self.tds = self.data.loc[1, 'mean_sal']
 
     def step(self):
-        #get step count
+        #get oyster count
         self.oyster_count = len(list(self.model.space.get_intersecting_agents(self)))
+        #get total wieght of oyster shells
+        self.total_shell_weight = self.model.space.get_intersecting_agents(self)
         #get new environmental variables
         self.do = self.data.loc[self.model.step_count + 1, 'mean_do']
         self.tss = self.data.loc[self.model.step_count + 1, 'mean_turb'] #needs to be converted to tss still

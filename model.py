@@ -22,8 +22,8 @@ class OysterModel(mesa.Model):
     unique_id = "OBJECTID"
 
     #define init parameters
-    def __init__(self, N, harvest_rate, num_safe_reefs):
-        self.num_oysters = N #number of oysters (int)
+    def __init__(self):
+        #self.num_oysters = N #number of oysters (int)
         # self.harvest_rate = harvest_rate #proportion of oysters to take (between 0 and 1)
         # self.num_safe_reefs = num_safe_reefs #how many reefs are sanctuary reefs
         self.space = SeaBed(crs = "epsg:3857")

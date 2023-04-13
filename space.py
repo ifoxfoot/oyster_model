@@ -40,10 +40,10 @@ class SeaBed(mg.GeoSpace):
             data = np.zeros(shape = (1, raster_layer.height, raster_layer.width)),
             attr_name = "num_oysters_in_cell",
         )
-        raster_layer.apply_raster(
-            data = np.zeros(shape = (1, raster_layer.height, raster_layer.width)),
-            attr_name = "water_level"
-        )
+        # raster_layer.apply_raster(
+        #     data = np.zeros(shape = (1, raster_layer.height, raster_layer.width)),
+        #     attr_name = "water_level"
+        # )
         #add raster layer
         super().add_layer(raster_layer)
 
@@ -56,11 +56,11 @@ class SeaBed(mg.GeoSpace):
     def add_oyster(self, oyster):
         self.raster_layer.cells[oyster.x][-oyster.y].num_oysters_in_cell += 1
     
-    def update_water_level(self, rmg):
-        watermatrix = rmg.reshape((1, self.raster_layer.height, self.raster_layer.width))
-        water = self.raster_layer.apply_raster(
-            data = watermatrix,
-            attr_name = "water_level"
-        )
+    # def update_water_level(self, rmg):
+    #     watermatrix = rmg.reshape((1, self.raster_layer.height, self.raster_layer.width))
+    #     water = self.raster_layer.apply_raster(
+    #         data = watermatrix,
+    #         attr_name = "water_level"
+    #     )
 
 

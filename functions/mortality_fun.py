@@ -13,11 +13,11 @@ def mort_prob (age, tds, tds_list, tss, tss_list, temp, temp_list, do, do_list):
             tds_mort = 0.001
         elif 20 < tds <= 28:
             tds_mort = 0.001
-        elif len(tds_list) >= 7 and all(28 <= v <= 35 for v in tds_list[-7:]):
+        elif len(tds_list) >= 7 and all(28 <= v <= 36 for v in tds_list[-7:]):
             tds_mort = 0.02
-        elif 28 < tds <= 35:
+        elif 28 < tds <= 36:
             tds_mort = 0.01
-        elif tds > 35:
+        elif tds > 36:
             tds_mort = 0.05
     else:
         if len(tds_list) >= 7 and all(v < 3 for v in tds_list[-7:]):
@@ -30,11 +30,11 @@ def mort_prob (age, tds, tds_list, tss, tss_list, temp, temp_list, do, do_list):
             tds_mort = 0.001
         elif 20 < tds <= 28:
             tds_mort = 0.001
-        elif len(tds_list) >= 7 and all(28 <= v <= 35 for v in tds_list[-7:]):
+        elif len(tds_list) >= 7 and all(28 <= v <= 36 for v in tds_list[-7:]):
             tds_mort = 0.02
-        elif 28 < tds <= 35:
+        elif 28 < tds <= 36:
             tds_mort = 0.002
-        elif tds > 35:
+        elif tds > 36:
             tds_mort = 0.05
 
     #TOTAL SUS SOLIDS
@@ -112,8 +112,10 @@ def mort_prob (age, tds, tds_list, tss, tss_list, temp, temp_list, do, do_list):
         do_mort = 0.2
     elif do <= 2.4:
         do_mort = 0.1
-    elif 2.4 < do: #changed this from 2.4 < do < 4
+    elif 2.4 < do < 4: 
         do_mort = 0.0125
+    elif 4 <= do: #added upper bound
+        do_mort = 0
 
     #return the max mortality prob for any env condition
     max_mort = max(
@@ -123,4 +125,4 @@ def mort_prob (age, tds, tds_list, tss, tss_list, temp, temp_list, do, do_list):
         do_mort
         )
 
-    return(max_mort * 0.5) #times 0.5 to represent time out of water
+    return(max_mort) #times 0.5 to represent time out of water
