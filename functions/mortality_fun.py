@@ -13,12 +13,12 @@ def mort_prob (age, tds, tds_list, tss, tss_list, temp, temp_list, do, do_list):
             tds_mort = 0.001
         elif 20 < tds <= 28:
             tds_mort = 0.001
-        elif len(tds_list) >= 7 and all(28 <= v <= 36 for v in tds_list[-7:]):
-            tds_mort = 0.02
-        elif 28 < tds <= 36:
-            tds_mort = 0.01
-        elif tds > 36:
-            tds_mort = 0.05
+        elif len(tds_list) >= 7 and all(28 <= v <= 35 for v in tds_list[-7:]):
+            tds_mort = 0.003 #changed from 0.02
+        elif 28 < tds <= 35:
+            tds_mort = 0.002 #changed from 0.01
+        elif tds > 35:
+            tds_mort = 0.005 #changed from 0.5
     else:
         if len(tds_list) >= 7 and all(v < 3 for v in tds_list[-7:]):
             tds_mort = 0.2
@@ -30,12 +30,12 @@ def mort_prob (age, tds, tds_list, tss, tss_list, temp, temp_list, do, do_list):
             tds_mort = 0.001
         elif 20 < tds <= 28:
             tds_mort = 0.001
-        elif len(tds_list) >= 7 and all(28 <= v <= 36 for v in tds_list[-7:]):
-            tds_mort = 0.02
-        elif 28 < tds <= 36:
-            tds_mort = 0.002
-        elif tds > 36:
-            tds_mort = 0.05
+        elif len(tds_list) >= 7 and all(28 <= v <= 35 for v in tds_list[-7:]):
+            tds_mort = 0.003 #changed from 0.02
+        elif 28 < tds <= 35:
+            tds_mort = 0.002 #changed?
+        elif tds > 35:
+            tds_mort = 0.005 #changed from 0.05
 
     #TOTAL SUS SOLIDS
     if age < 365:
@@ -125,4 +125,4 @@ def mort_prob (age, tds, tds_list, tss, tss_list, temp, temp_list, do, do_list):
         do_mort
         )
 
-    return(max_mort) #times 0.5 to represent time out of water
+    return(max_mort)

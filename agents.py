@@ -43,6 +43,7 @@ class Oyster(mg.GeoAgent):
          self.x = col
          self.y = row - self.model.space.raster_layer.height - 1
          self.age = age
+         self.elevation = self.model.space.raster_layer.elevation
          self.birth_reef = birth_reef
          self.home_reef = home_reef
          self.energy = random.randint(0,10)
@@ -123,8 +124,6 @@ class Oyster(mg.GeoAgent):
             self.status = "dead"
             self.model.space.remove_agent(self)
             self.model.schedule.remove(self)
-        
-            print(self.mortality_prob)
 
             #convert dead oysters to shells
             new_shell = Shell(
