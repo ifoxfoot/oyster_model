@@ -40,7 +40,7 @@ iteration_one = results_df[results_df.type == "Oyster"]
 #plt.plot(iteration_one.Step, iteration_one.mortality_prob, label = "mortality prob")
 
 #plot things (Reef)
-plt.plot(iteration_one.Step, iteration_one.mortality_prob, label = "Mean Mortality Rate")
+plt.plot(iteration_one.Step, iteration_one.elevation, label = "Elevation")
 plt.xlabel('step')
 plt.legend()
 plt.show()

@@ -104,6 +104,7 @@ class OysterModel(mesa.Model):
                                 "dry_biomass": lambda a: a.dry_biomass if a.type == "Oyster" else None,
                                 "wet_biomass": lambda a: a.wet_biomass if a.type == "Oyster" else None,
                                 "mortality_prob": lambda a: a.mortality_prob if a.type == "Oyster" else None,
+                                "elevation": lambda a: a.elevation if a.type == "Oyster" else None,
                                 #reef metrics
                                 "oyster_count": lambda a: a.oyster_count if a.type == "Reef" else None
                                 },

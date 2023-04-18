@@ -36,14 +36,21 @@ class Oyster(mg.GeoAgent):
     def __init__(self, unique_id, model, geometry, crs, birth_reef, home_reef, age = 0):
          super().__init__(unique_id, model, geometry, crs)
          self.type = "Oyster"
+
+         #position
          self.geometry = geometry
          row, col = rio.transform.rowcol(
             self.model.space.raster_layer.transform, 
             self.geometry.x, self.geometry.y)
          self.x = col
          self.y = row - self.model.space.raster_layer.height - 1
+         
+         #innundiation time
+         self.elevation = self.model.space.raster_layer.cells[self.x][-self.y].elevation
+         self.pct_time_underwater = max(min(-0.496*self.elevation + 0.499, 1), 0)
+
+         #demographics
          self.age = age
-         self.elevation = self.model.space.raster_layer.elevation
          self.birth_reef = birth_reef
          self.home_reef = home_reef
          self.energy = random.randint(0,10)
@@ -53,6 +60,8 @@ class Oyster(mg.GeoAgent):
          self.shell_weight = self.wet_biomass * 3.4
          self.fertility = 0
          self.mortality_prob = 0
+
+         print(self.elevation)
 
          #init energy list
          self.energy_list = []
@@ -76,7 +85,7 @@ class Oyster(mg.GeoAgent):
                 self.home_reef.temp, 
                 self.home_reef.temp_list
             )
-        self.energy += daily_energy
+        self.energy += daily_energy * self.pct_time_underwater
         self.energy_list.append(daily_energy)
        
         # #energy gain if under water
@@ -120,7 +129,11 @@ class Oyster(mg.GeoAgent):
             )
 
         #if conditions met, kill off
-        if (self.energy < 0) or (self.age > 3650) or (random.random() < self.mortality_prob) or ((self.model.step_count >= 8) and all(v == 0 for v in self.energy_list[-8:])):
+        if ((self.energy < 0) or 
+            (self.age > 3650) or 
+            (random.random() < self.mortality_prob * self.pct_time_underwater) or 
+            ((self.model.step_count >= 8) and all(v == 0 for v in self.energy_list[-8:]))
+            ):
             self.status = "dead"
             self.model.space.remove_agent(self)
             self.model.schedule.remove(self)
