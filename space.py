@@ -50,5 +50,9 @@ class SeaBed(mg.GeoSpace):
     #when an oyster is added, add it to raster layer
     def add_oyster(self, oyster):
         self.raster_layer.cells[oyster.x][-oyster.y].num_oysters_in_cell += 1
+
+    #when an oyster is added, add it to raster layer
+    def remove_oyster(self, oyster):
+        self.raster_layer.cells[oyster.x][-oyster.y].num_oysters_in_cell -= 1
     
 

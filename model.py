@@ -87,6 +87,22 @@ class OysterModel(mesa.Model):
                 self.space.add_agents(this_oyster)
                 self.schedule.add(this_oyster)
 
+        #add shellss to each reef, proportional to reef size
+        for agent in self.reef_agents:
+            for i in range(round((agent.SHAPE_Area * 2785)/100000)):
+                #create agent
+                this_shell = Shell(
+                    unique_id = "shell_" + str(self.next_id()),
+                    model = self,
+                    geometry = self.point_in_reef(agent),
+                    crs =  self.space.crs,
+                    shell_length = random.randint(1,300)
+                )
+                #add oyster agents to raster, agent layer, and scheduler
+                self.space.add_oyster(this_shell)
+                self.space.add_agents(this_shell)
+                self.schedule.add(this_shell)
+
         #add reef agents to schedule after oysters
         for agent in self.reef_agents:
             self.schedule.add(agent)
@@ -99,12 +115,14 @@ class OysterModel(mesa.Model):
             agent_reporters = {"type" : "type",
                                 #oyster metrics
                                 "energy": lambda a: a.energy if a.type == "Oyster" else None,
+                                "daily_energy": lambda a: a.daily_energy if a.type == "Oyster" else None,
                                 "fertility": lambda a: a.fertility if a.type == "Oyster" else None,
                                 "shell_length_mm": lambda a: a.shell_length_mm if a.type == "Oyster" else None,
                                 "dry_biomass": lambda a: a.dry_biomass if a.type == "Oyster" else None,
                                 "wet_biomass": lambda a: a.wet_biomass if a.type == "Oyster" else None,
                                 "mortality_prob": lambda a: a.mortality_prob if a.type == "Oyster" else None,
                                 "elevation": lambda a: a.elevation if a.type == "Oyster" else None,
+                                "pct_time_underwater": lambda a: a.pct_time_underwater if a.type == "Oyster" else None,
                                 #reef metrics
                                 "oyster_count": lambda a: a.oyster_count if a.type == "Reef" else None
                                 },

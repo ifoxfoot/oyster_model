@@ -23,9 +23,24 @@ class Shell(mg.GeoAgent):
         super().__init__(unique_id, model, geometry, crs)
         self.shell_length = shell_length
         self.type = "Shell"
+
+        #geometry 
+        row, col = rio.transform.rowcol(
+            self.model.space.raster_layer.transform, 
+            self.geometry.x, self.geometry.y)
+        self.x = col
+        self.y = row - self.model.space.raster_layer.height - 1
         
     def step(self):
-        self.shell_length =- self.shell_length * .001
+        #shell degredation
+        self.shell_length -= (self.shell_length * .001)
+
+        #if less than one mm remove from model
+        if self.shell_length < 1:
+            self.model.space.remove_agent(self)
+            self.model.schedule.remove(self)
+            self.model.space.remove_oyster(self)
+    
 
 #set up class for oyster agent
 class Oyster(mg.GeoAgent):
@@ -60,8 +75,7 @@ class Oyster(mg.GeoAgent):
          self.shell_weight = self.wet_biomass * 3.4
          self.fertility = 0
          self.mortality_prob = 0
-
-         print(self.elevation)
+         self.daily_energy = 0
 
          #init energy list
          self.energy_list = []
@@ -75,7 +89,7 @@ class Oyster(mg.GeoAgent):
         #age
         self.age += 1
 
-        daily_energy = energy_gain(
+        self.daily_energy = energy_gain(
                 self.age, 
                 self.home_reef.do,
                 self.home_reef.tss, 
@@ -85,8 +99,8 @@ class Oyster(mg.GeoAgent):
                 self.home_reef.temp, 
                 self.home_reef.temp_list
             )
-        self.energy += daily_energy * self.pct_time_underwater
-        self.energy_list.append(daily_energy)
+        self.energy += (self.daily_energy * self.pct_time_underwater)
+        self.energy_list.append(self.daily_energy)
        
         # #energy gain if under water
         # if self.model.space.raster_layer.cells[self.x][-self.y].water_level > 0:

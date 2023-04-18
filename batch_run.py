@@ -26,10 +26,13 @@ results_df = pd.DataFrame(results)
 print(results_df.keys())
 
 #first filter the results for one iteration one agent to look at oyster metrics
-#iteration_one = results_df[(results_df.iteration == 1) & (results_df.AgentID == "oyster_" + str(random.randint(1,500)))]
+#iteration_one = results_df[(results_df.AgentID == "oyster_2")]
 
 #get reef agents
 iteration_one = results_df[results_df.type == "Oyster"]
+
+means = iteration_one.groupby('Step').mean()
+plt.plot(means.shell_length_mm, label = "mean")
 
 #plot things (Oyster)
 #plt.plot(iteration_one.Step, iteration_one.dry_biomass, label = "dry_biomass")
@@ -40,7 +43,7 @@ iteration_one = results_df[results_df.type == "Oyster"]
 #plt.plot(iteration_one.Step, iteration_one.mortality_prob, label = "mortality prob")
 
 #plot things (Reef)
-plt.plot(iteration_one.Step, iteration_one.elevation, label = "Elevation")
+#plt.plot(iteration_one.Step, iteration_one.elevation, label = "Elevation")
 plt.xlabel('step')
 plt.legend()
 plt.show()
