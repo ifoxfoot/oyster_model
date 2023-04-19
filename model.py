@@ -123,6 +123,7 @@ class OysterModel(mesa.Model):
                                 "mortality_prob": lambda a: a.mortality_prob if a.type == "Oyster" else None,
                                 "elevation": lambda a: a.elevation if a.type == "Oyster" else None,
                                 "pct_time_underwater": lambda a: a.pct_time_underwater if a.type == "Oyster" else None,
+                                "total_shell_weight": lambda a: a.total_shell_weight if a.type == "Reef" else None,
                                 #reef metrics
                                 "oyster_count": lambda a: a.oyster_count if a.type == "Reef" else None
                                 },
@@ -138,6 +139,13 @@ class OysterModel(mesa.Model):
         while not random_reef.geometry.contains(pnt):
             pnt = Point(random.uniform(minx, maxx), random.uniform(miny, maxy))
         return pnt
+    
+    #function to convert shell length to shell weight
+    def length_to_weight (self, shell_length_mm):
+        dry_biomass = 9.6318 * (10**-6) * (shell_length_mm**2.743)
+        wet_biomass =  (dry_biomass * 5.6667) + dry_biomass 
+        shell_weight = wet_biomass * 3.4
+        return shell_weight
 
    
     #define step

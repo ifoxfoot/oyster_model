@@ -53,3 +53,9 @@ show()
 figure('water depth (high tide)')  # new fig, with a name
 imshow.imshow_grid_at_node(grid = grid, values = 'water_high', limits = (0,4))
 show()
+
+shell_length_mm = 300
+dry_biomass = 9.6318 * (10**-6) * (shell_length_mm**2.743)
+wet_biomass =  (dry_biomass * 5.6667) + dry_biomass
+shell_weight = wet_biomass * 3.4
+

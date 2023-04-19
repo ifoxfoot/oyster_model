@@ -21,8 +21,9 @@ class Shell(mg.GeoAgent):
 
     def __init__(self, unique_id, model, geometry, crs, shell_length):
         super().__init__(unique_id, model, geometry, crs)
-        self.shell_length = shell_length
         self.type = "Shell"
+        self.shell_length = shell_length
+        self.shell_weight = self.model.length_to_weight(self.shell_length)
 
         #geometry 
         row, col = rio.transform.rowcol(
@@ -34,6 +35,7 @@ class Shell(mg.GeoAgent):
     def step(self):
         #shell degredation
         self.shell_length -= (self.shell_length * .001)
+        self.shell_weight = self.model.length_to_weight(self.shell_length)
 
         #if less than one mm remove from model
         if self.shell_length < 1:
@@ -72,7 +74,7 @@ class Oyster(mg.GeoAgent):
          self.shell_length_mm = 0.08219178 * self.age #found using line between (0,0) and (3650-max age, 300-max size)
          self.dry_biomass = 9.6318 * (10**-6) * (self.shell_length_mm**2.743)
          self.wet_biomass =  (self.dry_biomass * 5.6667) + self.dry_biomass
-         self.shell_weight = self.wet_biomass * 3.4
+         self.shell_weight = self.model.length_to_weight(self.shell_length_mm)
          self.fertility = 0
          self.mortality_prob = 0
          self.daily_energy = 0
@@ -127,7 +129,7 @@ class Oyster(mg.GeoAgent):
         self.shell_length_mm += shell_length_gain(self.shell_length_mm, self.energy)
         self.dry_biomass = 9.6318 * (10**-6) * (self.shell_length_mm**2.743)
         self.wet_biomass =  (self.dry_biomass * 5.6667) + self.dry_biomass 
-        self.shell_weight = self.wet_biomass * 3.4
+        self.shell_weight = self.model.length_to_weight(self.shell_length_mm)
 
         #death probabiliyt NOT ADDED INTO DEATH IF STATEMENT YET
         self.mortality_prob = mort_prob(
@@ -231,6 +233,8 @@ class Reef(mg.GeoAgent):
         self.tss = self.data.loc[1, 'pred_tss'] #needs to be converted to tss still
         self.temp = self.data.loc[1, 'mean_temp']
         self.tds = self.data.loc[1, 'mean_sal']
+        #init shell weight
+        self.total_shell_weight = None
 
     def step(self):
         #get oyster count
@@ -252,6 +256,16 @@ class Reef(mg.GeoAgent):
         self.temp_list = self.temp_list[-7:]
         self.tds_list = self.tds_list[-7:]
         self.do_list = self.do_list[-7:]
+        #once a year get total shell weight
+        if self.model.step_count%4 == 0:
+            #get shell weight 
+            shell_weights = [a.shell_weight for a in self.model.space.get_intersecting_agents(self) 
+                                       if isinstance(a, (Oyster, Shell))]
+            self.total_shell_weight = sum(shell_weights)
+            #amount to raise reef by
+            self.mm_of_growth = (((self.total_shell_weight * 100000)/1000)/self.SHAPE_Area)/0.731
+            #Get the cells that intersect with the polygon-agent
+            self.model.space.raster_layer.get_intersecting_cells(self).new_elevation =+ self.mm_of_growth
 
     #get reef identity
     def __repr__(self):
