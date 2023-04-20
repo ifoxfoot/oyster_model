@@ -1,61 +1,38 @@
-from landlab import RasterModelGrid
-from landlab.components import TidalFlowCalculator
-from landlab.plot import imshow
-from pylab import show, figure
-
-#make raster data
-grid = RasterModelGrid((3, 5), xy_spacing=2.0) 
-z = grid.add_zeros("topographic__elevation", at = "node")
-z[5:10] = [2.0, 0.25, 0.0, -0.25, -3.0]
-
-#plot raster
-figure('Elevations from the field')  # new fig, with a name
-imshow.imshow_grid_at_node(grid, "topographic__elevation")
-show()
+import numpy as np
+import geopandas as gpd
+from rasterio.features import rasterize
+import rasterio 
+from shapely.geometry import Polygon
+import pandas as pd
+import matplotlib.pyplot as plt
 
 
-tfc = TidalFlowCalculator(grid, tidal_range=1.289919, tidal_period=43482.58, roughness=0.05)
+# create a geopandas dataframe from the polygons and attributes
+# create a list of polygons
+polygons = [Polygon([(0, 0), (0, 1), (1, 1), (1, 0)]),
+            Polygon([(1, 1), (1, 2), (2, 2), (2, 1)]),
+            Polygon([(2, 2), (2, 3), (3, 3), (3, 2)])]
 
-#run the tidal flow calc
-tfc.run_one_step()
+# create a pandas dataframe with some attributes
+df = pd.DataFrame({'id': [1, 2, 3],
+                   'name': ['polygon 1', 'polygon 2', 'polygon 3'],
+                   'value': [10, 20, 30]})
 
-names = tfc.output_var_names
+# create a geopandas dataframe from the polygons and attributes
+gdf = gpd.GeoDataFrame(df, geometry=polygons)
 
-#store tidal period for depth
-period=4.0e4
+# specify the dimensions and resolution of your output raster
+width = 100
+height = 100
+transform = rasterio.transform.from_bounds(*gdf.total_bounds, width=width, height=height)
 
-#get innudiation rate
-rate = tfc.calc_tidal_inundation_rate()
+# create an empty raster to store the output
+image = np.zeros((height, width), dtype=np.uint8)
 
-#get high tide water level
-dem_high = 1 * period * rate[:]  # depth in m
-grid.add_field("water_high", dem_high, at = "node")
+# rasterize the polygons in the geodataframe and store the result in the output raster
+shapes = ((geom, 255) for geom in gdf.geometry)
+ras = rasterize(shapes=shapes, out=image, transform=transform)
 
-#get low tide water level
-dem_low = 0.5 * rate[:] * period # depth in m
-grid.add_field("water_low", dem_low, at = "node")
-
-depth = grid.add_field("water_depth", tfc._water_depth, at = "node")
-
-m_depth = grid.add_field("mean_water_depth", tfc., at = "node")
-
-#water depth ()
-figure('water depth (tfc_output)')  # new fig, with a name
-imshow.imshow_grid_at_node(grid = grid, values = 'water_depth', limits = (0,4))
-show()
-
-#water depth ()
-figure('water depth (low tide)')  # new fig, with a name
-imshow.imshow_grid_at_node(grid = grid, values = 'water_low', limits = (0,4))
-show()
-
-#water depth ()
-figure('water depth (high tide)')  # new fig, with a name
-imshow.imshow_grid_at_node(grid = grid, values = 'water_high', limits = (0,4))
-show()
-
-shell_length_mm = 300
-dry_biomass = 9.6318 * (10**-6) * (shell_length_mm**2.743)
-wet_biomass =  (dry_biomass * 5.6667) + dry_biomass
-shell_weight = wet_biomass * 3.4
-
+# plot rasterized
+plt.imshow(ras)
+plt.show()

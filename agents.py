@@ -2,6 +2,7 @@
 import mesa_geo as mg
 import random
 import rasterio as rio
+from rasterio.features import rasterize
 import pandas as pd
 
 #import funs
@@ -264,8 +265,16 @@ class Reef(mg.GeoAgent):
             self.total_shell_weight = sum(shell_weights)
             #amount to raise reef by
             self.mm_of_growth = (((self.total_shell_weight * 100000)/1000)/self.SHAPE_Area)/0.731
-            #Get the cells that intersect with the polygon-agent
-            self.model.space.raster_layer.get_intersecting_cells(self).new_elevation =+ self.mm_of_growth
+            #assign reef growth value to polygon
+            vals = ((geom, self.mm_of_growth) for geom in self.geometry)
+            #define transform
+            transform = rio.transform.from_bounds(*self.total_bounds, 
+                                                  width=self.model.space.raster_layer.width, 
+                                                  height=self.model.space.raster_layer.width)
+            #rasterize polygon
+            ras = rasterize(shapes=vals, out=self.model.space.raster_layer, transform=transform)
+            #add growth vals to elevation layer
+            self.model.space.raster_layer.new_elevation += ras
 
     #get reef identity
     def __repr__(self):
