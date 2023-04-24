@@ -42,6 +42,7 @@ class SeaBed(mg.GeoSpace):
         )
         super().add_layer(raster_layer)
 
+
     #return raster layer when called
     @property
     def raster_layer(self):

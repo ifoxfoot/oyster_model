@@ -10,7 +10,7 @@ from space import *
 from agents import *
 
 #store model
-oys_mod = OysterModel(500, 0, 0)
+oys_mod = OysterModel()
 
 
 rmg = RasterModelGrid((oys_mod.space.raster_layer.height, 

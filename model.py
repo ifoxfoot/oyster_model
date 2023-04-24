@@ -1,6 +1,7 @@
 #import packages
 import mesa
 import mesa_geo as mg
+import geopandas as gpd
 from shapely.geometry import Point
 import random
 random.seed(3)
@@ -51,14 +52,16 @@ class OysterModel(mesa.Model):
 
         # #store tidal period for depth
         # self.tidal_period = 43482.58
+
+        reef_data = gpd.read_file("data/oyster_reef_buf.gpkg")
         
         #create reef agents
         ac = mg.AgentCreator(
             Reef, 
             model = self,
-            # agent_kwargs = {
-            #     "sanctuary_status" : random.random() < (num_safe_reefs/100)
-            #     }
+            agent_kwargs = {
+                "poly" : reef_data
+                }
             )
         self.reef_agents = ac.from_file(
             self.reefs_data, 
@@ -181,7 +184,7 @@ class OysterModel(mesa.Model):
         self.space._recreate_rtree()  # Recalculate spatial tree, because agents are moving??
 
     #define run model function
-    def run_model(self, steps=365):
+    def run_model(self, steps=150):
          for i in range(steps):
             self.step()
 

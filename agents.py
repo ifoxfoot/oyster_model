@@ -4,6 +4,8 @@ import random
 import rasterio as rio
 from rasterio.features import rasterize
 import pandas as pd
+import numpy as np
+import geopandas as gpd
 
 #import funs
 from functions.energy_fun import *
@@ -216,13 +218,16 @@ class Reef(mg.GeoAgent):
     """Reef Agent"""
 
     def __init__(
-        self, unique_id, model, geometry, crs, 
+        self, unique_id, model, geometry, crs, poly
         # sanctuary_status
     ):
         super().__init__(unique_id, model, geometry, crs)
         self.type = "Reef"
         # self.sanctuary_status = sanctuary_status
         self.data = pd.read_csv("data/wq_perams_10apr23.csv")
+
+        self.poly = poly
+        self.shape = poly.loc[poly['OBJECTID'] == self.unique_id]
 
         #create lists for multi-step effects
         self.tss_list = []
@@ -258,7 +263,7 @@ class Reef(mg.GeoAgent):
         self.tds_list = self.tds_list[-7:]
         self.do_list = self.do_list[-7:]
         #once a year get total shell weight
-        if self.model.step_count%4 == 0:
+        if self.model.step_count%365 == 0:
             #get shell weight 
             shell_weights = [a.shell_weight for a in self.model.space.get_intersecting_agents(self) 
                                        if isinstance(a, (Oyster, Shell))]
@@ -266,15 +271,22 @@ class Reef(mg.GeoAgent):
             #amount to raise reef by
             self.mm_of_growth = (((self.total_shell_weight * 100000)/1000)/self.SHAPE_Area)/0.731
             #assign reef growth value to polygon
-            vals = ((geom, self.mm_of_growth) for geom in self.geometry)
+            vals = ((geom, self.mm_of_growth) for geom in self.shape.geometry)
             #define transform
-            transform = rio.transform.from_bounds(*self.total_bounds, 
+            transform = rio.transform.from_bounds(*self.model.space.raster_layer.total_bounds, 
                                                   width=self.model.space.raster_layer.width, 
-                                                  height=self.model.space.raster_layer.width)
+                                                  height=self.model.space.raster_layer.height)
+            # create an empty raster to store the output
+            image = np.zeros((self.model.space.raster_layer.height, self.model.space.raster_layer.width), dtype=np.float32) 
             #rasterize polygon
-            ras = rasterize(shapes=vals, out=self.model.space.raster_layer, transform=transform)
+            ras = rasterize(shapes=vals, out=image, transform=transform)
             #add growth vals to elevation layer
-            self.model.space.raster_layer.new_elevation += ras
+            elev = self.model.space.raster_layer.get_raster("elevation")
+            new_elev = ras + elev
+            self.model.space.raster_layer.apply_raster(new_elev, 
+                                                       attr_name = "elevation")
+
+
 
     #get reef identity
     def __repr__(self):
