@@ -29,13 +29,16 @@ print(results_df.keys())
 #iteration_one = results_df[(results_df.AgentID == "oyster_2")]
 
 #get reef agents
-iteration_one = results_df[results_df.type == "Reef"]
+iteration_one = results_df[results_df.type == "Oyster"]
 
-# means = iteration_one.groupby('Step').mean("total_shell_weight")
-# plt.plot(means.total_shell_weight, label = "mean")
+means = iteration_one.groupby('Step').mean("shell_length_mm")
+plt.plot(means.shell_length_mm, label = "mean shell length")
+plt.xlabel('step')
+plt.legend()
+plt.show()
 
 #plot things (Oyster)
-plt.plot(iteration_one.Step, iteration_one.total_shell_weight, label = "total_shell_weight")
+#plt.plot(iteration_one.Step, iteration_one.total_shell_weight, label = "total_shell_weight")
 #plt.plot(iteration_one.Step, iteration_one.dry_biomass, label = "dry_biomass")
 #plt.plot(iteration_one.Step, iteration_one.wet_biomass, label = "wet_biomass")
 #plt.plot(iteration_one.Step, iteration_one.shell_length_mm, label = "shell length (mm)")
@@ -45,6 +48,4 @@ plt.plot(iteration_one.Step, iteration_one.total_shell_weight, label = "total_sh
 
 #plot things (Reef)
 #plt.plot(iteration_one.Step, iteration_one.elevation, label = "Elevation")
-plt.xlabel('step')
-plt.legend()
-plt.show()
+

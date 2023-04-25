@@ -92,5 +92,5 @@ def energy_gain(age, do, tds, tds_list, tss, tss_list, temp, temp_list):
             temp_energy = 0.75
 
     #return weighted energy
-    return(2.8 * do_energy * tds_energy * tss_energy * temp_energy)
+    return(1.35 * do_energy * tds_energy * tss_energy * temp_energy) #energy changed from 2.8
 
