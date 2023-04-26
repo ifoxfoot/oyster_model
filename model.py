@@ -31,6 +31,7 @@ class OysterModel(mesa.Model):
         self.schedule = mesa.time.RandomActivation(self)
         self.step_count = 1
         self.current_id = 0
+        self.ind_per_super_a = 100000
 
         #add crs for space
         self.space.set_elevation_layer(crs = "epsg:3857")
@@ -72,9 +73,25 @@ class OysterModel(mesa.Model):
         #add reef agents to space
         self.space.add_agents(self.reef_agents)
 
+        #add shells to each reef, proportional to reef size
+        for agent in self.reef_agents:
+            for i in range(round((agent.SHAPE_Area * 2785)/self.ind_per_super_a)):
+                #create agent
+                this_shell = Shell(
+                    unique_id = "shell_" + str(self.next_id()),
+                    model = self,
+                    geometry = self.point_in_reef(agent),
+                    crs =  self.space.crs,
+                    shell_length = random.randint(1,300)
+                )
+                #add oyster agents to raster, agent layer, and scheduler
+                self.space.add_oyster(this_shell)
+                self.space.add_agents(this_shell)
+                self.schedule.add(this_shell)
+
         #add oysters to each reef, proportional to reef size
         for agent in self.reef_agents:
-            for i in range(round((agent.SHAPE_Area * 1620)/100000)):
+            for i in range(round((agent.SHAPE_Area * 1620)/self.ind_per_super_a)):
                  #create agent
                 this_oyster = Oyster(
                     unique_id = "oyster_" + str(self.next_id()),
@@ -89,22 +106,6 @@ class OysterModel(mesa.Model):
                 self.space.add_oyster(this_oyster)
                 self.space.add_agents(this_oyster)
                 self.schedule.add(this_oyster)
-
-        #add shellss to each reef, proportional to reef size
-        for agent in self.reef_agents:
-            for i in range(round((agent.SHAPE_Area * 2785)/100000)):
-                #create agent
-                this_shell = Shell(
-                    unique_id = "shell_" + str(self.next_id()),
-                    model = self,
-                    geometry = self.point_in_reef(agent),
-                    crs =  self.space.crs,
-                    shell_length = random.randint(1,300)
-                )
-                #add oyster agents to raster, agent layer, and scheduler
-                self.space.add_oyster(this_shell)
-                self.space.add_agents(this_shell)
-                self.schedule.add(this_shell)
 
         #add reef agents to schedule after oysters
         for agent in self.reef_agents:

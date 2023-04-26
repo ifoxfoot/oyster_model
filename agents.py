@@ -26,6 +26,7 @@ class Shell(mg.GeoAgent):
         super().__init__(unique_id, model, geometry, crs)
         self.type = "Shell"
         self.shell_length = shell_length
+        self.og_shell_length = shell_length
         self.shell_weight = self.model.length_to_weight(self.shell_length)
 
         #geometry 
@@ -37,7 +38,7 @@ class Shell(mg.GeoAgent):
         
     def step(self):
         #shell degredation
-        self.shell_length -= (self.shell_length * .001)
+        self.shell_length -= (self.og_shell_length/3650)
         self.shell_weight = self.model.length_to_weight(self.shell_length)
 
         #if less than one mm remove from model
@@ -78,9 +79,10 @@ class Oyster(mg.GeoAgent):
          self.dry_biomass = 9.6318 * (10**-6) * (self.shell_length_mm**2.743)
          self.wet_biomass =  (self.dry_biomass * 5.6667) + self.dry_biomass
          self.shell_weight = self.model.length_to_weight(self.shell_length_mm)
-         self.fertility = 0
-         self.mortality_prob = 0
-         self.daily_energy = 0
+         self.fertility = None
+         self.reproduced = False
+         self.mortality_prob = None
+         self.daily_energy = None
 
          #init energy list
          self.energy_list = []
@@ -94,6 +96,7 @@ class Oyster(mg.GeoAgent):
         #age
         self.age += 1
 
+        #energy gain
         self.daily_energy = energy_gain(
                 self.age, 
                 self.home_reef.do,
@@ -106,24 +109,6 @@ class Oyster(mg.GeoAgent):
             )
         self.energy += (self.daily_energy * self.pct_time_underwater)
         self.energy_list.append(self.daily_energy)
-       
-        # #energy gain if under water
-        # if self.model.space.raster_layer.cells[self.x][-self.y].water_level > 0:
-        #     daily_energy = energy_gain(
-        #         self.age, 
-        #         self.home_reef.do,
-        #         self.home_reef.tss, 
-        #         self.home_reef.tss_list, 
-        #         self.home_reef.tds, 
-        #         self.home_reef.tds_list, 
-        #         self.home_reef.temp, 
-        #         self.home_reef.temp_list
-        #     )
-        #     self.energy += daily_energy
-        #     self.energy_list.append(daily_energy)
-        #     self.enery_gained = 1
-        # else:
-        #     self.energy_gained = 0
 
         #energy loss
         self.energy -= 1.2
@@ -134,7 +119,7 @@ class Oyster(mg.GeoAgent):
         self.wet_biomass =  (self.dry_biomass * 5.6667) + self.dry_biomass 
         self.shell_weight = self.model.length_to_weight(self.shell_length_mm)
 
-        #death probabiliyt NOT ADDED INTO DEATH IF STATEMENT YET
+        #death probabiliyt
         self.mortality_prob = mort_prob(
             self.age, 
             self.home_reef.tds, 
@@ -180,7 +165,9 @@ class Oyster(mg.GeoAgent):
         reproductive_days = list(range(203, 210)) + list(range(212, 215))
         
         #reproduction
-        if (self.status == "alive") and any(self.model.step_count%i == 0 for i in reproductive_days):
+        if ((self.status == "alive") and
+            (self.reproduced == False) and
+            any(self.model.step_count%i == 0 for i in reproductive_days)):
 
             #get fertility
             self.fertility = n_babies(
@@ -189,9 +176,44 @@ class Oyster(mg.GeoAgent):
                 self.home_reef.tss, 
                 self.home_reef.tds, 
                 self.home_reef.temp)
+            
+            #set reproduced to T for rest of spawning period
+            if self.fertility > 0:
+                self.reproduced = True
 
             #create new oysters
             for i in range(self.fertility):
+                #get random reef
+                random_reef = random.choice(self.model.reef_agents)
+                
+                #create oyster
+                baby_oyster = Oyster(
+                    unique_id = "oyster_" + str(self.model.next_id()),
+                    model = self.model,
+                    geometry = self.model.point_in_reef(random_reef), 
+                    crs = self.model.space.crs,
+                    birth_reef = self.home_reef,
+                    home_reef = random_reef,
+                    age = 0
+                )
+            
+                #add oyster agents to raster, agent layer, and scheduler
+                self.model.space.add_oyster(baby_oyster)
+                self.model.space.add_agents(baby_oyster)
+                self.model.schedule.add(baby_oyster)
+
+        #reset reproduction val for next spawning period
+        if self.model.step_count%211 == 0:
+            self.reproduced = False
+
+        #reset reproduction val for next spawning period
+        if self.model.step_count%216 == 0:
+            self.reproduced = False
+
+        #natural recruitment
+        if (self.model.step_count > 0) and (self.model.step_count%i == 0 for i in (210, 215)):
+            num_oysters = [agent for agent in self.model.schedule.agents if isinstance(agent, Oyster)]
+            for i in num_oysters:
                 #get random reef
                 random_reef = random.choice(self.model.reef_agents)
                 
@@ -240,7 +262,8 @@ class Reef(mg.GeoAgent):
         self.temp = self.data.loc[1, 'mean_temp']
         self.tds = self.data.loc[1, 'mean_sal']
         #init shell weight
-        self.total_shell_weight = None
+        self.shell_weight_gain = None
+
 
     def step(self):
         #get oyster count
@@ -262,16 +285,24 @@ class Reef(mg.GeoAgent):
         self.temp_list = self.temp_list[-7:]
         self.tds_list = self.tds_list[-7:]
         self.do_list = self.do_list[-7:]
+
+        #get first day shell weight so we know how much reef is adding
+        if self.model.step_count == 1:
+            init_shell_weight = [a.shell_weight for a in self.model.space.get_intersecting_agents(self) 
+                                       if isinstance(a, (Oyster, Shell))]
+            self.initial_shell_weight = sum(init_shell_weight)
+
         #once a year get total shell weight
         if self.model.step_count%365 == 0:
             #get shell weight 
             shell_weights = [a.shell_weight for a in self.model.space.get_intersecting_agents(self) 
                                        if isinstance(a, (Oyster, Shell))]
-            self.total_shell_weight = sum(shell_weights)
+            self.shell_weight_gain = sum(shell_weights) - self.initial_shell_weight
             #amount to raise reef by
-            self.mm_of_growth = (((self.total_shell_weight * 100000)/1000)/self.SHAPE_Area)/0.731
+            self.mm_of_growth = (((self.shell_weight_gain * self.model.ind_per_super_a)/1000)/self.SHAPE_Area)/0.731
+            print(self.mm_of_growth)
             #assign reef growth value to polygon
-            vals = ((geom, self.mm_of_growth) for geom in self.shape.geometry)
+            vals = ((geom, (self.mm_of_growth/1000)) for geom in self.shape.geometry)
             #define transform
             transform = rio.transform.from_bounds(*self.model.space.raster_layer.total_bounds, 
                                                   width=self.model.space.raster_layer.width, 
@@ -285,8 +316,6 @@ class Reef(mg.GeoAgent):
             new_elev = ras + elev
             self.model.space.raster_layer.apply_raster(new_elev, 
                                                        attr_name = "elevation")
-
-
 
     #get reef identity
     def __repr__(self):
