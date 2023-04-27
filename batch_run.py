@@ -31,8 +31,8 @@ print(results_df.keys())
 #get reef agents
 iteration_one = results_df[results_df.type == "Oyster"]
 
-means = iteration_one.groupby('Step').mean("shell_length_mm")
-plt.plot(means.shell_length_mm, label = "mean shell length")
+means = iteration_one.groupby('Step').mean("mortality_prob", "pct_time_underwater")
+plt.plot((means.mortality_prob), label = "mean mort_prob times underwater")
 plt.xlabel('step')
 plt.legend()
 plt.show()

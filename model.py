@@ -183,10 +183,15 @@ class OysterModel(mesa.Model):
         #     water_level = 1 * rate[:] * self.tidal_period
         # self.space.update_water_level(water_level)
         self.space._recreate_rtree()  # Recalculate spatial tree, because agents are moving??
+        
+        #stop step after 1 yr
+        if self.step_count == 365 * 5:
+            self.running = False
 
     #define run model function
     def run_model(self, steps=150):
          for i in range(steps):
             self.step()
 
+       
 

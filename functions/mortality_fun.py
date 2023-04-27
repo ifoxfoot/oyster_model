@@ -101,11 +101,11 @@ def mort_prob (age, tds, tds_list, tss, tss_list, temp, temp_list, do, do_list):
     elif 10 < temp <= 20:
         temp_mort = 0.00125
     elif len(temp_list) >= 7 and all(20 < v <= 32 for v in temp_list[-7:]):
-        temp_mort = 0.01
+        temp_mort = 0.005 #changed from 0.01
     elif 20 < temp <= 32:
-        temp_mort = 0.0055
+        temp_mort = 0.003 #changed from 0.0055
     elif temp > 32:
-        temp_mort = 0.015
+        temp_mort = 0.01
     
     #DISSOLVED OXYGEN
     if len(do_list) >= 7 and all(v <= 2.4 for v in temp_list[-7:]):
