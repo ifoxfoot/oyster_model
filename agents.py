@@ -111,7 +111,7 @@ class Oyster(mg.GeoAgent):
         self.energy_list.append(self.daily_energy)
 
         #energy loss
-        self.energy -= 1.2
+        self.energy -= (1.2 * self.pct_time_underwater)
 
         #growth
         self.shell_length_mm += shell_length_gain(self.shell_length_mm, self.energy)
@@ -138,6 +138,10 @@ class Oyster(mg.GeoAgent):
             (random.random() < self.mortality_prob * self.pct_time_underwater) or 
             ((self.model.step_count >= 8) and all(v == 0 for v in self.energy_list[-8:]))
             ):
+            if self.energy < 0: print("neg energy")
+            if self.age > 3650: print("old")
+            if random.random() < self.mortality_prob * self.pct_time_underwater: print("mort")
+            if (self.model.step_count >= 8) and all(v == 0 for v in self.energy_list[-8:]): print("no energy 8 days")
             self.status = "dead"
             self.model.space.remove_agent(self)
             self.model.schedule.remove(self)
