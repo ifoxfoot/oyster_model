@@ -3,7 +3,6 @@ import mesa
 import mesa_geo as mg
 import numpy as np
 
-
 #class for cells in raster
 class SeaBedCell(mg.Cell):
     elevation: int | None
@@ -41,7 +40,6 @@ class SeaBed(mg.GeoSpace):
             attr_name = "num_oysters_in_cell",
         )
         super().add_layer(raster_layer)
-
 
     #return raster layer when called
     @property

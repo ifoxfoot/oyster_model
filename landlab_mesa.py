@@ -12,6 +12,7 @@ from agents import *
 #store model
 oys_mod = OysterModel()
 
+oys_mod.run_model(steps = 1)
 
 rmg = RasterModelGrid((oys_mod.space.raster_layer.height, 
                        oys_mod.space.raster_layer.width),

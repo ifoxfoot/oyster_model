@@ -130,7 +130,8 @@ class OysterModel(mesa.Model):
                                 "pct_time_underwater": lambda a: a.pct_time_underwater if a.type == "Oyster" else None,
                                 "total_shell_weight": lambda a: a.total_shell_weight if a.type == "Reef" else None,
                                 #reef metrics
-                                "oyster_count": lambda a: a.oyster_count if a.type == "Reef" else None
+                                "oyster_count": lambda a: a.oyster_count if a.type == "Reef" else None,
+                                "total_mm_growth": lambda a: a.total_mm_growth if a.type == "Reef" else None
                                 },
             #get oyster lifespan                    
             tables = {"Lifespan": [lambda a: a.unique_id if a.type == "Oyster" else None, 

@@ -74,7 +74,7 @@ class Oyster(mg.GeoAgent):
          self.age = age
          self.birth_reef = birth_reef
          self.home_reef = home_reef
-         self.energy = random.randint(0,10)
+         self.energy = random.randint(1,10)
          self.shell_length_mm = 0.08219178 * self.age #found using line between (0,0) and (3650-max age, 300-max size)
          self.dry_biomass = 9.6318 * (10**-6) * (self.shell_length_mm**2.743)
          self.wet_biomass =  (self.dry_biomass * 5.6667) + self.dry_biomass
@@ -138,11 +138,6 @@ class Oyster(mg.GeoAgent):
             (random.random() < self.mortality_prob * self.pct_time_underwater) or 
             ((self.model.step_count >= 8) and all(v == 0 for v in self.energy_list[-8:]))
             ):
-            if self.energy < 0: print("neg energy")
-            if self.age > 3650: print("old")
-            if random.random() < self.mortality_prob * self.pct_time_underwater: print("mort")
-            if (self.model.step_count >= 8) and all(v == 0 for v in self.energy_list[-8:]): print("no energy 8 days")
-            self.status = "dead"
             self.model.space.remove_agent(self)
             self.model.schedule.remove(self)
 
@@ -239,12 +234,12 @@ class Reef(mg.GeoAgent):
         self.do_list = []
         #init env values
         self.do = self.data.loc[1, 'mean_do']
-        self.tss = self.data.loc[1, 'pred_tss'] #needs to be converted to tss still
+        self.tss = self.data.loc[1, 'pred_tss'] 
         self.temp = self.data.loc[1, 'mean_temp']
         self.tds = self.data.loc[1, 'mean_sal']
-        #init shell weight
+        #init growth stuff
         self.shell_weight_gain = None
-
+        self.total_mm_growth = 0
 
     def step(self):
         #get oyster count
@@ -253,7 +248,7 @@ class Reef(mg.GeoAgent):
         self.total_shell_weight = self.model.space.get_intersecting_agents(self)
         #get new environmental variables
         self.do = self.data.loc[self.model.step_count + 1, 'mean_do']
-        self.tss = self.data.loc[self.model.step_count + 1, 'mean_turb'] #needs to be converted to tss still
+        self.tss = self.data.loc[self.model.step_count + 1, 'pred_tss'] 
         self.temp = self.data.loc[self.model.step_count + 1, 'mean_temp']
         self.tds = self.data.loc[self.model.step_count + 1, 'mean_sal']
         #store variables in list
@@ -302,6 +297,7 @@ class Reef(mg.GeoAgent):
             self.shell_weight_gain = sum(shell_weights) - self.initial_shell_weight
             #amount to raise reef by
             self.mm_of_growth = (((self.shell_weight_gain * self.model.ind_per_super_a)/1000)/self.SHAPE_Area)/0.731
+            self.total_mm_growth += self.mm_of_growth
             print(self.mm_of_growth)
             #assign reef growth value to polygon
             vals = ((geom, (self.mm_of_growth/1000)) for geom in self.shape.geometry)
