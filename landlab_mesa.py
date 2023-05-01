@@ -23,8 +23,8 @@ rmg.add_field("num_oysters",
               oys_mod.space.raster_layer.get_raster("num_oysters_in_cell"))
 
 #plot raster
-figure('Elevations from the field')  # new fig, with a name
-imshow.imshow_grid_at_node(rmg, "topographic__elevation")
+figure('num oysters from the model')  # new fig, with a name
+imshow.imshow_grid_at_node(rmg, "num_oysters")
 show()
 
 #store roughness values
@@ -55,18 +55,8 @@ period = 4.0e4
 
 #get innudiation rate
 rate = tfc.calc_tidal_inundation_rate()
-depth_low = 0.5 * rate[:] * period # depth in m
-rmg.add_field("water_low", depth_low, at = "node")
+depth_mid = 0.5 * rate[:] * period # depth in m
+rmg.add_field("water_low", depth_mid, at = "node")
 
-depth_high = 1 * rate[:] * period # depth in m
-rmg.add_field("water_high", depth_high, at = "node")
-
-#water depth ()
-figure('water depth low tide')  # new fig, with a name
-imshow.imshow_grid(grid = rmg, values = 'water_low', limits = (0,10))
-show()
-figure('water depth high tide') 
-imshow.imshow_grid(grid = rmg, values = 'water_high', limits = (0,10))
-show()
 
 

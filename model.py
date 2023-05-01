@@ -31,7 +31,7 @@ class OysterModel(mesa.Model):
         self.schedule = mesa.time.RandomActivation(self)
         self.step_count = 1
         self.current_id = 0
-        self.ind_per_super_a = 100000
+        self.ind_per_super_a = (2142.45 * 9) #num oysters per cell area times nine for moore neighborhood
 
         #add crs for space
         self.space.set_elevation_layer(crs = "epsg:3857")
@@ -118,6 +118,7 @@ class OysterModel(mesa.Model):
         self.datacollector = mesa.DataCollector(
             agent_reporters = {"type" : "type",
                                 #oyster metrics
+                                "age": lambda a: a.age if a.type == "Oyster" else None,
                                 "energy": lambda a: a.energy if a.type == "Oyster" else None,
                                 "daily_energy": lambda a: a.daily_energy if a.type == "Oyster" else None,
                                 "fertility": lambda a: a.fertility if a.type == "Oyster" else None,
@@ -150,7 +151,6 @@ class OysterModel(mesa.Model):
         wet_biomass =  (dry_biomass * 5.6667) + dry_biomass 
         shell_weight = wet_biomass * 3.4
         return shell_weight
-
    
     #define step
     def step(self):
@@ -176,20 +176,14 @@ class OysterModel(mesa.Model):
         # tfc.run_one_step()
         # #get innudiation rate
         # rate = tfc.calc_tidal_inundation_rate()
-        # #depth in m
-        # if(self.step_count%2 == 0):
-        #     water_level = 0.5 * rate[:] * self.tidal_period
-        # else:
-        #     water_level = 1 * rate[:] * self.tidal_period
-        # self.space.update_water_level(water_level)
         self.space._recreate_rtree()  # Recalculate spatial tree, because agents are moving??
         
-        #stop step after 1 yr
-        if self.step_count == 365 * 5:
+        #stop step after 5 yr
+        if self.step_count == (365 * 5) + 1:
             self.running = False
 
     #define run model function
-    def run_model(self, steps=150):
+    def run_model(self, steps):
          for i in range(steps):
             self.step()
 

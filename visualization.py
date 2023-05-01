@@ -51,7 +51,7 @@ def agent_portrayal(agent):
             #         "Layer": 2
             #     }
     elif isinstance(agent, SeaBedCell):
-        return (agent.elevation, agent.elevation, agent.elevation, 1)
+        return (agent.num_oysters_in_cell, agent.num_oysters_in_cell, agent.num_oysters_in_cell, 1)
 
 
 #create map element

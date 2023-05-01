@@ -2,7 +2,7 @@
 def shell_length_gain (shell_length_mm, energy):
 
     if shell_length_mm < 37:
-        sl_weight = 1.8
+        sl_weight = 0.8
     elif 37 <= shell_length_mm <= 72:
         sl_weight = 0.7
     elif 72 < shell_length_mm <= 120:
@@ -15,3 +15,5 @@ def shell_length_gain (shell_length_mm, energy):
         sl_weight = 0.01
 
     return(0.6667 * energy * sl_weight)
+
+#changed constant from 0.6667
