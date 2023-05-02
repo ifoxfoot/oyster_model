@@ -22,12 +22,13 @@ class Shell(mg.GeoAgent):
 
     """Shell Agent"""
 
-    def __init__(self, unique_id, model, geometry, crs, shell_length):
+    def __init__(self, unique_id, model, geometry, crs, shell_length, age = 0):
         super().__init__(unique_id, model, geometry, crs)
         self.type = "Shell"
         self.shell_length = shell_length
         self.og_shell_length = shell_length
         self.shell_weight = self.model.length_to_weight(self.shell_length)
+        self.age = age
 
         #geometry 
         row, col = rio.transform.rowcol(
@@ -37,8 +38,10 @@ class Shell(mg.GeoAgent):
         self.y = row - self.model.space.raster_layer.height - 1
         
     def step(self):
+        #increment age up
+        self.age += 1
         #shell degredation
-        self.shell_length -= (self.og_shell_length/3650)
+        self.shell_length =(-0.08219178*self.age) + self.og_shell_length
         self.shell_weight = self.model.length_to_weight(self.shell_length)
 
         #if less than one mm remove from model
@@ -92,6 +95,10 @@ class Oyster(mg.GeoAgent):
 
         #set status to alive
         self.status = "alive"
+
+        # #innundiation time
+        # self.elevation = self.model.space.raster_layer.cells[self.x][-self.y].elevation
+        # self.pct_time_underwater = max(min(-0.496*self.elevation + 0.499, 1), 0)
         
         #age
         self.age += 1
@@ -108,7 +115,7 @@ class Oyster(mg.GeoAgent):
                 self.home_reef.temp_list
             )
         self.energy += (self.daily_energy * self.pct_time_underwater)
-        self.energy_list.append(self.daily_energy)
+        self.energy_list.append(self.daily_energy * self.pct_time_underwater)
 
         #energy loss
         self.energy -= (1.2 * self.pct_time_underwater)
@@ -136,7 +143,8 @@ class Oyster(mg.GeoAgent):
         if ((self.energy < 0) or 
             (self.age > 3650) or 
             (random.random() < self.mortality_prob * self.pct_time_underwater) or 
-            ((self.model.step_count >= 8) and all(v == 0 for v in self.energy_list[-8:]))
+            ((self.model.step_count >= 8) and all(v == 0 for v in self.energy_list[-8:])) or
+            self.pct_time_underwater <= 0.20 #made up this num
             ):
             self.model.space.remove_agent(self)
             self.model.schedule.remove(self)
@@ -182,8 +190,10 @@ class Oyster(mg.GeoAgent):
 
             #create new oysters
             for i in range(self.fertility):
+                area_list = [a.SHAPE_Area for a in self.model.reef_agents]
+                choice = random.choices(self.model.reef_agents, weights = area_list)
                 #get random reef
-                random_reef = random.choice(self.model.reef_agents)
+                random_reef = choice[0]
                 
                 #create oyster
                 baby_oyster = Oyster(
@@ -298,7 +308,6 @@ class Reef(mg.GeoAgent):
             #amount to raise reef by
             self.mm_of_growth = (((self.shell_weight_gain * self.model.ind_per_super_a)/1000)/self.SHAPE_Area)/0.731
             self.total_mm_growth += self.mm_of_growth
-            print(self.mm_of_growth)
             #assign reef growth value to polygon
             vals = ((geom, (self.mm_of_growth/1000)) for geom in self.shape.geometry)
             #define transform

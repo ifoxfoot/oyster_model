@@ -16,7 +16,7 @@ results = mesa.batch_run(
     OysterModel,
     parameters=params,
     iterations=1,
-    max_steps=1825,
+    max_steps=365 * 5,
     number_processes=1,
     data_collection_period=1,
     display_progress=True,
@@ -30,9 +30,16 @@ print(results_df.keys())
 iteration_one = results_df[results_df.type == "Reef"]
 
 #plot
-sns.plot(iteration_one.total_mm_growth, color = ,label = "mm of growth")
+sns.lineplot(data=iteration_one, x='Step', y='total_mm_growth', hue='AgentID')
 plt.xlabel('step')
-plt.legend()
+plt.ylabel('Total mm Growth')
+plt.title("Modeled Change In Reef Elevation After 5 Years")
+plt.show()
+
+sns.lineplot(data=iteration_one, x='Step', y='oyster_count', hue='AgentID')
+plt.xlabel('step')
+plt.ylabel('Number of Oysters and Shells')
+plt.title("Oyster and Shell Population over 5 Years")
 plt.show()
 
 #get oyster agents

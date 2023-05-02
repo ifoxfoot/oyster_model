@@ -17,9 +17,9 @@ def energy_gain(age, do, tds, tds_list, tss, tss_list, temp, temp_list):
             tds_energy = 0.8
         elif tds < 12:
             tds_energy = 0.9
-        elif 12 <= tds <= 35: #changed from 30
+        elif 12 <= tds <= 36: #changed from 30
             tds_energy = 1.0
-        elif tds > 35:
+        elif tds > 36:
             tds_energy = 0.5 #changed from 0.5
 
         #TOTAL SUSPENDED SOLIDS
@@ -62,9 +62,9 @@ def energy_gain(age, do, tds, tds_list, tss, tss_list, temp, temp_list):
             tds_energy = 0.9
         elif tds < 12:
             tds_energy = 0.95
-        elif 12 <= tds <= 35:
+        elif 12 <= tds <= 36:
             tds_energy = 1.0
-        elif tds > 35:
+        elif tds > 36:
             tds_energy = 0.5 #changed from 0.5
 
         #TOTAL SUSPENDED SOLIDS

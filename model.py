@@ -82,7 +82,8 @@ class OysterModel(mesa.Model):
                     model = self,
                     geometry = self.point_in_reef(agent),
                     crs =  self.space.crs,
-                    shell_length = random.randint(1,300)
+                    shell_length = random.randint(1,300),
+                    age = random.randint(1, 365)
                 )
                 #add oyster agents to raster, agent layer, and scheduler
                 self.space.add_oyster(this_shell)
