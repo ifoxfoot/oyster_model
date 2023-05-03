@@ -16,7 +16,7 @@ results = mesa.batch_run(
     OysterModel,
     parameters=params,
     iterations=1,
-    max_steps=365 * 4,
+    max_steps=365 * 1,
     number_processes=1,
     data_collection_period=1,
     display_progress=True,
@@ -52,11 +52,11 @@ print(results_df.keys())
 #get oyster agents
 # iteration_one = results_df[results_df.type == "Oyster"]
 
-pops = results_df.groupby(['Step', 'type']).size().reset_index(name='counts')
-sns.lineplot(data=pops, x='Step', y='counts', hue='type')
-plt.xlabel('step')
-plt.legend()
-plt.show()
+# pops = results_df.groupby(['Step', 'type']).size().reset_index(name='counts')
+# sns.lineplot(data=pops, x='Step', y='counts', hue='type')
+# plt.xlabel('step')
+# plt.legend()
+# plt.show()
 
 # means = iteration_one.groupby('Step').mean("age")
 # plt.plot((means.age), label = "mean age")
@@ -71,11 +71,11 @@ plt.show()
 # plt.show()
 
 #first filter the results for one iteration one agent to look at oyster metrics
-#iteration_one = results_df[(results_df.AgentID == "oyster_1094")]
+iteration_one = results_df[(results_df.AgentID == "oyster_1094")]
 
 #plot things (Oyster)
-# plt.plot(iteration_one.Step, iteration_one.shell_length_mm, label = "shell_length_mmt")
-# plt.show()
+plt.plot(iteration_one.Step, iteration_one.shell_length_mm, label = "shell_length_mmt")
+plt.show()
 #plt.plot(iteration_one.Step, iteration_one.dry_biomass, label = "dry_biomass")
 #plt.plot(iteration_one.Step, iteration_one.wet_biomass, label = "wet_biomass")
 #plt.plot(iteration_one.Step, iteration_one.shell_length_mm, label = "shell length (mm)")

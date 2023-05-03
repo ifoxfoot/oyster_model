@@ -22,7 +22,7 @@ class Shell(mg.GeoAgent):
 
     """Shell Agent"""
 
-    def __init__(self, unique_id, model, geometry, crs, shell_length, age = 0):
+    def __init__(self, unique_id, model, geometry, crs, shell_length, age = 1):
         super().__init__(unique_id, model, geometry, crs)
         self.type = "Shell"
         self.shell_length = shell_length
@@ -90,6 +90,9 @@ class Oyster(mg.GeoAgent):
          #init energy list
          self.energy_list = []
 
+         #establish reproductive days
+         self.reproductive_days = list(range(203, 210)) + list(range(212, 215))
+
     #define what happens at each step      
     def step(self):
 
@@ -138,43 +141,41 @@ class Oyster(mg.GeoAgent):
             self.home_reef.do, 
             self.home_reef.do_list
             )
-
+        #if any(self.model.step_count%i == 0 for i in self.reproductive_days):
+        
         #if conditions met, kill off
         if ((self.energy < 0) or 
             (self.age > 3650) or 
-            (random.random() < self.mortality_prob * self.pct_time_underwater) or 
+            (random.random() < (self.mortality_prob * self.pct_time_underwater)) or 
             ((self.model.step_count >= 8) and all(v == 0 for v in self.energy_list[-8:])) or
             self.pct_time_underwater <= 0.20 #made up this num
             ):
-            self.model.space.remove_agent(self)
-            self.model.schedule.remove(self)
+                self.model.space.remove_agent(self)
+                self.model.schedule.remove(self)
 
-            #convert dead oysters to shells
-            new_shell = Shell(
-                unique_id = "shell_" + str(self.unique_id),
-                model = self.model,
-                geometry = self.geometry, 
-                crs = self.model.space.crs,
-                shell_length = self.shell_length_mm
-                )
+                #convert dead oysters to shells
+                new_shell = Shell(
+                    unique_id = "shell_" + str(self.unique_id),
+                    model = self.model,
+                    geometry = self.geometry, 
+                    crs = self.model.space.crs,
+                    shell_length = self.shell_length_mm
+                    )
 
-            #add shell agents to grid and scheduler
-            self.model.space.add_agents(new_shell)
-            self.model.schedule.add(new_shell)
+                #add shell agents to grid and scheduler
+                self.model.space.add_agents(new_shell)
+                self.model.schedule.add(new_shell)
             
         # #harvest on day 298 if home reef is not sancuary, according to harves rate
         # if (self.status == "alive") & (self.model.step_count%298 == 0) & (self.home_reef.sanctuary_status == False) & (random.random() < self.model.harvest_rate):
         #     self.status = "harvested"
         #     self.model.space.remove_agent(self)
         #     self.model.schedule.remove(self)
-
-        #establish reproductive days
-        reproductive_days = list(range(203, 210)) + list(range(212, 215))
         
         #reproduction
         if ((self.status == "alive") and
             (self.reproduced == False) and
-            any(self.model.step_count%i == 0 for i in reproductive_days)):
+            any(self.model.step_count%i == 0 for i in self.reproductive_days)):
 
             #get fertility
             self.fertility = n_babies(
@@ -285,9 +286,9 @@ class Reef(mg.GeoAgent):
         #natural recruitment
         if (self.model.step_count > 0) and (self.model.step_count%211 == 0 or
                                             self.model.step_count%216 == 0 ):
-            for i in range(round((self.SHAPE_Area * 38)/self.model.ind_per_super_a)):
-            # if self.shell_to_oyster >= 1.72:
-            #     for i in range(round((self.shell_count - (self.oyster_count * 1.72))/1.72)):
+            #for i in range(round((self.SHAPE_Area * 38)/self.model.ind_per_super_a)):
+            if ((self.SHAPE_Area * 1620)/self.model.ind_per_super_a) > self.oyster_count:
+                for i in range(round(((self.SHAPE_Area * 1620)/self.model.ind_per_super_a) - self.oyster_count)):
                     #create oyster
                     baby_oyster = Oyster(
                         unique_id = "oyster_" + str(self.model.next_id()),

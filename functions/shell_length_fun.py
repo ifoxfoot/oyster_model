@@ -14,5 +14,5 @@ def shell_length_gain (shell_length_mm, energy):
     elif shell_length_mm > 300:
         sl_weight = 0.01
 
-    return(0.19 * energy * sl_weight) #changed constant from 0.6667
+    return(0.06 * energy * sl_weight) #changed constant from 0.6667
 
