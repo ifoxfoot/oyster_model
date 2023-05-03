@@ -253,7 +253,11 @@ class Reef(mg.GeoAgent):
 
     def step(self):
         #get oyster count
-        self.oyster_count = len(list(self.model.space.get_intersecting_agents(self)))
+        self.oyster_count = len(list(a for a in self.model.space.get_intersecting_agents(self) 
+                                     if isinstance(a, Oyster)))
+        self.shell_count = len(list(a for a in self.model.space.get_intersecting_agents(self) 
+                                     if isinstance(a, Shell)))
+        self.shell_to_oyster = self.shell_count/(self.oyster_count + 0.1)
         #get total wieght of oyster shells
         self.total_shell_weight = self.model.space.get_intersecting_agents(self)
         #get new environmental variables
@@ -279,25 +283,26 @@ class Reef(mg.GeoAgent):
             self.initial_shell_weight = sum(init_shell_weight)
 
         #natural recruitment
-        if (self.model.step_count > 0) and (self.model.step_count%210 == 0 or
-                                            self.model.step_count%215 == 0 ):
+        if (self.model.step_count > 0) and (self.model.step_count%211 == 0 or
+                                            self.model.step_count%216 == 0 ):
             for i in range(round((self.SHAPE_Area * 38)/self.model.ind_per_super_a)):
-
-                #create oyster
-                baby_oyster = Oyster(
-                    unique_id = "oyster_" + str(self.model.next_id()),
-                    model = self.model,
-                    geometry = self.model.point_in_reef(self), 
-                    crs = self.model.space.crs,
-                    birth_reef = "out_of_bounds",
-                    home_reef = self,
-                    age = 0
-                )
+            # if self.shell_to_oyster >= 1.72:
+            #     for i in range(round((self.shell_count - (self.oyster_count * 1.72))/1.72)):
+                    #create oyster
+                    baby_oyster = Oyster(
+                        unique_id = "oyster_" + str(self.model.next_id()),
+                        model = self.model,
+                        geometry = self.model.point_in_reef(self), 
+                        crs = self.model.space.crs,
+                        birth_reef = "out_of_bounds",
+                        home_reef = self,
+                        age = 0
+                    )
             
-                #add oyster agents to raster, agent layer, and scheduler
-                self.model.space.add_oyster(baby_oyster)
-                self.model.space.add_agents(baby_oyster)
-                self.model.schedule.add(baby_oyster)
+                    #add oyster agents to raster, agent layer, and scheduler
+                    self.model.space.add_oyster(baby_oyster)
+                    self.model.space.add_agents(baby_oyster)
+                    self.model.schedule.add(baby_oyster)
 
         #once a year get total shell weight
         if self.model.step_count%365 == 0:
