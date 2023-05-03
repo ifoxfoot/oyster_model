@@ -149,9 +149,9 @@ class OysterModel(mesa.Model):
     
     #function to convert shell length to shell weight
     def length_to_weight (self, shell_length_mm):
-        dry_biomass = 9.6318 * (10**-6) * (shell_length_mm**2.743)
+        dry_biomass = 9.6318 * (10**-6) * (shell_length_mm**2.743) #A paper by Powell et al found the scaling coefficient for Florida to be lower, around 1.8 not 2.7
         wet_biomass =  (dry_biomass * 5.6667) + dry_biomass 
-        shell_weight = wet_biomass * 3.4
+        shell_weight = wet_biomass * 3.4 #I looked at the data from the USFWS report and this is 3.57 not a huge difference but could make a bit of a difference
         return shell_weight
    
     #define step
