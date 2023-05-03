@@ -78,7 +78,7 @@ class Oyster(mg.GeoAgent):
          self.birth_reef = birth_reef
          self.home_reef = home_reef
          self.energy = random.randint(1,10)
-         self.shell_length_mm = 0.08219178 * self.age #found using line between (0,0) and (3650-max age, 300-max size)
+         self.shell_length_mm = 0.08219178 * self.age #found using line between (0,0) and (3650-max age, 300-max size) #my guess is this is the source of the oysters growing so large
          self.dry_biomass = 9.6318 * (10**-6) * (self.shell_length_mm**2.743)
          self.wet_biomass =  (self.dry_biomass * 5.6667) + self.dry_biomass
          self.shell_weight = self.model.length_to_weight(self.shell_length_mm)
@@ -121,7 +121,7 @@ class Oyster(mg.GeoAgent):
         self.energy_list.append(self.daily_energy * self.pct_time_underwater)
 
         #energy loss
-        self.energy -= (1.2 * self.pct_time_underwater)
+        self.energy -= (1.2 * self.pct_time_underwater) #I wonder if this makes sense to have a constant value that doesn't vary with temperature, respiration goes down when its cold
 
         #growth
         self.shell_length_mm += shell_length_gain(self.shell_length_mm, self.energy)
