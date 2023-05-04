@@ -41,7 +41,7 @@ class Shell(mg.GeoAgent):
         #increment age up
         self.age += 1
         #shell degredation
-        self.shell_length =(-0.08219178*self.age) + self.og_shell_length
+        self.shell_length = (-0.08219178*self.age) + self.og_shell_length
         self.shell_weight = self.model.length_to_weight(self.shell_length)
 
         #if less than one mm remove from model
@@ -86,6 +86,8 @@ class Oyster(mg.GeoAgent):
          self.reproduced = False
          self.mortality_prob = None
          self.daily_energy = None
+         self.mort_cause = "alive"
+         self.model.counts["alive"] += 1
 
          #init energy list
          self.energy_list = []
@@ -150,6 +152,19 @@ class Oyster(mg.GeoAgent):
             ((self.model.step_count >= 8) and all(v == 0 for v in self.energy_list[-8:])) or
             self.pct_time_underwater <= 0.20 #made up this num
             ):
+                if self.energy < 0:
+                    self.mort_cause = "no_energy"
+                elif self.age > 3650:
+                    self.mort_cause = "old_age"
+                elif ((self.model.step_count >= 8) and all(v == 0 for v in self.energy_list[-8:])):
+                    self.mort_cause = "no_energy_eight_days"
+                elif self.pct_time_underwater <= 0.20:
+                    self.mort_cause = "out_of_water"
+                else: 
+                    self.mort_cause = "mortality"
+
+                self.model.counts[self.mort_cause] += 1
+
                 self.model.space.remove_agent(self)
                 self.model.schedule.remove(self)
 
@@ -165,6 +180,7 @@ class Oyster(mg.GeoAgent):
                 #add shell agents to grid and scheduler
                 self.model.space.add_agents(new_shell)
                 self.model.schedule.add(new_shell)
+        else: self.model.counts["alive"] += 1
             
         # #harvest on day 298 if home reef is not sancuary, according to harves rate
         # if (self.status == "alive") & (self.model.step_count%298 == 0) & (self.home_reef.sanctuary_status == False) & (random.random() < self.model.harvest_rate):
@@ -233,7 +249,7 @@ class Reef(mg.GeoAgent):
         super().__init__(unique_id, model, geometry, crs)
         self.type = "Reef"
         # self.sanctuary_status = sanctuary_status
-        self.data = pd.read_csv("data/wq_perams_10apr23.csv")
+        self.data = pd.read_csv("data/wq_perams_late.csv")
 
         self.poly = poly
         self.shape = poly.loc[poly['OBJECTID'] == self.unique_id]
@@ -306,7 +322,7 @@ class Reef(mg.GeoAgent):
                     self.model.schedule.add(baby_oyster)
 
         #once a year get total shell weight
-        if self.model.step_count%365 == 0:
+        if self.model.step_count%30 == 0:
             #get shell weight 
             shell_weights = [a.shell_weight for a in self.model.space.get_intersecting_agents(self) 
                                        if isinstance(a, (Oyster, Shell))]

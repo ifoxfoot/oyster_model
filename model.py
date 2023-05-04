@@ -31,6 +31,17 @@ class OysterModel(mesa.Model):
         self.schedule = mesa.time.RandomActivation(self)
         self.step_count = 1
         self.current_id = 0
+        
+        #initialize counts
+        self.counts = {
+            "alive": 0,
+            "no_energy": 0,
+            "old_age": 0,
+            "no_energy_eight_days": 0,
+            "out_of_water": 0,
+            "mortality": 0,
+        }
+        
         self.ind_per_super_a = (2142.45 * 9) #num oysters per cell area times nine for moore neighborhood
 
         #add crs for space
@@ -114,9 +125,21 @@ class OysterModel(mesa.Model):
 
         #init data collector
         self.running = True
+
+        if self.running == False:
+            print(self.counts)
         
         #tell data collector what to collect
         self.datacollector = mesa.DataCollector(
+            model_reporters= { 
+                #mortaity counts
+                "alive": get_alive_count,
+                "no_energy": get_no_energy_count,
+                "old_age": get_old_age_count,
+                "no_energy_eight_days": get_no_energy_eight_days_count,
+                "mortality": get_mortality_count,
+                "out_of_water": get_out_of_water_count,
+            },
             agent_reporters = {"type" : "type",
                                 #oyster metrics
                                 "age": lambda a: a.age if a.type == "Oyster" else None,
@@ -149,17 +172,31 @@ class OysterModel(mesa.Model):
     
     #function to convert shell length to shell weight
     def length_to_weight (self, shell_length_mm):
-        dry_biomass = 9.6318 * (10**-6) * (shell_length_mm**2.743) #A paper by Powell et al found the scaling coefficient for Florida to be lower, around 1.8 not 2.7
+        dry_biomass = 9.6318 * (10**-6) * (shell_length_mm**1.8) #A paper by Powell et al found the scaling coefficient for Florida to be lower, around 1.8 not 2.7
         wet_biomass =  (dry_biomass * 5.6667) + dry_biomass 
-        shell_weight = wet_biomass * 3.4 #I looked at the data from the USFWS report and this is 3.57 not a huge difference but could make a bit of a difference
+        shell_weight = wet_biomass * 3.57 #I looked at the data from the USFWS report and this is 3.57  not 3.4 not a huge difference but could make a bit of a difference
         return shell_weight
+    
+    #fun to rest counts after each step
+    def reset_counts(self):
+        self.counts = {
+            "alive": 0,
+            "no_energy": 0,
+            "old_age": 0,
+            "no_energy_eight_days": 0,
+            "out_of_water": 0,
+            "mortality": 0,
+            }
    
     #define step
     def step(self):
         """Advance the model by one step."""
+        self.reset_counts()
         self.schedule.step()
         self.step_count += 1
         self.datacollector.collect(self)
+        self.space._recreate_rtree()  # Recalculate spatial tree, because agents are moving??
+
         # #add oysters to rmg
         # self.rmg.add_field("num_oysters",
         #                    self.space.raster_layer.get_raster("num_oysters_in_cell"),
@@ -178,16 +215,35 @@ class OysterModel(mesa.Model):
         # tfc.run_one_step()
         # #get innudiation rate
         # rate = tfc.calc_tidal_inundation_rate()
-        self.space._recreate_rtree()  # Recalculate spatial tree, because agents are moving??
         
         #stop step after 5 yr
         if self.step_count == (365 * 5) + 1:
             self.running = False
 
+ 
     #define run model function
     def run_model(self, steps):
          for i in range(steps):
             self.step()
+
+# Functions needed for datacollector
+def get_alive_count(model):
+    return model.counts["alive"]
+
+def get_no_energy_count(model):
+    return model.counts["no_energy"]
+
+def get_old_age_count(model):
+    return model.counts["old_age"]
+
+def get_no_energy_eight_days_count(model):
+    return model.counts["no_energy_eight_days"]
+
+def get_mortality_count(model):
+    return model.counts["mortality"]
+
+def get_out_of_water_count(model):
+    return model.counts["out_of_water"]
 
        
 
