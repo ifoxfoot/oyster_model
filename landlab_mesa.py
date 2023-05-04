@@ -1,8 +1,12 @@
 #import libraries
-from landlab.plot import imshow, video_out
+from landlab.plot import imshow
 from pylab import show, figure
 from landlab.components import TidalFlowCalculator
 from landlab import RasterModelGrid
+from landlab.io.esri_ascii import write_esri_ascii
+import os
+import matplotlib.pyplot as plt
+from numpy import flip
 
 #import mesa model
 from model import *
@@ -16,16 +20,22 @@ oys_mod.run_model(steps = 1)
 
 rmg = RasterModelGrid((oys_mod.space.raster_layer.height, 
                        oys_mod.space.raster_layer.width),
-                       1.157226984026, 
-                       (-9051628.873678505, 3492744.042225802))
+                       1.157226984026,
+                        (0, -149) 
+                       #(-9051628.873678505, 3492744.042225802)
+                       )
 rmg.add_field("topographic__elevation", 
-              oys_mod.space.raster_layer.get_raster("elevation"))
+              np.fliplr(oys_mod.space.raster_layer.get_raster("elevation")))
 rmg.add_field("num_oysters",
-              oys_mod.space.raster_layer.get_raster("num_oysters_in_cell"))
+              np.fliplr(oys_mod.space.raster_layer.get_raster("num_oysters_in_cell")))
+
+
 
 #plot raster
 figure('num oysters from the model')  # new fig, with a name
 imshow.imshow_grid_at_node(rmg, "num_oysters")
+# ax = plt.gca()
+# ax.set_ylim(ax.get_ylim()[::-1])
 show()
 
 #store roughness values
@@ -40,6 +50,8 @@ rough[rmg.at_node["num_oysters"] > 0] = oyster_roughness
 #plot raster
 figure('Roughness vals')  # new fig, with a name
 imshow.imshow_grid_at_node(rmg, "mannings_n")
+# ax = plt.gca()
+# ax.set_ylim(ax.get_ylim()[::-1])
 show()
 
 #map roughness to link
@@ -48,16 +60,28 @@ r_link = rmg.map_mean_of_link_nodes_to_link("mannings_n")
 #init tidal flow calculator
 tfc = TidalFlowCalculator(rmg, tidal_range = 1.289919, tidal_period = 43482.58, roughness = r_link)
 
-#run the tidal flow calc
+#run it
 tfc.run_one_step()
 
-#store tidal period for depth
-period = 4.0e4
+#convert flow back to nodes
+ebb_vel = rmg.map_max_of_node_links_to_node("ebb_tide_flow__velocity")
 
-#get innudiation rate
-rate = tfc.calc_tidal_inundation_rate()
-depth_mid = 0.5 * rate[:] * period # depth in m
-rmg.add_field("water_low", depth_mid, at = "node")
+flood_vel = rmg.map_max_of_node_links_to_node("flood_tide_flow__velocity")
 
+#plot raster
+figure('Tidal Flow Ebb')  # new fig, with a name
+imshow.imshow_grid_at_node(rmg, ebb_vel)
+# ax = plt.gca()
+# ax.set_ylim(ax.get_ylim()[::-1])
+show()
 
+#plot raster
+figure('Tidal Flow Flood')  # new fig, with a name
+imshow.imshow_grid_at_node(rmg, ebb_vel)
+# ax = plt.gca()
+# ax.set_ylim(ax.get_ylim()[::-1])
+show()
 
+#write to raster
+files = write_esri_ascii("data/test.asc", rmg)
+[os.path.basename(name) for name in sorted(files)]
