@@ -10,15 +10,15 @@ def mort_prob (age, tds, tds_list, tss, tss_list, temp, temp_list, do, do_list):
         elif 5 <= tds <= 10:
             tds_mort = 0.005
         elif 10 < tds <= 20:
-            tds_mort = 0.001
+            tds_mort = 0.0001
         elif 20 < tds <= 28:
-            tds_mort = 0.001
+            tds_mort = 0.0001
         elif len(tds_list) >= 7 and all(28 <= v <= 35 for v in tds_list[-7:]):
-            tds_mort = 0.003 #changed from 0.02
-        elif 28 < tds <= 35:
-            tds_mort = 0.002 #changed from 0.01
-        elif tds > 35:
-            tds_mort = 0.005 #changed from 0.5
+            tds_mort = 0.00015 #changed from 0.02
+        elif 28 < tds <= 36:
+            tds_mort = 0.00018 #changed from 0.01
+        elif tds > 36:
+            tds_mort = 0.002 #changed from 0.5
     else:
         if len(tds_list) >= 7 and all(v < 3 for v in tds_list[-7:]):
             tds_mort = 0.2
@@ -27,15 +27,15 @@ def mort_prob (age, tds, tds_list, tss, tss_list, temp, temp_list, do, do_list):
         elif 3 <= tds <= 10:
             tds_mort = 0.002
         elif 10 < tds <= 20:
-            tds_mort = 0.001
+            tds_mort = 0.0001
         elif 20 < tds <= 28:
-            tds_mort = 0.001
+            tds_mort = 0.0001
         elif len(tds_list) >= 7 and all(28 <= v <= 35 for v in tds_list[-7:]):
-            tds_mort = 0.003 #changed from 0.02
-        elif 28 < tds <= 35:
-            tds_mort = 0.002 #changed?
-        elif tds > 35:
-            tds_mort = 0.005 #changed from 0.05
+            tds_mort = 0.00015 #changed from 0.02
+        elif 28 < tds <= 36:
+            tds_mort = 0.00018 #changed?
+        elif tds > 36:
+            tds_mort = 0.002 #changed from 0.05
 
     #TOTAL SUS SOLIDS
     if age < 365:
@@ -101,9 +101,9 @@ def mort_prob (age, tds, tds_list, tss, tss_list, temp, temp_list, do, do_list):
     elif 10 < temp <= 20:
         temp_mort = 0.00125
     elif len(temp_list) >= 7 and all(20 < v <= 32 for v in temp_list[-7:]):
-        temp_mort = 0.005 #changed from 0.01
+        temp_mort = 0.0015 #changed from 0.01
     elif 20 < temp <= 32:
-        temp_mort = 0.003 #changed from 0.0055
+        temp_mort = 0.001 #changed from 0.0055
     elif temp > 32:
         temp_mort = 0.01
     
