@@ -16,20 +16,16 @@ from agents import *
 #store model
 oys_mod = OysterModel()
 
-oys_mod.run_model(steps = 1)
+oys_mod.run_model(steps = 365*5)
 
 rmg = RasterModelGrid((oys_mod.space.raster_layer.height, 
                        oys_mod.space.raster_layer.width),
-                       1.157226984026,
-                        (0, -149) 
-                       #(-9051628.873678505, 3492744.042225802)
+                       1.157226984026
                        )
 rmg.add_field("topographic__elevation", 
               np.fliplr(oys_mod.space.raster_layer.get_raster("elevation")))
 rmg.add_field("num_oysters",
               np.fliplr(oys_mod.space.raster_layer.get_raster("num_oysters_in_cell")))
-
-
 
 #plot raster
 figure('num oysters from the model')  # new fig, with a name
@@ -65,23 +61,25 @@ tfc.run_one_step()
 
 #convert flow back to nodes
 ebb_vel = rmg.map_max_of_node_links_to_node("ebb_tide_flow__velocity")
+rmg.add_field("ebb_vel", ebb_vel)
 
 flood_vel = rmg.map_max_of_node_links_to_node("flood_tide_flow__velocity")
+rmg.add_field("flood_vel", flood_vel)
 
 #plot raster
 figure('Tidal Flow Ebb')  # new fig, with a name
-imshow.imshow_grid_at_node(rmg, ebb_vel)
+imshow.imshow_grid_at_node(rmg, "ebb_vel")
 # ax = plt.gca()
 # ax.set_ylim(ax.get_ylim()[::-1])
 show()
 
 #plot raster
 figure('Tidal Flow Flood')  # new fig, with a name
-imshow.imshow_grid_at_node(rmg, ebb_vel)
+imshow.imshow_grid_at_node(rmg, "ebb_vel")
 # ax = plt.gca()
 # ax.set_ylim(ax.get_ylim()[::-1])
 show()
 
 #write to raster
-files = write_esri_ascii("data/test.asc", rmg)
+files = write_esri_ascii("outputs/five_years.asc", rmg)
 [os.path.basename(name) for name in sorted(files)]

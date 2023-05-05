@@ -326,11 +326,11 @@ class Reef(mg.GeoAgent):
             #get shell weight 
             shell_weights = [a.shell_weight for a in self.model.space.get_intersecting_agents(self) 
                                        if isinstance(a, (Oyster, Shell))]
-            self.shell_weight_gain = sum(shell_weights) - self.initial_shell_weight
-            #amount to raise reef by
-            self.mm_of_growth = (((self.shell_weight_gain * self.model.ind_per_super_a)/1000)/self.SHAPE_Area)/0.731
-            self.total_mm_growth += self.mm_of_growth
-            #assign reef growth value to polygon
+            self.shell_weight_gain = sum(shell_weights) - self.initial_shell_weight 
+            #amount to raise reef by (convert g to kg)
+            self.mm_of_growth = ((((self.shell_weight_gain * self.model.ind_per_super_a)/1000)/self.SHAPE_Area)/0.731) - self.total_mm_growth #total_mm_growth starts at 0
+            self.total_mm_growth += self.mm_of_growth #then growth is added
+            #assign reef growth value to polygon (convert mm to m)
             vals = ((geom, (self.mm_of_growth/1000)) for geom in self.shape.geometry)
             #define transform
             transform = rio.transform.from_bounds(*self.model.space.raster_layer.total_bounds, 
