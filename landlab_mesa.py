@@ -16,7 +16,7 @@ from agents import *
 #store model
 oys_mod = OysterModel()
 
-oys_mod.run_model(steps = 365*5)
+oys_mod.run_model(steps = 1)
 
 rmg = RasterModelGrid((oys_mod.space.raster_layer.height, 
                        oys_mod.space.raster_layer.width),
@@ -54,7 +54,7 @@ show()
 r_link = rmg.map_mean_of_link_nodes_to_link("mannings_n")
 
 #init tidal flow calculator
-tfc = TidalFlowCalculator(rmg, tidal_range = 1.289919, tidal_period = 43482.58, roughness = r_link)
+tfc = TidalFlowCalculator(rmg, tidal_range = 1.289919, tidal_period = 43482.58, roughness = 0.02)
 
 #run it
 tfc.run_one_step()
@@ -81,5 +81,5 @@ imshow.imshow_grid_at_node(rmg, "ebb_vel")
 show()
 
 #write to raster
-files = write_esri_ascii("outputs/five_years.asc", rmg)
+files = write_esri_ascii("outputs/no_oyster.asc", rmg)
 [os.path.basename(name) for name in sorted(files)]
