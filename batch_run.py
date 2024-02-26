@@ -1,3 +1,6 @@
+#this script contains the code use a mesa tool called batch run and create some figures
+#batch run is a function that allows the user to run a mesa model many times with different inputs
+
 
 #import library 
 import mesa
@@ -9,7 +12,7 @@ from matplotlib import rcParams
 rcParams.update({'figure.autolayout': True})
 
 
-#import model
+#import mesa model from model file
 from model import *
 
 #set params
@@ -30,11 +33,10 @@ results = mesa.batch_run(
 results_df = pd.DataFrame(results)
 print(results_df.keys())
 
-#get reef agents
+#get results for reef agents
 reefs = results_df[results_df.type == "Reef"]
 
-
-#change in elevation
+#plot change in elevation every 30 days
 #filter by step/30
 thirty_steps = reefs[reefs['Step'] % 30 == 0]
 ax = sns.lineplot(data=thirty_steps, x='Step', y='mm_growth', hue='AgentID', palette="Set1")
@@ -46,7 +48,7 @@ plt.title("Modeled Change In Reef Elevation Over 5 Years")
 plt.savefig('outputs/reef_elevation.png', dpi = 600)
 plt.show()
 
-#
+#plot daily reef elevation
 ax = sns.lineplot(data=reefs, x='Step', y='total_mm_growth', hue='AgentID', palette="Set1")
 plt.xlabel('Model Step (1 Day)')
 plt.ylabel('Elevation\nChange (mm)', rotation = 0)
